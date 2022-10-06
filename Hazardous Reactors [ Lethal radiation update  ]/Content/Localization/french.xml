@@ -22,7 +22,7 @@
 			<!-- QoL Afflictions -->
 			
 <afflictionname.burningrod>Combustible surchauffé</afflictionname.burningrod>
-<afflictiondescription.burningrod>Vous tenez une barre de combustible surchauffé à 2800°C sans protection!</afflictiondescription.burningrod>
+<afflictiondescription.burningrod>Vous tenez une barre de combustible surchauffé à 2800°C sans outil adapté!</afflictiondescription.burningrod>
 <afflictioncauseofdeath.burningrod>Brulé à mort en tenant une barre de combustible surchauffée.</afflictioncauseofdeath.burningrod>
 
 <afflictionname.hazardexposure>Exposition dangereuse aux barres de combustible</afflictionname.hazardexposure>
@@ -68,16 +68,16 @@
 <entitydescription.fuelrod>Combustible standard pour réacteur nucléaire.</entitydescription.fuelrod>
 
 <entityname.thoriumfuelrod>Barre de combustible en thorium</entityname.thoriumfuelrod>
-<entitydescription.thoriumfuelrod>Les barres de combustible en thorium peuvent durée jusqu'à trois fois plus longtemps que celui en uranium.</entitydescription.thoriumfuelrod>
+<entitydescription.thoriumfuelrod>Les barres de combustible en thorium peuvent durer jusqu'à trois fois plus longtemps que celle en uranium.</entitydescription.thoriumfuelrod>
 
 <entityname.fulguriumfuelrod>Barre de combustible en fulgurium</entityname.fulguriumfuelrod>
-<entitydescription.fulguriumfuelrod>Les barres de combustible en fulgurium ne génère pas autant de chaleur que les autres combustibles mais compense avec son extrême longévité.</entitydescription.fulguriumfuelrod>
+<entitydescription.fulguriumfuelrod>Même si elles ne génèrent pas autant de chaleur que les autres combustibles mais compensent avec son extrême longévité, capable de réguler la fission des autres combustibles à un certain niveau ce qui en fait un bon combustible complémentaire. Trop stable pour être utilisé tel que et doit être préchauffé pour être utilisable.</entitydescription.fulguriumfuelrod>
 
 <entityname.fulguriumfuelrodvolatile>Barre de combustible en fulgurium volatile</entityname.fulguriumfuelrodvolatile>
 <entitydescription.fulguriumfuelrodvolatile>Un amalgame de fulgurium et d'incendium, s'il ne possède ni la longévité du fulgurium ou la production de chaleur de l'incendium il se situe entre les deux cependant possède la quasi-totalité de leurs points négatifs respectif.</entitydescription.fulguriumfuelrodvolatile>
 
 <entityname.ekutility_incendiumfuelrod>Barre de combustible en incendium</entityname.ekutility_incendiumfuelrod>
-<entitydescription.ekutility_incendiumfuelrod>Les barres de combustible en incendium ont un potentiel d'énergie extrêmement élevé mais son instable est hautement inflammable. Sensible aux impacts même dans des conteneurs sécurisé.</entitydescription.ekutility_incendiumfuelrod>
+<entitydescription.ekutility_incendiumfuelrod>Possède une énergie potentielle extrême mais est tout aussi instable. Autochauffantes sinon stocké dans un conteneur adéquat au point fondre à travers la coque du sous-marin. Sensible aux impactes même si stocké correctement.</entitydescription.ekutility_incendiumfuelrod>
 
 <entityname.supercritical_incendium>Barre de combustible d'incendium super critique</entityname.supercritical_incendium>
 <entitydescription.supercritical_incendium>Cette barre de combustible a atteint un état super-critique durant la fusion du coeur et risque de libérer toute son énergie dans une violente explosion au moindre impact, l'énergie ambiante libérée est suffisante pour faire fondre la coque du sous-marin mais semble s'épuiser rapidement.</entitydescription.supercritical_incendium>
@@ -88,13 +88,25 @@
 <entityname.molten_rods>Corium</entityname.molten_rods>
 <entitydescription.molten_rods>Magma radioactif solidifié, émet une quantité extrême de radiation.</entitydescription.molten_rods>
 
-			<!-- Explosive weapon items -->
+			<!-- Weapon -->
 
 <entityname.nukerod>Ogive "Crisis"</entityname.nukerod>
-<entitydescription.nukerod>Explosif sensible aux impacts crée à partir de combustible alien dans un état super-critique. Capable de dégâts cataclysmiques en maximisant la surface de la cible.</entitydescription.nukerod>
+<entitydescription.nukerod>Une barre de combustible alien en état supercritique maintenu en stase, les générateurs de stases sont très fragiles et ne survivront pas un impact même modéré ce qui en fait une puissante ogive tactique.</entitydescription.nukerod>
 
 <entityname.nukerodenhanced>Ogive "Crisis" amélioré</entityname.nukerodenhanced>
-<entitydescription.nukerodenhanced>Ogive "Crisis" amélioré avec des matériaux fissibles. Capable de dégâts cataclysmiques en maximisant la surface de la cible.</entitydescription.nukerodenhanced>
+<entitydescription.nukerodenhanced>Ogive "Crisis" amélioré avec des matériaux fissibles pour augmenter son potentiel énergitique. Génère aussi un sursaut gamma.</entitydescription.nukerodenhanced>
+
+<entitydescription.nucleargun>Un prototype d'arme énergétique construite avec les matériaux aliens d'Europe. Le danger auquel l'utilisateur s'expose à l'utilisation dépend de la barre de combustible chargé.</entitydescription.nucleargun>
+
+			<!-- Mission text -->
+
+<missionname.salvagewreckwarhead>Récupération d'arme expérimentale</missionname.salvagewreckwarhead>
+<missiondescription.salvagewreckwarhead>Un sous-marin militaire de la coalition a sombré à proximité avec à bord un explosif expérimental. Cherchez dans la zone des signes de sa balise de détresse et récupérez sa cargaison.</missiondescription.salvagewreckwarhead>
+<missionsonarlabel.salvagewreckwarhead>Sous-marin de la Coalition</missionsonarlabel.salvagewreckwarhead>
+<missionsuccess.salvagewreckwarhead>L'ogive a été récupérée.</missionsuccess.salvagewreckwarhead>
+<missionfailure.salvagewreckwarhead>Vous n'avez pas réussi à récupérer l'ogive.</missionfailure.salvagewreckwarhead>
+<missionheader0.salvagewreckwarhead>Ogive récupérée.</missionheader0.salvagewreckwarhead>
+<missionmessage0.salvagewreckwarhead>Vous avez trouvé l'ogive perdue. Amenez-la à [location2] sans la faire exploser pour toucher votre récompense. Soyez mis en garde : l'ogive est extrêmement sensible à tout type de dégâts.</missionmessage0.salvagewreckwarhead>
 
 			<!-- Misc/material items -->
 			
@@ -252,7 +264,7 @@ Fusion du coeur : Irradiation et contamination massive sur une très vaste zone.
 
 Barre de combustible en Incendium
 
-ATTENTION sensible aux impacte même dans des conteneurs sécurisés, placez-les dans une caisse à barre à combustible puis sur une étagère pour réellement les sécuriser.
+ATTENTION Combustible auto-inflammable si mal stocké. Sensible aux impactes et brulant à tout moment. À ranger immédiatement dans un conteneur adapté puis dans un rack pour vraiment sécuriser la barre de combustible.
 
 Quand activée : Génération thermique extrême brulant tout personnel proche et endommage la coque en contact directe.
 

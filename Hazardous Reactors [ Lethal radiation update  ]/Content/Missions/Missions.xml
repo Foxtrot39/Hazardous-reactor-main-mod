@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Missions>
+  <SalvageMission
+    identifier="salvagewreckwarhead"
+    tags="salvage,salvagewreck"
+    type="Salvage"
+    difficulty="3"
+    commonness="1000"
+	description="A coalition cargo vessel went missing approximately two months ago when transporting nuclear ordianace from [location1] to [location2]. The vessel was presumed to be taken by the abyss, but now its emergency beacon seems to have been activated near [location2]. Find the vessel and steal the warhead for the revolution."
+    reward="4500"
+    spawntype="wreck"
+    showmessagewhenpickedup="true"
+    itemidentifier="nukerod,nukerodenhanced"
+    containertag="securelocker"
+    requirewreck="true">
+
+    <Reputation identifier="location" amount="10" />
+    <Reputation identifier="seperatist" amount="15" />
+
+    <Icon texture="Content/UI/MissionIcons2.png" sourcerect="0,512,256,256" color="49,93,233"/>
+
+
+    <LocationType from="Research" to="Military"/>
+    <LocationType from="Military" to="Military"/>
+    <LocationType from="Military" to="Research"/>
+    <LocationType from="Research" to="Research"/>
+
+    <message header="" text=""/>
+  </SalvageMission>
+</Missions>
