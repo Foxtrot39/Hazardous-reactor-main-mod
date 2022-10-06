@@ -199,8 +199,8 @@
       <RequiredItem identifier="du_p_alloy" />
       <RequiredItem identifier="du_p_alloy" />
     </Fabricate>
-  <Sprite texture="%ModDir%/Content/Items/Misc/RodCylinderSpritesheet.png" depth="0.55" sourcerect="0,32,116,32" origin="0.5,0.5" />
-  <InventoryIcon texture="%ModDir%/Content/Items/Misc/RodCylinderInvSpritesheet.png" sourcerect="0,0,64,64" origin="0.5,0.5" /> 
+    <Sprite texture="%ModDir%/Content/Items/Misc/RodCylinderSpritesheet.png" depth="0.55" sourcerect="22,2,116,31" origin="0.5,0.5" />
+    <InventoryIcon texture="%ModDir%/Content/Items/Misc/RodCylinderInvSpritesheet.png" sourcerect="6,7,51,50" origin="0.5,0.5" />
     <Body width="215" height="30" density="30" />
     <Holdable slots="RightHand,LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use"/>
     <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
