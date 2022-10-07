@@ -11,11 +11,6 @@
       <Price storeidentifier="merchantmine"  multiplier="1.25" />
       <Price storeidentifier="merchantengineering" multiplier="1.4" minavailable="2" />
     </Price>
-    <Deconstruct time="15">
-      <Item identifier="titanium" />
-      <Item identifier="lead" />
-      <Item identifier="rubber" />
-    </Deconstruct>
     <Fabricate suitablefabricators="fabricator" requiredtime="30">
       <RequiredSkill identifier="mechanical" level="25" />
       <RequiredItem identifier="titaniumaluminiumalloy" />
