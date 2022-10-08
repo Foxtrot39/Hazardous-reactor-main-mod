@@ -16,7 +16,7 @@
   -->
 
   <!-- Uranium Fuel Rod (Inactive) -->
-  <Item name="" category="fuel" identifier="fuelrod" Tags="reactorfuel" maxstacksize="4" scale="0.5" health="90" pickdistance="150" cargocontaineridentifier="fuelcrate" impactsoundtag="impact_metal_light">
+  <Item name="" category="fuel" identifier="fuelrod" Tags="reactorfuel" maxstacksize="4" scale="0.5" health="90" pickdistance="150" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light">
     <!-- Spawn/PrefContainer(Vanilla) & Store Availability-->
     <PreferredContainer primary="reactorcab"/>
     <PreferredContainer secondary="nucleargun" minamount="1" maxamount="1" spawnprobability="1"/>
@@ -167,7 +167,7 @@
   </Item>
 
   <!-- Thorium Fuel Rod (Inactive) -->
-  <Item name="" category="fuel" identifier="thoriumfuelrod" Tags="reactorfuel" maxstacksize="4" cargocontaineridentifier="fuelcrate" scale="0.5" health="300" pickdistance="150" impactsoundtag="impact_metal_light">
+  <Item name="" category="fuel" identifier="thoriumfuelrod" Tags="reactorfuel" maxstacksize="4" cargocontaineridentifier="metalcrate" scale="0.5" health="300" pickdistance="150" impactsoundtag="impact_metal_light">
     <!-- Spawn/PrefContainer(Vanilla) & Store Availability-->
     <PreferredContainer primary="reactorcab" />
     <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" amount="1" spawnprobability="0.1"/>
@@ -368,7 +368,7 @@
     -->
 
   <!-- Fulgurium Fuel Rod (Active) -->
-  <Item name="" category="fuel" identifier="fulguriumfuelrod" Tags="reactorfuel" maxstacksize="1" scale="0.5" health="1500" cargocontaineridentifier="fuelcrate" pickdistance="150" impactsoundtag="impact_metal_light">
+  <Item name="" category="fuel" identifier="fulguriumfuelrod" Tags="reactorfuel" maxstacksize="1" scale="0.5" health="1500" cargocontaineridentifier="metalcrate" pickdistance="150" impactsoundtag="impact_metal_light">
     <!-- Spawn/PrefContainer(Vanilla) & Store Availability || Removed to be more Bot Friendly
     <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" amount="1" spawnprobability="0.2"/>
     <PreferredContainer secondary="beaconengcab" amount="1" spawnprobability="0.05"/>
@@ -549,7 +549,7 @@
       -->
   
   <!-- Incendium Fuel Rod (Active) -->
-  <Item name="" category="fuel" identifier="ekutility_incendiumfuelrod" Tags="reactorfuel" maxstacksize="1" scale="0.5" health="70" cargocontaineridentifier="fuelcrate" pickdistance="150" impacttolerance="4" impactsoundtag="impact_metal_light">
+  <Item name="" category="fuel" identifier="ekutility_incendiumfuelrod" Tags="reactorfuel" maxstacksize="1" scale="0.5" health="70" cargocontaineridentifier="metalcrate" pickdistance="150" impacttolerance="4" impactsoundtag="impact_metal_light">
     <!-- Spawn/PrefContainer(Vanilla) & Store Availability || Removed to be more Bot Friendly
     <PreferredContainer primary="reactorcab" />
     <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" amount="1" spawnprobability="0.2"/>
@@ -803,7 +803,7 @@
 
 </Override>
   <Override>
-    <Item name="" identifier="fulguriumfuelrodvolatile" category="fuel" Tags="reactorfuel" maxstacksize="8" impacttolerance="3" description="" cargocontaineridentifier="fuelcrate" health="750" scale="0.5">
+    <Item name="" identifier="fulguriumfuelrodvolatile" category="fuel" Tags="reactorfuel" maxstacksize="8" impacttolerance="3" description="" cargocontaineridentifier="metalcrate" health="750" scale="0.5">
       <!-- Pricing -->
       <Price baseprice="400" soldeverywhere="false">
         <Price locationtype="outpost" multiplier="0" sold="false" />
@@ -1222,6 +1222,7 @@
     </Throwable>
   </Item>
   
+    <!-- to do later
     <Item name="" category="weapon" identifier="vacuumcollapse" health="50" Tags="smallitem" description="">
     <Sprite texture="Content/Items/Alien/AlienRuins_Items.png" depth="0.84" sourcerect="1,1,1,1" origin="0.5,0.5" />
     <Body width="1" height="1" density="0" />
@@ -1230,5 +1231,5 @@
         <Remove />
       </StatusEffect>
     </TriggerComponent>
-   </Item>
+   </Item> -->
 </Items>
