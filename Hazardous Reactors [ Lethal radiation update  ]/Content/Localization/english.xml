@@ -22,7 +22,7 @@
 			<!-- QoL Afflictions -->
 			
 <afflictionname.burningrod>Hot rod</afflictionname.burningrod>
-<afflictiondescription.burningrod>You're holding a 2800°C hot piece of metal without appropriate tool!</afflictiondescription.burningrod>
+<afflictiondescription.burningrod>You're holding a 2800°C hot fuel rod without appropriate tool!</afflictiondescription.burningrod>
 <afflictioncauseofdeath.burningrod>Burned to death holding an overheated fuel rod.</afflictioncauseofdeath.burningrod>
 
 <afflictionname.hazardexposure>Rod hazard exposure</afflictionname.hazardexposure>
