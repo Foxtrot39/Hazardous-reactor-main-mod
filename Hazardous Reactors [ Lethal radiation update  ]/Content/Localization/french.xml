@@ -101,11 +101,17 @@
 			<!-- Mission text -->
 
 <missionname.salvagewreckwarhead>Récupération d'arme expérimentale</missionname.salvagewreckwarhead>
+
 <missiondescription.salvagewreckwarhead>Un sous-marin militaire de la coalition a sombré à proximité avec à bord un explosif expérimental. Cherchez dans la zone des signes de sa balise de détresse et récupérez sa cargaison.</missiondescription.salvagewreckwarhead>
+
 <missionsonarlabel.salvagewreckwarhead>Sous-marin de la Coalition</missionsonarlabel.salvagewreckwarhead>
+
 <missionsuccess.salvagewreckwarhead>L'ogive a été récupérée.</missionsuccess.salvagewreckwarhead>
+
 <missionfailure.salvagewreckwarhead>Vous n'avez pas réussi à récupérer l'ogive.</missionfailure.salvagewreckwarhead>
+
 <missionheader0.salvagewreckwarhead>Ogive récupérée.</missionheader0.salvagewreckwarhead>
+
 <missionmessage0.salvagewreckwarhead>Vous avez trouvé l'ogive perdue. Amenez-la à [location2] sans la faire exploser pour toucher votre récompense. Soyez mis en garde : l'ogive est extrêmement sensible à tout type de dégâts.</missionmessage0.salvagewreckwarhead>
 
 			<!-- Misc/material items -->

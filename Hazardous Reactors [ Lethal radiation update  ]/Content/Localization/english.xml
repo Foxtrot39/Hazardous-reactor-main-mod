@@ -101,11 +101,17 @@
 			<!-- Mission text -->
 
 <missionname.salvagewreckwarhead>Recover Experimental Weapon</missionname.salvagewreckwarhead>
+
 <missiondescription.salvagewreckwarhead>A military Coalition sub has sunk nearby carying an experimental explosive device. Search the area for signs of its distress beacon and recover its cargo.</missiondescription.salvagewreckwarhead>
-<missionsonarlabel.salvagewreckwarhead>Sunken coalition submarine</missionsonarlabel.salvagewreckwarhead>
+
+<missionsonarlabel.salvagewreckwarhead>Sunken Coalition submarine</missionsonarlabel.salvagewreckwarhead>
+
 <missionsuccess.salvagewreckwarhead>The warhead has been recovered.</missionsuccess.salvagewreckwarhead>
+
 <missionfailure.salvagewreckwarhead>Failed to recover the warhead.</missionfailure.salvagewreckwarhead>
+
 <missionheader0.salvagewreckwarhead>Warhead recovered.</missionheader0.salvagewreckwarhead>
+
 <missionmessage0.salvagewreckwarhead>You have found the lost warhead. Bring it to [location2] without detonating it to claim your reward. Be warned that it is extremely sensitive to any sort of damage.</missionmessage0.salvagewreckwarhead>
 
 
