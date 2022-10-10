@@ -188,7 +188,7 @@
     grainburst="3">
     <Effect minstrength="0" maxstrength="100" strengthchange="-100">
       <StatusEffect target="Character" delay="0.5" stackable="false" >
-        <Affliction identifier="burn" amount="3" />
+        <Affliction identifier="burn" amount="5" />
       </StatusEffect>
     </Effect>
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,104,60,255" origin="0,0" />
@@ -209,7 +209,7 @@
     grainburst="3">
     <Effect minstrength="0" maxstrength="100" strengthchange="-200">
       <StatusEffect target="Character" delay="0.5" stackable="false">
-        <Affliction identifier="burn" amount="0.6" />
+        <Affliction identifier="burn" amount="10" />
       </StatusEffect>
     </Effect>
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,104,60,255" origin="0,0" />
@@ -230,7 +230,7 @@
     grainburst="3">
     <Effect minstrength="0" maxstrength="100" strengthchange="-100">
       <StatusEffect target="Character" delay="0.5" stackable="false">
-        <Affliction identifier="burn" amount="4" />
+        <Affliction identifier="burn" amount="25" />
       </StatusEffect>
     </Effect>
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,104,60,255" origin="0,0" />

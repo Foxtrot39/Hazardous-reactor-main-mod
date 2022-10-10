@@ -257,44 +257,32 @@
       
       <!-- CRITICAL INTEGRITY EFFECTS AND ALARMS-->
       
+      <StatusEffect type="Always" target="This" comparison="And" condition="-0.4">
+        <Conditional condition="lte 25" />
+        <Conditional condition="gte 10" />
+        <RequiredItem items="fuelrod_active,fulguriumfuelrod,thoriumfuelrod_active,ekutility_incendiumfuelrod,fulguriumfuelrodvolatile" type="Contained" />
+      </StatusEffect>
+      
       <StatusEffect type="Always" target="This" comparison="And" >
         <ParticleEmitter particle="smoke" particleburstamount="6" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" underwaterbubble="false" />
         <ParticleEmitter particle="swirlysmoke" particlespersecond="6" scalemin="1" scalemax="2" anglemin="0" anglemax="360" velocitymin="0" velocitymax="10" />
-        <sound file="%ModDir%/Content/Items/Reactor/buzz.ogg" type="OnUse" range="10000.0" loop="true" volume="1.0" />
+        <sound file="Content/Items/Reactor/ReactorOverheatAlarm.ogg" type="OnUse" range="10000.0" loop="true" volume="1.0" />
         <Conditional condition="lte 25" />
-        <RequiredItem items="fuelrod_active,fulguriumfuelrod,thoriumfuelrod_active,ekutility_incendiumfuelrod,fulguriumfuelrodvolatile" type="Contained" />
-      </StatusEffect>
-      
-      <StatusEffect type="Always" target="This" comparison="And" condition="-0.4">
-        <Conditional condition="lte 25" />
-        <Conditional condition="gte 15" />
-        <RequiredItem items="fuelrod_active,fulguriumfuelrod,thoriumfuelrod_active,ekutility_incendiumfuelrod,fulguriumfuelrodvolatile" type="Contained" />
-      </StatusEffect>
-      
-      <StatusEffect type="Always" target="This" comparison="And" >
-        <sound file="Content/Items/Reactor/reverbbuzz.ogg" type="OnUse" range="10000.0" loop="true" volume="1.0" />
-        <Conditional condition="lte 21" />
-        <RequiredItem items="fuelrod_active,fulguriumfuelrod,thoriumfuelrod_active,ekutility_incendiumfuelrod,fulguriumfuelrodvolatile" type="Contained" />
-      </StatusEffect>
-      
-      <StatusEffect type="Always" target="This" comparison="And" >
-        <sound file="%ModDir%/Content/Items/Reactor/highbeep.ogg" type="OnUse" range="10000.0" loop="true" volume="1.0" />
-        <Conditional condition="lte 19" />
-        <RequiredItem items="fuelrod_active,fulguriumfuelrod,thoriumfuelrod_active,ekutility_incendiumfuelrod,fulguriumfuelrodvolatile" type="Contained" />
-      </StatusEffect>
-      
-      <StatusEffect type="Always" target="This" comparison="And" >
-        <sound file="%ModDir%/Content/Items/Reactor/MeltdownSiren2.ogg" type="OnUse" range="10000.0" loop="true" volume="1.0" />
-        <Conditional condition="lte 10" />
+        <Conditional condition="gte 10" />
         <RequiredItem items="fuelrod_active,fulguriumfuelrod,thoriumfuelrod_active,ekutility_incendiumfuelrod,fulguriumfuelrodvolatile" type="Contained" />
       </StatusEffect>
       
       <StatusEffect type="Always" target="This" comparison="And" condition="-0.4" >
         <ParticleEmitter particle="smoke" particleburstamount="6" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" underwaterbubble="false" />
         <ParticleEmitter particle="swirlysmoke" particlespersecond="6" scalemin="1" scalemax="2" anglemin="0" anglemax="360" velocitymin="0" velocitymax="10" />
-        <sound file="%ModDir%/Content/Items/Reactor/Alarm5.ogg" type="OnUse" range="10000.0" loop="true" volume="0.4" />
-        <Conditional condition="lte 15" />
+        <Conditional condition="lte 10" />
         <Fire size="1" />
+        <RequiredItem items="fuelrod_active,fulguriumfuelrod,thoriumfuelrod_active,ekutility_incendiumfuelrod,fulguriumfuelrodvolatile" type="Contained" />
+      </StatusEffect>
+      
+      <StatusEffect type="Always" target="This" comparison="And" >
+        <sound file="%ModDir%/Content/Items/Reactor/MeltdownSiren2.ogg" type="OnUse" range="10000.0" loop="true" volume="1.0" />
+        <Conditional condition="lte 10" />
         <RequiredItem items="fuelrod_active,fulguriumfuelrod,thoriumfuelrod_active,ekutility_incendiumfuelrod,fulguriumfuelrodvolatile" type="Contained" />
       </StatusEffect>
       

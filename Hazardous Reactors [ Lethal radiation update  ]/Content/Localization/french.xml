@@ -257,7 +257,7 @@ Toutes barres de combustible activées vont sévèrement bruler toute personne q
 
 Barre de combustible en uranium/thorium
 
-Quand activé : Radiation, deux fois pour le thorium comparé à l'uranium.
+Quand activée : Zone d'effet radioactif, le thorium est moins dangereux.
 
 Fusion du coeur : Irradiation et contamination massive sur une très vaste zone.
 
@@ -268,14 +268,14 @@ ATTENTION Combustible auto-inflammable si mal stocké. Sensible aux impactes et 
 
 Quand activée : Génération thermique extrême brulant tout personnel proche et endommage la coque en contact directe.
 
-Fusion du coeur : voir rapport d'observation de combat 
+Fusion du coeur : voir rapport d'observation de combat .
 
 Danger d'utilisation : Le potentiel énergétique de ce type de barre à combustible est si élevé que les réacteurs ne sont pas capables de les utiliser sans dégradation rapide de celui-ci et nécessite donc une supervision permanente, de plus la chaleur dégagée est telle que tout personnel à proximité immédiate du réacteur subiront des brûlures malgré le bouclier thermique du réacteur.
 
 
 Barre de combustible en Fulgurium
 
-Effet permanent : Anomalie électrique détruisant rapidement les boîtes de raccordement, ne jamais laisser en dehors du réacteur ou d'une caisse pour barre à combustible.
+Quand activée : Anomalie électrique détruisant rapidement les boîtes de raccordement, ne jamais laisser en dehors du réacteur ou d'une caisse pour barre à combustible. Cause un éffondrement temporaire du réseau élecrique.
 
 Fusion du coeur  : Onde IEM massive.
 
@@ -286,7 +286,7 @@ Barre de combustible en volatile fulgurium
 
 ATTENTION sensible aux impacte même dans des conteneurs sécurisés, placez-les dans une caisse à barre à combustible puis sur une étagère pour réellement les sécuriser.
 
-Effet permanent : Anomalie électrique détruisant rapidement les boîtes de raccordement, ne jamais laisser en dehors du réacteur ou d'une caisse pour barre à combustible.
+Effet actif : Anomalie électrique détruisant rapidement les boîtes de raccordement, ne jamais laisser en dehors du réacteur ou d'une caisse pour barre à combustible.
 
 Quand activée : Danger thermique capable de faire fondre la coque.
 

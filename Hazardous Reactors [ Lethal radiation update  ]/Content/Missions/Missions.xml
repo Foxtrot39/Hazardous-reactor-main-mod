@@ -6,12 +6,12 @@
     type="Salvage"
     difficulty="3"
     commonness="1000"
-	description="A coalition cargo vessel went missing approximately two months ago when transporting nuclear ordianace from [location1] to [location2]. The vessel was presumed to be taken by the abyss, but now its emergency beacon seems to have been activated near [location2]. Find the vessel and steal the warhead for the revolution."
+	description=""
     reward="4500"
     spawntype="wreck"
     showmessagewhenpickedup="true"
-    itemidentifier="nukerod,nukerodenhanced"
-    containertag="secarmcab"
+    itemidentifier="nukerodenhanced"
+    containertag="securecontainer"
     requirewreck="true">
 
     <Reputation identifier="location" amount="10" />
