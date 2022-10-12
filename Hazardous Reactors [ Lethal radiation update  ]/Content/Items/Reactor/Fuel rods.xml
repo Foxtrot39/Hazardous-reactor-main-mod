@@ -606,16 +606,18 @@
       <StatusEffect type="OnNotContained" target="This" IsOn="true" allowwhenbroken="true">
         <Conditional Range="gt 1" targetitemcomponent="LightComponent"/>
       </StatusEffect>
-      
+
       <StatusEffect type="OnContained" target="This" IsOn="true" comparison="And" allowwhenbroken="true">
         <Conditional Range="gt 1" targetitemcomponent="LightComponent"/>
         <Conditional hastag="neq hazardcontainement" targetcontainer="true" />
       </StatusEffect>
+
       <!-- TURNS OFF THE HAZARD -->
       <StatusEffect type="OnContained" target="This" IsOn="false" comparison="And" allowwhenbroken="true">
         <Conditional hastag="eq hazardcontainement" targetcontainer="true" />
         <Conditional HasStatusTag="neq hazardactive" targetcontainer="true"/>
       </StatusEffect>
+      
       <!-- Burns whoever holds it -->
       <StatusEffect type="OnActive" target="Character" allowwhenbroken="true">
         <Affliction identifier="burningrod" strength="300" />
@@ -666,7 +668,7 @@
       <!-- HEAT HAZARD BASED ON HEAT Above 360 -->
 
       <!-- Heat Hazard Active (Above 360) -->
-      <StatusEffect type="Always" target="This" interval="0.6"  disabledeltatime="true" comparison="And" allowwhenbroken="true">
+      <StatusEffect type="OnActive" target="This" interval="0.6"  disabledeltatime="true" comparison="And" allowwhenbroken="true">
         <Conditional Range="gt 360" targetitemcomponent="LightComponent"/>
         <Explosion range="300" force="0.001" ignorecover="false" showeffects="false" >
           <Affliction identifier="burn_emitter" strength="200" />
@@ -675,7 +677,7 @@
       </StatusEffect>
       
       <!-- Heat Hazard Lethal (Above 450) -->
-      <StatusEffect type="Always" target="This" interval="0.6" disabledeltatime="true" allowwhenbroken="true" >
+      <StatusEffect type="OnActive" target="This" interval="0.6" disabledeltatime="true" allowwhenbroken="true" >
         <Conditional Range="gt 450" targetitemcomponent="LightComponent"/>
         <Explosion range="500" force="0.001" ignorecover="false" showeffects="false" >
           <Affliction identifier="burn_emitter" strength="200" />
@@ -725,7 +727,7 @@
         <Use />
       </StatusEffect>
       <!-- Hazard: Brown out and JB box damage-->
-      <StatusEffect type="OnSpawn" delay="0.01" target="NearbyItems" range="60000.0" targettags="reactor1,reactorvar,outpostreactor,reactorvar1" Fissionrate="0" setvalue="true" duration="10" disabledeltatime="true" />
+      <StatusEffect type="OnSpawn" delay="0.01" target="NearbyItems" range="60000.0" targettags="reactor1,reactorvar,outpostreactor,reactorvar1" Fissionrate="0" setvalue="true" duration="6" disabledeltatime="true" />
       <StatusEffect type="OnSpawn" delay="0.01" target="NearbyItems" range="6000.0" targettags="junctionbox"  Condition="-2" disabledeltatime="true" />
       <!-- delete after effect-->
       <StatusEffect type="OnSpawn" target="This" delay="0.4">
