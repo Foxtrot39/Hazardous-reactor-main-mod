@@ -220,7 +220,7 @@ Alarm 3 : Lo/Hi alarm, crisis stage 2 alarm.
 All crew not assisting with the reactor are required to get inside a diving suit and keep maximum distance with the reactor.
 Immediately put whatever protective gear you can find then move in and remove ALL contained fuel rods ASAP, beware of fire hazard.
 
-If the reactor room is equiped with a emergency flooding system : completely flood the reactor room : the water will prevent it to explode when the core gets exposed. Though it will still be destroyed and the fuel lost.
+If the reactor room is equiped with a emergency flooding system, completely flood the reactor room : the water will severly limit the explosion caused by the molten core getting exposed. Though the fuel is still lost.
 
 Note : The meltdown scenario of a reactor is dependent if fuel was contained or not and wich rods were present when the reactor is destroyed when not flooded.
 
@@ -265,7 +265,7 @@ WARNING Self igniting when not in a secure storage. Impact sensitive and searing
 
 Active hazard : Thermal hazard able to melt through the hull and burn nearby personnel, also able to evaporate water. Can cause massive fire when exposed to air.
 
-Reactor effect : Accelerate the reactor's wear and tear as the extreme heat generation burns even nearby personnel. Cause frequent heatspikes that turns on the reactor for a short moment making repair a lot harder.
+Reactor effect : Extreme heat stress, increasing required maintenance. May cause frequent heat spikes at random. The rod pushes the reactor coolant system to its limit, making the area around the Reactor an extreme heat hazard should it go critical. 
 
 Meldtodwn hazard : See combat observation report. 
 

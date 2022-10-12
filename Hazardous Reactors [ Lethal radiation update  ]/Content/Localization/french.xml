@@ -229,9 +229,9 @@ Alarme 3 : Alarme deux ton type LO/HI, Alarme de crise stade 2.
 Tout personnel qui n'intervient pas au réacteur doit immédiatement équiper une combinaison de plongée et maintenir une distance maximale à la salle du réacteur.
 Immédiatement équiper toute protection disponible ainsi qu'un extincteur, éteindre l'incendie pour accéder au réacteur et retirer tout combustible.
 
-Si la salle du réacteur est équipée de pompes pour immersion d'urgence : inondé intégralement la salle, l'eau empêchera l'explosion du réacteur mais celui-ci sera tout de même détruit et tout combustible perdu.
+Si la salle du réacteur est équipée de pompes pour immersion d'urgence : inondé intégralement la salle, l'eau limitera sévèrement les dégâts de l'explosion du réacteur, tout combustible est tout de même perdu combustible perdu.
 
-Note : L'explosion du réacteur diffère selon les barres de combustible présent ou s'il n'y avait aucune barre de combustible présent lors de sa destruction hors immersion totale.
+Note : L'explosion du réacteur diffère selon les barres de combustible présent ou s'il n'y avait aucune barre de combustible présent lors de sa destruction.
 
 ATTENTION les barres contenant de l'incendium explose en cas d'impacts.
 
@@ -274,9 +274,10 @@ ATTENTION Combustible auto-inflammable si mal stocké. Sensible aux impactes et 
 
 Quand activée : Génération thermique extrême brulant tout personnel proche et endommage la coque en contact directe.
 
+
 Fusion du coeur : voir rapport d'observation de combat .
 
-Danger d'utilisation : Le potentiel énergétique de ce type de barre à combustible est si élevé que les réacteurs ne sont pas capables de les utiliser sans dégradation rapide de celui-ci et nécessite donc une supervision permanente, de plus la chaleur dégagée est telle que tout personnel à proximité immédiate du réacteur subiront des brûlures malgré le bouclier thermique du réacteur.
+Danger d'utilisation : Génère un stress thermique conséquent ce qui  requière une maintenance du réacteur plus régulière. . La génération thermique pousse le système de refroidissement à ses limites, si jamais le réacteur devient critique il génèrera un ddanger thermique extrême.
 
 
 Barre de combustible en Fulgurium
