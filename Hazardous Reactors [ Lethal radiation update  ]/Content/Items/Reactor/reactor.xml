@@ -5,8 +5,8 @@
     <trigger />
     <Sprite texture="Content/Items/Reactor/reactor.png" sourcerect="0,0,528,336" origin="0.5,0.45" depth="0.8" />
     <UpgradePreviewSprite scale="3.0" texture="Content/UI/WeaponUI.png" sourcerect="0,960,64,64" origin="0.5,0.45" />
-    <BrokenSprite texture="Content/Items/Reactor/reactor.png" sourcerect="0,368,528,336" depth="0.8" origin="0.5,0.45" maxcondition="40" />
-    <BrokenSprite texture="Content/Items/Reactor/reactor.png" sourcerect="0,720,528,336" depth="0.8" origin="0.5,0.45" maxcondition="0" />
+    <BrokenSprite texture="Content/Items/Reactor/reactor.png" sourcerect="0,338,528,336" depth="0.8" origin="0.5,0.45" maxcondition="40" />
+    <BrokenSprite texture="Content/Items/Reactor/reactor.png" sourcerect="0,676,528,336" depth="0.8" origin="0.5,0.45" maxcondition="0" />
     <aitarget sightrange="500" soundrange="4000" />
     <Reactor canbeselected="true" firedelay="10" meltdowndelay="60" maxpoweroutput="10000" fuelconsumptionrate="0.2" vulnerabletoemp="false" msg="ItemMsgInteractSelect">
       <TemperatureBoostSoundUp file="Content/Items/Reactor/ReactorTemperatureBoostUp.ogg" range="500.0" />
@@ -16,10 +16,10 @@
         <Sprite name="ReactorGraphLine" texture="Content/Items/Reactor/graphLine.png" sourcerect="0,0,32,32" />
       </GraphLine>
       <FissionRateMeter>
-        <Sprite name="FissionRateMeter" texture="%ModDir%/Content/Items/Reactor/reactor.png" sourcerect="603,817,441,240" origin="0.5,1" />
+        <Sprite name="FissionRateMeter" texture="Content/Items/Reactor/reactor.png" sourcerect="544,770,441,240" origin="0.5,1" />
       </FissionRateMeter>
       <TurbineOutputMeter>
-        <Sprite name="TurbineOutputMeter" texture="%ModDir%/Content/Items/Reactor/reactor.png" sourcerect="603,817,441,240" origin="0.5,1" />
+        <Sprite name="TurbineOutputMeter" texture="Content/Items/Reactor/reactor.png" sourcerect="544,770,441,240" origin="0.5,1" />
       </TurbineOutputMeter>
       <MeterPointer>
         <Sprite name="MeterPointer" texture="Content/UI/UIAtlasDevices.png" sourcerect="938,846,31,167 " origin="0.5,0.9" />
@@ -63,15 +63,17 @@
         </Explosion>
       </StatusEffect>
       
-      <!-- SAFE MELTDOWN WHEN UNDERWATER -->
-      
-      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
-        <sound file="Content/Items/Weapons/ExplosionDebris5.ogg" range="8000" selectionmode="All" />
-        <Sound file="%ModDir%/Content/Items/Reactor/reactoremppulse.ogg" range="8000" volume="1.0" dontmuffle="true" />
-        <Conditional InWater="true" />
-      </StatusEffect>
+      <!-- SAFE-ISH MELTDOWN WHEN UNDERWATER -->
+
       <StatusEffect type="OnBroken" target="Contained" Condition="0.0" setvalue="true">
         <Conditional InWater="true" />
+        <sound file="Content/Items/Weapons/ExplosionDebris5.ogg" range="8000" selectionmode="All" />
+        <sound file="Content/Items/Weapons/IncendiumGrenade.ogg" range="8000" selectionmode="All" />
+        <Explosion range="750" structuredamage="30" force="5" camerashake="2" smoke="false" flashrange="2000" flashduration="3" ignorecover="false" empstrength="2">
+          <Affliction identifier="burn" strength="20" />
+          <Affliction identifier="explosiondamage" strength="20" />
+          <Affliction identifier="stun" strength="5" />
+        </Explosion>
       </StatusEffect>
       
       <!-- REACTOR "DRY" EXPLOSION WITH ANY FUEL CONTAINED -->
@@ -135,6 +137,19 @@
           <Affliction identifier="burn" strength="400" />
           <Affliction identifier="explosiondamage" strength="100" />
         </Explosion>
+      </StatusEffect>
+      
+      <!-- INCENDIUM LOW FISSION EXPLOIT MITIGATION -->
+
+      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" comparison="And">
+        <RequiredItem items="ekutility_incendiumfuelrod" type="Contained" />
+        <Conditional targetitemcomponent="Reactor" temperature="gt 2" />
+      </StatusEffect>
+      
+      <StatusEffect type="Always" target="This" disabledeltatime="true" delay="0.5" stackable="false" condition="-0.05" comparison="And">
+        <RequiredItem items="ekutility_incendiumfuelrod" type="Contained" />
+        <Conditional targetitemcomponent="Reactor" temperature="gt 2" />
+        <Conditional condition="gt 27" />
       </StatusEffect>
       
       <!-- INCENDIUM CRISIS ROD SPAWN EFFECT -->
@@ -203,16 +218,7 @@
           <Affliction identifier="contamination" strength="4" />
         </Explosion>
       </StatusEffect>
-      
-      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" comparison="And">
-        <Conditional condition="lt 25" />
-        <Conditional condition="gt 0" />
-        <Conditional targetitemcomponent="Reactor" temperature="gt 2" />
-        <Explosion range="500" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
-          <Affliction identifier="burn_emitter" strength="100" />
-        </Explosion>
-      </StatusEffect>
-      
+
       <StatusEffect type="Always" target="This">
         <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" underwaterbubble="false" />
         <ParticleEmitter particle="swirlysmoke" particlespersecond="3" scalemin="1" scalemax="2" anglemin="0" anglemax="360" velocitymin="0" velocitymax="10" />
@@ -257,10 +263,28 @@
       
       <!-- CRITICAL INTEGRITY EFFECTS AND ALARMS-->
       
-      <StatusEffect type="Always" target="This" comparison="And" condition="-0.4">
+      <StatusEffect type="Always" target="This" comparison="And" condition="-0.8">
         <Conditional condition="lte 25" />
         <Conditional condition="gte 10" />
         <RequiredItem items="fuelrod_active,fulguriumfuelrod,thoriumfuelrod_active,ekutility_incendiumfuelrod,fulguriumfuelrodvolatile" type="Contained" />
+      </StatusEffect>
+      
+      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" comparison="And">
+        <Conditional condition="lt 25" />
+        <Conditional condition="gt 0" />
+        <RequiredItem items="ekutility_incendiumfuelrod" type="Contained" />
+        <Explosion range="500" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
+          <Affliction identifier="burn_emitter_with_incendium" strength="100" />
+        </Explosion>
+      </StatusEffect>
+      
+      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" comparison="And">
+        <Conditional condition="lt 25" />
+        <Conditional condition="gt 0" />
+        <RequiredItem items="fuelrod_active,fulguriumfuelrod,thoriumfuelrod_active,ekutility_incendiumfuelrod,fulguriumfuelrodvolatile" type="Contained" />
+        <Explosion range="500" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
+          <Affliction identifier="burn_emitter" strength="100" />
+        </Explosion>
       </StatusEffect>
       
       <StatusEffect type="Always" target="This" comparison="And" >
@@ -272,12 +296,27 @@
         <RequiredItem items="fuelrod_active,fulguriumfuelrod,thoriumfuelrod_active,ekutility_incendiumfuelrod,fulguriumfuelrodvolatile" type="Contained" />
       </StatusEffect>
       
-      <StatusEffect type="Always" target="This" comparison="And" condition="-0.4" >
+      <StatusEffect type="Always" target="This" comparison="And" condition="-0.3" >
         <ParticleEmitter particle="smoke" particleburstamount="6" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" underwaterbubble="false" />
         <ParticleEmitter particle="swirlysmoke" particlespersecond="6" scalemin="1" scalemax="2" anglemin="0" anglemax="360" velocitymin="0" velocitymax="10" />
         <Conditional condition="lte 10" />
         <Fire size="1" />
-        <RequiredItem items="fuelrod_active,fulguriumfuelrod,thoriumfuelrod_active,ekutility_incendiumfuelrod,fulguriumfuelrodvolatile" type="Contained" />
+        <RequiredItem items="fuelrod_active,fulguriumfuelrod,thoriumfuelrod_active,fulguriumfuelrodvolatile" type="Contained" />
+      </StatusEffect>
+      
+      <StatusEffect type="Always" target="This" comparison="And"  >
+        <ParticleEmitter particle="smoke" particleburstamount="6" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" underwaterbubble="false" />
+        <ParticleEmitter particle="swirlysmoke" particlespersecond="6" scalemin="1" scalemax="2" anglemin="0" anglemax="360" velocitymin="0" velocitymax="10" />
+        <Conditional condition="lte 10" />
+        <Fire size="10" />
+        <RequiredItem items="ekutility_incendiumfuelrod" type="Contained" />
+      </StatusEffect>
+      
+     <StatusEffect type="Always" target="This" disabledeltatime="true" delay="0.5" stackable="false" condition="-0.2" comparison="And">
+        <RequiredItem items="ekutility_incendiumfuelrod" type="Contained" />
+        <Conditional targetitemcomponent="Reactor" temperature="gt 2" />
+        <Conditional condition="gt 10" />
+        <Conditional condition="lt 25" />
       </StatusEffect>
       
       <StatusEffect type="Always" target="This" comparison="And" >
@@ -292,14 +331,15 @@
         <sound file="%ModDir%/Content/Items/Reactor/Pipeburst.ogg" type="Always" loop="false" range="1000.0" volume="1.0" />
         <Conditional condition="lte 25.85" />
         <Conditional condition="gt 25" />
-        <Conditional targetitemcomponent="Reactor" temperature="gt 2" />
+        <RequiredItem items="fuelrod_active,fulguriumfuelrod,thoriumfuelrod_active,fulguriumfuelrodvolatile" type="Contained" />
       </StatusEffect>
       
       <StatusEffect type="Always" target="This" comparison="And">
         <ParticleEmitter particle="steamspray" particlespersecond="200" anglemin="0" anglemax="360" velocitymin="75" velocitymax="150" underwaterbubble="true" highqualitycollisiondetection="true" />
         <sound file="%ModDir%/Content/Items/Reactor/Steamleak.ogg" type="Always" range="1000.0" loop="true" volume="1.0" />
         <Conditional condition="lte 25" />
-        <Conditional condition="gte 15" />
+        <Conditional condition="gte 10" />
+        <RequiredItem items="fuelrod_active,fulguriumfuelrod,thoriumfuelrod_active,ekutility_incendiumfuelrod,fulguriumfuelrodvolatile" type="Contained" />
       </StatusEffect>
     </Reactor>
     
@@ -307,20 +347,16 @@
     
     <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="0" IsOn="false" castshadows="false" allowingameediting="false">
       <Upgrade gameversion="0.9.600.0" lightcolor="255,255,255,0" />
-      <IsActive targetitemcomponent="Reactor" temperature="gt 2"></IsActive>
-      <sprite texture="%ModDir%/Content/Items/Reactor/reactor.png" depth="0.025" sourcerect="544,16,528,336" origin="0.5,0.45" alpha="1.0" />
+      <IsActive targetitemcomponent="Reactor" temperature="gt 2"/>
+      <sprite texture="Content/Items/Reactor/reactor.png" depth="0.025" sourcerect="523,0,482,336" origin="0.5,0.45" alpha="1.0" />
     </LightComponent>
     
     <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="0" IsOn="false" castshadows="false" allowingameediting="false" blinkfrequency="1">
       <Upgrade gameversion="0.9.600.0" lightcolor="255,255,255,0" />
-      <StatusEffect type="Always" target="This" IsOn="true">
-        <Conditional targetitem="reactor" condition="lte 25" />
+      <sprite texture="Content/Items/Reactor/reactor.png" depth="0.025" sourcerect="523,337,482,336" origin="0.5,0.45" alpha="1.0" />
+      <StatusEffect type="Always" target="This" IsOn="true" >
+      <Conditional targetitem="reactor" condition="lte 25" />
       </StatusEffect>
-      
-      <StatusEffect type="Always" target="This" IsOn="false">
-        <Conditional targetitem="reactor" condition="gte 25" />
-      </StatusEffect>
-      <sprite texture="%ModDir%/Content/Items/Reactor/reactor.png" depth="0.025" sourcerect="544,368,528,336" origin="0.5,0.45" alpha="1.0" />
     </LightComponent>
     
     <!-- CONNECTION PANNEL + WIRING FAILURE -->

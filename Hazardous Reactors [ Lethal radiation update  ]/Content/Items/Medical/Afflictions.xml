@@ -194,6 +194,26 @@
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,104,60,255" origin="0,0" />
   </Affliction>
   
+  <Affliction
+    name="burn emitter meltdown with incendium"
+    identifier="burn_emitter_with_incendium"
+    description="cause burn damage"
+    limbspecific="false"
+    indicatorlimb="Torso"
+    showiconthreshold="110"
+    showinhealthscannerthreshold="110"
+    karmachangeonapplied="-1"
+    treatmentthreshold="0"
+    maxstrength="100"
+    grainburst="3">
+    <Effect minstrength="0" maxstrength="100" strengthchange="-100">
+      <StatusEffect target="Character" delay="0.5" stackable="false" >
+        <Affliction identifier="burn" amount="10" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,104,60,255" origin="0,0" />
+  </Affliction>
+  
   
   <Affliction
     name="burn emitter"

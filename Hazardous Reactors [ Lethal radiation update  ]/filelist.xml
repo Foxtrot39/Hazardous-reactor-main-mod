@@ -26,6 +26,7 @@
   <Text file="%ModDir%/Content/Localization/english.xml" />
   <Text file="%ModDir%/Content/Localization/french.xml" />
   <Text file="%ModDir%/Content/Localization/PTBR.xml" />
+  <Text file="%ModDir%/Content/Localization/russian.xml" />
   <Missions file="%ModDir%/Content/Missions/Missions.xml" />
   <RandomEvents file="%ModDir%/Content/Missions/Scriptedevent.xml" />
 </contentpackage>
