@@ -3,19 +3,38 @@
 
 			<!-- Afflictions -->
 
-<afflictionname.dnadamage>Dommage à l'ADN</afflictionname.dnadamage>
-<afflictiondescription.dnadamage>L'ADN du patient devient trop endommagé pour maintenir les fonctions vitales du corps.</afflictiondescription.dnadamage>
+<afflictionname.dnadamage>Irradiation de l'ADN</afflictionname.dnadamage>
+
+<afflictiondescription.dnadamage>Le patient souffre de dénaturation de son ADN induit par la radiation.</afflictiondescription.dnadamage>
+<afflictiondescription.dnadamage.high>L'ADN de du patient a atteint un niveau critique de dégâts à l'ADN et montre des symptômes du syndrome de défaillance multiviscérale.</afflictiondescription.dnadamage.high>
+
+<afflictiondescription.dnadamage.self>Vous vous sentez affaiblie et plusieurs points de douleur vous tenaillent de l'intérieur.</afflictiondescription.dnadamage.self>
+<afflictiondescription.dnadamage.high.self>Vous sentez votre corps mourir alors que vos cellules peinent à maintenir leurs fonctions vitales.</afflictiondescription.dnadamage.high.self>
+
 <afflictioncauseofdeath.dnadamage>ADN endommagé au-delà du seuil de viabilité</afflictioncauseofdeath.dnadamage>
-<afflictioncauseofdeathself.dnadamage>Votre ADN n'est plus capable de maintenir les fonctions vitales du corps.</afflictioncauseofdeathself.dnadamage>
+<afflictioncauseofdeathself.dnadamage>Votre ADN a atteint un niveau létal de dégâts.</afflictioncauseofdeathself.dnadamage>
 
 <afflictionname.radiationresistance>Radioprotecteur</afflictionname.radiationresistance>
 <afflictiondescription.radiationresistance>Empêche la contamination et protège contre l'irradiation.</afflictiondescription.radiationresistance>
 
 <afflictionname.contamination>Contamination aux matériaux radioactif</afflictionname.contamination>
-<afflictiondescription.contamination>Le patient a été contaminé par des éléments radioactifs provoquant une irradiation chronique et dégrade son ADN.</afflictiondescription.contamination>
+
+<afflictiondescription.contamination>Le patient souffre d'irradiation chronique du à l'inhalation de particules radioactives.</afflictiondescription.contamination>
+<afflictiondescription.contamination.high>Le patient montre des signes sévères d'irradiation et commence à vomir du sang.</afflictiondescription.contamination.high>
+
+<afflictiondescription.contamination.self>Vous vous sentez affaiblie et semblez recevoir des brulures de null part.</afflictiondescription.contamination.self>
+<afflictiondescription.contamination.high.self>Vous souffrez de brulure sévère sur tout votre corps sans source apparente et commencez à vomir du sang. Vous auriez dû Porter une combinaison avant d'aller là-bas....</afflictiondescription.contamination.high.self>
 
 <afflictionname.lethalradiation>Syndrome d'irradiation aiguë</afflictionname.lethalradiation>
-<afflictiondescription.lethalradiation>Le patient a été lourdement irradié trop longtemps ou a reçu une dose de radiation fatale et mourra dans peu de temps sans traitement d'urgence.</afflictiondescription.lethalradiation>
+
+<afflictiondescription.lethalradiation.low>le patient montre des signes irradiation extrême.</afflictiondescription.lethalradiation.low>
+<afflictiondescription.lethalradiation>La santé du patient se dégrade à une vitesse alarmante alors que les radiations ravagent son corps.</afflictiondescription.lethalradiation>
+<afflictiondescription.lethalradiation.high>La peau du patient commence à tomber en lambeaux et commencé montre des signes du syndrome de défaillance multiviscérale en raison de la dégradation rapide de son ADN.</afflictiondescription.lethalradiation.high>
+
+<afflictiondescription.lethalradiation.low.self>Votre vue est obstruée par une sorte de brouillard statique et vous souffrez de brulure sévère sur tout votre corps.</afflictiondescription.lethalradiation.low.self>
+<afflictiondescription.lethalradiation.self>Vous luttez ne serait-ce que pour rester debout alors que votre corps faibli à une vitesse alarmante.</afflictiondescription.lethalradiation.self>
+<afflictiondescription.lethalradiation.high.self>Vous sentez vos organes cuire et périr sous l'effet des radiations, il ne vous reste plus beaucoup de temps.</afflictiondescription.lethalradiation.high.self>
+
 <afflictioncauseofdeath.lethalradiation>Irradiation létale.</afflictioncauseofdeath.lethalradiation>
 <afflictioncauseofdeathself.lethalradiation>Vous êtes mort d'une irradiation létale.</afflictioncauseofdeathself.lethalradiation>
 

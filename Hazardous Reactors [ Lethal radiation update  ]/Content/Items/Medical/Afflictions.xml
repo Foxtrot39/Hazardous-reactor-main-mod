@@ -13,6 +13,15 @@
     treatmentthreshold="0"
     showiconthreshold="60"
     showinhealthscannerthreshold="15">
+    <Description 
+      textidentifier="afflictiondescription.dnadamage"
+      minstrength="0"
+      maxstrength="70"/>
+    <Description 
+      textidentifier="afflictiondescription.dnadamage.high"
+      minstrength="70"
+      maxstrength="100"/>
+
     <Effect minstrength="0" maxstrength="60" minvitalitydecrease="0" maxvitalitydecrease="20" minchromaticaberration="0.0" maxchromaticaberration="2.5" />
     <Effect minstrength="60" maxstrength="80" minvitalitydecrease="20" maxvitalitydecrease="40" minchromaticaberration="2.5" maxchromaticaberration="5">
       <StatusEffect target="Character" targetlimb="Torso" delay="1" stackable="false">
@@ -152,6 +161,14 @@
     treatmentthreshold="0"
     maxstrength="100"
     grainburst="3">
+    <Description 
+      textidentifier="afflictiondescription.contamination"
+      minstrength="0"
+      maxstrength="70"/>
+    <Description 
+      textidentifier="afflictiondescription.contamination.high"
+      minstrength="75"
+      maxstrength="100"/>
     <!-- Radioactive dust inhaled, have fun -->
     <Effect minstrength="5" maxstrength="25">
       <StatusEffect target="Character" delay="1" stackable="false" >
@@ -554,6 +571,15 @@
     maxstrength="300"
     iconcolors="255,255,0,255">
     
+    <Description 
+      textidentifier="afflictiondescription.lethalradiation.low"
+      minstrength="0"
+      maxstrength="200"/>
+    <Description 
+      textidentifier="afflictiondescription.lethalradiation"
+      minstrength="200"
+      maxstrength="300"/>    
+      
     <Effect minstrength="0" maxstrength="60" strengthchange="-0.2" />
     <Effect minstrength="60" maxstrength="120" minchromaticaberration="2" maxchromaticaberration="2" mingrainstrength="2" maxgrainstrength="2" MinScreenBlur="2" MaxScreenBlur="2" resistancefor="radiationsickness" minresistance="1" maxresistance="1" >
       <StatusEffect target="Character" delay="1" stackable="false">

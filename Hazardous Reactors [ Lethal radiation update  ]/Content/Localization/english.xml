@@ -4,18 +4,36 @@
 			<!-- Afflictions -->
 
 <afflictionname.dnadamage>DNA damage</afflictionname.dnadamage>
-<afflictiondescription.dnadamage>Patient's DNA is getting too damaged to maintain vital body functions.</afflictiondescription.dnadamage>
+<afflictiondescription.dnadamage>The patient is suffering from radiation induced DNA damage.</afflictiondescription.dnadamage>
+<afflictiondescription.dnadamage.high>The patient's DNA has sufffered critical radiation damage. Signs of total organ failure start to appear.</afflictiondescription.dnadamage.high>
+
+<afflictiondescription.dnadamage.self>You're feeling weakened and pain grasp you from the inside of your body.</afflictiondescription.dnadamage.self>
+<afflictiondescription.dnadamage.high.self>You can feel your body shutdown as it start to be unable to sustain even basic metabolism.</afflictiondescription.dnadamage.high.self>
+
 <afflictioncauseofdeath.dnadamage>DNA damaged beyond viability threshold</afflictioncauseofdeath.dnadamage>
-<afflictioncauseofdeathself.dnadamage>Your DNA can no longer maintain vital body functions.</afflictioncauseofdeathself.dnadamage>
+<afflictioncauseofdeathself.dnadamage>Your DNA could no longer maintain vital body functions.</afflictioncauseofdeathself.dnadamage>
 
 <afflictionname.radiationresistance>Radio protectant</afflictionname.radiationresistance>
 <afflictiondescription.radiationresistance>Prevents contamination and greatly protects against radiation.</afflictiondescription.radiationresistance>
 
 <afflictionname.contamination>Radioactive material contamination</afflictionname.contamination>
-<afflictiondescription.contamination>Patient has been contaminated with radioactive materials causing chronic radiation sickness and DNA damage.</afflictiondescription.contamination>
+
+<afflictiondescription.contamination>The patient is having chronic irradiation from having inhaled radioactive particles.</afflictiondescription.contamination>
+<afflictiondescription.contamination.high>The patient start to show signs of severe radiation sickness and starts to vomit blood.</afflictiondescription.contamination.high>
+
+<afflictiondescription.contamination.self>You feel weak and seems to get burns out of nowhere.</afflictiondescription.contamination.self>
+<afflictiondescription.contamination.high.self>You're getting burns all over your body and start vomiting blood. Should have worn a diving suit before going there... </afflictiondescription.contamination.high.self>
 
 <afflictionname.lethalradiation>Acute radiation syndrome</afflictionname.lethalradiation>
-<afflictiondescription.lethalradiation>Patient has been heavely irradiated for too long or recieved a fatal radiation dose and will die shortly without emergency treatment.</afflictiondescription.lethalradiation>
+
+<afflictiondescription.lethalradiation.low>The patient shows signs of extreme radiation sickness.</afflictiondescription.lethalradiation.low>
+<afflictiondescription.lethalradiation>The patient's health is degrading extremely fast as the body weakens from the radiation induced damage.</afflictiondescription.lethalradiation>
+<afflictiondescription.lethalradiation.high>The patient's skin start to peel off and the organs start failing as the radiation is quickly degrading DNA below viability threshold.</afflictiondescription.lethalradiation.high>
+
+<afflictiondescription.lethalradiation.low.self>Your view is obstructed by some static and you get severe burns everywhere.</afflictiondescription.lethalradiation.low.self>
+<afflictiondescription.lethalradiation.self>You start to struggle to stay up as your condition worsen at an alarming rate.</afflictiondescription.lethalradiation.self>
+<afflictiondescription.lethalradiation.high.self>You can feel your organs getting cooked by the extreme radiation as they fail one by one, you don't have much time left.</afflictiondescription.lethalradiation.high.self>
+
 <afflictioncauseofdeath.lethalradiation>Lethal irradiation.</afflictioncauseofdeath.lethalradiation>
 <afflictioncauseofdeathself.lethalradiation>You've died of a lethal radiation exposure.</afflictioncauseofdeathself.lethalradiation>
 
@@ -29,7 +47,7 @@
 <afflictiondescription.hazardexposure>You're within range of a fuel rod's harmfull effect wear appropriate protection.</afflictiondescription.hazardexposure>
 
 <afflictionname.dnaregeneration>DNA regeneration</afflictionname.dnaregeneration>
-<afflictiondescription.dnaregeneration>Patient's DNA is slowly getting restored.</afflictiondescription.dnaregeneration>
+<afflictiondescription.dnaregeneration>The patient's DNA integrity is slowly getting restored.</afflictiondescription.dnaregeneration>
 
 <afflictionname.antiradeffect>Anti-radiation drug effect</afflictionname.antiradeffect>
 <afflictiondescription.antiradeffect>Patient's body is slowly getting purged from radioactive contaminants and radiation.</afflictiondescription.antiradeffect>

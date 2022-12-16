@@ -245,8 +245,14 @@
         <Use />
       </StatusEffect>
     </RangedWeapon>
-    <ItemContainer itemrotation="90" capacity="1" maxstacksize="1" hideitems="false" itempos="10,-5" containedspritedepth="0.56" containedstateindicatorstyle="tank">
-      <Containable items="reactorfuel" />
+    
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="false" itempos="10,-5" containedspritedepths="0.562,0.561" containedstateindicatorstyle="default" containedstateindicatorslot="0">
+      <Containable items="reactorfuel" rotation="90"/>
+      <SlotIcon slotindex="0" texture="Content/UI/InventoryUIAtlas.png" sourcerect="907,947,107,27" origin="0.5,0.5" />
+      <SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="flashlight" hide="false" itempos="25,0" setactive="true"/>
+      </SubContainer>
 
       <!--Uranium Fuel Rod Switch-->
       <Containable items="fuelrod">
