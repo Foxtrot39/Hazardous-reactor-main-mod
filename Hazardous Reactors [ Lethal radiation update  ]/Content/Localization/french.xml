@@ -107,6 +107,9 @@
 <entityname.molten_rods>Corium</entityname.molten_rods>
 <entitydescription.molten_rods>Magma radioactif solidifié, émet une quantité extrême de radiation.</entitydescription.molten_rods>
 
+<entityname.control_rod>Barre de contrôle</entityname.control_rod>
+<entitydescription.control_rod>Ne fournit aucune chaleur pour la production d'électricité mais mitige grandement les pics de températures en conditions normales.</entitydescription.control_rod>
+
 			<!-- Weapon -->
 
 <entityname.nukerod>Ogive "Crisis"</entityname.nukerod>
@@ -261,6 +264,7 @@ __________________________________________IV. Dangers des barre de combustible__
 
 Une information importante avant de traité cette section, les materiaux fissile utilisés dans la fabrication de barre a combustible doivent être entroposer dans une casse sécurisé ou dans une salle isolé de l'équipage.
 Bien que leurs émissions sont faibles, une large quantité de ces matériaux stocker au même endroit peux être aussi dangereux qu'une fuite de radiation sur un réacteur.
+Les barres de combustibles peuvent entrer en fusion si elles restent trop longtemps surchauffées avec un taux de fission élevée.
 
 Les barres de combustibles ont plusieurs couches de dangers mortels et leur maniement par du personnel mal entraîné peut entrainer la mort de plus d'un membre d'équipage voit la perte du sous-marin. Une barre de combustible est considérée comme dangereux quand partiellement ou totalement usée elle émettra une lumière caractéristique à ce point.
 À moins d'être placé dans le réacteur, les barres de combustibles sont *presque* complètement sûres à manipuler.

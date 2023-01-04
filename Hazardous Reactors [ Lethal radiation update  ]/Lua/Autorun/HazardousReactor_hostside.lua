@@ -113,3 +113,51 @@ Hook.Add("incendiumrodspecial", "incendiumrodspecialed", function (effect, delta
     end
   end
 end)
+
+--To swap standard rods with corium
+Hook.Add("meltdownstandard", "rodswap", function (effect, deltaTime, item, targets, worldPosition)
+  if targets[1] == nil then return end
+  local standard_rod = targets[1]
+  local standard_rod_identifier = standard_rod.Prefab.Identifier.Value
+
+  Entity.Spawner.AddEntityToRemoveQueue(standard_rod)
+
+  Timer.Wait(function() 
+    local prefab = ItemPrefab.GetItemPrefab("molten_rods")
+    Entity.Spawner.AddItemToSpawnQueue(prefab, item.ownInventory)
+  end,
+  100)
+
+end)
+
+--To swap volatile rods with its critical variant
+Hook.Add("meltdownvolatile", "rodswap", function (effect, deltaTime, item, targets, worldPosition)
+  if targets[1] == nil then return end
+  local volatile_rod = targets[1]
+  local volatile_rod_identifier = volatile_rod.Prefab.Identifier.Value
+
+  Entity.Spawner.AddEntityToRemoveQueue(volatile_rod)
+
+  Timer.Wait(function() 
+    local prefab = ItemPrefab.GetItemPrefab("supercritical_fulgurium")
+    Entity.Spawner.AddItemToSpawnQueue(prefab, item.ownInventory)
+  end,
+  100)
+
+end)
+
+--To swap incendium rods with its critical variant
+Hook.Add("meltdownincendium", "rodswap", function (effect, deltaTime, item, targets, worldPosition)
+  if targets[1] == nil then return end
+  local incendium_rod = targets[1]
+  local incendium_rod_identifier = incendium_rod.Prefab.Identifier.Value
+
+  Entity.Spawner.AddEntityToRemoveQueue(incendium_rod)
+
+  Timer.Wait(function() 
+    local prefab = ItemPrefab.GetItemPrefab("supercritical_incendium")
+    Entity.Spawner.AddItemToSpawnQueue(prefab, item.ownInventory)
+  end,
+  100)
+
+end)

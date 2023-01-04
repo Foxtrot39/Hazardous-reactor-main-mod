@@ -106,6 +106,9 @@
 <entityname.molten_rods>Corium</entityname.molten_rods>
 <entitydescription.molten_rods>Solidified radioactive magma, emits an extreme amount of radiation.</entitydescription.molten_rods>
 
+<entityname.control_rod>Control rod</entityname.control_rod>
+<entitydescription.control_rod>Doesn't provide any heat for electricity generation but mitigate temperature surges in normal conditions.</entitydescription.control_rod>
+
 			<!-- Weapons -->
 
 <entityname.nukerod>Crisis warhead</entityname.nukerod>
@@ -251,6 +254,7 @@ __________________________________________IV. Fuel rods hazards_________________
 
 Important information before dealing with this section, the fissile materials used in the manufacture of fuel rods must be stored in a secure crate or in a room isolated from the crew.
 Although their emissions are low, storing large quantities of these materials in one place can be as dangerous as a radiation leak from a reactor.
+Fuel rods can suffer a meltdown if they remain overheated for too long at a high fission rate.
 
 Fuel rods have multiple layers of lethal hazards attached to them and untrained personel will cause a lot more harm than good manipulating them. A rod is deemed hazardous once its partialy or completely depleted, it will be glowing at this point.
 Unless placed inside of a running reactor, rods are *nearly* totaly safe to handle.
@@ -264,7 +268,7 @@ Once active however, rods are to be treated with extreme care and stored in the 
 There are 2 type of fuel rod hazards different for each fuel rod :
 
 -Active rod hazards
--Meltdown hazards
+-Reactor meltdown hazards
 
 Rod hazards
 

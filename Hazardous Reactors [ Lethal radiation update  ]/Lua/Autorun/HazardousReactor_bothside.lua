@@ -14,6 +14,38 @@ Hook.Add("roundStart", "changeRepairThingyOfReactors", function()
   end
 end)
 
+--Reactor fire/meltdown delay override
+Hook.Add("roundStart", "ChangeReactorMeltdownTimers", function()
+   for k, v in pairs(Item.ItemList) do
+     local reactor = v.GetComponentString("Reactor")
+     if reactor then
+        reactor.FireDelay = 15
+        reactor.MeltdownDelay= 40
+
+     end
+  end
+end)
+
+
+--Control rod spawn in station outpost, not possible as it stand to make use of this increasing firedelay instead
+--Hook.Add("roundStart", "makeOutpostReactorHappy", function ()
+--   if not Level.Loaded then return end -- if no level, ignore
+--   local outpost = Level.Loaded.StartOutpost
+
+--    if not outpost then return end -- no outpost, don't do anything
+
+--    for _, item in pairs(outpost.GetItems(false)) do
+--        local reactor = item.GetComponentString("Reactor")
+
+ --       if reactor then
+ --           local prefab = ItemPrefab.GetItemPrefab("control_rod")
+--            Entity.Spawner.AddItemToSpawnQueue(prefab, item.OwnInventory)
+--        end
+--    end
+--end)
+
+
+
 --Rod Hazard LightComponent Force Update when Broken
 Hook.Patch(
 "Barotrauma.Items.Components.LightComponent",
