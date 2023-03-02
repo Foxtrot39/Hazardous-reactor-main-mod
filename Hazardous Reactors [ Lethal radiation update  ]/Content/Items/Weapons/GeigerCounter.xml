@@ -1,6 +1,6 @@
 <Items>
   <Item name="" identifier="geigercounter" description="" category="Equipment" Tags="smallitem" cargocontaineridentifier="metalcrate" Scale="0.3" impactsoundtag="impact_metal_light">
-    <InventoryIcon texture="%ModDir%/Content/Items/Weapons/geiger_counter.png" sourcerect="0,0,52,132" depth="0.55" origin="0.5,0.5" />
+    <InventoryIcon texture="%ModDir%/Content/Items/Weapons/geiger_counterinv.png" sourcerect="0,0,131,131" depth="0.55" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/Content/Items/Weapons/geiger_counter.png" sourcerect="0,0,52,132" depth="0.55" origin="0.5,0.5" />
     <Body width="27" height="60" density="12" />
     <PreferredContainer primary="reactorcab" minamount="2" maxamount="2" spawnprobability="1" />

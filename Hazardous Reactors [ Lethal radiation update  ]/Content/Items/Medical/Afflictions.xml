@@ -328,9 +328,11 @@
     treatmentthreshold="0"
     maxstrength="100">
     <Effect minstrength="0" maxstrength="100" strengthchange="-200">
-      <StatusEffect target="Character" targetlimbs="LeftHand,RightHand">
-        <Affliction identifier="burn" amount="2.5" />
-        <sound file="%ModDir%/Content/Items/Medical/fleshburn.ogg" type="OnUse" range="250.0" loop="true" volume="0.8" dontmuffle="true" />
+      <StatusEffect target="Character" intervale="0.1" targetlimbs="LeftHand,RightHand">
+        <Affliction identifier="burn" amount="4.5" />
+      </StatusEffect>
+      <StatusEffect target="Character" >
+        <sound file="%ModDir%/Content/Items/Medical/fleshburn.ogg" type="OnUse" range="250.0" loop="true" volume="0.8" />
       </StatusEffect>
     </Effect>
     <icon texture="%ModDir%/Content/UI/HazardousIconsAtlas.png" sourcerect="384,0,128,128" color="139,60,42,255" origin="0,0" />

@@ -28,7 +28,7 @@
     </Wearable>
     <!-- Only accept fuel rods -->
     <ItemContainer autofill="False" hideitems="true" drawinventory="true" capacity="1" slotsperrow="1" maxstacksize="1" canbeselected="true" msg="ItemMsgInteractSelect" keepopenwhenequipped="false" movableframe="false">
-      <Containable items="fuelrod,thoriumfuelrod,fuelrod_active,thoriumfuelrod_active,fulguriumfuelrod,fulguriumfuelrodvolatile,ekutility_incendiumfuelrod,depletedfuel" />
+      <Containable items="reactorfuel,depletedfuel" />
     </ItemContainer>
   </Item>
 
@@ -92,7 +92,7 @@
     </Holdable>
     <!-- Only accept fuel rods -->
     <ItemContainer autofill="False" capacity="12" slotsperrow="3" canbeselected="true" msg="ItemMsgInteractSelect" keepopenwhenequipped="true" movableframe="true">
-      <Containable items="fuelrod,thoriumfuelrod,fuelrod_active,thoriumfuelrod_active,fulguriumfuelrod,fulguriumfuelrodvolatile,ekutility_incendiumfuelrod,depletedfuel,uranium,thorium" />
+      <Containable items="reactorfuel,,uranium,thorium,uraniumore,brockite,thorianite" />
     </ItemContainer>
   </Item>
 </Override>
@@ -223,5 +223,66 @@
     </ItemContainer>
       
   </Item> -->
+  
+  <Item name="" identifier="fuelbackpack" tags="largeitem,mobilecontainer,hazardcontainement" description="" showcontentsintooltip="true" scale="0.5" linkable="true" pickdistance="150" impactsoundtag="impact_metal_heavy" waterproof="true" fireproof="true">
+
+    <Fabricate suitablefabricators="fabricator" requiredtime="60">
+      <RequiredSkill identifier="electrical" level="70" />
+      <RequiredSkill identifier="mechanical" level="50" />
+      <RequiredItem identifier="du_p_alloy" />
+      <RequiredItem identifier="lead" />
+      <RequiredItem identifier="rubber" />
+      <RequiredItem identifier="ballisticfiber" />
+      <RequiredItem identifier="geigercounter" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Content/Items/Misc/ShieldedBackPack.png" depth="0.55" sourcerect="0,0,74,149" origin="0.5,0.5" />
+    <InventoryIcon texture="%ModDir%/Content/Items/Misc/ShieldedBackPack.png" sourcerect="0,0,74,149" origin="0.5,0.5" />
+    <Body width="74" height="149" density="30" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect">
+      <!-- LUA Geiger Counter-->
+      <StatusEffect type="Always" target="Character" interval="1">
+        <LuaHook name="geigercount" />
+      </StatusEffect>
+
+      <!-- Condition Based Sounds-->
+      <!-- Low Rad 1-20 -->
+      <StatusEffect type="Always" target="This" comparison="And">
+        <Conditional Condition="neq 100" />
+        <Conditional Condition="gte 80" />
+        <sound file="%ModDir%/Content/Items/Reactor/lowradiation.ogg" range="500.0" loop="true" volume="0.5" dontmuffle="true" />
+      </StatusEffect>
+      <!-- Med Rad 21-50 -->
+      <StatusEffect type="Always" target="This" comparison="And">
+        <Conditional Condition="lt 80" />
+        <Conditional Condition="gte 50" />
+        <sound file="%ModDir%/Content/Items/Reactor/mediumradiation.ogg" range="500.0" loop="true" volume="0.5" dontmuffle="true" />
+      </StatusEffect>
+      <!-- High Rad 51-80 -->
+      <StatusEffect type="Always" target="This" comparison="And">
+        <Conditional Condition="lt 50" />
+        <Conditional Condition="gte 20" />
+        <sound file="%ModDir%/Content/Items/Reactor/highradiation.ogg" range="500.0" loop="true" volume="0.5" dontmuffle="true" />
+      </StatusEffect>
+      <!-- Lethal Rad 80+ -->
+      <StatusEffect type="Always" target="This" comparison="And">
+        <Conditional Condition="lt 20" />
+        <sound file="%ModDir%/Content/Items/Reactor/extremeradiation.ogg" range="500.0" loop="true" volume="0.5" dontmuffle="true" />
+      </StatusEffect>
+    </Holdable>
+    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Use">
+      <sprite name="backpack worn" texture="%ModDir%/Content/Items/Misc/ShieldedBackPack.png" canbehiddenbyotherwearables="false" rotation="0" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,74,149" origin="1.2,0.6" limb="Torso" ignorelimbscale="true" scale="0.5" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness,lethalradiation" damagemultiplier="0.8" damagesound="LimbArmor" />
+    </Wearable>
+    <!-- Only accept radioactive materials in certain slots -->
+    <ItemContainer capacity="3" maxstacksize="16" hideitems="true" >
+      <Containable items="reactorfuel,uranium,thorium,uraniumore,brockite,thorianite" />
+      <SlotIcon slotindex="0" texture="Content/UI/MainIconsAtlas.png" sourcerect="896,768,128,128" origin="0.5,0.5"/>
+      <SlotIcon slotindex="1" texture="Content/UI/MainIconsAtlas.png" sourcerect="896,768,128,128" origin="0.5,0.5"/>
+      <SlotIcon slotindex="2" texture="Content/UI/MainIconsAtlas.png" sourcerect="896,768,128,128" origin="0.5,0.5"/>
+      <SubContainer capacity="9" maxstacksize="16">
+        <Containable items="smallitem,mediumitem" excludeditems="toolbelt,toolbox,bandolier,cargoscooter" />
+      </SubContainer>
+    </ItemContainer>
+  </Item>
 
 </Items>

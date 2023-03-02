@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Hazardous Reactors" modversion="1.0.38" corepackage="False" steamworkshopid="2547888957" gameversion="0.20.16.1" altnames="Hazardous Reactors">
+<contentpackage name="Hazardous Reactors" modversion="1.0.40" corepackage="False" steamworkshopid="2547888957" gameversion="0.21.6.0" altnames="Hazardous Reactors">
   <Item file="%ModDir%/Content/Items/Reactor/reactor.xml" />
   <Afflictions file="%ModDir%/Content/Items/Medical/Afflictions.xml" />
   <Item file="%ModDir%/Content/Items/Medical/Medical.xml" />
@@ -12,9 +12,6 @@
   <Item file="%ModDir%/Content/Items/Misc/poweritems.xml" />
   <Item file="%ModDir%/Content/Items/Gear/divinggear.xml" />
   <Item file="%ModDir%/Content/Items/Misc/containers.xml" />
-  <EnemySubmarine file="%ModDir%/Content/Items/Pirate sub fix/HumpbackPirate.sub" />
-  <EnemySubmarine file="%ModDir%/Content/Items/Pirate sub fix/DugongPirate.sub" />
-  <EnemySubmarine file="%ModDir%/Content/Items/Pirate sub fix/Typhon2Pirate.sub" />
   <Missions file="%ModDir%/Content/Items/Pirate sub fix/Mission.xml" />
   <Decals file="%ModDir%/Content/Items/Medical/DecalPrefabs.xml" />
   <Particles file="%ModDir%/Content/Items/Medical/ParticlePrefabs.xml" />
@@ -29,4 +26,7 @@
   <Text file="%ModDir%/Content/Localization/russian.xml" />
   <Missions file="%ModDir%/Content/Missions/Missions.xml" />
   <RandomEvents file="%ModDir%/Content/Missions/Scriptedevent.xml" />
+  <EnemySubmarine file="%ModDir%/Content/Items/Pirate sub fix/DugongPirate.sub" />
+  <EnemySubmarine file="%ModDir%/Content/Items/Pirate sub fix/HumpbackPirate.sub" />
+  <EnemySubmarine file="%ModDir%/Content/Items/Pirate sub fix/Typhon2Pirate.sub" />
 </contentpackage>

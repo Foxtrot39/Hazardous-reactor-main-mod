@@ -80,6 +80,9 @@
 <entityname.ekutility_handtruck_reactorfuel>Fuelrod Handling Truck</entityname.ekutility_handtruck_reactorfuel>
 <entitydescription.ekutility_handtruck_reactorfuel>A hand truck with shielded pig for moving around fuel rods.</entitydescription.ekutility_handtruck_reactorfuel>
 
+<entityname.fuelbackpack>Radiation shielded backpack</entityname.fuelbackpack>
+<entitydescription.fuelbackpack>A shielded backpack allowing to carry radioactive material and fuel rods safely, equiped with a build in geiger counter and offer limited radiation protection.</entitydescription.fuelbackpack>
+
 			<!-- Reactor items -->
 
 <entityname.fuelrod>Uranium fuel rod</entityname.fuelrod>
@@ -89,7 +92,7 @@
 <entitydescription.thoriumfuelrod>Can last up to three time as long as uranium rods.</entitydescription.thoriumfuelrod>
 
 <entityname.fulguriumfuelrod>Fulgurium fuel rod</entityname.fulguriumfuelrod>
-<entitydescription.fulguriumfuelrod>While it does not provide as much heat as any other fuel rods, it has fission monitoring capability coupled with high longevity to make it an excellent complementary fuel rod. Too stable to be used as is and needs to be pre-heated to be usable as fuel.</entitydescription.fulguriumfuelrod>
+<entitydescription.fulguriumfuelrod>Doesn't provide as much heat as any other fuel rods but last much longer and posses a fission monitoring capability. Too stable to be used as is and needs to be pre-heated to be usable as fuel.</entitydescription.fulguriumfuelrod>
 
 <entityname.fulguriumfuelrodvolatile>Volatile Fulgurium Fuel Rod</entityname.fulguriumfuelrodvolatile>
 <entitydescription.fulguriumfuelrodvolatile>An amalgam rod of incendium and fulgurium, it doesn't have the potency of incendium and the longevity of fulgurium but has roughly half their respective strength but for nearly all their drawbacks.</entitydescription.fulguriumfuelrodvolatile>

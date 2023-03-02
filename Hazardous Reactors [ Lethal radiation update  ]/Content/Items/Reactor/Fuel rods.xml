@@ -807,7 +807,7 @@
     </Item>
   </Override>
 
-    <Item name="" category="fuel" identifier="control_rod" Tags="smallitem,reactorfuel" maxstacksize="1" scale="0.5" cargocontaineridentifier="metalcrate" pickdistance="150" impactsoundtag="impact_metal_light">
+    <Item name="" category="fuel" identifier="control_rod" Tags="smallitem,reactorfuel" health='100' maxstacksize="1" scale="0.5" cargocontaineridentifier="metalcrate" pickdistance="150" impactsoundtag="impact_metal_light">
 
       <!-- Standard info-->
     <InventoryIcon texture="%ModDir%/Content/Items/Reactor/controlrod2.png" sourcerect="0,0,63,62" origin="0.5,0.5" depth="0.55" />
@@ -830,7 +830,9 @@
       </Fabricate>
 
       <!-- Holding/Throwing & Status Effect -->
-      <Throwable characterusable="false" slots="RightHand,LeftHand" throwforce="4.0" holdpos="0,0" handle1="0,0" msg="ItemMsgPickUpSelect" />
+      <Throwable characterusable="false" slots="RightHand,LeftHand" throwforce="4.0" holdpos="0,0" handle1="0,0" msg="ItemMsgPickUpSelect" >
+        <StatusEffect type="Always" target="This" condition="100" disabledeltatime="true" setvalue="true"/>
+      </Throwable>
 
     </Item>
   
