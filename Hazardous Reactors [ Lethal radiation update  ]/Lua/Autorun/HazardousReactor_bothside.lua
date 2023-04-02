@@ -5,10 +5,10 @@ Hook.Add("roundStart", "changeRepairThingyOfReactors", function()
      if repairable and v.Submarine == Submarine.MainSub and  v.GetComponentString("Reactor") then
         repairable.RepairThreshold = 80
         repairable.MinDeteriorationCondition = 0
-    repairable.FixDurationLowSkill = 60
-    repairable.FixDurationHighSkill = 30
-    repairable.MinDeteriorationDelay = 120
-    repairable.MinDeteriorationDelay = 240
+        repairable.FixDurationLowSkill = 60
+        repairable.FixDurationHighSkill = 30
+        repairable.MinDeteriorationDelay = 120
+        repairable.MaxDeteriorationDelay = 240
     
      end
   end

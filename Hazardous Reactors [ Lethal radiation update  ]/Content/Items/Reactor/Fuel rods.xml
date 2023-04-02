@@ -13,7 +13,7 @@
 
   -->
     <!-- Uranium Fuel Rod (Inactive) -->
-    <Item name="" category="fuel" identifier="fuelrod" Tags="reactorfuel" maxstacksize="4" scale="0.5" health="90" pickdistance="150" cargocontaineridentifier="fuelcrate" impactsoundtag="impact_metal_light">
+    <Item name="" category="fuel" identifier="fuelrod" Tags="reactorfuel,HRradioactive" maxstacksize="4" scale="0.5" health="90" pickdistance="150" cargocontaineridentifier="fuelcrate" impactsoundtag="impact_metal_light">
       <!-- Spawn/PrefContainer(Vanilla) & Store Availability-->
       <PreferredContainer primary="reactorcab" />
       <PreferredContainer secondary="nucleargun" minamount="1" maxamount="1" spawnprobability="1" />
@@ -57,7 +57,7 @@
       </Throwable>
     </Item>
     <!-- Uranium Fuel Rod (Active) -->
-    <Item nameidentifier="fuelrod" hideinmenus="true" identifier="fuelrod_active" Tags="reactorfuel" maxstacksize="1" scale="0.5" health="90" cargocontaineridentifier="fuelcrate" pickdistance="150" impactsoundtag="impact_metal_light">
+    <Item nameidentifier="fuelrod" hideinmenus="true" identifier="fuelrod_active" Tags="reactorfuel,HRradioactive" maxstacksize="1" scale="0.5" health="90" cargocontaineridentifier="fuelcrate" pickdistance="150" impactsoundtag="impact_metal_light">
       <!-- Standard info-->
       <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="576,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Tools/tools.png" depth="0.55" sourcerect="410,1,19,68" />
@@ -145,7 +145,7 @@
       </LightComponent>
     </Item>
     <!-- Thorium Fuel Rod (Inactive) -->
-    <Item name="" category="fuel" identifier="thoriumfuelrod" Tags="reactorfuel" maxstacksize="4" cargocontaineridentifier="fuelcrate" scale="0.5" health="300" pickdistance="150" impactsoundtag="impact_metal_light">
+    <Item name="" category="fuel" identifier="thoriumfuelrod" Tags="reactorfuel,HRradioactive" maxstacksize="4" cargocontaineridentifier="fuelcrate" scale="0.5" health="300" pickdistance="150" impactsoundtag="impact_metal_light">
       <!-- Spawn/PrefContainer(Vanilla) & Store Availability-->
       <PreferredContainer primary="reactorcab" />
       <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" amount="1" spawnprobability="0.1" />
@@ -188,7 +188,7 @@
       </Throwable>
     </Item>
     <!-- Thorium Fuel Rod (Active) -->
-    <Item nameidentifier="thoriumfuelrod" hideinmenus="true" identifier="thoriumfuelrod_active" Tags="reactorfuel" maxstacksize="1" scale="0.5" health="300" cargocontaineridentifier="fuelcrate" pickdistance="150" impactsoundtag="impact_metal_light">
+    <Item nameidentifier="thoriumfuelrod" hideinmenus="true" identifier="thoriumfuelrod_active" Tags="reactorfuel,HRradioactive" maxstacksize="1" scale="0.5" health="300" cargocontaineridentifier="fuelcrate" pickdistance="150" impactsoundtag="impact_metal_light">
       <!-- Standard info-->
       <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="384,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Tools/tools.png" depth="0.56" sourcerect="452,1,19,68" />
@@ -321,7 +321,7 @@
         completely inert when on 0% condition
     -->
     <!-- Fulgurium Fuel Rod (Active) -->
-    <Item name="" category="fuel" identifier="fulguriumfuelrod" Tags="reactorfuel" maxstacksize="1" scale="0.5" health="1500" cargocontaineridentifier="fuelcrate" pickdistance="150" impactsoundtag="impact_metal_light">
+    <Item name="" category="fuel" identifier="fulguriumfuelrod" Tags="reactorfuel,HRradioactive" maxstacksize="1" scale="0.5" health="1500" cargocontaineridentifier="fuelcrate" pickdistance="150" impactsoundtag="impact_metal_light">
       <!-- Spawn/PrefContainer(Vanilla) & Store Availability || Removed to be more Bot Friendly
     <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" amount="1" spawnprobability="0.2"/>
     <PreferredContainer secondary="beaconengcab" amount="1" spawnprobability="0.05"/>
@@ -481,7 +481,7 @@
 
       -->
     <!-- Incendium Fuel Rod (Active) -->
-    <Item name="" category="fuel" identifier="ekutility_incendiumfuelrod" Tags="reactorfuel" maxstacksize="1" scale="0.5" health="70" cargocontaineridentifier="fuelcrate" pickdistance="150" impacttolerance="4" impactsoundtag="impact_metal_light">
+    <Item name="" category="fuel" identifier="ekutility_incendiumfuelrod" Tags="reactorfuel,HRradioactive" maxstacksize="1" scale="0.5" health="70" cargocontaineridentifier="fuelcrate" pickdistance="150" impacttolerance="4" impactsoundtag="impact_metal_light">
       <!-- Spawn/PrefContainer(Vanilla) & Store Availability || Removed to be more Bot Friendly
     <PreferredContainer primary="reactorcab" />
     <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" amount="1" spawnprobability="0.2"/>
@@ -677,7 +677,7 @@
     </Item>
   </Override>
   <Override>
-    <Item name="" identifier="fulguriumfuelrodvolatile" category="fuel" Tags="reactorfuel" maxstacksize="8" impacttolerance="3" description="" cargocontaineridentifier="fuelcrate" health="750" scale="0.5">
+    <Item name="" identifier="fulguriumfuelrodvolatile" category="fuel" Tags="reactorfuel,HRradioactive" maxstacksize="8" impacttolerance="3" description="" cargocontaineridentifier="fuelcrate" health="750" scale="0.5">
       <!-- Pricing -->
       <Price baseprice="400" soldeverywhere="false">
         <Price locationtype="outpost" multiplier="0" sold="false" />
@@ -807,7 +807,7 @@
     </Item>
   </Override>
 
-    <Item name="" category="fuel" identifier="control_rod" Tags="smallitem,reactorfuel" health='100' maxstacksize="1" scale="0.5" cargocontaineridentifier="metalcrate" pickdistance="150" impactsoundtag="impact_metal_light">
+    <Item name="" category="fuel" identifier="control_rod" Tags="smallitem,reactorfuel,HRradioactive" health='100' maxstacksize="1" scale="0.5" cargocontaineridentifier="metalcrate" pickdistance="150" impactsoundtag="impact_metal_light">
 
       <!-- Standard info-->
     <InventoryIcon texture="%ModDir%/Content/Items/Reactor/controlrod2.png" sourcerect="0,0,63,62" origin="0.5,0.5" depth="0.55" />
@@ -837,7 +837,7 @@
     </Item>
   
   <!-- CRISIS FUEL RODS -->
-  <Item name="" category="fuel" identifier="supercritical_incendium" scale="0.5" tags="crisis,reactorfuel" impacttolerance="3" impactsoundtag="impact_metal_light" description="" health="400">
+  <Item name="" category="fuel" identifier="supercritical_incendium" scale="0.5" tags="crisis,reactorfuel,HRradioactive" impacttolerance="3" impactsoundtag="impact_metal_light" description="" health="400">
     <!-- Texture and light -->
     <InventoryIcon texture="%ModDir%/Content/Items/Reactor/incendium rod critical.png" sourcerect="27,30,71,65" origin="0.5,0.5" depth="0.55" />
     <Sprite texture="%ModDir%/Content/Items/Reactor/incendium rod critical2.png" sourcerect="22,12,22,72" origin="0.5,0.5" depth="0.55" />
@@ -848,7 +848,15 @@
     </LightComponent>
     <Throwable characterusable="false" slots="Any,RightHand,LeftHand" throwforce="4.0" holdpos="0,0" handle1="0,0" msg="ItemMsgPickUpSelect">
       <!-- Applies flare effect -->
-      <StatusEffect type="Always" disabledeltatime="true" stackable="false" target="This" comparison="And">
+      <StatusEffect type="OnContained" disabledeltatime="true" stackable="false" target="This" comparison="And" >
+        <Conditional condition="gt 1" />
+        <Conditional targetcontainer="true" hastag="neq stasis" />
+        <sound file="Content/Items/Tools/FlareLoop.ogg" range="800.0" loop="true" />
+        <ParticleEmitter particle="ekflarelight1" emitinterval="2.1" particleamount="10" particlespersecond="25" anglemin="70" anglemax="100" velocitymin="100" velocitymax="200" scalemin="0.7" scalemax="0.7" />
+        <ParticleEmitter particle="ekthermiteflare1" emitinterval="2.1" particleamount="10" particlespersecond="25" anglemin="70" anglemax="100" velocitymin="100" velocitymax="200" scalemin="0.7" scalemax="0.7" />
+        <ParticleEmitter particle="FlareBubbles" particlespersecond="40" anglemin="70" anglemax="100" velocitymin="100" velocitymax="200" scalemin="0.8" scalemax="1.2" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" disabledeltatime="true" stackable="false" target="This" comparison="And">
         <Conditional condition="gt 1" />
         <sound file="Content/Items/Tools/FlareLoop.ogg" range="800.0" loop="true" />
         <ParticleEmitter particle="ekflarelight1" emitinterval="2.1" particleamount="10" particlespersecond="25" anglemin="70" anglemax="100" velocitymin="100" velocitymax="200" scalemin="0.7" scalemax="0.7" />
@@ -856,18 +864,35 @@
         <ParticleEmitter particle="FlareBubbles" particlespersecond="40" anglemin="70" anglemax="100" velocitymin="100" velocitymax="200" scalemin="0.8" scalemax="1.2" />
       </StatusEffect>
       <!-- Intended AOE effect -->
-      <StatusEffect type="Always" disabledeltatime="true" stackable="false" delay="1" target="This" comparison="And">
+      <StatusEffect type="OnContained" disabledeltatime="true" stackable="false" delay="1" target="This" comparison="And">
+        <Conditional condition="gt 1" />
+        <Conditional targetcontainer="true" hastag="neq stasis" />
+        <Explosion range="500" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
+          <Affliction identifier="criticalrod_burn_emitter" strength="100" />
+          <Affliction identifier="hazardexposure" strength="10" />
+        </Explosion>
+      </StatusEffect>
+      
+      <StatusEffect type="OnNotContained" disabledeltatime="true" stackable="false" delay="1" target="This" comparison="And">
         <Conditional condition="gt 1" />
         <Explosion range="500" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
           <Affliction identifier="criticalrod_burn_emitter" strength="100" />
           <Affliction identifier="hazardexposure" strength="10" />
         </Explosion>
       </StatusEffect>
-      <StatusEffect type="Always" disabledeltatime="true" stackable="false" delay="1" target="This">
+      
+      <StatusEffect type="OnContained" disabledeltatime="true" stackable="false" delay="1" target="This" comparison="And">
+        <Conditional condition="gt 1" />
+        <Conditional targetcontainer="true" hastag="neq stasis" />
+        <Explosion range="350" structuredamage="10" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" />
+      </StatusEffect>
+      
+      <StatusEffect type="OnNotContained" disabledeltatime="true" stackable="false" delay="1" target="This" comparison="And">
         <Conditional condition="gt 1" />
         <Explosion range="350" structuredamage="10" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" />
       </StatusEffect>
-      <StatusEffect type="InWater" target="This">
+      
+      <StatusEffect type="InWater" target="This,Hull" WaterVolume="-20000" >
         <Conditional condition="gt 1" />
         <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="1" velocitymin="0" velocitymax="50" scalemin="1" scalemax="1" />
         <ParticleEmitter particle="extinguisher" anglemin="0" anglemax="360" velocitymin="5.0" velocitymax="50.0" particlespersecond="40" />
@@ -900,12 +925,12 @@
       </StatusEffect>
     </Throwable>
   </Item>
-  <Item name="" category="fuel" identifier="supercritical_fulgurium" variantof="supercritical_incendium" scale="0.5" tags="crisis,reactorfuel" impacttolerance="3" impactsoundtag="impact_metal_light" description="" health="700">
+  <Item name="" category="fuel" identifier="supercritical_fulgurium" variantof="supercritical_incendium" scale="0.5" tags="crisis,reactorfuel,HRradioactive" impacttolerance="3" impactsoundtag="impact_metal_light" description="" health="700">
     <InventoryIcon texture="%ModDir%/Content/Items/Reactor/volatile rod critical 2.png" sourcerect="0,0,63,62" origin="0.5,0.5" depth="0.55" />
     <Sprite texture="%ModDir%/Content/Items/Reactor/volatile rod critical 1.png" sourcerect="0,0,22,73" origin="0.5,0.5" depth="0.55" />
     <Body height="64.799995" width="19.8" density="40" />
   </Item>
-  <Item name="" identifier="molten_rods" Tags="crisis,reactorfuel" maxstacksize="1" cargocontaineridentifier="fuelcrate" scale="0.25" health="100" impactsoundtag="impact_metal_light" description="">
+  <Item name="" identifier="molten_rods" Tags="crisis,reactorfuel,HRradioactive" maxstacksize="1" cargocontaineridentifier="fuelcrate" scale="0.25" health="100" impactsoundtag="impact_metal_light" description="">
     <PreferredContainer primary="reactor1wrecked" minamount="0" maxamount="1" spawnprobability="0.5" />
     <Deconstruct time="60">
       <Item identifier="radiotoxin" />
@@ -957,10 +982,14 @@
     <Fabricate suitablefabricators="fabricator" requiredtime="15">
       <RequiredItem identifier="supercritical_fulgurium" mincondition="0.5" usecondition="false" />
       <RequiredItem identifier="fueltrasnportcylinderreinforced" />
+      <RequiredItem identifier="detonator" />
+      <RequiredItem identifier="c4block" />
     </Fabricate>
     <Fabricate suitablefabricators="fabricator" requiredtime="15">
       <RequiredItem identifier="supercritical_incendium" mincondition="0.5" usecondition="false" />
       <RequiredItem identifier="fueltrasnportcylinderreinforced" />
+      <RequiredItem identifier="detonator" />
+      <RequiredItem identifier="c4block" />
     </Fabricate>
     <!-- Texture and light -->
     <Sprite texture="%ModDir%/Content/Items/Misc/RodCylinderSpritesheet.png" depth="0.55" sourcerect="16,33,129,40" origin="0.5,0.5" />

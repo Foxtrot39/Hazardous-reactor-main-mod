@@ -1,47 +1,197 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Missions>
-    <PirateMission name="Pirate Vessel" type="Pirate" identifier="pirate1" tags="piratehumpback" description="A pirate vessel has been sighted in this area. Check the locations that the submarine has reportedly been patrolling, and find the vessel and eliminate its crew." difficulty="4" sonarlabel="Pirate sighting" commonness="80" reward="3500" achievementidentifier="piratemission" successmessage="The pirate vessel's crew was successfully eliminated." addedmissiondifficultyperplayer="8">
-      <message header="Pirates detected" text="" />
-      <message header="Pirates eliminated" text="" />
-      <Reputation identifier="location" amount="30" />
-      <SubmarineTypes>
-        <Submarine path="%ModDir%/Content/Items/Pirate sub fix/DugongPirate.sub" preferreddifficulty="10" alternatereward="3200" />
-        <Submarine path="%ModDir%/Content/Items/Pirate sub fix/HumpbackPirate.sub" preferreddifficulty="40" alternatereward="4400" />
-        <Submarine path="%ModDir%/Content/Items/Pirate sub fix/Typhon2Pirate.sub" preferreddifficulty="70" alternatereward="5600" />
-      </SubmarineTypes>
-      <Characters>
-        <Character typeidentifier="piratecaptain" minamount="1" maxamount="1" />
-        <Character typeidentifier="piratesecurity" minamount="1" maxamount="5" />
-        <Character typeidentifier="piratemechanic" minamount="1" maxamount="1" />
-        <Character typeidentifier="pirateengineer" minamount="1" maxamount="1" />
-      </Characters>
-      <CharacterTypes>
-        <CharacterType typeidentifier="piratecaptain">
-          <Character identifier="piratecaptain" from="piratenpcs1" preferreddifficulty="50" iscommander="true" />
-          <Character identifier="piratecaptainlord" from="piratenpcs1" preferreddifficulty="90" iscommander="true" />
-        </CharacterType>
-        <CharacterType typeidentifier="piratesecurity">
-          <Character identifier="piratesecurityrecruit" from="piratenpcs1" preferreddifficulty="40" />
-          <Character identifier="piratesecuritygunner" from="piratenpcs1" preferreddifficulty="60" />
-          <Character identifier="piratesecuritybrute" from="piratenpcs1" preferreddifficulty="70" />
-          <Character identifier="piratesecurityelite" from="piratenpcs1" preferreddifficulty="100" />
-        </CharacterType>
-        <CharacterType typeidentifier="piratemechanic">
-          <Character identifier="piratemechanicrecruit" from="piratenpcs1" preferreddifficulty="40" />
-          <Character identifier="piratemechanicveteran" from="piratenpcs1" preferreddifficulty="70" />
-        </CharacterType>
-        <CharacterType typeidentifier="pirateengineer">
-          <Character identifier="pirateengineerrecruit" from="piratenpcs1" preferreddifficulty="40" />
-          <Character identifier="pirateengineerveteran" from="piratenpcs1" preferreddifficulty="70" />
-        </CharacterType>
-      </CharacterTypes>
-      <Icon texture="Content/UI/MissionIcons.png" sourcerect="0,768,256,256" color="243,146,55" />
-      <LocationType from="City" to="City" />
-      <LocationType from="City" to="Outpost" />
-      <LocationType from="City" to="Military" />
-      <LocationType from="City" to="Research" />
-      <LocationType from="City" to="Mine" />
-    </PirateMission>
-  </Missions>
+  <PirateMission
+    type="Pirate"
+    identifier="pirate1"
+    tags="combatcoalitionvsseparatists"
+    difficulty="4"
+    commonness="20"
+    reward="4000"
+    achievementidentifier="combatmissioncoalitionvsseparatists"
+    addedmissiondifficultyperplayer="8">
+    <Reputation identifier="coalition" amount="10" />
+    <Reputation identifier="separatists" amount="-10" />
+    <SubmarineTypes>
+      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/DugongPiratefix.sub" preferreddifficulty="10" alternatereward="3200"/>
+      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/HumpbackPiratefix.sub" preferreddifficulty="40" alternatereward="4400"/>
+      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/Typhon2Piratefix.sub" preferreddifficulty="70" alternatereward="5600"/>
+    </SubmarineTypes>
+    <Characters>
+      <Character typeidentifier="separatistcaptain" minamount="1" maxamount="1"/>
+      <Character typeidentifier="separatistsecurity" minamount="1" maxamount="5" />
+      <Character typeidentifier="separatistmechanic" minamount="1" maxamount="1" />
+      <Character typeidentifier="separatistengineer" minamount="1" maxamount="1" />
+    </Characters>
+    <CharacterTypes>
+      <CharacterType typeidentifier="separatistcaptain">
+        <Character identifier="separatistcaptain" from="combatmissionseparatistnpcs" preferreddifficulty="50" iscommander="true" />
+        <Character identifier="separatistcaptainlord" from="combatmissionseparatistnpcs" preferreddifficulty="90" iscommander="true" />
+      </CharacterType>
+      <CharacterType typeidentifier="separatistsecurity">
+        <Character identifier="separatistsecurityrecruit" from="combatmissionseparatistnpcs" preferreddifficulty="40"/>
+        <Character identifier="separatistsecuritygunner" from="combatmissionseparatistnpcs" preferreddifficulty="60"/>
+        <Character identifier="separatistsecuritybrute" from="combatmissionseparatistnpcs" preferreddifficulty="70"/>
+        <Character identifier="separatistsecurityelite" from="combatmissionseparatistnpcs" preferreddifficulty="100"/>
+      </CharacterType>
+      <CharacterType typeidentifier="separatistmechanic">
+        <Character identifier="separatistmechanicrecruit" from="combatmissionseparatistnpcs" preferreddifficulty="40"/>
+        <Character identifier="separatistmechanicveteran" from="combatmissionseparatistnpcs" preferreddifficulty="70"/>
+      </CharacterType>
+      <CharacterType typeidentifier="separatistengineer">
+        <Character identifier="separatistengineerrecruit" from="combatmissionseparatistnpcs" preferreddifficulty="40"/>
+        <Character identifier="separatistengineerveteran" from="combatmissionseparatistnpcs" preferreddifficulty="70"/>
+      </CharacterType>
+    </CharacterTypes>
+    <Icon texture="Content/UI/MissionIcons.png" sourcerect="0,768,256,256" color="243,146,55"/>
+    <message header="missionheader0.pirate1" text="missionmessage0.pirate1"/>
+    <message header="missionheader1.pirate1" text="missionmessage1.pirate1"/>
+  </PirateMission>
+
+  <PirateMission
+    type="Pirate"
+    identifier="pirate1separatists"
+    tags="combatseparatistsvscoalition"
+    difficulty="4"
+    commonness="20"
+    reward="4000"
+    achievementidentifier="combatmissionseparatistsvscoalition"
+    addedmissiondifficultyperplayer="8">
+    <Reputation identifier="separatists" amount="10" />
+    <Reputation identifier="coalition" amount="-10" />
+    <SubmarineTypes>
+      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/Dugongfix.sub" preferreddifficulty="10" alternatereward="3200"/>
+      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/Humpbackfix.sub" preferreddifficulty="40" alternatereward="4400"/>
+      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/Typhon2fix.sub" preferreddifficulty="70" alternatereward="5600"/>
+    </SubmarineTypes>
+    <Characters>
+      <Character typeidentifier="coalitioncaptain" minamount="1" maxamount="1"/>
+      <Character typeidentifier="coalitionsecurity" minamount="1" maxamount="5" />
+      <Character typeidentifier="coalitionmechanic" minamount="1" maxamount="1" />
+      <Character typeidentifier="coalitionengineer" minamount="1" maxamount="1" />
+    </Characters>
+    <CharacterTypes>
+      <CharacterType typeidentifier="coalitioncaptain">
+        <Character identifier="coalitioncaptain" from="combatmissioncoalitionnpcs" preferreddifficulty="50" iscommander="true" />
+        <Character identifier="coalitioncaptainlord" from="combatmissioncoalitionnpcs" preferreddifficulty="90" iscommander="true" />
+      </CharacterType>
+      <CharacterType typeidentifier="coalitionsecurity">
+        <Character identifier="coalitionsecurityrecruit" from="combatmissioncoalitionnpcs" preferreddifficulty="40"/>
+        <Character identifier="coalitionsecuritygunner" from="combatmissioncoalitionnpcs" preferreddifficulty="60"/>
+        <Character identifier="coalitionsecuritybrute" from="combatmissioncoalitionnpcs" preferreddifficulty="70"/>
+        <Character identifier="coalitionsecurityelite" from="combatmissioncoalitionnpcs" preferreddifficulty="100"/>
+      </CharacterType>
+      <CharacterType typeidentifier="coalitionmechanic">
+        <Character identifier="coalitionmechanicrecruit" from="combatmissioncoalitionnpcs" preferreddifficulty="40"/>
+        <Character identifier="coalitionmechanicveteran" from="combatmissioncoalitionnpcs" preferreddifficulty="70"/>
+      </CharacterType>
+      <CharacterType typeidentifier="coalitionengineer">
+        <Character identifier="coalitionengineerrecruit" from="combatmissioncoalitionnpcs" preferreddifficulty="40"/>
+        <Character identifier="coalitionengineerveteran" from="combatmissioncoalitionnpcs" preferreddifficulty="70"/>
+      </CharacterType>
+    </CharacterTypes>
+    <Icon texture="Content/UI/MissionIcons.png" sourcerect="0,768,256,256" color="243,146,55"/>
+    <message header="missionheader0.pirate1" text="missionmessage0.pirate1"/>
+    <message header="missionheader1.pirate1" text="missionmessage1.pirate1"/>
+  </PirateMission>
+
+  <PirateMission
+    type="Pirate"
+    identifier="coalitionattack1"
+    tags="coalitionattack"
+    showinmenus="false"
+    showstartmessage="false"
+    issideobjective="true"
+    achievementidentifier="combatmissionseparatistsvscoalition"
+    difficulty="4"
+    commonness="0"
+    reward="0"
+    addedmissiondifficultyperplayer="8">
+    <Reputation identifier="separatists" amount="5" />
+    <Reputation identifier="coalition" amount="-5" />
+    <SubmarineTypes>
+      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/Dugongfix.sub" preferreddifficulty="10"/>
+      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/Humpbackfix.sub" preferreddifficulty="40"/>
+      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/Typhon2fix.sub" preferreddifficulty="70"/>
+    </SubmarineTypes>
+    <Characters>
+      <Character typeidentifier="coalitioncaptain" minamount="1" maxamount="1"/>
+      <Character typeidentifier="coalitionsecurity" minamount="1" maxamount="5" />
+      <Character typeidentifier="coalitionmechanic" minamount="1" maxamount="1" />
+      <Character typeidentifier="coalitionengineer" minamount="1" maxamount="1" />
+    </Characters>
+    <CharacterTypes>
+      <CharacterType typeidentifier="coalitioncaptain">
+        <Character identifier="coalitioncaptain" from="combatmissioncoalitionnpcs" preferreddifficulty="50" iscommander="true" />
+        <Character identifier="coalitioncaptainlord" from="combatmissioncoalitionnpcs" preferreddifficulty="90" iscommander="true" />
+      </CharacterType>
+      <CharacterType typeidentifier="coalitionsecurity">
+        <Character identifier="coalitionsecurityrecruit" from="combatmissioncoalitionnpcs" preferreddifficulty="40"/>
+        <Character identifier="coalitionsecuritygunner" from="combatmissioncoalitionnpcs" preferreddifficulty="60"/>
+        <Character identifier="coalitionsecuritybrute" from="combatmissioncoalitionnpcs" preferreddifficulty="70"/>
+        <Character identifier="coalitionsecurityelite" from="combatmissioncoalitionnpcs" preferreddifficulty="100"/>
+      </CharacterType>
+      <CharacterType typeidentifier="coalitionmechanic">
+        <Character identifier="coalitionmechanicrecruit" from="combatmissioncoalitionnpcs" preferreddifficulty="40"/>
+        <Character identifier="coalitionmechanicveteran" from="combatmissioncoalitionnpcs" preferreddifficulty="70"/>
+      </CharacterType>
+      <CharacterType typeidentifier="coalitionengineer">
+        <Character identifier="coalitionengineerrecruit" from="combatmissioncoalitionnpcs" preferreddifficulty="40"/>
+        <Character identifier="coalitionengineerveteran" from="combatmissioncoalitionnpcs" preferreddifficulty="70"/>
+      </CharacterType>
+    </CharacterTypes>
+    <Icon texture="Content/UI/MissionIcons.png" sourcerect="0,768,256,256" color="243,146,55"/>
+    <message header="missionheader0.coalitionattack1" text="missionmessage0.coalitionattack1"/>
+  </PirateMission> 
+  
+  <PirateMission
+    type="Pirate"
+    identifier="separatistattack1"
+    tags="separatistattack"
+    showinmenus="false"
+    showstartmessage="false"
+    issideobjective="true"
+    achievementidentifier="combatmissioncoalitionvsseparatists"
+    difficulty="4"
+    commonness="20"
+    reward="0"
+    addedmissiondifficultyperplayer="8">
+    <Reputation identifier="coalition" amount="5" />
+    <Reputation identifier="separatists" amount="-10" />
+    <SubmarineTypes>
+      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/DugongPiratefix.sub" preferreddifficulty="10"/>
+      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/HumpbackPiratefix.sub" preferreddifficulty="40"/>
+      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/Typhon2Piratefix.sub" preferreddifficulty="70"/>
+    </SubmarineTypes>
+    <Characters>
+      <Character typeidentifier="separatistcaptain" minamount="1" maxamount="1"/>
+      <Character typeidentifier="separatistsecurity" minamount="1" maxamount="5" />
+      <Character typeidentifier="separatistmechanic" minamount="1" maxamount="1" />
+      <Character typeidentifier="separatistengineer" minamount="1" maxamount="1" />
+    </Characters>
+    <CharacterTypes>
+      <CharacterType typeidentifier="separatistcaptain">
+        <Character identifier="separatistcaptain" from="combatmissionseparatistnpcs" preferreddifficulty="50" iscommander="true" />
+        <Character identifier="separatistcaptainlord" from="combatmissionseparatistnpcs" preferreddifficulty="90" iscommander="true" />
+      </CharacterType>
+      <CharacterType typeidentifier="separatistsecurity">
+        <Character identifier="separatistsecurityrecruit" from="combatmissionseparatistnpcs" preferreddifficulty="40"/>
+        <Character identifier="separatistsecuritygunner" from="combatmissionseparatistnpcs" preferreddifficulty="60"/>
+        <Character identifier="separatistsecuritybrute" from="combatmissionseparatistnpcs" preferreddifficulty="70"/>
+        <Character identifier="separatistsecurityelite" from="combatmissionseparatistnpcs" preferreddifficulty="100"/>
+      </CharacterType>
+      <CharacterType typeidentifier="separatistmechanic">
+        <Character identifier="separatistmechanicrecruit" from="combatmissionseparatistnpcs" preferreddifficulty="40"/>
+        <Character identifier="separatistmechanicveteran" from="combatmissionseparatistnpcs" preferreddifficulty="70"/>
+      </CharacterType>
+      <CharacterType typeidentifier="separatistengineer">
+        <Character identifier="separatistengineerrecruit" from="combatmissionseparatistnpcs" preferreddifficulty="40"/>
+        <Character identifier="separatistengineerveteran" from="combatmissionseparatistnpcs" preferreddifficulty="70"/>
+      </CharacterType>
+    </CharacterTypes>
+    <Icon texture="Content/UI/MissionIcons.png" sourcerect="0,768,256,256" color="243,146,55"/>
+    <message header="missionheader0.separatistattack1" text="missionmessage0.separatistattack1"/>
+  </PirateMission>
+  
+    </Missions>
 </Override>

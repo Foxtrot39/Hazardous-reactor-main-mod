@@ -27,7 +27,7 @@
       <sprite name="Rod storage worn" texture="%ModDir%/Content/Items/Misc/RodCylinderSpritesheet.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="22,2,116,31" origin="0.5,2" limb="Torso" ignorelimbscale="true" scale="0.5" />
     </Wearable>
     <!-- Only accept fuel rods -->
-    <ItemContainer autofill="False" hideitems="true" drawinventory="true" capacity="1" slotsperrow="1" maxstacksize="1" canbeselected="true" msg="ItemMsgInteractSelect" keepopenwhenequipped="false" movableframe="false">
+    <ItemContainer autofill="False" capacity="1" slotsperrow="1" maxstacksize="1" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="false">
       <Containable items="reactorfuel,depletedfuel" />
     </ItemContainer>
   </Item>
@@ -59,7 +59,7 @@
       <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.7" setvalue="true" />
     </Holdable>
     <!-- Only accept fuel rods -->
-    <ItemContainer autofill="False" capacity="4" slotsperrow="2" canbeselected="true" msg="ItemMsgInteractSelect" keepopenwhenequipped="true" movableframe="true">
+    <ItemContainer autofill="False" capacity="4" slotsperrow="2" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="false">
       <Containable items="fuelrod,thoriumfuelrod,fuelrod_active,thoriumfuelrod_active,fulguriumfuelrod,fulguriumfuelrodvolatile,ekutility_incendiumfuelrod,depletedfuel,uranium,thorium" />
     </ItemContainer>
   </Item>
@@ -91,7 +91,7 @@
       <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.5" setvalue="true" />
     </Holdable>
     <!-- Only accept fuel rods -->
-    <ItemContainer autofill="False" capacity="12" slotsperrow="3" canbeselected="true" msg="ItemMsgInteractSelect" keepopenwhenequipped="true" movableframe="true">
+    <ItemContainer autofill="False" capacity="12" slotsperrow="3" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="false">
       <Containable items="reactorfuel,,uranium,thorium,uraniumore,brockite,thorianite" />
     </ItemContainer>
   </Item>
@@ -209,7 +209,7 @@
       
     Container, voltage 
     
-    <ItemContainer autofill="False" hideitems="true" drawinventory="true" capacity="2" slotsperrow="2" maxstacksize="1" canbeselected="true" msg="ItemMsgInteractSelect" keepopenwhenequipped="true" movableframe="true">
+    <ItemContainer autofill="False" hideitems="true" drawinventory="true" capacity="2" slotsperrow="2" maxstacksize="1" canbeselected="true" msg="ItemMsgInteractSelect" keepopenwhenequipped="true" movableframe="false">
   <SlotIcon slotindex="0" texture="Content/UI/WeaponUI.png" sourcerect="64,961,32,22" origin="0.5,0.45" />
   
       <Containable items="supercritical_incendium,supercritical_fulgurium,molten_rods" />
@@ -284,5 +284,123 @@
       </SubContainer>
     </ItemContainer>
   </Item>
+  
+   <Item name="" identifier="fueltrasnportcylinderreinforced" tags="mediumitem,mobilecontainer,tool,stasis" description="" scale="0.5" linkable="true" pickdistance="150" impactsoundtag="impact_metal_heavy">
+    <Price baseprice="800" soldeverywhere="false">
+      <Price locationtype="outpost" multiplier="1" minavailable="1" />
+      <Price locationtype="city" multiplier="0.9" minavailable="1" />
+      <Price locationtype="research" multiplier="1.25" minavailable="2" />
+      <Price locationtype="military" multiplier="1.1" minavailable="1" />
+      <Price locationtype="mine" multiplier="1.3" minavailable="1" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="fueltransportcylinder" />
+      <Item identifier="stasisemitter" />
+      <Item identifier="AI_microchip" />
+      <Item identifier="du_p_alloy" />
+      <Item identifier="du_p_alloy" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="70">
+      <RequiredSkill identifier="mechanical" level="40" />
+      <RequiredItem identifier="fueltransportcylinder" />
+      <RequiredItem identifier="AI_microchip" />
+      <RequiredItem identifier="stasisemitter" />
+      <RequiredItem identifier="du_p_alloy" />
+      <RequiredItem identifier="du_p_alloy" />
+    </Fabricate>
+    
+    <Sprite texture="%ModDir%/Content/Items/Misc/RodCylinderSpritesheet.png" depth="0.55" sourcerect="22,2,116,31" origin="0.5,0.5" >
+        <LightComponent range="150.0" lightcolor="255,255,0,250" minvoltage="0.5" powerconsumption="10" flicker="0.5" flickerspeed="1.0" IsOn="false" allowingameediting="false">
+          <StatusEffect type="OnActive" targettype="Contained" Condition="-0.55" comparison="And" targetslot="1" />
+          <LightTexture texture="Content/Lights/light.png" origin="0.5,0.5" size="1.0,1.0" />
+        
+    <!-- Cause crisis rod effect when unpowered/inactive -->
+    
+      <!-- Flare effect -->
+      <StatusEffect type="Always" disabledeltatime="true" stackable="false" target="This" comparison="And" >
+        <RequiredItem identifier="supercritical_fulgurium,supercritical_incendium" type="contained" condition="gte 1" />
+        <sound file="Content/Items/Tools/FlareLoop.ogg" range="800.0" loop="true" />
+        <ParticleEmitter particle="ekflarelight1" emitinterval="2.1" particleamount="10" particlespersecond="25" anglemin="70" anglemax="100" velocitymin="100" velocitymax="200" scalemin="0.7" scalemax="0.7" />
+        <ParticleEmitter particle="ekthermiteflare1" emitinterval="2.1" particleamount="10" particlespersecond="25" anglemin="70" anglemax="100" velocitymin="100" velocitymax="200" scalemin="0.7" scalemax="0.7" />
+        <ParticleEmitter particle="FlareBubbles" particlespersecond="40" anglemin="70" anglemax="100" velocitymin="100" velocitymax="200" scalemin="0.8" scalemax="1.2" />
+      </StatusEffect>
+
+      <!-- Intended AOE effect -->
+      <StatusEffect type="Always" disabledeltatime="true" stackable="false" delay="1" target="This" comparison="And">
+        <Conditional condition="gt 1" />
+        <Conditional targetitemcomponent="lightcompnent" IsOn="False" />
+        <requireditem Item="crisis" type="contained" />
+        <Explosion range="500" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
+          <Affliction identifier="criticalrod_burn_emitter" strength="100" />
+          <Affliction identifier="hazardexposure" strength="10" />
+        </Explosion>
+      </StatusEffect>
+      
+      <StatusEffect type="OnNotContained" disabledeltatime="true" stackable="false" delay="1" target="This" comparison="And">
+        <Conditional condition="gt 1" />
+        <Explosion range="500" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
+          <Affliction identifier="criticalrod_burn_emitter" strength="100" />
+          <Affliction identifier="hazardexposure" strength="10" />
+        </Explosion>
+      </StatusEffect>
+      
+      <StatusEffect type="OnContained" disabledeltatime="true" stackable="false" delay="1" target="This" comparison="And">
+        <Conditional condition="gt 1" />
+        <Conditional targetcontainer="true" hastag="neq stasis" />
+        <Explosion range="350" structuredamage="10" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" />
+      </StatusEffect>
+      
+      <StatusEffect type="OnNotContained" disabledeltatime="true" stackable="false" delay="1" target="This" comparison="And">
+        <Conditional condition="gt 1" />
+        <Explosion range="350" structuredamage="10" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" />
+      </StatusEffect>
+        
+        
+        
+        
+        
+        </LightComponent>
+    </Sprite>
+    
+    <InventoryIcon texture="%ModDir%/Content/Items/Misc/RodCylinderInvSpritesheet.png" sourcerect="6,7,51,50" origin="0.5,0.5" />
+    <Body width="215" height="30" density="30" />
+    <Holdable slots="RightHand,LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use" >
+    
+
+      
+    </Holdable>
+    <!-- Stall rod decay when powered/active -->
+
+
+    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="Rod storage worn" texture="%ModDir%/Content/Items/Misc/RodCylinderSpritesheet.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="22,2,116,31" origin="0.5,2" limb="Torso" ignorelimbscale="true" scale="0.5" />
+  </Wearable>
+
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+        <GuiFrame relativesize="0.09,0.07" anchor="CenterLeft" pivot="BottomLeft" relativeoffset="0.006,-0.05" style="ItemUI" />
+        <TickBox text="stasis">
+          <StatusEffect type="OnUse" targettype="This" IsOn="true" />
+          <StatusEffect type="OnSecondaryUse" targettype="This" IsOn="false" />
+        </TickBox>
+      </CustomInterface>
+    
+  <ItemContainer autofill="False" capacity="1" slotsperrow="1" maxstacksize="1" containedstateindicatorstyle="battery" containedstateindicatorslot="1" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="false" >
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="192,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+      <Containable items="reactorfuel,depletedfuel" />
+      <SubContainer capacity="1" >
+      <Containable items="mobilebattery">
+        <StatusEffect type="OnContaining" targettype="This" Voltage="1.0" setvalue="true" />
+      </Containable>
+      </SubContainer>
+    </ItemContainer>
+
+     <!-- <GuiFrame relativesize="0.11,0.1" anchor="CenterLeft" pivot="BottomLeft" relativeoffset="0.006,-0.05" style="ItemUI" />
+
+    -->
+
+  </Item>
+
+
 
 </Items>

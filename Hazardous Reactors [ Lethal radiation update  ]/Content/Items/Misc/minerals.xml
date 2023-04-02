@@ -40,8 +40,8 @@
     <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgUsePlasmaCutter" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false" />
   </Item>
 
-  <Item identifier="deconcontaminationemitter" hideinmenus="true">
-    <Sprite texture="Content/Items/JobGear/TalentGear.png" sourcerect="0,0,2,2" depth="0.55" origin="0.5,0.5" />
+  <Item identifier="deconcontaminationemitter" description="" hideinmenus="true">
+    <sprite texture="%ModDir%/Content/UI/HazardousIconsAtlas.png" sourcerect="256,0,128,128" color="139,60,42,255" origin="0,0" />
     <Body radius="1" width="1" density="10" />
     <ItemComponent>
       <!-- Contamination on Deconstruction-->
@@ -62,7 +62,7 @@
 
 <Override>
 
-  <Item name="" identifier="uranium" category="Material" maxstacksize="8" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
+  <Item name="" identifier="uranium" category="Material" maxstacksize="8" Tags="smallitem,HRradioactive" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab" minamount="1" maxamount="2" spawnprobability="0.05"/>
     <PreferredContainer primary="storagecab"/>
     <Price baseprice="50" sold="false">
@@ -109,7 +109,7 @@
     </LightComponent>
   </Item>
 
-  <Item name="" identifier="thorium" category="Material" maxstacksize="8" Tags="smallitem" canbepicked="true" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
+  <Item name="" identifier="thorium" category="Material" maxstacksize="8" Tags="smallitem,HRradioactive" canbepicked="true" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="storagecab"/>
     <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab" minamount="1" maxamount="2" spawnprobability="0.02"/>
     <Price baseprice="125" sold="false">
@@ -156,7 +156,7 @@
     </LightComponent>
   </Item>
 
-  <Item name="" identifier="uraniumore" category="Material" Tags="smallitem,ore" maxstacksize="8" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
+  <Item name="" identifier="uraniumore" category="Material" Tags="smallitem,ore,HRradioactive" maxstacksize="8" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="mineralcab" secondary="storagecab"/>
     <Price baseprice="200" sold="false">
       <Price storeidentifier="merchantoutpost" multiplier="1.1" />
@@ -196,7 +196,7 @@
     <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgUsePlasmaCutter" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false" />
   </Item>
 
-  <Item name="" identifier="brockite" category="Material" Tags="smallitem,ore" maxstacksize="8" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
+  <Item name="" identifier="brockite" category="Material" Tags="smallitem,ore,HRradioactive" maxstacksize="8" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="mineralcab" secondary="storagecab"/>
     <Price baseprice="150" sold="false">
       <Price storeidentifier="merchantoutpost" multiplier="1.1" />
@@ -235,7 +235,7 @@
     <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgUsePlasmaCutter" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false" />
   </Item>
 
-  <Item name="" identifier="thorianite" category="Material" Tags="smallitem,ore" maxstacksize="8" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
+  <Item name="" identifier="thorianite" category="Material" Tags="smallitem,ore,HRradioactive" maxstacksize="8" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="mineralcab" secondary="storagecab"/>
     <Price baseprice="300" sold="false">
       <Price storeidentifier="merchantoutpost" multiplier="1.1" />

@@ -86,12 +86,12 @@
     </Item>
   </Override>
   <Item name="" identifier="du_p_alloy" category="Material,Alien" Tags="smallitem" description="" maxstacksize="8" cargocontaineridentifier="metalcrate" canbepicked="true" scale="0.5" impactsoundtag="impact_metal_heavy">
-    <Price baseprice="200" soldeverywhere="false">
+    <Price baseprice="700" soldeverywhere="false">
       <Price locationtype="outpost" multiplier="0" sold="false" />
       <Price locationtype="city" multiplier="0" sold="false" />
       <Price locationtype="research" multiplier="1.5" sold="false" />
       <Price locationtype="military" multiplier="1.5" sold="false" />
-      <Price locationtype="mine" multiplier="0" sold="false" />
+      <Price locationtype="mine" multiplier="1" minamount="0" maxamount="3" sold="true" />
     </Price>
     <Deconstruct time="60">
       <Item identifier="depletedfuel" />
@@ -99,8 +99,10 @@
     </Deconstruct>
     <Fabricate suitablefabricators="fabricator" requiredtime="70">
       <RequiredSkill identifier="mechanical" level="50" />
-      <RequiredItem identifier="depletedfuel" />
-      <RequiredItem identifier="physicorium" />
+      <Item identifier="depletedfuel" />
+      <Item identifier="depletedfuel" />
+      <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
     </Fabricate>
     <InventoryIcon texture="%ModDir%/Content/Items/Misc/du+p.png" sourcerect="0,0,58,30" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/Content/Items/Misc/du+p.png" sourcerect="0,0,58,30" origin="0.5,0.5" depth="0.55" />
@@ -175,36 +177,5 @@
         <Remove />
       </StatusEffect>
     </Holdable>
-  </Item>
-  <Item name="" identifier="fueltrasnportcylinderreinforced" tags="mediumitem,mobilecontainer,tool" description="" scale="0.5" linkable="true" pickdistance="150" impactsoundtag="impact_metal_heavy">
-    <Price baseprice="800" soldeverywhere="false">
-      <Price locationtype="outpost" multiplier="1" minavailable="1" />
-      <Price locationtype="city" multiplier="0.9" minavailable="1" />
-      <Price locationtype="research" multiplier="1.25" minavailable="2" />
-      <Price locationtype="military" multiplier="1.1" minavailable="1" />
-      <Price locationtype="mine" multiplier="1.3" minavailable="1" />
-    </Price>
-    <Deconstruct time="10">
-      <Item identifier="fueltransportcylinder" />
-      <Item identifier="stasisemitter" />
-      <Item identifier="AI_microchip" />
-      <Item identifier="du_p_alloy" />
-      <Item identifier="du_p_alloy" />
-    </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="70">
-      <RequiredSkill identifier="mechanical" level="40" />
-      <RequiredItem identifier="fueltransportcylinder" />
-      <RequiredItem identifier="AI_microchip" />
-      <RequiredItem identifier="stasisemitter" />
-      <RequiredItem identifier="du_p_alloy" />
-      <RequiredItem identifier="du_p_alloy" />
-    </Fabricate>
-    <Sprite texture="%ModDir%/Content/Items/Misc/RodCylinderSpritesheet.png" depth="0.55" sourcerect="22,2,116,31" origin="0.5,0.5" />
-    <InventoryIcon texture="%ModDir%/Content/Items/Misc/RodCylinderInvSpritesheet.png" sourcerect="6,7,51,50" origin="0.5,0.5" />
-    <Body width="215" height="30" density="30" />
-    <Holdable slots="RightHand,LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use"/>
-    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-      <sprite name="Rod storage worn" texture="%ModDir%/Content/Items/Misc/RodCylinderSpritesheet.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="22,2,116,31" origin="0.5,2" limb="Torso" ignorelimbscale="true" scale="0.5" />
-    </Wearable>
   </Item>
 </Items>

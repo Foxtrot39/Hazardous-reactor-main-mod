@@ -81,7 +81,7 @@
 <entitydescription.ekutility_handtruck_reactorfuel>A hand truck with shielded pig for moving around fuel rods.</entitydescription.ekutility_handtruck_reactorfuel>
 
 <entityname.fuelbackpack>Radiation shielded backpack</entityname.fuelbackpack>
-<entitydescription.fuelbackpack>A shielded backpack allowing to carry radioactive material and fuel rods safely, equiped with a build in geiger counter and offer limited radiation protection.</entitydescription.fuelbackpack>
+<entitydescription.fuelbackpack>A shielded backpack with an inbuilt geiger counter, able to monitor radiation levels and safely transport radioactive materials.</entitydescription.fuelbackpack>
 
 			<!-- Reactor items -->
 
@@ -92,7 +92,7 @@
 <entitydescription.thoriumfuelrod>Can last up to three time as long as uranium rods.</entitydescription.thoriumfuelrod>
 
 <entityname.fulguriumfuelrod>Fulgurium fuel rod</entityname.fulguriumfuelrod>
-<entitydescription.fulguriumfuelrod>Doesn't provide as much heat as any other fuel rods but last much longer and posses a fission monitoring capability. Too stable to be used as is and needs to be pre-heated to be usable as fuel.</entitydescription.fulguriumfuelrod>
+<entitydescription.fulguriumfuelrod>Doesen't provide as much heat as other types of fuel rod, but lasts much longer and acts as a moderator, reducing fission spikes from other rods. Too stable to be used as is, and must be pre-heated to be used as fuel.</entitydescription.fulguriumfuelrod>
 
 <entityname.fulguriumfuelrodvolatile>Volatile Fulgurium Fuel Rod</entityname.fulguriumfuelrodvolatile>
 <entitydescription.fulguriumfuelrodvolatile>An amalgam rod of incendium and fulgurium, it doesn't have the potency of incendium and the longevity of fulgurium but has roughly half their respective strength but for nearly all their drawbacks.</entitydescription.fulguriumfuelrodvolatile>
@@ -120,7 +120,7 @@
 <entityname.nukerodenhanced>Enhanced Crisis warhead</entityname.nukerodenhanced>
 <entitydescription.nukerodenhanced>Crisis warhead further enhanced with fissile materials for increased heat generation on detonation. Also cause a gamma-ray burst.</entitydescription.nukerodenhanced>
 
-<entitydescription.nucleargun>A prototype charge cycle energy weapon built using the unique alien materials on Europa. The dangers for the user depend of the loaded fuel rod.</entitydescription.nucleargun>
+<entitydescription.nucleargun>A prototype particle weapon constructed using the unique alien materials on Europa, utilizing fuel rods as a power source. Dangerous to those on both ends of the barrel, depending on the fissile material used to power it.</entitydescription.nucleargun>
 
 			<!-- Mission text -->
 
@@ -139,7 +139,7 @@
 <entitydescription.geigercounter>Small device translating nearby radiation levels into audio and visual cues. Also passively monitor its carrier for radiation poisoning.</entitydescription.geigercounter>
 
 <entityname.iodine>Iodine</entityname.iodine>
-
+<entitydescription.iodine>Most commonly used in the manufacture of radio-protectant drugs.</entitydescription.iodine>
 
 <entityname.du_p_alloy>Depleted uranium - physicorium alloy</entityname.du_p_alloy>
 <entitydescription.du_p_alloy>Extremely sturdy and heavy alloy.</entitydescription.du_p_alloy>
@@ -155,6 +155,9 @@
 
 <entityname.iodinecrystal>Diiodine crystal</entityname.iodinecrystal>
 <entitydescription.iodinecrystal>Crystals made exclusively out of iodine</entitydescription.iodinecrystal>
+
+<entityname.deconcontaminationemitter>Contamination hazard</entityname.deconcontaminationemitter>
+<entitydescription.deconcontaminationemitter>Warning : Deconstruction process will contaminate nearby unprotected personel.</entitydescription.deconcontaminationemitter>
 
 <entityname.manual>Reactor operating manual</entityname.manual>
 <entitydescription.manual>Contains all important elements around nuclear reactors and its related hazards.</entitydescription.manual>

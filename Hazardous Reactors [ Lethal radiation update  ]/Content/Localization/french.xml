@@ -162,6 +162,9 @@
 <entityname.iodinecrystal>Cristaux de d'iodine</entityname.iodinecrystal>
 <entitydescription.iodinecrystal>Cristaux fait exclusivement d'iode.</entitydescription.iodinecrystal>
 
+<entityname.deconcontaminationemitter>Danger de contamination</entityname.deconcontaminationemitter>
+<entitydescription.deconcontaminationemitter>Attention : Le processus de déconstruction contaminera le personnel non protégé à proximité..</entitydescription.deconcontaminationemitter>
+
 <entityname.manual>Guide d'opération du réacteur</entityname.manual>
 <entitydescription.manual>Contient toutes les informations importantes en relation du réacteur nucléaire et ses dangers.</entitydescription.manual>
 <terminalwelcomemsg.manual>
