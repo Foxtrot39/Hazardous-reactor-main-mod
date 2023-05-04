@@ -41,7 +41,7 @@ Hook.Add("roundStart", "infinitefuel", function ()
      end
        if reactor then
            local prefab = ItemPrefab.GetItemPrefab("thoriumfuelrod")
--        Entity.Spawner.AddItemToSpawnQueue(prefab, item.OwnInventory)
+         Entity.Spawner.AddItemToSpawnQueue(prefab, item.OwnInventory)
        end
     end
 end)
