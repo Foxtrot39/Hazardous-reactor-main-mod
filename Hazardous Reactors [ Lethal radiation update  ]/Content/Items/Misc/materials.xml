@@ -97,7 +97,7 @@
       <Item identifier="depletedfuel" />
       <Item identifier="physicorium" />
     </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="70">
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="70">
       <RequiredSkill identifier="mechanical" level="50" />
       <Item identifier="depletedfuel" />
       <Item identifier="depletedfuel" />

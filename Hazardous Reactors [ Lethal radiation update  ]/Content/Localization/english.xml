@@ -159,6 +159,12 @@
 <entityname.deconcontaminationemitter>Contamination hazard</entityname.deconcontaminationemitter>
 <entitydescription.deconcontaminationemitter>Warning : Deconstruction process will contaminate nearby unprotected personel.</entitydescription.deconcontaminationemitter>
 
+<entityname.nuclearmaterialprocessor>Fuel processor</entityname.nuclearmaterialprocessor>
+<entitydescription.nuclearmaterialprocessor>A heavely shielded fabricator allowing safe handling of hazardous materials.</entitydescription.nuclearmaterialprocessor>
+
+<entityname.fissiledeconstructor>Radiation shielded deconstructor</entityname.fissiledeconstructor>
+<entitydescription.fissiledeconstructor>A heavely shielded deconstructor allowing safe handling of hazardous materials.</entitydescription.fissiledeconstructor>
+
 <entityname.manual>Reactor operating manual</entityname.manual>
 <entitydescription.manual>Contains all important elements around nuclear reactors and its related hazards.</entitydescription.manual>
 <terminalwelcomemsg.manual>
@@ -261,6 +267,8 @@ __________________________________________IV. Fuel rods hazards_________________
 Important information before dealing with this section, the fissile materials used in the manufacture of fuel rods must be stored in a secure crate or in a room isolated from the crew.
 Although their emissions are low, storing large quantities of these materials in one place can be as dangerous as a radiation leak from a reactor.
 Fuel rods can suffer a meltdown if they remain overheated for too long at a high fission rate.
+
+Fabrication and recycling of spend fuel should be done with specialized equipement sold by engineers or miners.
 
 Fuel rods have multiple layers of lethal hazards attached to them and untrained personel will cause a lot more harm than good manipulating them. A rod is deemed hazardous once its partialy or completely depleted, it will be glowing at this point.
 Unless placed inside of a running reactor, rods are *nearly* totaly safe to handle.

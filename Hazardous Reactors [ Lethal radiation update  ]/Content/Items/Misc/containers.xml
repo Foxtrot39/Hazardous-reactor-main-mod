@@ -274,13 +274,14 @@
       <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness,lethalradiation" damagemultiplier="0.8" damagesound="LimbArmor" />
     </Wearable>
     <!-- Only accept radioactive materials in certain slots -->
-    <ItemContainer capacity="3" maxstacksize="16" hideitems="true" >
+    <ItemContainer slotsperrow="3" maxstacksize="16" hideitems="true" >
       <Containable items="reactorfuel,uranium,thorium,uraniumore,brockite,thorianite" />
       <SlotIcon slotindex="0" texture="Content/UI/MainIconsAtlas.png" sourcerect="896,768,128,128" origin="0.5,0.5"/>
       <SlotIcon slotindex="1" texture="Content/UI/MainIconsAtlas.png" sourcerect="896,768,128,128" origin="0.5,0.5"/>
       <SlotIcon slotindex="2" texture="Content/UI/MainIconsAtlas.png" sourcerect="896,768,128,128" origin="0.5,0.5"/>
-      <SubContainer capacity="9" maxstacksize="16">
-        <Containable items="smallitem,mediumitem" excludeditems="toolbelt,toolbox,bandolier,cargoscooter" />
+      <SubContainer capacity="1" maxstacksize="16">
+      <Containable items="reactorfuel,uranium,thorium,uraniumore,brockite,thorianite" />
+      <SlotIcon slotindex="0" texture="Content/UI/MainIconsAtlas.png" sourcerect="896,768,128,128" origin="0.5,0.5"/>
       </SubContainer>
     </ItemContainer>
   </Item>
@@ -313,10 +314,16 @@
         <LightComponent range="150.0" lightcolor="255,255,0,250" minvoltage="0.5" powerconsumption="10" flicker="0.5" flickerspeed="1.0" IsOn="false" allowingameediting="false">
           <StatusEffect type="OnActive" targettype="Contained" Condition="-0.55" comparison="And" targetslot="1" />
           <LightTexture texture="Content/Lights/light.png" origin="0.5,0.5" size="1.0,1.0" />
-        
-    <!-- Cause crisis rod effect when unpowered/inactive -->
+        </LightComponent>
+    </Sprite>
     
-      <!-- Flare effect -->
+    <InventoryIcon texture="%ModDir%/Content/Items/Misc/RodCylinderInvSpritesheet.png" sourcerect="6,7,51,50" origin="0.5,0.5" />
+    <Body width="215" height="30" density="30" />
+    <Holdable slots="RightHand,LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use" >
+    
+    <!-- Cause crisis rod effect when unpowered/inactive WIP
+    
+      Flare effect 
       <StatusEffect type="Always" disabledeltatime="true" stackable="false" target="This" comparison="And" >
         <RequiredItem identifier="supercritical_fulgurium,supercritical_incendium" type="contained" condition="gte 1" />
         <sound file="Content/Items/Tools/FlareLoop.ogg" range="800.0" loop="true" />
@@ -325,10 +332,10 @@
         <ParticleEmitter particle="FlareBubbles" particlespersecond="40" anglemin="70" anglemax="100" velocitymin="100" velocitymax="200" scalemin="0.8" scalemax="1.2" />
       </StatusEffect>
 
-      <!-- Intended AOE effect -->
+       Intended AOE effect 
       <StatusEffect type="Always" disabledeltatime="true" stackable="false" delay="1" target="This" comparison="And">
         <Conditional condition="gt 1" />
-        <Conditional targetitemcomponent="lightcompnent" IsOn="False" />
+        <Conditional targetcontainer="true" IsOn="False" />
         <requireditem Item="crisis" type="contained" />
         <Explosion range="500" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
           <Affliction identifier="criticalrod_burn_emitter" strength="100" />
@@ -353,46 +360,33 @@
       <StatusEffect type="OnNotContained" disabledeltatime="true" stackable="false" delay="1" target="This" comparison="And">
         <Conditional condition="gt 1" />
         <Explosion range="350" structuredamage="10" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" />
-      </StatusEffect>
-        
-        
-        
-        
-        
-        </LightComponent>
-    </Sprite>
-    
-    <InventoryIcon texture="%ModDir%/Content/Items/Misc/RodCylinderInvSpritesheet.png" sourcerect="6,7,51,50" origin="0.5,0.5" />
-    <Body width="215" height="30" density="30" />
-    <Holdable slots="RightHand,LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use" >
-    
+      </StatusEffect> -->
 
-      
     </Holdable>
-    <!-- Stall rod decay when powered/active -->
+
 
 
     <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
       <sprite name="Rod storage worn" texture="%ModDir%/Content/Items/Misc/RodCylinderSpritesheet.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="22,2,116,31" origin="0.5,2" limb="Torso" ignorelimbscale="true" scale="0.5" />
   </Wearable>
-
+ <!--
       <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
         <GuiFrame relativesize="0.09,0.07" anchor="CenterLeft" pivot="BottomLeft" relativeoffset="0.006,-0.05" style="ItemUI" />
         <TickBox text="stasis">
           <StatusEffect type="OnUse" targettype="This" IsOn="true" />
           <StatusEffect type="OnSecondaryUse" targettype="This" IsOn="false" />
         </TickBox>
-      </CustomInterface>
+      </CustomInterface> -->
     
-  <ItemContainer autofill="False" capacity="1" slotsperrow="1" maxstacksize="1" containedstateindicatorstyle="battery" containedstateindicatorslot="1" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="false" >
+  <ItemContainer autofill="False" capacity="1" slotsperrow="1" maxstacksize="1" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="false" >
       <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="192,448,64,64" origin="0.5,0.5" />
-      <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
       <Containable items="reactorfuel,depletedfuel" />
+     <!-- <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
       <SubContainer capacity="1" >
       <Containable items="mobilebattery">
         <StatusEffect type="OnContaining" targettype="This" Voltage="1.0" setvalue="true" />
       </Containable>
-      </SubContainer>
+      </SubContainer> -->
     </ItemContainer>
 
      <!-- <GuiFrame relativesize="0.11,0.1" anchor="CenterLeft" pivot="BottomLeft" relativeoffset="0.006,-0.05" style="ItemUI" />
@@ -400,7 +394,204 @@
     -->
 
   </Item>
+  
+    <!-- Custome fabricator/deconstructor -->
+  
+    <Item
+		name=""
+    identifier="nuclearmaterialprocessor"
+    tags="nuclearmaterialprocessor,hazardcontainement,donttakeitems,dontsellitems"
+    category="Machine"
+		linkable="true"
+    allowedlinks="deconstructor,locker,fissiledeconstructor"
+    description=""
+    scale="0.5" 
+    damagedbyexplosions="true" 
+    explosiondamagemultiplier="0.2">
+    
+      <Body width="336" height="395" density="40" />
+    
+    <Price baseprice="1500" minleveldifficulty="0" soldbydefault="true" soldeverywhere="false" minavailable="0" maxavailable="1">
+      <Price storeidentifier="merchantmine" sold="true" minavailable="1" />
+      <Price storeidentifier="merchantengineering" sold="true" minavailable="1" />
+    </Price>
 
+    <Upgrade gameversion="0.10.4.0">
+      <Repairable Msg="ItemMsgRepairWrench"/>
+    </Upgrade>
 
+    <UpgradePreviewSprite scale="2.5" texture="Content/UI/WeaponUI.png" sourcerect="256,960,64,64" origin="0.5,0.45" />
+    <Sprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" sourcerect="0,624,336,400" depth="0.8"/>
+    <BrokenSprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" sourcerect="336,624,336,400" depth="0.8" maxcondition="80" fadein="true" />
+    <BrokenSprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" sourcerect="672,624,336,400" depth="0.8" maxcondition="0" />
+    <DecorativeSprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" depth="0.84" offset="-103,99" sourcerect="908,301,116,87"/>
+    <DecorativeSprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" depth="0.81" offset="-103,99" sourcerect="825,395,114,83"/>
+    <DecorativeSprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" depth="0.83" offset="-72,129" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-715">
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Fabricator" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Fabricator" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+    <DecorativeSprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" depth="0.83" offset="-117,71" sourcerect="805,537,54,54" origin="0.5,0.5" rotationspeed="400">
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Fabricator" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Fabricator" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+
+    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" alphablend="false" allowingameediting="false">
+      <sprite texture="Content/Items/Command/navigatorLights.png" depth="0.025" sourcerect="351,624,336,400" alpha="1.0" />
+    </LightComponent>
+
+    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" alphablend="false" blinkfrequency="1" allowingameediting="false">
+      <sprite texture="Content/Items/Command/navigatorLights.png" depth="0.025" sourcerect="688,624,336,400" alpha="1.0" />
+    </LightComponent>
+    
+    <Fabricator canbeselected="true" powerconsumption="500.0" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.4,0.45" style="ItemUI" anchor="Center" />
+      <sound file="Content/Items/Fabricators/Fabricator.ogg" type="OnActive" range="1000.0" volumeproperty="RelativeVoltage" loop="true"/>
+      <poweronsound file="Content/Items/PowerOnLight1.ogg" range="600" loop="false" />
+      <StatusEffect type="InWater" target="This" condition="-0.5" />
+    </Fabricator>
+    
+      <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="[E] Detach (Crowbar)" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="false">
+        <RequiredItem identifier="crowbar" type="Equipped" />
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.25" setvalue="true" />
+      </Holdable>
+
+    <ConnectionPanel selectkey="Action" canbeselected="true" hudpriority="10" msg="ItemMsgRewireScrewdriver">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel"/>
+      <RequiredSkill identifier="electrical" level="55" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Explosion range="100.0" force="1.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="4" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <RequiredItem items="screwdriver" type="Equipped"/>
+      <input name="power_in" displayname="connection.powerin"/>
+      <output name="condition_out" displayname="connection.conditionout" />
+    </ConnectionPanel>
+
+    <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.50" mindeteriorationdelay="60" maxdeteriorationdelay="120" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.1,0.27" style="ItemUI"/>
+      <RequiredSkill identifier="mechanical" level="55" />
+      <RequiredItem items="wrench" type="Equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
+      <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <Affliction identifier="lacerations" strength="5" />
+        <Affliction identifier="stun" strength="4" />
+      </StatusEffect>
+    </Repairable>
+
+    <ItemContainer capacity="5" canbeselected="true" hideitems="true" slotsperrow="5" uilabel="" allowuioverlap="true"/>
+    <ItemContainer capacity="1" canbeselected="true" hideitems="true" slotsperrow="1" uilabel="" allowuioverlap="true"/>
+  </Item>
+
+ <Item
+    name=""
+    identifier="fissiledeconstructor"
+    tags="deconstructor,hazardcontainement,donttakeitems,dontsellitems"
+    category="Machine"
+		linkable="true"
+    allowedlinks="fabricator,medicalfabricator,locker"
+    description=""
+    scale="0.5"     
+    damagedbyexplosions="true" 
+    explosiondamagemultiplier="0.2">
+    
+    <Body width="256" height="315" density="40" />
+    
+    <Price baseprice="1500" minleveldifficulty="0" soldbydefault="true" soldeverywhere="false" minavailable="0" maxavailable="1">
+      <Price storeidentifier="merchantmine" sold="true" minavailable="1" />
+      <Price storeidentifier="merchantengineering" sold="true" minavailable="1" />
+    </Price>
+
+    <Upgrade gameversion="0.10.4.0">
+      <Repairable Msg="ItemMsgRepairWrench"/>
+    </Upgrade>
+
+    <UpgradePreviewSprite scale="2.5" texture="Content/UI/WeaponUI.png" sourcerect="320,960,64,64" origin="0.5,0.45" />
+    <Sprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" depth="0.8" sourcerect="0,304,256,320"/>
+    <BrokenSprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" sourcerect="272,304,256,320" depth="0.8" maxcondition="80" fadein="true" />
+    <BrokenSprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" sourcerect="544,304,256,320" depth="0.8" maxcondition="0" />
+    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" alphablend="false" allowingameediting="false">
+      <sprite texture="Content/Items/Command/navigatorLights.png" depth="0.025" sourcerect="0,665,256,320" origin="0.5,0.5" alpha="1.0" />
+    </LightComponent>
+    <DecorativeSprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" depth="0.84" sourcerect="866,484,156,105"/>
+    <DecorativeSprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" depth="0.83" offset="-27,-20" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-715">
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+    <DecorativeSprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" depth="0.82" offset="-29,-30" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-718">
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+    <DecorativeSprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" depth="0.81" offset="-30,-40" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-720">
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+    <DecorativeSprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" depth="0.83" offset="38,-20" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="715">
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>'
+    <DecorativeSprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" depth="0.82" offset="40,-30" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="718">
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+    <DecorativeSprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" depth="0.81" offset="41,-40" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed=" 720">
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+
+    <Deconstructor canbeselected = "true" powerconsumption="500.0" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.25,0.37" minsize="320,266" style="ItemUI" anchor="Center"/>
+      <sound file="Content/Items/Fabricators/Deconstructor.ogg" type="OnActive" range="1000.0" volumeproperty="RelativeVoltage" loop="true"/>
+      <poweronsound file="Content/Items/PowerOnLight3.ogg" range="600" loop="false" />
+      <StatusEffect type="InWater" target="This" condition="-0.5" />
+    </Deconstructor>
+    
+      <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="[E] Detach (Crowbar)" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="false">
+        <RequiredItem identifier="crowbar" type="Equipped" />
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.25" setvalue="true" />
+      </Holdable>
+
+    <ConnectionPanel selectkey="Action" canbeselected="true" hudpriority="10" msg="ItemMsgRewireScrewdriver">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel"/>
+      <RequiredSkill identifier="electrical" level="55" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Explosion range="100.0" force="1.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="4" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <RequiredItem items="screwdriver" type="Equipped"/>
+      <input name="power_in" displayname="connection.powerin"/>
+      <output name="condition_out" displayname="connection.conditionout" />
+    </ConnectionPanel>
+
+    <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.50" mindeteriorationdelay="60" maxdeteriorationdelay="120" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
+      <RequiredSkill identifier="mechanical" level="55" />
+      <RequiredItem items="wrench" type="equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
+      <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <Affliction identifier="lacerations" strength="5" />
+        <Affliction identifier="stun" strength="4" />
+      </StatusEffect>
+    </Repairable>
+    <ItemContainer capacity="3" canbeselected="true" hideitems="true" hudpos="0.5, 0.4" slotsperrow="3" uilabel="" allowuioverlap="true"/>
+    <ItemContainer capacity="5" canbeselected="true" hideitems="true" hudpos="0.5, 0.8" slotsperrow="5" uilabel="" allowuioverlap="true"/>
+  </Item>
 
 </Items>

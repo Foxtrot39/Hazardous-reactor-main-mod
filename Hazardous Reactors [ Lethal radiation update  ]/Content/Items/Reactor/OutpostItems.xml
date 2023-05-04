@@ -172,6 +172,14 @@
         <SpawnItem identifier="molten_rods" spawnposition="ThisInventory" />
       </StatusEffect>
       
+      <StatusEffect type="Always" target="this" delay="45" comparison="And" checkconditionalalways="true" >
+        <RequiredItem items="fuelrod_active,thoriumfuelrod_active,molten_rods" type="Contained" />
+        <Conditional InWater="false" />
+        <Conditional temperaturecritical="true" />
+        <Conditional fissionrate="gt 90" />
+        <SpawnItem identifier="molten_rods" spawnposition="ThisInventory" />
+      </StatusEffect>
+      
       <!-- CONTROL RODS EFFECT -->
       
       <StatusEffect type="Always" target="this" delay="2" temperature="40" setvalue="true" comparison="And" checkconditionalalways="true" stackable="false">
@@ -347,12 +355,12 @@
 
       <!-- OVERHEATING DAMAGE OVER TIME -->
       
-      <StatusEffect type="Always" interval="1" target="This" stackable="false" condition="-70" comparison="And" >
+      <StatusEffect type="Always" delay="1" target="This" stackable="false" condition="-2" comparison="And" >
         <Conditional temperaturecritical="eq true" />
         <Conditional fissionrate="lt 90" />
       </StatusEffect>
 
-      <StatusEffect type="Always" interval="1" target="This" condition="-200" stackable="false" comparison="And" >
+      <StatusEffect type="Always" delay="1" target="This" condition="-2" stackable="false" comparison="And" >
         <Conditional temperaturecritical="eq true" />
         <Conditional fissionrate="gte 90" />
       </StatusEffect>
@@ -421,7 +429,7 @@
 
     <LightComponent range="400" lightcolor="0,239,255,250" powerconsumption="0" IsOn="false" castshadows="false" allowingameediting="false" blinkfrequency="1">
       
-      <StatusEffect type="Always" target="This"  IsOn="true" conditionalcomparison="Or"  >
+      <StatusEffect type="Always" target="This"  IsOn="true" conditionalcomparison="Or"  pulsefrequency="1" >
         <Conditional condition="lte 25" />
         <Conditional temperaturecritical="true" />
         <Conditional TargetContainedItem="true" hastag="crisis" />
@@ -488,13 +496,6 @@
       
       <Containable items="fuelrod_active">
         <StatusEffect type="OnContaining" target="This" AvailableFuel="80" disabledeltatime="true" />
-        
-        <!-- Overheat meltdown -->
-        <StatusEffect type="OnContaining" delay="45" target="Contained" Checkconditionalalways="true" >
-        <LuaHook name="meltdownstandard" />
-        <Conditional targetcontainer="true" targetitemcomponent="Reactor" temperaturecritical="eq true" />
-        <Conditional targetcontainer="true" targetitemcomponent="Reactor" fissionrate="gt 90" />
-        </StatusEffect>
       </Containable>
 
       <!--Thorium Fuel Rod Switch-->
@@ -509,13 +510,6 @@
       
       <Containable items="thoriumfuelrod_active">
         <StatusEffect type="OnContaining" target="This" AvailableFuel="100.0" disabledeltatime="true" />
-        
-        <!-- Standard rod overheat meltdown -->
-        <StatusEffect type="OnContaining" delay="45" target="Contained" Checkconditionalalways="true" >
-        <LuaHook name="meltdownstandard" />
-        <Conditional targetcontainer="true" targetitemcomponent="Reactor" temperaturecritical="eq true" />
-        <Conditional targetcontainer="true" targetitemcomponent="Reactor" fissionrate="gt 90" />
-        </StatusEffect>
       </Containable>
 
       <!--Fulgurium Fuel Rod HEAT system-->
@@ -586,13 +580,8 @@
         <StatusEffect type="OnContaining" target="This" AvailableFuel="2000.0" disabledeltatime="true" />
       </Containable>
       
-      <Containable items="control_rod" >
-        <StatusEffect type="OnContaining" delay="45" target="Contained" Checkconditionalalways="true" >
-        <LuaHook name="meltdownstandard" />
-        <Conditional targetcontainer="true" targetitemcomponent="Reactor" temperaturecritical="eq true" />
-        <Conditional targetcontainer="true" targetitemcomponent="Reactor" fissionrate="gt 90" />
-        </StatusEffect>
-      </Containable>
+      <Containable items="control_rod" />
+
       
     </ItemContainer>
     
@@ -600,7 +589,7 @@
     
     <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="720" MinDeteriorationCondition="0" minsabotagecondition="10" RepairThreshold="80" fixDurationHighSkill="30" fixDurationLowSkill="60" msg="ItemMsgRepairWrench" hudpriority="10">
       <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
-      <RequiredSkill identifier="electrical" level="170" />
+      <RequiredSkill identifier="electrical" level="120" />
       <RequiredSkill identifier="mechanical" level="60" />
       <RequiredItem items="wrench" type="equipped" />
       <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />

@@ -13,9 +13,9 @@
     <Reputation identifier="coalition" amount="10" />
     <Reputation identifier="separatists" amount="-10" />
     <SubmarineTypes>
-      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/DugongPiratefix.sub" preferreddifficulty="10" alternatereward="3200"/>
-      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/HumpbackPiratefix.sub" preferreddifficulty="40" alternatereward="4400"/>
-      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/Typhon2Piratefix.sub" preferreddifficulty="70" alternatereward="5600"/>
+      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/ForEnemyAIOnlyDugongPiratefix.sub" preferreddifficulty="10" alternatereward="3200"/>
+      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/ForEnemyAIOnlyHumpbackPiratefix.sub" preferreddifficulty="40" alternatereward="4400"/>
+      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/ForEnemyAIOnlyTyphon2Piratefix.sub" preferreddifficulty="70" alternatereward="5600"/>
     </SubmarineTypes>
     <Characters>
       <Character typeidentifier="separatistcaptain" minamount="1" maxamount="1"/>
@@ -60,9 +60,9 @@
     <Reputation identifier="separatists" amount="10" />
     <Reputation identifier="coalition" amount="-10" />
     <SubmarineTypes>
-      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/Dugongfix.sub" preferreddifficulty="10" alternatereward="3200"/>
-      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/Humpbackfix.sub" preferreddifficulty="40" alternatereward="4400"/>
-      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/Typhon2fix.sub" preferreddifficulty="70" alternatereward="5600"/>
+      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/ForEnemyAIOnlyDugongfix.sub" preferreddifficulty="10" alternatereward="3200"/>
+      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/ForEnemyAIOnlyHumpbackfix.sub" preferreddifficulty="40" alternatereward="4400"/>
+      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/ForEnemyAIOnlyTyphon2fix.sub" preferreddifficulty="70" alternatereward="5600"/>
     </SubmarineTypes>
     <Characters>
       <Character typeidentifier="coalitioncaptain" minamount="1" maxamount="1"/>
@@ -110,9 +110,9 @@
     <Reputation identifier="separatists" amount="5" />
     <Reputation identifier="coalition" amount="-5" />
     <SubmarineTypes>
-      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/Dugongfix.sub" preferreddifficulty="10"/>
-      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/Humpbackfix.sub" preferreddifficulty="40"/>
-      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/Typhon2fix.sub" preferreddifficulty="70"/>
+      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/ForEnemyAIOnlyDugongfix.sub" preferreddifficulty="10"/>
+      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/ForEnemyAIOnlyHumpbackfix.sub" preferreddifficulty="40"/>
+      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/ForEnemyAIOnlyTyphon2fix.sub" preferreddifficulty="70"/>
     </SubmarineTypes>
     <Characters>
       <Character typeidentifier="coalitioncaptain" minamount="1" maxamount="1"/>
@@ -159,9 +159,9 @@
     <Reputation identifier="coalition" amount="5" />
     <Reputation identifier="separatists" amount="-10" />
     <SubmarineTypes>
-      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/DugongPiratefix.sub" preferreddifficulty="10"/>
-      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/HumpbackPiratefix.sub" preferreddifficulty="40"/>
-      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/Typhon2Piratefix.sub" preferreddifficulty="70"/>
+      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/ForEnemyAIOnlyDugongPiratefix.sub" preferreddifficulty="10"/>
+      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/ForEnemyAIOnlyHumpbackPiratefix.sub" preferreddifficulty="40"/>
+      <Submarine path="%ModDir%/Content/Items/Pirate sub fix/ForEnemyAIOnlyTyphon2Piratefix.sub" preferreddifficulty="70"/>
     </SubmarineTypes>
     <Characters>
       <Character typeidentifier="separatistcaptain" minamount="1" maxamount="1"/>

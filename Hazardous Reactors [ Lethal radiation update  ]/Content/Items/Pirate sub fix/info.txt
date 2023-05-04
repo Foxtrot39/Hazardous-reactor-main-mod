@@ -1,1 +1,1 @@
-Reactor stats changed in sub editor to avoid bot to comit reactor assisted suicide (fuel, degradation ect)
+Reactor stats changed in sub editor to avoid bot to commit reactor assisted suicide (fuel, degradation ect)

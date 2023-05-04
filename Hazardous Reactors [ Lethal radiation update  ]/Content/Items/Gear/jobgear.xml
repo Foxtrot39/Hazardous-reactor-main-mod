@@ -40,27 +40,27 @@
       <Price storeidentifier="merchantmilitary" multiplier="0.9" />
       <Price storeidentifier="merchantmine" multiplier="0.9" />
     </Price>
-    <Fabricate suitablefabricators="fabricator" requiredtime="25" requiresrecipe="true">
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="25" requiresrecipe="true">
       <RequiredSkill identifier="electrical" level="35" />
       <RequiredItem identifier="fuelrod_active" mincondition="0.0" maxcondition="0.1" usecondition="false" />
       <RequiredItem identifier="steel" />
     </Fabricate>
-    <Fabricate suitablefabricators="fabricator" requiredtime="25" requiresrecipe="true">
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="25" requiresrecipe="true">
       <RequiredSkill identifier="electrical" level="35" />
       <RequiredItem identifier="thoriumfuelrod_active" mincondition="0.0" maxcondition="0.1" usecondition="false" />
       <RequiredItem identifier="steel" />
     </Fabricate>
-    <Fabricate suitablefabricators="fabricator" requiredtime="30" requiresrecipe="true" amount="2">
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="30" requiresrecipe="true" amount="2">
       <RequiredSkill identifier="electrical" level="55" />
       <RequiredItem identifier="fulguriumfuelrod" mincondition="0.0" maxcondition="0.1" usecondition="false" />
       <RequiredItem identifier="steel" />
     </Fabricate>
-    <Fabricate suitablefabricators="fabricator" requiredtime="30" requiresrecipe="true" amount="2">
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="30" requiresrecipe="true" amount="2">
       <RequiredSkill identifier="electrical" level="55" />
       <RequiredItem identifier="fulguriumfuelrodvolatile" mincondition="0.0" maxcondition="0.1" usecondition="false" />
       <RequiredItem identifier="steel" />
     </Fabricate>
-    <Fabricate suitablefabricators="fabricator" requiredtime="30" requiresrecipe="true" amount="2">
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="30" requiresrecipe="true" amount="2">
       <RequiredSkill identifier="electrical" level="55" />
       <RequiredItem identifier="ekutility_incendiumfuelrod" mincondition="0.0" maxcondition="0.1" usecondition="false" />
       <RequiredItem identifier="steel" />

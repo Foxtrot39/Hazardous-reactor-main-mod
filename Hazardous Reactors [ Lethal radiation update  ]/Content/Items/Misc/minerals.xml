@@ -41,18 +41,20 @@
   </Item>
 
   <Item identifier="deconcontaminationemitter" description="" hideinmenus="true">
-    <sprite texture="%ModDir%/Content/UI/HazardousIconsAtlas.png" sourcerect="256,0,128,128" color="139,60,42,255" origin="0,0" />
+    <sprite texture="%ModDir%/Content/UI/HazardousIconsAtlas.png" sourcerect="256,0,128,128" color="139,60,42,255" origin="0.5,0.5" />
     <Body radius="1" width="1" density="10" />
     <ItemComponent>
       <!-- Contamination on Deconstruction-->
-      <StatusEffect type="OnSpawn" target="This" delay="0.1" checkconditionalalways="true">
+      <StatusEffect type="Always" target="This" delay="0.1" stackable="false" comparison="And" >
         <Conditional InWater="false" />
+        <Conditional targetcontainer="true" hastag="neq hazardcontainement"/>
         <sound file="%ModDir%/Content/Items/Misc/rock.ogg" range="600" volume="0.8" />
         <Explosion range="500" force="0.001" ignorecover="false" showeffects="false" smoke="true">
           <Affliction identifier="contamination" strength="10" />
           <Affliction identifier="radiationgeiger" strength="3" />
         </Explosion>
       </StatusEffect>
+      
       <!-- delete after explosion-->
       <StatusEffect type="OnSpawn" target="This" delay="0.2">
         <Remove />

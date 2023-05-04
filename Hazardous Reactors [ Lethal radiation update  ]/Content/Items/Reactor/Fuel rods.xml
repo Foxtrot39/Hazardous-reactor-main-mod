@@ -43,7 +43,7 @@
         <Item identifier="deconcontaminationemitter" />
       </Deconstruct>
       <!-- Cheaper Recipe, No Recycling (for now) -->
-      <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="15">
         <RequiredSkill identifier="electrical" level="25" />
         <RequiredItem identifier="iron" />
         <RequiredItem identifier="copper" />
@@ -55,6 +55,13 @@
         <!-- ON SPAWN RETURN CONDITION TO 100% -->
         <StatusEffect type="OnSpawn" target="This" condition="500" delay="3" />
       </Throwable>
+      <ItemContainer hideitems="true" capacity="1" itemrotation="90" drawinventory="false" canbeselected="false" SpawnWithId="nucleargunbolt" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false">
+        <Containable items="nucleargunbolt" />
+        <!-- SHOOTY = ROD HAZARD ACTIVE!-->
+        <StatusEffect type="OnUse" target="This" IsOn="true" condition="-10" disabledeltatime="true">
+          <SpawnItem identifiers="nucleargunbolt" spawnposition="ThisInventory" />
+        </StatusEffect>
+      </ItemContainer>
     </Item>
     <!-- Uranium Fuel Rod (Active) -->
     <Item nameidentifier="fuelrod" hideinmenus="true" identifier="fuelrod_active" Tags="reactorfuel,HRradioactive" maxstacksize="1" scale="0.5" health="90" cargocontaineridentifier="fuelcrate" pickdistance="150" impactsoundtag="impact_metal_light">
@@ -174,7 +181,7 @@
         <Item identifier="deconcontaminationemitter" />
       </Deconstruct>
       <!-- Cheaper Recipe, No Recycling (for now) -->
-      <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="15">
         <RequiredSkill identifier="electrical" level="35" />
         <RequiredItem identifier="steel" />
         <RequiredItem identifier="copper" />
@@ -186,6 +193,13 @@
         <!-- ON SPAWN RETURN CONDITION TO 100% -->
         <StatusEffect type="OnSpawn" target="This" condition="500" delay="3" />
       </Throwable>
+      <ItemContainer hideitems="true" capacity="1" itemrotation="90" drawinventory="false" canbeselected="false" SpawnWithId="nucleargunbolt" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false">
+        <Containable items="nucleargunbolt" />
+        <!-- SHOOTY = ROD HAZARD ACTIVE!-->
+        <StatusEffect type="OnUse" target="This" IsOn="true" condition="-10" disabledeltatime="true">
+          <SpawnItem identifiers="nucleargunbolt" spawnposition="ThisInventory" />
+        </StatusEffect>
+      </ItemContainer>
     </Item>
     <!-- Thorium Fuel Rod (Active) -->
     <Item nameidentifier="thoriumfuelrod" hideinmenus="true" identifier="thoriumfuelrod_active" Tags="reactorfuel,HRradioactive" maxstacksize="1" scale="0.5" health="300" cargocontaineridentifier="fuelcrate" pickdistance="150" impactsoundtag="impact_metal_light">
@@ -348,7 +362,7 @@
         <Item identifier="fulgurium" mincondition="0.95" />
       </Deconstruct>
       <!-- Cheaper Recipe, No Recycling (for now) -->
-      <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="15">
         <RequiredSkill identifier="electrical" level="45" />
         <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
         <RequiredItem identifier="lead" />
@@ -694,7 +708,7 @@
         <Item identifier="fulgurium" copycondition="true" />
         <Item identifier="incendium" copycondition="true" />
       </Deconstruct>
-      <Fabricate suitablefabricators="fabricator" requiredtime="25" requiresrecipe="true">
+      <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="25" requiresrecipe="true">
         <RequiredSkill identifier="electrical" level="70" />
         <RequiredItem identifier="titaniumaluminiumalloy" />
         <RequiredItem identifier="titaniumaluminiumalloy" />
@@ -821,7 +835,7 @@
 
       </Deconstruct>
       
-      <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="15">
         <RequiredSkill identifier="electrical" level="45" />
         <RequiredSkill identifier="mechanical" level="45" />
         <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
@@ -902,8 +916,10 @@
         <Affliction identifier="burn" strength="5" />
         <Affliction identifier="burningrod" strength="100" />
       </StatusEffect>
-      <!-- Burnout timer using item condition as countdown -->
-      <StatusEffect type="Always" target="This" condition="-2.5" delay="1" stackable="false" disabledeltatime="true" />
+      <!-- Burnout timer using item condition as countdown, deactivated in the reinforced fuel carrier -->
+      <StatusEffect type="Always" target="This" condition="-2.5" delay="1" stackable="false" disabledeltatime="true" >
+        <Conditional targetcontainer="true" hastag="neq stasis" />
+      </StatusEffect>
 
     <!-- Powerfull explosion if impacting anything -->
 
@@ -931,7 +947,7 @@
     <Body height="64.799995" width="19.8" density="40" />
   </Item>
   <Item name="" identifier="molten_rods" Tags="crisis,reactorfuel,HRradioactive" maxstacksize="1" cargocontaineridentifier="fuelcrate" scale="0.25" health="100" impactsoundtag="impact_metal_light" description="">
-    <PreferredContainer primary="reactor1wrecked" minamount="0" maxamount="1" spawnprobability="0.5" />
+    <PreferredContainer primary="reactor1wrecked" minamount="0" maxamount="1" spawnprobability="0.05" />
     <Deconstruct time="60">
       <Item identifier="radiotoxin" />
       <Item identifier="radiotoxin" />
@@ -947,15 +963,21 @@
     <!-- Active effect and other SE -->
 
     <Throwable characterusable="false" slots="Any,RightHand,LeftHand" throwforce="1.0" holdpos="0,-50" handle1="-10,0" handle2="10,0" msg="ItemMsgPickUpSelect" >
-      <StatusEffect type="Always" target="This" stackable="false" delay="1">
+      <StatusEffect type="Always" target="This" interval="3">
         <Explosion range="1000" stun="0" force="0.001" smoke="false" flames="false" shockwave="false" sparks="false" underwaterbubble="false" camerashake="0.0" flash="false" flashRange="0" ignorecover="false">
-          <Affliction identifier="radiationsickness" strength="10" />
-          <Affliction identifier="radiationgeiger" strength="10" />
-          <Affliction identifier="lethalradiation" strength="15" />
+          <Affliction identifier="radiationsickness" strength="25" />
+          <Affliction identifier="lethalradiation" strength="25" />
         </Explosion>
       </StatusEffect>
-      <StatusEffect type="Always" target="This" stackable="false" delay="0.1">
-        <Explosion range="1000" stun="0" force="0.001" smoke="false" flames="false" shockwave="false" sparks="false" underwaterbubble="false" camerashake="0.0" flash="false" flashRange="0" ignorecover="false">
+      
+      <StatusEffect type="Always" target="This" interval="0">
+        <Explosion range="1000" stun="0" force="0" showeffects="false" ignorecover="false">
+          <Affliction identifier="radiationgeiger" strength="8" />
+        </Explosion>
+      </StatusEffect>
+      
+      <StatusEffect type="Always" target="This" stackable="false" interval="1">
+        <Explosion range="1000" stun="0" force="0.001" showeffects="false" ignorecover="false">
           <Affliction identifier="hazardexposure" strength="1000" />
         </Explosion>
       </StatusEffect>
@@ -967,7 +989,7 @@
         <Conditional targetcontainer="true" hastag="neq reactor" />
         <Explosion range="150" structuredamage="0" force="0" flames="false" sparks="false" shockwave="true" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" stackable="false" />
       </StatusEffect>
-      <StatusEffect type="OnContained" targettype="This,Character" targetlimbs="LeftHand,RightHand" disabledeltatime="true" delay="0.5" stackable="false" comparison="And">
+      <StatusEffect type="OnContained" targettype="This,Character" targetlimbs="LeftHand,RightHand" disabledeltatime="true" interval="3" comparison="And">
         <Affliction identifier="burningrod" strength="100" />
         <Affliction identifier="radiationsickness" strength="100" />
         <Affliction identifier="radiationgeiger" strength="100" />
@@ -979,13 +1001,13 @@
     </Throwable>
   </Item>
   <Item name="" category="weapon" identifier="nukerod" Tags="smallitem" impacttolerance="3" maxstacksize="8" scale="0.5" health="1" impactsoundtag="impact_metal_heavy" description="">
-    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="15">
       <RequiredItem identifier="supercritical_fulgurium" mincondition="0.5" usecondition="false" />
       <RequiredItem identifier="fueltrasnportcylinderreinforced" />
       <RequiredItem identifier="detonator" />
       <RequiredItem identifier="c4block" />
     </Fabricate>
-    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="15">
       <RequiredItem identifier="supercritical_incendium" mincondition="0.5" usecondition="false" />
       <RequiredItem identifier="fueltrasnportcylinderreinforced" />
       <RequiredItem identifier="detonator" />
@@ -1021,7 +1043,7 @@
     </Throwable>
   </Item>
   <Item name="" category="weapon" identifier="nukerodenhanced" Tags="smallitem" impacttolerance="3" maxstacksize="8" scale="0.5" health="1" impactsoundtag="impact_metal_heavy" description="">
-    <Fabricate suitablefabricators="fabricator" requiredtime="160">
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="160">
       <RequiredSkill identifier="mechanical" level="40" />
       <RequiredSkill identifier="electrical" level="40" />
       <RequiredItem identifier="nukerod" />

@@ -165,6 +165,12 @@
 <entityname.deconcontaminationemitter>Danger de contamination</entityname.deconcontaminationemitter>
 <entitydescription.deconcontaminationemitter>Attention : Le processus de déconstruction contaminera le personnel non protégé à proximité..</entitydescription.deconcontaminationemitter>
 
+<entityname.nuclearmaterialprocessor>Fabricateur de materiaux nucléaire</entityname.nuclearmaterialprocessor>
+<entitydescription.nuclearmaterialprocessor>Un fabricateur spécialisé équipé d'un bouclier anti-radiation permettant la manipulation sans risque de matériaux dangereux.</entitydescription.nuclearmaterialprocessor>
+
+<entityname.fissiledeconstructor>Déconstructeur avec blindage anti radiation</entityname.fissiledeconstructor>
+<entitydescription.fissiledeconstructor>Un déconstructeur equipé d'un bouclier anti-radiation permettant la manipulation sans risque de matériaux dangereux.</entitydescription.fissiledeconstructor>
+
 <entityname.manual>Guide d'opération du réacteur</entityname.manual>
 <entitydescription.manual>Contient toutes les informations importantes en relation du réacteur nucléaire et ses dangers.</entitydescription.manual>
 <terminalwelcomemsg.manual>
@@ -271,6 +277,8 @@ __________________________________________IV. Dangers des barre de combustible__
 Une information importante avant de traité cette section, les materiaux fissile utilisés dans la fabrication de barre a combustible doivent être entroposer dans une casse sécurisé ou dans une salle isolé de l'équipage.
 Bien que leurs émissions sont faibles, une large quantité de ces matériaux stocker au même endroit peux être aussi dangereux qu'une fuite de radiation sur un réacteur.
 Les barres de combustibles peuvent entrer en fusion si elles restent trop longtemps surchauffées avec un taux de fission élevée.
+
+La fabrication et le recyclage des barres de combustibles devrait être effectuées via des équipements spécialisés vendus par des ingénieurs or mineurs.
 
 Les barres de combustibles ont plusieurs couches de dangers mortels et leur maniement par du personnel mal entraîné peut entrainer la mort de plus d'un membre d'équipage voit la perte du sous-marin. Une barre de combustible est considérée comme dangereux quand partiellement ou totalement usée elle émettra une lumière caractéristique à ce point.
 À moins d'être placé dans le réacteur, les barres de combustibles sont *presque* complètement sûres à manipuler.
