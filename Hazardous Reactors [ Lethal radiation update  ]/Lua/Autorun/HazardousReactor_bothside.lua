@@ -25,6 +25,7 @@ Hook.Add("roundStart", "ChangeReactorMeltdownTimers", function()
 end)
 
 -- Remove fuel consumption from outpost reactor
+local thoriumFuelRodPrefab = ItemPrefab.GetItemPrefab("thoriumfuelrod")
 Hook.Add("roundStart", "infinitefuel", function ()
   if not Level.Loaded then return end
 
@@ -35,8 +36,7 @@ Hook.Add("roundStart", "infinitefuel", function ()
     local reactor = item.GetComponentString("Reactor")
     if reactor then
       reactor.FuelConsumptionRate = 0
-      local prefab = ItemPrefab.GetItemPrefab("thoriumfuelrod")
-      Entity.Spawner.AddItemToSpawnQueue(prefab, item.OwnInventory)
+      Entity.Spawner.AddItemToSpawnQueue(thoriumFuelRodPrefab, item.OwnInventory)
     end
   end
 end)

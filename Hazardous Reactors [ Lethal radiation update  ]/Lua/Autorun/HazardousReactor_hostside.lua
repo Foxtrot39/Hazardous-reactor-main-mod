@@ -26,22 +26,35 @@ Hook.Add("geigercount", "geigereffect", function (effect, deltaTime, item, targe
   geigerRadsIndex[item] = rads
 end)
 
+function replaceEntity(current, prefab, ...)
+  local args = {...}
+
+  -- XXX: this is a workaround for a race condition where `Entity.Spawner` is
+  -- initialized after Luatrauma invokes our `<LuaHook>`s.
+  if not Entity.Spawner then
+    -- Reschedule it to run on the next frame... hopefully it will be initialized then
+    Timer.NextFrame(function()
+      replaceEntity(current, prefab, unpack(args))
+    end)
+    return
+  end
+
+  Entity.Spawner.AddEntityToRemoveQueue(current)
+  -- This needs to be done on the next tick, because Barotrauma processes
+  -- the spawn queue before the remove queue, which could result in the
+  -- item container overflowing.
+  Timer.NextFrame(function()
+    Entity.Spawner.AddItemToSpawnQueue(prefab, unpack(args))
+  end)
+end
+
 -- To Swap out Inactive for Active Fuelrod
 Hook.Add("fuelrodswap", "rodswap", function (effect, deltaTime, item, targets, worldPosition)
   local rod = targets[1]
   if not rod then return end
 
-  local rod_identifier = rod.Prefab.Identifier.Value
-  local rod_conidition = rod.Condition
-  local rod_quality = rod.Quality
-
-  Entity.Spawner.AddEntityToRemoveQueue(rod)
-
-  Timer.Wait(function()
-    local prefab = ItemPrefab.GetItemPrefab(rod_identifier .. "_active")
-    Entity.Spawner.AddItemToSpawnQueue(prefab, item.ownInventory, rod_conidition, rod_quality)
-  end,
-  100)
+  local prefab = ItemPrefab.GetItemPrefab(rod.Prefab.Identifier.Value .. "_active")
+  replaceEntity(rod, prefab, item.ownInventory, rod.Condition, rod.Quality)
 end)
 
 -- Fulgurium Fuel rod Special effect AutoReactor Control
@@ -118,46 +131,26 @@ Hook.Add("incendiumrodspecial", "incendiumrodspecialed", function (effect, delta
 end)
 
 -- To swap standard rods with corium
+local moltenRodPrefab = ItemPrefab.GetItemPrefab("molten_rods")
 Hook.Add("meltdownstandard", "rodswap", function (effect, deltaTime, item, targets, worldPosition)
   local rod = targets[1]
   if not rod then return end
-  local rod_identifier = rod.Prefab.Identifier.Value
-
-  Entity.Spawner.AddEntityToRemoveQueue(rod)
-
-  Timer.Wait(function()
-    local prefab = ItemPrefab.GetItemPrefab("molten_rods")
-    Entity.Spawner.AddItemToSpawnQueue(prefab, item.ownInventory)
-  end,
-  100)
+  replaceEntity(rod, moltenRodPrefab, item.ownInventory)
 end)
 
+
 -- To swap volatile rods with its critical variant
+local criticalFulguriumPrefab = ItemPrefab.GetItemPrefab("supercritical_fulgurium")
 Hook.Add("meltdownvolatile", "rodswap", function (effect, deltaTime, item, targets, worldPosition)
   local rod = targets[1]
   if not rod then return end
-  local rod_identifier = rod.Prefab.Identifier.Value
-
-  Entity.Spawner.AddEntityToRemoveQueue(rod)
-
-  Timer.Wait(function()
-    local prefab = ItemPrefab.GetItemPrefab("supercritical_fulgurium")
-    Entity.Spawner.AddItemToSpawnQueue(prefab, item.ownInventory)
-  end,
-  100)
+  replaceEntity(rod, criticalFulguriumPrefab, item.ownInventory)
 end)
 
 -- To swap incendium rods with its critical variant
+local criticalIncendiumPrefab = ItemPrefab.GetItemPrefab("supercritical_incendium")
 Hook.Add("meltdownincendium", "rodswap", function (effect, deltaTime, item, targets, worldPosition)
   local rod = targets[1]
   if not rod then return end
-  local rod_identifier = rod.Prefab.Identifier.Value
-
-  Entity.Spawner.AddEntityToRemoveQueue(rod)
-
-  Timer.Wait(function()
-    local prefab = ItemPrefab.GetItemPrefab("supercritical_incendium")
-    Entity.Spawner.AddItemToSpawnQueue(prefab, item.ownInventory)
-  end,
-  100)
+  replaceEntity(rod, criticalIncendiumPrefab, item.ownInventory)
 end)
