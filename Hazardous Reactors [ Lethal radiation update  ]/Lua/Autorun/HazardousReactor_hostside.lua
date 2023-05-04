@@ -1,53 +1,56 @@
 if Game.IsMultiplayer and CLIENT then return end
 
+LuaUserData.MakeFieldAccessible(Descriptors["Barotrauma.Items.Components.Reactor"], "unsentChanges")
+
 local geigerRadsIndex = {}
 
 Hook.Add("geigercount", "geigereffect", function (effect, deltaTime, item, targets, worldPosition)
-  if targets[1] == nil then item.condition = 100 return end
-  if geigerRadsIndex[item] == nil then geigerRadsIndex[item] = 0 end
-
   local c = targets[1]
+  if not c then
+    item.condition = 100
+    return
+  end
+
+  if not geigerRadsIndex[item] then
+    geigerRadsIndex[item] = 0
+  end
+
   local r = c.CharacterHealth.GetAffliction("radiationgeiger")
   local rads = 0
-  if(r) then
+  if r then
     rads = r.Strength
   end
 
   local deltaRads = math.max(rads - geigerRadsIndex[item], 0)
   item.condition = 100 - (deltaRads * 10)
   geigerRadsIndex[item] = rads
-
 end)
 
---To Swap out Inactive for Active Fuelrod
+-- To Swap out Inactive for Active Fuelrod
 Hook.Add("fuelrodswap", "rodswap", function (effect, deltaTime, item, targets, worldPosition)
-  if targets[1] == nil then return end
-  local old_rod = targets[1]
-  local old_rod_identifier = old_rod.Prefab.Identifier.Value
-  local old_rod_conidition = old_rod.Condition
-  local old_rod_quality = old_rod.Quality
+  local rod = targets[1]
+  if not rod then return end
 
-  Entity.Spawner.AddEntityToRemoveQueue(old_rod)
+  local rod_identifier = rod.Prefab.Identifier.Value
+  local rod_conidition = rod.Condition
+  local rod_quality = rod.Quality
 
-  Timer.Wait(function() 
-    local prefab = ItemPrefab.GetItemPrefab(old_rod_identifier.."_active")
-    Entity.Spawner.AddItemToSpawnQueue(prefab, item.ownInventory, old_rod_conidition, old_rod_quality)
+  Entity.Spawner.AddEntityToRemoveQueue(rod)
+
+  Timer.Wait(function()
+    local prefab = ItemPrefab.GetItemPrefab(rod_identifier .. "_active")
+    Entity.Spawner.AddItemToSpawnQueue(prefab, item.ownInventory, rod_conidition, rod_quality)
   end,
   100)
-
 end)
 
-
---update/sync reactor!
-LuaUserData.MakeFieldAccessible(Descriptors["Barotrauma.Items.Components.Reactor"], "unsentChanges")
-
---Fulgurium Fuel rod Special effect AutoReactor Control
+-- Fulgurium Fuel rod Special effect AutoReactor Control
 Hook.Add("fulguriumrodspecial", "fulguriumrodspecialed", function (effect, deltaTime, item, targets, worldPosition)
-  if targets[1] == nil then return end
-  local fuelrod = targets[1]
-  local lightcomp = fuelrod.GetComponentString("LightComponent")
+  local rod = targets[1]
+  if not rod then return end
+  local light = rod.GetComponentString("LightComponent")
 
-  if lightcomp.Range > 0 then
+  if light.Range > 0 then
     local reactor = item.GetComponentString("Reactor")
     local correctionvalue = reactor.CorrectTurbineOutput - reactor.TargetTurbineOutput
     if math.abs(correctionvalue) < 15 then return end
@@ -57,107 +60,104 @@ Hook.Add("fulguriumrodspecial", "fulguriumrodspecialed", function (effect, delta
     else
       reactor.TargetTurbineOutput = reactor.TargetTurbineOutput - 5
     end
-    fuelrod.Condition = fuelrod.Condition - 15
+    rod.Condition = rod.Condition - 15
     reactor.unsentChanges = true
-
   end
 end)
 
+local heatspikePrefab = ItemPrefab.GetItemPrefab("heatspikeemitter")
 
-local heatspikeprefab = ItemPrefab.GetItemPrefab("heatspikeemitter")
-
---Incendium Fuel rod Special effect, Uncontrolled Reactor Temp! + Spawning "heat spikes"  
+-- Incendium Fuel rod Special effect, Uncontrolled Reactor Temp! + Spawning "heat spikes"
 Hook.Add("incendiumrodspecial", "incendiumrodspecialed", function (effect, deltaTime, item, targets, worldPosition)
-  if targets[1] == nil then return end
-  local fuelrod = targets[1]
-  local lightcomp = fuelrod.GetComponentString("LightComponent")
-  local reactor = item.GetComponentString("Reactor")
-  local luckynumber = math.random(1000)
---Higher the number, the worse it is!
+  local rod = targets[1]
+  if not rod then return end
 
-  if lightcomp.Range < 300 then
+  local light = rod.GetComponentString("LightComponent")
+  local reactor = item.GetComponentString("Reactor")
+
+  -- The higher the number, the worse it is!
+  local luckynumber = math.random(1000)
+
+  if light.Range < 300 then
     if luckynumber > 950 then
       reactor.Temperature = reactor.Temperature + 30
       reactor.unsentChanges = true
-      fuelrod.Condition = fuelrod.Condition - 1
+      rod.Condition = rod.Condition - 1
     elseif luckynumber > 700 then
       reactor.Temperature = reactor.Temperature + 20
       reactor.unsentChanges = true
-      fuelrod.Condition = fuelrod.Condition - 0.5
+      rod.Condition = rod.Condition - 0.5
     end
-  elseif lightcomp.Range < 450 then
+  elseif light.Range < 450 then
     if luckynumber > 995 then
-      Entity.Spawner.AddItemToSpawnQueue(heatspikeprefab, fuelrod.ownInventory,nil,nil,nil,false)
-      fuelrod.Condition = fuelrod.Condition - 5
+      Entity.Spawner.AddItemToSpawnQueue(heatspikePrefab, rod.ownInventory, nil, nil, nil, false)
+      rod.Condition = rod.Condition - 5
     elseif luckynumber > 900 then
       reactor.Temperature = reactor.Temperature + 30
       reactor.unsentChanges = true
-      fuelrod.Condition = fuelrod.Condition - 1
+      rod.Condition = rod.Condition - 1
     elseif luckynumber > 700 then
       reactor.Temperature = reactor.Temperature + 20
       reactor.unsentChanges = true
-      fuelrod.Condition = fuelrod.Condition - 0.5
+      rod.Condition = rod.Condition - 0.5
     end
   else
     if luckynumber > 950 then
-      Entity.Spawner.AddItemToSpawnQueue(heatspikeprefab, fuelrod.ownInventory,nil,nil,nil,false)
-      fuelrod.Condition = fuelrod.Condition - 5
+      Entity.Spawner.AddItemToSpawnQueue(heatspikePrefab, rod.ownInventory, nil, nil, nil, false)
+      rod.Condition = rod.Condition - 5
     elseif luckynumber > 800 then
       reactor.Temperature = reactor.Temperature + 30
       reactor.unsentChanges = true
-      fuelrod.Condition = fuelrod.Condition - 1
+      rod.Condition = rod.Condition - 1
     elseif luckynumber > 400 then
       reactor.Temperature = reactor.Temperature + 20
       reactor.unsentChanges = true
-      fuelrod.Condition = fuelrod.Condition - 0.5
+      rod.Condition = rod.Condition - 0.5
     end
   end
 end)
 
---To swap standard rods with corium
+-- To swap standard rods with corium
 Hook.Add("meltdownstandard", "rodswap", function (effect, deltaTime, item, targets, worldPosition)
-  if targets[1] == nil then return end
-  local standard_rod = targets[1]
-  local standard_rod_identifier = standard_rod.Prefab.Identifier.Value
+  local rod = targets[1]
+  if not rod then return end
+  local rod_identifier = rod.Prefab.Identifier.Value
 
-  Entity.Spawner.AddEntityToRemoveQueue(standard_rod)
+  Entity.Spawner.AddEntityToRemoveQueue(rod)
 
-  Timer.Wait(function() 
+  Timer.Wait(function()
     local prefab = ItemPrefab.GetItemPrefab("molten_rods")
     Entity.Spawner.AddItemToSpawnQueue(prefab, item.ownInventory)
   end,
   100)
-
 end)
 
---To swap volatile rods with its critical variant
+-- To swap volatile rods with its critical variant
 Hook.Add("meltdownvolatile", "rodswap", function (effect, deltaTime, item, targets, worldPosition)
-  if targets[1] == nil then return end
-  local volatile_rod = targets[1]
-  local volatile_rod_identifier = volatile_rod.Prefab.Identifier.Value
+  local rod = targets[1]
+  if not rod then return end
+  local rod_identifier = rod.Prefab.Identifier.Value
 
-  Entity.Spawner.AddEntityToRemoveQueue(volatile_rod)
+  Entity.Spawner.AddEntityToRemoveQueue(rod)
 
-  Timer.Wait(function() 
+  Timer.Wait(function()
     local prefab = ItemPrefab.GetItemPrefab("supercritical_fulgurium")
     Entity.Spawner.AddItemToSpawnQueue(prefab, item.ownInventory)
   end,
   100)
-
 end)
 
---To swap incendium rods with its critical variant
+-- To swap incendium rods with its critical variant
 Hook.Add("meltdownincendium", "rodswap", function (effect, deltaTime, item, targets, worldPosition)
-  if targets[1] == nil then return end
-  local incendium_rod = targets[1]
-  local incendium_rod_identifier = incendium_rod.Prefab.Identifier.Value
+  local rod = targets[1]
+  if not rod then return end
+  local rod_identifier = rod.Prefab.Identifier.Value
 
-  Entity.Spawner.AddEntityToRemoveQueue(incendium_rod)
+  Entity.Spawner.AddEntityToRemoveQueue(rod)
 
-  Timer.Wait(function() 
+  Timer.Wait(function()
     local prefab = ItemPrefab.GetItemPrefab("supercritical_incendium")
     Entity.Spawner.AddItemToSpawnQueue(prefab, item.ownInventory)
   end,
   100)
-
 end)
