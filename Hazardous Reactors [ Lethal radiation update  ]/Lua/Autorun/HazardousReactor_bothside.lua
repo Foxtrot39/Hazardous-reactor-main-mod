@@ -52,7 +52,6 @@ Hook.Patch(
       local light = instance.item.GetComponentString("LightComponent")
       light.Update(ptable["deltaTime"], ptable["cam"])
     end
-    return nil
   end,
   Hook.HookMethodType.Before)
 
