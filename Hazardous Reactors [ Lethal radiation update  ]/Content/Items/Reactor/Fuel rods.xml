@@ -335,7 +335,7 @@
         completely inert when on 0% condition
     -->
     <!-- Fulgurium Fuel Rod (Active) -->
-    <Item name="" category="fuel" identifier="fulguriumfuelrod" Tags="reactorfuel,HRradioactive" maxstacksize="1" scale="0.5" health="1500" cargocontaineridentifier="fuelcrate" pickdistance="150" impactsoundtag="impact_metal_light">
+    <Item name="" category="fuel" identifier="fulguriumfuelrod" Tags="reactorfuel,HRradioactive" maxstacksize="4" scale="0.5" health="1500" cargocontaineridentifier="fuelcrate" pickdistance="150" impactsoundtag="impact_metal_light">
       <!-- Spawn/PrefContainer(Vanilla) & Store Availability || Removed to be more Bot Friendly
     <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" amount="1" spawnprobability="0.2"/>
     <PreferredContainer secondary="beaconengcab" amount="1" spawnprobability="0.05"/>
@@ -495,7 +495,7 @@
 
       -->
     <!-- Incendium Fuel Rod (Active) -->
-    <Item name="" category="fuel" identifier="ekutility_incendiumfuelrod" Tags="reactorfuel,HRradioactive" maxstacksize="1" scale="0.5" health="70" cargocontaineridentifier="fuelcrate" pickdistance="150" impacttolerance="4" impactsoundtag="impact_metal_light">
+    <Item name="" category="fuel" identifier="ekutility_incendiumfuelrod" Tags="reactorfuel,HRradioactive" maxstacksize="4" scale="0.5" health="70" cargocontaineridentifier="fuelcrate" pickdistance="150" impacttolerance="4" impactsoundtag="impact_metal_light">
       <!-- Spawn/PrefContainer(Vanilla) & Store Availability || Removed to be more Bot Friendly
     <PreferredContainer primary="reactorcab" />
     <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" amount="1" spawnprobability="0.2"/>
@@ -691,7 +691,7 @@
     </Item>
   </Override>
   <Override>
-    <Item name="" identifier="fulguriumfuelrodvolatile" category="fuel" Tags="reactorfuel,HRradioactive" maxstacksize="8" impacttolerance="3" description="" cargocontaineridentifier="fuelcrate" health="750" scale="0.5">
+    <Item name="" identifier="fulguriumfuelrodvolatile" category="fuel" Tags="reactorfuel,HRradioactive" maxstacksize="4" impacttolerance="3" description="" cargocontaineridentifier="fuelcrate" health="750" scale="0.5">
       <!-- Pricing -->
       <Price baseprice="400" soldeverywhere="false">
         <Price locationtype="outpost" multiplier="0" sold="false" />
