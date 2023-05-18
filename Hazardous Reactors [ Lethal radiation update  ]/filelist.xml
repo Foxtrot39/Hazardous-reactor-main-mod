@@ -21,6 +21,7 @@
   <Item file="%ModDir%/Content/Items/Weapons/GeigerCounter.xml" />
   <Text file="%ModDir%/Content/Localization/english.xml" />
   <Text file="%ModDir%/Content/Localization/french.xml" />
+  <Text file="%ModDir%/Content/Localization/LatinamericanSpanish.xml" />
   <Text file="%ModDir%/Content/Localization/PTBR.xml" />
   <Text file="%ModDir%/Content/Localization/Russian.xml" />
 </contentpackage>
