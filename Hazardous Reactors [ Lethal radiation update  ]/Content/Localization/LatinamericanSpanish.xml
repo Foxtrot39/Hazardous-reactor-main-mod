@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Latinamerican Spanish" nowhitespace="false" translatedname="Español Latinoamericano">
+
+			<!-- Aflicciones -->
+
+<afflictionname.dnadamage>Daño de ADN</afflictionname.dnadamage>
+<afflictiondescription.dnadamage>El paciente sufre daños en el ADN inducidos por la radiación.</afflictiondescription.dnadamage>
+<afflictiondescription.dnadamage.high>El ADN del paciente ha sufrido daños críticos por radiación. Comienzan a aparecer signos de fallo orgánico total.</afflictiondescription.dnadamage.high>
+
+<afflictiondescription.dnadamage.self>Te sientes debilitado y el dolor te agarra desde el interior de tu cuerpo.</afflictiondescription.dnadamage.self>
+<afflictiondescription.dnadamage.high.self>Sientes que tu cuerpo se apaga y empieza a ser incapaz de mantener siquiera el metabolismo básico.</afflictiondescription.dnadamage.high.self>
+
+<afflictioncauseofdeath.dnadamage>ADN dañado más allá del umbral de viabilidad</afflictioncauseofdeath.dnadamage>
+<afflictioncauseofdeathself.dnadamage>Tu ADN ya no puede mantener las funciones vitales del cuerpo</afflictioncauseofdeathself.dnadamage>
+
+<afflictionname.radiationresistance>Radioprotector</afflictionname.radiationresistance>
+<afflictiondescription.radiationresistance>Impide la contaminación y protege en gran medida contra la radiación.</afflictiondescription.radiationresistance>
+
+<afflictionname.contamination>Contaminación por material radiactivo</afflictionname.contamination>
+
+<afflictiondescription.contamination>El paciente tiene irradiación crónica por haber inhalado partículas radiactivas.</afflictiondescription.contamination>
+<afflictiondescription.contamination.high>El paciente empieza a mostrar signos de enfermedad grave por radiación y empieza a vomitar sangre.</afflictiondescription.contamination.high>
+
+<afflictiondescription.contamination.self>Se siente débil y parece que le salen quemaduras de la nada.</afflictiondescription.contamination.self>
+<afflictiondescription.contamination.high.self>Te salen quemaduras por todo el cuerpo y empiezas a vomitar sangre. Deberías haberte puesto una escafandra antes de ir allí.... </afflictiondescription.contamination.high.self>
+
+<afflictionname.lethalradiation>Síndrome de radiación aguda</afflictionname.lethalradiation>
+
+<afflictiondescription.lethalradiation.low>El paciente muestra signos de enfermedad por radiación extrema.</afflictiondescription.lethalradiation.low>
+<afflictiondescription.lethalradiation>La salud del paciente se degrada extremadamente rápido a medida que el cuerpo se debilita por los daños inducidos por la radiación.</afflictiondescription.lethalradiation>
+<afflictiondescription.lethalradiation.high>La piel del paciente comienza a pelarse y los órganos empiezan a fallar ya que la radiación está degradando rápidamente el ADN por debajo del umbral de viabilidad.</afflictiondescription.lethalradiation.high>
+
+<afflictiondescription.lethalradiation.low.self>Tu vista se ve obstruida por algo estático y sufres quemaduras graves por todas partes.</afflictiondescription.lethalradiation.low.self>
+<afflictiondescription.lethalradiation.self>Empiezas a luchar por mantenerte en pie a medida que tu estado empeora a un ritmo alarmante.</afflictiondescription.lethalradiation.self>
+<afflictiondescription.lethalradiation.high.self> Puedes sentir cómo tus órganos se van cocinando por la radiación extrema a medida que fallan uno a uno, no te queda mucho tiempo.</afflictiondescription.lethalradiation.high.self>
+
+<afflictioncauseofdeath.lethalradiation>Irradiación letal.</afflictioncauseofdeath.lethalradiation>
+<afflictioncauseofdeathself.lethalradiation>Has muerto por una exposición letal a la radiación.</afflictioncauseofdeathself.lethalradiation>
+
+			<!-- Aflicciones QoL -->
+			
+<afflictionname.burningrod>Barra caliente</afflictionname.burningrod>
+<afflictiondescription.burningrod>¡Estás sujetando una barra de combustible caliente a 2800°C sin la herramienta adecuada!</afflictiondescription.burningrod>
+<afflictioncauseofdeath.burningrod>Has muerto quemado sujetando una barra de combustible sobrecalentada.</afflictioncauseofdeath.burningrod>
+
+<afflictionname.hazardexposure>Exposición peligrosa a la varilla</afflictionname.hazardexposure>
+<afflictiondescription.hazardexposure> <afflictiondescription.hazardexposure>Estás dentro del alcance del efecto dañino de una varilla de combustible, ponte la protección adecuada</afflictiondescription.hazardexposure>.
+
+<afflictionname.dnaregeneration>Regeneración de ADN</afflictionname.dnaregeneration>
+<afflictiondescription.dnaregeneration>La integridad del ADN del paciente se está restaurando lentamente.</afflictiondescription.dnaregeneration>
+
+<afflictionname.antiradeffect>Efecto del fármaco antirradiación</afflictionname.antiradeffect>
+<afflictiondescription.antiradeffect>El cuerpo del paciente se purga lentamente de los contaminantes radiactivos y la radiación.</afflictiondescription.antiradeffect>
+
+			<!-- Artículos médicos -->
+
+<entidad.DTPA>DTPA</entidad.DTPA>
+<entidaddescripción.DTPA>Una alternativa más accesible pero de acción mucho más lenta que los antirradicales, inútil contra el síndrome agudo por radiación.</entidaddescripción.DTPA>
+
+<entityname.Potassiumiodide>Yoduro de potasio</entityname.Potassiumiodide>
+<entitydescription.Potassiumiodide>Protege contra la radiación y la contaminación radiactiva. Debe tomarse regularmente para mantener todos sus efectos protectores. No protege frente a fuentes de radiación letales.</entitydescription.Potassiumiodide>
+
+<entityname.DNAstabiliser>Estabilizador de ADN</entityname.DNAstabiliser>
+<entidaddescripción.DNAstabiliser>Compuesto raro y complejo capaz de restaurar lentamente el ADN dañado durante un largo período de tiempo, peligroso si es inyectado por personal no entrenado.</entidaddescripción.DNAstabiliser>
+
+<entidad.antirad>AntiRad</entidad.antirad>
+<entitydescription.antirad>Medicamento muy potente capaz de purgar en segundos el cuerpo de todos los elementos radiactivos alogn radiación, mejor guardado para emergencias médicas.</entitydescription.antirad>
+
+<entityname.radiotoxin>Radiotoxina</entityname.radiotoxin>
+<entitydescription.radiotoxin>Un elemento extremadamente radioactivo capaz de provocar un síndrome agudo por radiación.</entitydescription.radiotoxin>
+	
+			<!-- Contenedores -->
+
+<entityname.fuelcrate>Caja de almacenamiento de material radiactivo</entityname.fuelcrate>
+<entitydescription.fuelcrate>Una caja de almacenamiento segura y pesada para transportar materiales radiactivos y barras de combustible.</entitydescription.fuelcrate>
+
+<entityname.fueltransportcylinder>Transportador de barras de combustible de una sola unidad</entityname.fueltransportcylinder>
+<entitydescription.fueltransportcylinder>Una unidad de almacenamiento de varillas de una sola ranura, mucho menos voluminosa que su homóloga de cajón de combustible, es lo suficientemente segura como para poder guardarlas en la mayoría de taquillas o cajones.</entitydescription.fueltransportcylinder>
+
+<entityname.ekutility_handtruck_reactorfuel>Camión de manipulación de varillas de combustible</entityname.ekutility_handtruck_reactorfuel>
+<entitydescription.ekutility_handtruck_reactorfuel>Una carretilla de mano con cerdo blindado para mover alrededor de las barras de combustible.</entitydescription.ekutility_handtruck_reactorfuel>
+
+<entityname.fuelbackpack>Mochila blindada contra la radiación</entityname.fuelbackpack>
+<entitydescription.fuelbackpack>Una mochila blindada con un contador Geiger incorporado, capaz de controlar los niveles de radiación y transportar materiales radiactivos de forma segura.</entitydescription.fuelbackpack>
+
+			<!-- Objetos de reactor -->
+
+<entityname.fuelrod>Barra de combustible de uranio</entityname.fuelrod>
+<entitydescription.fuelrod>Barra de combustible nuclear estándar</entitydescription.fuelrod>.
+
+<entityname.thoriumfuelrod>Barra de combustible de torio</entityname.thoriumfuelrod>
+<entitydescription.thoriumfuelrod>Puede durar hasta tres veces más que las varillas de uranio</entitydescription.thoriumfuelrod>.
+
+<entidadnombre.fulguriumfuelrod>Barra de combustible de fulgurio</entidadnombre.fulguriumfuelrod>
+<entitydescription.fulguriumfuelrod>No proporciona tanto calor como otros tipos de barras de combustible, pero dura mucho más y actúa como moderador, reduciendo los picos de fisión de otras barras. Demasiado estable para ser utilizada tal cual, y debe ser precalentada para ser utilizada como combustible.</entitydescription.fulguriumfuelrod>
+
+<entityname.fulguriumfuelrodvolatile>Barra de combustible de fulgurio volátil</entityname.fulguriumfuelrodvolatile>.
+<entitydescription.fulguriumfuelrodvolatile>Una varilla amalgama de incendium y fulgurium, no tiene la potencia del incendium ni la longevidad del fulgurium pero tiene aproximadamente la mitad de su fuerza respectiva pero por casi todos sus inconvenientes.</entitydescription.fulguriumfuelrodvolatile>.
+
+<entityname.ekutility_incendiumfuelrod>Barra de combustible de incandescencia</entityname.ekutility_incendiumfuelrod>
+<entitydescription.ekutility_incendiumfuelrod>Extremadamente potente pero también muy inestable, autocalentándose si se deja sin contener hasta el punto de explotar y fundir el casco. Sensible al impacto incluso en contenedores seguros.</entitydescription.ekutility_incendiumfuelrod>
+
+<entityname.supercritical_incendium>Barra incendiaria supercrítica</entityname.supercritical_incendium>
+<entitydescription.supercritical_incendium>Esta varilla de combustible ha alcanzado un estado supercrítico durante la fusión y corre el riesgo de liberar toda su energía a la vez al menor impacto, su energía liberada es suficiente para dañar el casco a su alrededor pero también parece agotarlo rápidamente.</entitydescription.supercritical_incendium>
+
+<entityname.supercritical_fulgurium>Barra de fulgurio volátil supercrítica</entityname.supercritical_fulgurium>
+<entitydescription.supercritical_fulgurium>Esta varilla de combustible ha alcanzado un estado supercrítico durante la fusión y corre el riesgo de liberar toda su energía a la vez al menor impacto, su energía liberada es suficiente para dañar el casco a su alrededor pero también parece agotarlo rápidamente. Sin embargo, la amalgama fulgurium hacer que se queme mucho más tiempo </entitydescription.supercritical_fulgurium>
+
+<entidadname.molten_rods>Corium</entidadname.molten_rods>
+<entitydescription.molten_rods>Magma radiactivo solidificado, emite una cantidad extrema de radiación.</entitydescription.molten_rods>
+
+<entidadnombre.varilla_de_control>Varilla de control</entidadnombre.varilla_de_control>
+<entitydescription.control_rod>No proporcionan calor para la generación de electricidad pero mitigan los picos de temperatura en condiciones normales.</entitydescription.control_rod>
+
+			<!-- Armas -->
+
+<entidadnombre.nukerod>Objiva de crisis</entidadnombre.nukerod>
+<entitydescription.nukerod>Una barra de combustible alienígena supercrítica bloqueada por estasis, los emisores de estasis son muy sensibles a los impactos y pueden fallar si golpean algo convirtiéndola en una ojiva muy potente.</entitydescription.nukerod>
+
+<entityname.nukerodenhanced>Ojiva de crisis mejorada</entityname.nukerodenhanced>
+<entitydescription.nukerodenhanced>Ojiva de crisis mejorada aún más con materiales fisibles para una mayor generación de calor en la detonación. También causa una explosión de rayos gamma.</entitydescription.nukerodenhanced>
+
+<entitydescription.nucleargun>Un prototipo de arma de partículas construida con los materiales alienígenas únicos de Europa, que utiliza barras de combustible como fuente de energía. Peligrosa para los que están en ambos extremos del cañón, dependiendo del material fisible utilizado para alimentarla.</entitydescription.nucleargun>
+
+			<!-- Texto de la misión -->
+
+<missionname.salvagewreckwarhead>Recuperar arma experimental</missionname.salvagewreckwarhead>
+<missiondescription.salvagewreckwarhead>Un submarino militar de la Coalición se ha hundido cerca transportando un artefacto explosivo experimental. Busca en la zona señales de su baliza de socorro y recupera su carga.</missiondescription.salvagewreckwarhead>
+<missionsonarlabel.salvagewreckwarhead>Submarino de la Coalición hundido</missionsonarlabel.salvagewreckwarhead>
+<missionuccess.salvagewreckwarhead>La ojiva ha sido recuperada.</missionsuccess.salvagewreckwarhead>
+<missionfailure.salvagewreckwarhead>No se ha podido recuperar la ojiva.</missionfailure.salvagewreckwarhead>
+<missionheader0.salvagewreckwarhead>Cabeza de guerra recuperada.</missionheader0.salvagewreckwarhead>
+<missionmessage0.salvagewreckwarhead>Has encontrado la ojiva perdida. Llévala a [ubicación2] sin detonarla para reclamar tu recompensa. Ten en cuenta que es extremadamente sensible a cualquier tipo de daño.</missionmessage0.salvagewreckwarhead>
+
+
+			<!-- Objetos varios/materiales -->
+ 
+<entidadnombre.geigercounter>Contador Geiger</entidadnombre.geigercounter>
+<entitydescription.geigercounter>Pequeño dispositivo que traduce los niveles de radiación cercanos en señales sonoras y visuales. También monitoriza pasivamente a su portador para detectar envenenamiento por radiación.</entitydescription.geigercounter>
+
+<entityname.iodine>Yodo</entityname.iodine>
+<entidaddescripción.yodo>Más comúnmente utilizado en la fabricación de medicamentos radioprotectores.</entidaddescripción.yodo>.
+
+<entityname.du_p_alloy>Uranio empobrecido - aleación de fisicurio</entityname.du_p_alloy>
+<entitydescription.du_p_alloy>Aleación extremadamente resistente y pesada</entitydescription.du_p_alloy>.
+
+<entidadnombre.AI_microchip>Microchip AI</entidadnombre.AI_microchip>
+<entidad.AI_microchip>Controlador de IA para emisores de estasis</entidad.AI_microchip>.
+
+<entityname.stasisemitter>Matriz de emisores de estasis</entityname.stasisemitter>
+<entitydescription.stasisemitter>Matriz de emisores de un generador de campo de estasis utilizado para el contenedor de almacenamiento de varillas reforzadas.</entitydescription.stasisemitter>
+
+<entityname.fueltrasnportcylinderreinforced> <entityname.fueltrasnportcylinderreinforced> <entityname.fueltrasnportcylinderreinforced> <entityname.fueltrasnportcylinderreinforced> <entityname.fueltrasnportcylinderreinforced>
+<entitydescription.fueltrasnportcylinderreinforced>Almacén de barras fuertemente reforzado con sistema de estasis incorporado para la contención de riesgos extremos. Sólo se puede llenar en un fabricante.</entitydescription.fueltrasnportcylinderreinforced>
+
+<entityname.iodinecrystal>Cristal de yodo</entityname.iodinecrystal>
+<entitydescription.iodinecrystal>Cristales hechos exclusivamente de yodo</entitydescription.iodinecrystal>
+
+<entityname.deconcontaminationemitter>Peligro de contaminación</entityname.deconcontaminationemitter>
+<entitydescription.deconcontaminationemitter>Advertencia: el proceso de deconstrucción contaminará a las personas cercanas no protegidas</entitydescription.deconcontaminationemitter>.
+
+<entityname.nuclearmaterialprocessor>Procesador de combustible</entityname.nuclearmaterialprocessor>
+<entidaddescripción.nuclearmaterialprocessor>Fabricador fuertemente blindado que permite la manipulación segura de materiales peligrosos.</entidaddescripción.nuclearmaterialprocessor>
+
+<entityname.fissiledeconstructor>Deconstructor blindado contra radiación</entityname.fissiledeconstructor>
+<entitydescription.fissiledeconstructor>Deconstructor fuertemente blindado que permite la manipulación segura de materiales peligrosos.</entitydescription.fissiledeconstructor>
+
+<entityname.manual>Manual de funcionamiento del reactor</entityname.manual>
+<entitydescription.manual>Contiene todos los elementos importantes en torno a los reactores nucleares y sus peligros relacionados.</entitydescription.manual>
+<terminalwelcomemsg.manual>
+
+______________________________Manual de funcionamiento del reactor del submarino nuclear de Europa v2.6____________________________
+
+
+_________________________________________________Sumario__________________________________________________
+
+
+ I.   Introducción
+ II.  Riesgos de funcionamiento del reactor
+ III. Gestión de crisis de reactores
+ IV.  Peligros de las barras de combustible
+ V.   Prohibición por la Coalición Europa de determinados materiales extraños
+ VI.  Radiación, contaminación y atención médica
+
+
+________________________________________________I. Introducción______________________________________________
+
+
+En primer lugar, enhorabuena por poseer u operar un submarino nuclear en el océano de Europa.
+
+Aunque el océano de Europa es tan traicionero como extremadamente peligroso. Algunos de los mayores peligros se encuentran dentro de las paredes seguras de su propio submarino.
+
+La energía nuclear puede ser el corazón palpitante de su submarino, pero también es una de las mayores amenazas si no se mantiene con regularidad.
+
+Este manual estándar está aquí para informarle a usted y a su tripulación de todos sus peligros y de cómo afrontarlos.
+
+Nota importante :
+
+-Los PUCS han demostrado ofrecer una protección total contra la radiación. El traje Abyss, con su protección medioambiental mejorada, ofrece una resistencia del 90%, mientras que la protección de cualquier otro traje es del 75%.
+-Todos los trajes de buceo son aparatos respiratorios cerrados y, por lo tanto, protegen totalmente contra la contaminación por materiales radiactivos.
+
+
+__________________________________________II. Riesgos de funcionamiento del reactor_______________________________________
+
+
+Debido a la corta vida útil de la tripulación de un submarino estándar, se han hecho pocos esfuerzos para que el uso de los reactores nucleares disponibles sea seguro.
+
+Los reactores nucleares están equipados con un contador Geiger que informa a la tripulación de los niveles actuales de radiación en la sala del reactor. Escucharlo significa que la sala no es segura para una exposición prolongada.
+
+Por esta razón, el personal que tiene que permanecer durante largos periodos en la sala del reactor debe llevar, como mínimo, un mono de ingeniero nuclear.
+
+A medida que el reactor sufra más y más daños, aumentará la radiación emitida, por lo que se recomienda llevar el equipo de seguridad y la medicación adecuados.
+
+Apagar el reactor detendrá las radiaciones ambientales siempre que no esté demasiado dañado.
+
+El reactor tampoco emitirá radiaciones mientras esté en buenas condiciones.
+
+Procedimiento estándar de seguridad para la reparación de reactores
+
+Los reactores nucleares son difíciles de mantener y ya se han registrado múltiples accidentes con consecuencias letales en toda Europa.
+
+Por lo tanto, siga los siguientes procedimientos para repararlo:
+
+-Paso 1: Llevar un traje de protección en todo momento, idealmente un PUCS debido a su completa protección contra la radiación, alternativamente un traje de abismo combinado con yoduro de potasio ofrece una alta protección contra la radiación también.
+-Paso 2 : Apagar completamente el reactor (temperatura a 0 y luces apagadas).
+-Paso 3: Repare el reactor.
+
+
+ADVERTENCIA Reparar un reactor en funcionamiento tiene muchas posibilidades de provocar una explosión de vapor contaminado que dañe aún más el reactor e irradie a todo el personal cercano.
+ADVERTENCIA La reparación del reactor por personal no cualificado puede provocar un accidente mortal por electrochoque.
+  
+  
+____________________________________________III. Gestión de crisis de reactores______________________________________
+
+
+Las crisis en los reactores deben tratarse como una emergencia principal y abordarse lo antes posible.
+Para advertir a la tripulación de una crisis inminente, los reactores están equipados con un sistema de alarma de 3 etapas, 2 de las cuales se clasifican como alarmas de crisis.
+
+Notas importantes sobre las alarmas de crisis:
+Esas alarmas también son una advertencia sobre la fuga del reactor, tanto de niveles peligrosos de calor a través de vapor sobrecalentado debido a una ruptura del sistema de refrigeración, que incluye contaminación radioactiva. En este punto, el cierre del reactor no detendrá la fusión.
+
+Las alarmas de crisis brindan a la tripulación menos de un minuto antes de que el reactor detone.
+
+Descripción de los sonidos de las alarmas y acciones recomendadas:
+
+Alarma 1: Zumbido profundo, alarma de sobrecalentamiento.
+Reducir la tasa de fisión; Esperar a que se estabilice por sí mismo; Retirar las barras de exceso.
+
+Alarma 2: Antigua alarma de sobrecalentamiento, alarma de la etapa 1 de la crisis.
+Ponerse el equipo de protección y entrar para retirar TODAS las barras de combustible contenidas.
+
+Alarma 3: Alarma de bajo/alto, alarma de la etapa 2 de la crisis.
+Todos los miembros de la tripulación que no estén ayudando con el reactor deben ponerse un traje de buceo y mantener la máxima distancia con el reactor.
+Inmediatamente ponerse cualquier equipo de protección que se encuentre y entrar para retirar TODAS las barras de combustible contenidas lo antes posible, tener cuidado con el peligro de incendio.
+
+Si la sala del reactor está equipada con un sistema de inundación de emergencia, inundar completamente la sala del reactor: el agua limitará severamente la explosión causada por el núcleo fundido expuesto. Sin embargo, el combustible aún se perderá.
+
+Nota: El escenario de fusión de un reactor depende de si el combustible estaba contenido o no y qué barras estaban presentes cuando el reactor se destruye y no está inundado.
+
+Tener cuidado con las barras de incendio y sus variantes, ya que son sensibles a los impactos y explotarán si se manejan bruscamente.
+
+Al reparar el reactor después de una fusión, consulte el procedimiento de seguridad de reparación, el reactor debe considerarse un peligro extremo de radiación en este punto.
+  
+
+__________________________________________IV. Peligros de las barras de combustible_______________________________________________
+
+Información importante antes de abordar esta sección: los materiales fisibles utilizados en la fabricación de barras de combustible deben almacenarse en una caja segura o en una habitación aislada de la tripulación.
+Aunque sus emisiones son bajas, almacenar grandes cantidades de estos materiales en un solo lugar puede ser tan peligroso como una fuga de radiación de un reactor.
+Las barras de combustible pueden sufrir una fusión si permanecen sobrecalentadas durante demasiado tiempo a una alta tasa de fisión.
+
+La fabricación y el reciclaje de combustible gastado deben realizarse con equipos especializados vendidos por ingenieros o mineros.
+
+Las barras de combustible tienen múltiples capas de peligros letales y el personal no capacitado causará mucho más daño que beneficio al manipularlas. Una barra se considera peligrosa una vez que está parcial o completamente agotada, en este punto brillará.
+A menos que estén colocadas dentro de un reactor en funcionamiento, las barras son *casi* totalmente seguras de manipular. 
+Sin embargo, una vez activas, las barras deben tratarse con extrema precaución y almacenarse en los siguientes contenedores apropiados:
+
+- Caja de almacenamiento de material radiactivo.
+- Camiones de manipulación de combustible.
+- Porta-varillas de unidad única.
+- El propio reactor.
+
+Existen dos tipos de peligros de las barras de combustible, diferentes para cada tipo de barra:
+
+- Peligros de las barras activas.
+- Peligros de fusión del reactor.
+
+Peligros de las barras:
+
+Cualquier barra que esté activa quemará severamente a cualquier persona que la sostenga con las manos desnudas, debido al simple hecho de que la barra todavía está a más de 2800°C de temperatura. También, como era de esperar, tienden a provocar incendios.
+
+Barras de uranio/torio:
+
+Peligro activo: Radiación, la mitad en el caso de una barra de torio.
+
+Peligro de fusión: Irradiación masiva y contaminación en un área muy grande.
+
+
+Barras de incendium:
+
+ADVERTENCIA: Se autoencienden cuando no se encuentran en un almacenamiento seguro. Sensibles a los impactos y extremadamente calientes en cualquier momento. Colóquelas de inmediato dentro de un contenedor seguro para evitar la autoignición y luego en un estante de cajas para evitar explosiones inducidas por impacto.
+
+Peligro activo: Peligro térmico capaz de derretir el casco y quemar al personal cercano, también capaz de evaporar agua. Puede provocar incendios masivos cuando se expone al aire.
+
+Efecto en el reactor: Estrés extremo por calor, aumento del mantenimiento requerido. Puede provocar picos de calor frecuentes al azar. La varilla empuja el sistema de refrigeración del reactor hasta su límite, convirtiendo el área alrededor del reactor en un peligro extremo de calor en caso de una reacción crítica.
+
+Peligro de fusión: Consulte el informe de observación de combate.
+
+
+Barras de fulgurium:
+
+Peligro activo: Anomalía EMP que daña rápidamente cajas de conexiones junto con descargas eléctricas perjudiciales. Provoca una falla temporal en la red eléctrica.
+
+Efecto en el reactor: Actúa como monitor de fisión, estabilizando el reactor para prevenir el sobrecalentamiento hasta cierto punto. Se enfría y se vuelve inerte cuando se expone al agua hasta que se vuelva a calentar, por lo que no debe usarse por sí sola.
+
+Peligro de fusión: EMP masivo que destruye todos los dispositivos electrónicos.
+
+Se han informado casos de tripulaciones de submarinos cercanos que también han sufrido los efectos del EMP a pesar de estar lejos, lo que indica que el alcance del pulso es extremadamente grande y similar a una cabeza de guerra EMP real.
+
+
+Barras volátiles de fulgurium:
+
+ADVERTENCIA: Sensibles a los impactos incluso cuando se almacenan correctamente. Coloque las barras en una caja de transporte y guárdelas en un estante de cajas para asegurarlas correctamente.
+
+Peligro activo: Anomalía eléctrica que daña rápidamente las cajas de conexiones, este efecto está siempre activo. No transporte la barra fuera de contenedores seguros. Peligro térmico capaz de fundir cascos.
+
+Peligro de fusión: EMP masivo, consulte el informe de observación de combate.
+
+
+Informe de observación: Durante los enfrentamientos entre el Cuerpo de Marines de la Coalición Europea y los submarinos separatistas jovianos, a veces se ha observado disparos de reactor que causan una explosión desproporcionada, seguida de una luz brillante similar a una antorcha que aparentemente derrite lo que queda del naufragio del submarino antes de desaparecer durante una explosión secundaria masiva al impactar el suelo.
+
+Los científicos especulan que los materiales de las barras de combustible pueden reaccionar durante una fusión, y su recolección requeriría un contenedor especialmente diseñado, protección pesada y una planificación considerable.
+
+
+_______________________________________V.La Coalición Europa prohíbe ciertos materiales extraños_______________________________
+
+
+En consecuencia, después de la pérdida total de la guarnición Debral 3 de la Coalición Europea debido a un ataque terrorista perpetrado por los separatistas jovianos utilizando un explosivo desconocido que contenía rastros de ciertos materiales alienígenas.
+ 
+La Coalición Europea ha emitido la siguiente orden:
+
+Los puestos militares y de investigación controlados por la Coalición Europea son los ÚNICOS autorizados para poseer, almacenar, vender o comprar incendium y fulgurium, así como cualquier artículo que haga uso de estos materiales.
+El incumplimiento se considerará un apoyo a los separatistas jovianos, y la Coalición utilizará la fuerza letal si es necesario para recuperar la mercancía contrabandeada.
+ 
+ 
+_____________________________________VI. Radiación, contaminación y atención médica_____________________________
+
+
+Radiación, también apodada la muerte invisible, no debe tomarse a la ligera.
+
+Si bien el cuerpo puede eliminarla lentamente con el tiempo, se recomienda utilizar medicamentos contra la radiación tan pronto como aparezcan los primeros síntomas:
+
+- Quemaduras crónicas.
+- Náuseas.
+- Deterioro visual.
+
+La contaminación radiactiva se caracteriza por la irradiación crónica.
+
+Si bien los antirradiculares curan rápidamente ambos, su disponibilidad y precio lo convierten en un medicamento de emergencia.
+
+El DTPA es más barato y más fácil de obtener, aunque su efecto activo es más lento.
+
+El radioprotector, también conocido como yoduro de potasio, ayuda a prevenir tanto la irradiación como la contaminación radiactiva, pero no tiene efectos curativos ni protege contra fuentes de radiación letal.
+
+Para limitar la muerte inducida por radiación, todos los submarinos están equipados con un contador Geiger en su cabina del reactor. Llevarlo automáticamente detectará las radiaciones y mostrará mediante señales visuales y auditivas su intensidad.
+
+También es la única forma de verificar si un miembro de la tripulación está irradiado sin tener síntomas evidentes.
+
+Tenga en cuenta que desmantelar materiales radiactivos requiere protección adecuada, ya que expondrá al personal cercano a la radiación que los contaminará.
+
+La exposición prolongada a una alta radiación o incluso una exposición breve a materiales extremadamente radiactivos puede provocar el síndrome de radiación aguda (SRA). Esto debe considerarse una emergencia médica, ya que sin tratamiento la víctima morirá en pocos minutos.
+
+Los síntomas son:
+
+- Quemaduras y daños internos en todo el cuerpo.
+- Debilidad extrema y dificultad para ponerse de pie.
+- Vómitos frecuentes de sangre.
+- Deterioro visual.
+- Inconsciencia.
+
+Solo el medicamento antirrad o una gran dosis de stabilosina pueden salvar a alguien en este punto.
+
+La irradiación y la contaminación radiactiva son una de las principales causas de degradación letal del ADN, aquí referida como daño del ADN, en Europa.
+
+Daño del ADN
+
+La degradación del ADN ocurre cuando se produce irradiación, contaminación o ambos, y es extremadamente mortal.
+
+Los síntomas incluyen:
+
+- Debilidad.
+- Vómitos de sangre.
+
+Si no se trata, el daño del ADN causará pérdida de sangre, daño interno y, en el peor de los casos, falla total de los órganos.
+
+El estabilizador de ADN, aunque está destinado a ser un medio para aumentar la esperanza de vida de algunos residentes de Europa, se ha demostrado que es eficaz contra la degradación celular inducida por la radiación.
+
+Sin embargo, el medicamento es costoso y igualmente peligroso si no es inyectado por un médico capacitado.
+
+Informes de inyecciones fallidas han informado que no solo tienen efectos positivos mínimos, sino que también causan graves daños internos en el proceso.
+ 
+ </terminalwelcomemsg.manual>
+
+</infotexts>
