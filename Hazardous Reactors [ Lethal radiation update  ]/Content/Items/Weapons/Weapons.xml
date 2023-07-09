@@ -9,17 +9,23 @@
         <Price locationtype="military" multiplier="0.9" minavailable="1" />
         <Price locationtype="mine" multiplier="1.25" sold="false" />
       </Price>
-      <Deconstruct time="20">
-        <Item identifier="steel" />
-        <Item identifier="uranium" />
-        <Item identifier="ic4block" />
-      </Deconstruct>
-      <Fabricate suitablefabricators="fabricator" requiredtime="30">
-        <RequiredSkill identifier="weapons" level="40" />
-        <RequiredItem identifier="steel" />
-        <RequiredItem identifier="uranium" />
-        <RequiredItem identifier="ic4block" />
-      </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="iron" />
+      <Item identifier="uranium" />
+      <Item identifier="incendium" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="40" />
+      <RequiredItem identifier="iron" amount="2" />
+      <RequiredItem identifier="uranium" />
+      <RequiredItem identifier="ic4block" />
+    </Fabricate>
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="30" requiresrecipe="true">
+      <RequiredSkill identifier="electrical" level="40" />
+      <RequiredItem identifier="iron" amount="2" />
+      <RequiredItem identifier="fuelrod" mincondition="0.8" usecondition="false" />
+      <RequiredItem identifier="uex" />
+    </Fabricate>
       <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="576,128,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="130,1,129,88" depth="0.55" origin="0.5,0.5" />
       <Body width="128" height="85" density="12" />
@@ -71,13 +77,13 @@
       <Item identifier="uranium" />
       <Item identifier="incendium" />
     </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="30">
       <RequiredSkill identifier="weapons" level="40" />
       <RequiredItem identifier="steel" />
       <RequiredItem identifier="uranium" />
       <RequiredItem identifier="ic4block" />
     </Fabricate>
-    <Fabricate suitablefabricators="fabricator" requiredtime="30" requiresrecipe="true">
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="30" requiresrecipe="true">
       <RequiredSkill identifier="electrical" level="40" />
       <RequiredItem identifier="steel" />
       <RequiredItem identifier="fuelrod" mincondition="0.8" usecondition="false" />
@@ -210,7 +216,7 @@
 </Override>
 
 <Override>
-  <Item name="" identifier="nucleargun" category="Equipment" cargocontaineridentifier="metalcrate" tags="mediumitem,mobilebattery,electrical,weapon,gun,hazardcontainement" Scale="0.5" impactsoundtag="impact_metal_heavy">
+  <Item name="" identifier="nucleargun" category="Equipment" cargocontaineridentifier="metalcrate" tags="mediumitem,electrical,weapon,gun,hazardcontainement" Scale="0.5" impactsoundtag="impact_metal_heavy">
     <PreferredContainer primary="secarmcab,weaponholder" />
     <Price baseprice="675" soldeverywhere="false">
       <Price locationtype="outpost" multiplier="1.5" sold="false" />

@@ -83,6 +83,10 @@
 <entityname.fuelbackpack>Radiation shielded backpack</entityname.fuelbackpack>
 <entitydescription.fuelbackpack>A shielded backpack with an inbuilt geiger counter, able to monitor radiation levels and safely transport radioactive materials.</entitydescription.fuelbackpack>
 
+<entityname.HRtongs>Fuel Rod Handling Tongs</entityname.HRtongs>
+<entitydescription.HRtongs>A set of tongs for keeping fuel rods at arms length. Doubles as a melee weapon.</entitydescription.HRtongs>
+
+
 			<!-- Reactor items -->
 
 <entityname.fuelrod>Uranium fuel rod</entityname.fuelrod>

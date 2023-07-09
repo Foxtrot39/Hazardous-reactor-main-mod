@@ -84,6 +84,9 @@
 <entityname.fuelbackpack>Sac à dos avec bouclier anti-radiation</entityname.fuelbackpack>
 <entitydescription.fuelbackpack>Un sac à dos renforcé pouvant transporter des materiaux nucléaire en toute sécurité, possède un compteur geiger and offre une protection limitée contre les radiations.</entitydescription.fuelbackpack>
 
+<entityname.HRtongs>Pince pour carburant de réacteur</entityname.HRtongs>
+<entitydescription.HRtongs>Une pince pour maintenir une barre de combustible à une distance sécurisée de vos mains. Peut être utilisé en tant qu'arme contondante si besoin.</entitydescription.HRtongs>
+
 			<!-- Reactor items -->
 
 <entityname.fuelrod>Barre de combustible en uranium</entityname.fuelrod>
