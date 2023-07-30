@@ -5,7 +5,7 @@
     tags="salvage,salvagewreck"
     type="Salvage"
     difficulty="3"
-    commonness="1000"
+    commonness="10"
 	description=""
     reward="4500"
     spawntype="wreck"
@@ -15,41 +15,14 @@
     requirewreck="true">
 
     <Reputation identifier="location" amount="10" />
-    <Reputation identifier="seperatist" amount="15" />
+    <Reputation identifier="coalition" amount="10" />
 
     <Icon texture="Content/UI/MissionIcons2.png" sourcerect="0,512,256,256" color="49,93,233"/>
-
-
-    <LocationType from="City" to="City"/>
-    <LocationType from="City" to="Outpost"/>
-    <LocationType from="City" to="Military"/>
-    <LocationType from="City" to="Research"/>
-    <LocationType from="City" to="Mine"/>
-
-    <LocationType from="Outpost" to="City"/>
-    <LocationType from="Outpost" to="Outpost"/>
-    <LocationType from="Outpost" to="Military"/>
-    <LocationType from="Outpost" to="Research"/>
-    <LocationType from="Outpost" to="Mine"/>
-
-    <LocationType from="Research" to="City"/>
-    <LocationType from="Research" to="Outpost"/>
-    <LocationType from="Research" to="Military"/>
-    <LocationType from="Research" to="Research"/>
-    <LocationType from="Research" to="Mine"/>
-
-    <LocationType from="Military" to="City"/>
-    <LocationType from="Military" to="Outpost"/>
-    <LocationType from="Military" to="Military"/>
-    <LocationType from="Military" to="Research"/>
-    <LocationType from="Military" to="Mine"/>
     
-    <LocationType from="Mine" to="City"/>
-    <LocationType from="Mine" to="Outpost"/>
-    <LocationType from="Mine" to="Military"/>
-    <LocationType from="Mine" to="Research"/>
-    <LocationType from="Mine" to="Mine"/>
+    <LocationType from="AnyOutpost" to="AnyOutpost" />
 
     <message header="" text=""/>
   </SalvageMission>
+  
+  
 </Missions>

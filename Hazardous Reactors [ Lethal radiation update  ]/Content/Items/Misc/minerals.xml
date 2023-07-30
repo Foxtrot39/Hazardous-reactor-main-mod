@@ -41,7 +41,8 @@
   </Item>
 
   <Item identifier="deconcontaminationemitter" description="" hideinmenus="true">
-    <sprite texture="%ModDir%/Content/UI/HazardousIconsAtlas.png" sourcerect="256,0,128,128" color="139,60,42,255" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Content/UI/HazardousIconsAtlas.png" depth="0.3" sourcerect="0,0,0,0" origin="0,0" />
+    <InventoryIcon texture="%ModDir%/Content/UI/HazardousIconsAtlas.png" sourcerect="256,0,128,128" color="139,60,42,255" origin="0.5,0.5" />
     <Body radius="1" width="1" density="10" />
     <ItemComponent>
       <!-- Contamination on Deconstruction-->

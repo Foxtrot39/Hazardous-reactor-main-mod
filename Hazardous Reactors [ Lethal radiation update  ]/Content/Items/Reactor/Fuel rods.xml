@@ -691,7 +691,7 @@
     </Item>
   </Override>
   <Override>
-    <Item name="" identifier="fulguriumfuelrodvolatile" category="fuel" Tags="reactorfuel,HRradioactive" maxstacksize="4" impacttolerance="3" description="" cargocontaineridentifier="fuelcrate" health="750" scale="0.5">
+    <Item name="" identifier="fulguriumfuelrodvolatile" category="fuel" Tags="reactorfuel,HRradioactive" maxstacksize="4" impacttolerance="6" description="" cargocontaineridentifier="fuelcrate" health="750" scale="0.5">
       <!-- Pricing -->
       <Price baseprice="400" soldeverywhere="false">
         <Price locationtype="outpost" multiplier="0" sold="false" />

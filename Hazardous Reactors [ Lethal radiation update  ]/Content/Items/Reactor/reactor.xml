@@ -169,7 +169,7 @@
       <StatusEffect type="OnBroken" target="this" delay="1" comparison="And">
         <RequiredItem items="fuelrod_active,thoriumfuelrod_active,molten_rods" type="Contained" />
         <Conditional InWater="false" />
-        <SpawnItem identifier="molten_rods" spawnposition="ThisInventory" />
+        <SpawnItem identifier="molten_rods" spawnposition="This" />
       </StatusEffect>
       
       <StatusEffect type="Always" target="this" delay="45" comparison="And" checkconditionalalways="true" >
@@ -404,7 +404,7 @@
       </StatusEffect>
       
       <StatusEffect type="Always" target="This" comparison="And">
-        <ParticleEmitter particle="steamspray" particlespersecond="200" anglemin="0" anglemax="360" velocitymin="75" velocitymax="150" underwaterbubble="true" highqualitycollisiondetection="true" />
+        <ParticleEmitter particle="steamspray" particlespersecond="100" anglemin="0" anglemax="360" velocitymin="75" velocitymax="150" underwaterbubble="true" highqualitycollisiondetection="true" />
         <sound file="%ModDir%/Content/Items/Reactor/Steamleak.ogg" type="Always" range="1000.0" loop="true" volume="1.0" />
         <Conditional condition="lte 25" />
         <Conditional condition="gte 10" />
@@ -412,7 +412,7 @@
       </StatusEffect>
       
       <StatusEffect type="Always" target="This" comparison="And">
-        <ParticleEmitter particle="steamspray" particlespersecond="200" anglemin="0" anglemax="360" velocitymin="75" velocitymax="150" underwaterbubble="true" highqualitycollisiondetection="true" />
+        <ParticleEmitter particle="steamspray" particlespersecond="100" anglemin="0" anglemax="360" velocitymin="75" velocitymax="150" underwaterbubble="true" highqualitycollisiondetection="true" />
         <sound file="%ModDir%/Content/Items/Reactor/Steamleak.ogg" type="Always" range="1000.0" loop="true" volume="1.0" />
         <Conditional condition="gte 10" />
         <Conditional TargetContainedItem="true" hastag="crisis" />
@@ -422,14 +422,14 @@
     
     <!-- REACTOR LIGHTS -->
     
-    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="0" IsOn="false" castshadows="false" allowingameediting="false">
+    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="0" IsOn="false" alphablend="false" castshadows="false" allowingameediting="false">
       <IsActive targetitemcomponent="Reactor" temperature="gt 2"/>
       <sprite texture="Content/Items/Reactor/reactor.png" depth="0.025" sourcerect="523,0,482,336" origin="0.5,0.45" alpha="1.0" />
     </LightComponent>
 
-    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="0" IsOn="false" castshadows="false" allowingameediting="false" blinkfrequency="1">
+    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="0" IsOn="false" alphablend="false" castshadows="false" allowingameediting="false" blinkfrequency="1">
       <Upgrade gameversion="0.9.600.0" lightcolor="255,255,255,0" />
-      <sprite texture="Content/Items/Reactor/reactor.png" depth="0.025" sourcerect="523,337,482,336" origin="0.5,0.45" alpha="1.0" />
+      <sprite texture="Content/Items/Reactor/reactor.png" depth="0.025" sourcerect="523,337,482,336" origin="0.5,0.45" alpha="2.0" />
       
       <StatusEffect type="Always" target="This"  IsOn="true" conditionalcomparison="Or"  pulsefrequency="1" >
         <Conditional condition="lte 25" />
