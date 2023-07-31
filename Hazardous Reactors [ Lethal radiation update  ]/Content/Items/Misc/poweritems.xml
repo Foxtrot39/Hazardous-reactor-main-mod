@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
   <Override>
-    <Item name="" identifier="fulguriumbatterycell" category="Equipment,Electrical" maxstacksize="8" tags="smallitem,loadable,mobilebattery" scale="0.5" cargocontaineridentifier="metalcrate" description="" impactsoundtag="impact_metal_light">
+    <Item name="" identifier="fulguriumbatterycell" category="Equipment,Electrical" maxstacksize="8" tags="smallitem,loadable,mobilebattery" health="200" scale="0.5" cargocontaineridentifier="metalcrate" description="" impactsoundtag="impact_metal_light">
       <Upgrade gameversion="0.10.0.0" scale="0.5" />
       <PreferredContainer primary="batterycellrecharger" maxcondition="80" />
       <PreferredContainer secondary="divingcab,engcab,reactorcab" />
