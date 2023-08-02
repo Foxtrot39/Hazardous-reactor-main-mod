@@ -128,13 +128,37 @@
 
 			<!-- Mission text -->
 
-<missionname.salvagewreckwarhead>Recover Experimental Weapon</missionname.salvagewreckwarhead>
-<missiondescription.salvagewreckwarhead>A military Coalition sub has sunk nearby carying an experimental explosive device. Search the area for signs of its distress beacon and recover its cargo.</missiondescription.salvagewreckwarhead>
-<missionsonarlabel.salvagewreckwarhead>Sunken Coalition submarine</missionsonarlabel.salvagewreckwarhead>
-<missionsuccess.salvagewreckwarhead>The warhead has been recovered.</missionsuccess.salvagewreckwarhead>
-<missionfailure.salvagewreckwarhead>Failed to recover the warhead.</missionfailure.salvagewreckwarhead>
-<missionheader0.salvagewreckwarhead>Warhead recovered.</missionheader0.salvagewreckwarhead>
-<missionmessage0.salvagewreckwarhead>You have found the lost warhead. Bring it to [location2] without detonating it to claim your reward. Be warned that it is extremely sensitive to any sort of damage or impact.</missionmessage0.salvagewreckwarhead>
+			<!-- Coalition version -->
+
+<missionname.salvagewreckwarheadcoalition>Recover Experimental Weapon</missionname.salvagewreckwarheadcoalition>
+
+<missiondescription.salvagewreckwarheadcoalition>A military Coalition sub has sunk nearby carying an experimental explosive device. Find the wreck and secure its cargo for the Coalition before someone else does.</missiondescription.salvagewreckwarheadcoalition>
+
+<missionsonarlabel.salvagewreckwarheadcoalition>Coalition submarine wreck</missionsonarlabel.salvagewreckwarheadcoalition>
+
+<missionsuccess.salvagewreckwarheadcoalition>The warhead has been recovered.</missionsuccess.salvagewreckwarheadcoalition>
+
+<missionfailure.salvagewreckwarheadcoalition>Failed to recover the warhead.</missionfailure.salvagewreckwarheadcoalition>
+
+<missionheader0.salvagewreckwarheadcoalition>Warhead recovered.</missionheader0.salvagewreckwarheadcoalition>
+
+<missionmessage0.salvagewreckwarheadcoalition>You have found the lost warhead. Bring it to [location2] without detonating it to claim your reward. Be warned that it is extremely sensitive to any sort of damage or impact.</missionmessage0.salvagewreckwarheadcoalition>
+
+			<!-- Separatist version -->
+
+<missionname.salvagewreckwarheadseparatist>Loot Experimental Weapon</missionname.salvagewreckwarheadseparatist>
+
+<missiondescription.salvagewreckwarheadseparatist>A military Coalition sub has sunk nearby carying an experimental explosive device. Find the wreck and steal its cargo for yourself before someone else takes it.</missiondescription.salvagewreckwarheadseparatist>
+
+<missionsonarlabel.salvagewreckwarheadseparatist>Coalition submarine wreck</missionsonarlabel.salvagewreckwarheadseparatist>
+
+<missionsuccess.salvagewreckwarheadseparatist>Warhead recovered.</missionsuccess.salvagewreckwarheadseparatist>
+
+<missionfailure.salvagewreckwarheadseparatist>Failed to recover the warhead.</missionfailure.salvagewreckwarheadseparatist>
+
+<missionheader0.salvagewreckwarheadseparatist>Warhead looted.</missionheader0.salvagewreckwarheadseparatist>
+
+<missionmessage0.salvagewreckwarheadseparatist>You have stolen the lost warhead. The Coalition wont be happy about it.</missionmessage0.salvagewreckwarheadseparatist>
 
 
 			<!-- Misc/material items -->

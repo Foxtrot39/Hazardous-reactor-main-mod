@@ -19,7 +19,7 @@ Hook.Add("roundStart", "ChangeReactorMeltdownTimers", function()
      local reactor = v.GetComponentString("Reactor")
      if reactor then
         reactor.FireDelay = 15
-        reactor.MeltdownDelay= 40
+        reactor.MeltdownDelay= 60
      end
   end
 end)

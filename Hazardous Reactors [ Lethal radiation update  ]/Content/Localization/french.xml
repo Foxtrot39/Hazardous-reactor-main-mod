@@ -127,20 +127,38 @@
 <entitydescription.nucleargun>Un prototype d'arme énergétique construite avec les matériaux aliens d'Europe. Le danger auquel l'utilisateur s'expose à l'utilisation dépend de la barre de combustible chargé.</entitydescription.nucleargun>
 
 			<!-- Mission text -->
+			
+			<!-- Coalition version -->
 
-<missionname.salvagewreckwarhead>Récupération d'arme expérimentale</missionname.salvagewreckwarhead>
+<missionname.salvagewreckwarheadcoalition>Récupération d'arme expérimentale</missionname.salvagewreckwarheadcoalition>
 
-<missiondescription.salvagewreckwarhead>Un sous-marin militaire de la coalition a sombré à proximité avec à bord un explosif expérimental. Cherchez dans la zone des signes de sa balise de détresse et récupérez sa cargaison.</missiondescription.salvagewreckwarhead>
+<missiondescription.salvagewreckwarheadcoalition>Un sous-marin militaire de la coalition a sombré à proximité avec à bord un explosif expérimental. Sécurisez sa cargaison pour la Coalition avant que quelqu'un d'autre ne le fasse.</missiondescription.salvagewreckwarheadcoalition>
 
-<missionsonarlabel.salvagewreckwarhead>Sous-marin de la Coalition</missionsonarlabel.salvagewreckwarhead>
+<missionsonarlabel.salvagewreckwarheadcoalition>Sous-marin de la Coalition</missionsonarlabel.salvagewreckwarheadcoalition>
 
-<missionsuccess.salvagewreckwarhead>L'ogive a été récupérée.</missionsuccess.salvagewreckwarhead>
+<missionsuccess.salvagewreckwarheadcoalition>L'ogive a été récupérée.</missionsuccess.salvagewreckwarheadcoalition>
 
-<missionfailure.salvagewreckwarhead>Vous n'avez pas réussi à récupérer l'ogive.</missionfailure.salvagewreckwarhead>
+<missionfailure.salvagewreckwarheadcoalition>Vous n'avez pas réussi à récupérer l'ogive.</missionfailure.salvagewreckwarheadcoalition>
 
-<missionheader0.salvagewreckwarhead>Ogive récupérée.</missionheader0.salvagewreckwarhead>
+<missionheader0.salvagewreckwarheadcoalition>Ogive récupérée.</missionheader0.salvagewreckwarheadcoalition>
 
-<missionmessage0.salvagewreckwarhead>Vous avez trouvé l'ogive perdue. Amenez-la à [location2] sans la faire exploser pour toucher votre récompense. Soyez prévenu : l'ogive est extrêmement sensible à tout type de dégâts ou impact.</missionmessage0.salvagewreckwarhead>
+<missionmessage0.salvagewreckwarheadcoalition>Vous avez trouvé l'ogive perdue. Amenez-la à [location2] sans la faire exploser pour toucher votre récompense. Soyez prévenu : l'ogive est extrêmement sensible à tout type de dégâts ou impact.</missionmessage0.salvagewreckwarheadcoalition>
+
+			<!-- Separatist version -->
+
+<missionname.salvagewreckwarheadseparatist>Pillage d'arme expérimentale</missionname.salvagewreckwarheadseparatist>
+
+<missiondescription.salvagewreckwarheadseparatist>Un sous-marin militaire de la coalition a sombré à proximité avec à bord un explosif expérimental. Voler la cargaison pour vous-même avant que quelqu'un d'autre ne la récupère.</missiondescription.salvagewreckwarheadseparatist>
+
+<missionsonarlabel.salvagewreckwarheadseparatist>Sous-marin de la Coalition</missionsonarlabel.salvagewreckwarheadseparatist>
+
+<missionsuccess.salvagewreckwarheadseparatist>L'ogive a été récupérée.</missionsuccess.salvagewreckwarheadseparatist>
+
+<missionfailure.salvagewreckwarheadseparatist>Vous n'avez pas réussi à récupérer l'ogive.</missionfailure.salvagewreckwarheadseparatist>
+
+<missionheader0.salvagewreckwarheadseparatist>Ogive dérobée.</missionheader0.salvagewreckwarheadseparatist>
+
+<missionmessage0.salvagewreckwarheadseparatist>Vous avez voler l'ogive perdue. La Coalition ne sera heureuse de l'apprendre.</missionmessage0.salvagewreckwarheadseparatist>
 
 			<!-- Misc/material items -->
 			
