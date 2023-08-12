@@ -102,10 +102,12 @@
       <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" disabledeltatime="true">
         <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
         <Affliction identifier="radiationresistance" amount="600" />
+        <Affliction identifier="contaminationresistance" amount="600" />
       </StatusEffect>
       <StatusEffect tags="medical" type="OnFailure" target="UseTarget" disabledeltatime="true">
         <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
         <Affliction identifier="radiationresistance" amount="300" />
+        <Affliction identifier="contaminationresistance" amount="300" />
       </StatusEffect>
       <!-- Remove the item when fully used -->
       <StatusEffect type="OnBroken" target="This">

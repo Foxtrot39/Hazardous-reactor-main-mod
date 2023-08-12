@@ -33,9 +33,9 @@ function replaceEntity(current, prefab, ...)
   -- initialized after Luatrauma invokes our `<LuaHook>`s.
   if not Entity.Spawner then
     -- Reschedule it to run on the next frame... hopefully it will be initialized then
-    Timer.NextFrame(function()
+    Timer.Wait(function()
       replaceEntity(current, prefab, unpack(args))
-    end)
+    end, 35)
     return
   end
 
@@ -43,9 +43,9 @@ function replaceEntity(current, prefab, ...)
   -- This needs to be done on the next tick because Barotrauma processes
   -- the spawn queue before the remove queue, which could result in the
   -- item container overflowing.
-  Timer.NextFrame(function()
+  Timer.Wait(function()
     Entity.Spawner.AddItemToSpawnQueue(prefab, unpack(args))
-  end)
+  end, 35)
 end
 
 -- To Swap out Inactive for Active Fuelrod
