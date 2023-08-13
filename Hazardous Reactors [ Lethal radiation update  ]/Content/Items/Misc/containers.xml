@@ -374,18 +374,18 @@
           <StatusEffect type="OnUse" targettype="This" IsOn="true" />
           <StatusEffect type="OnSecondaryUse" targettype="This" IsOn="false" />
         </TickBox>
-      </CustomInterface> -->
+      </CustomInterface>
     
   <ItemContainer autofill="False" capacity="1" slotsperrow="1" maxstacksize="1" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="false" >
       <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="192,448,64,64" origin="0.5,0.5" />
       <Containable items="reactorfuel,depletedfuel" />
-     <!-- <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
       <SubContainer capacity="1" >
       <Containable items="mobilebattery">
         <StatusEffect type="OnContaining" targettype="This" Voltage="1.0" setvalue="true" />
       </Containable>
-      </SubContainer> -->
-    </ItemContainer>
+      </SubContainer>
+    </ItemContainer> -->
 
      <!-- <GuiFrame relativesize="0.11,0.1" anchor="CenterLeft" pivot="BottomLeft" relativeoffset="0.006,-0.05" style="ItemUI" />
 
