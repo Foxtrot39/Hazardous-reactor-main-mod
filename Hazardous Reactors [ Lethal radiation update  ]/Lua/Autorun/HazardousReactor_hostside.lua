@@ -4,7 +4,7 @@ LuaUserData.MakeFieldAccessible(Descriptors["Barotrauma.Items.Components.Reactor
 
 local geigerRadsIndex = {}
 
-Hook.Add("geigercount", "geigereffect", function (effect, deltaTime, item, targets, worldPosition)
+Hook.Add("geigercount", "geigereffect", function(effect, deltaTime, item, targets, worldPosition)
   local c = targets[1]
   if not c then
     item.condition = 100
@@ -40,7 +40,7 @@ function replaceEntity(current, prefab, ...)
   end
 
   Entity.Spawner.AddEntityToRemoveQueue(current)
-  -- This needs to be done on the next tick, because Barotrauma processes
+  -- This needs to be done on the next tick because Barotrauma processes
   -- the spawn queue before the remove queue, which could result in the
   -- item container overflowing.
   Timer.Wait(function()
@@ -49,7 +49,7 @@ function replaceEntity(current, prefab, ...)
 end
 
 -- To Swap out Inactive for Active Fuelrod
-Hook.Add("fuelrodswap", "rodswap", function (effect, deltaTime, item, targets, worldPosition)
+Hook.Add("fuelrodswap", "rodswap", function(effect, deltaTime, item, targets, worldPosition)
   local rod = targets[1]
   if not rod then return end
 
@@ -58,16 +58,16 @@ Hook.Add("fuelrodswap", "rodswap", function (effect, deltaTime, item, targets, w
 end)
 
 -- Fulgurium Fuel rod Special effect AutoReactor Control
-Hook.Add("fulguriumrodspecial", "fulguriumrodspecialed", function (effect, deltaTime, item, targets, worldPosition)
+Hook.Add("fulguriumrodspecial", "fulguriumrodspecialed", function(effect, deltaTime, item, targets, worldPosition)
   local rod = targets[1]
   if not rod then return end
-  local light = rod.GetComponentString("LightComponent")
+  local light = rod:GetComponentString("LightComponent")
 
   if light.Range > 0 then
-    local reactor = item.GetComponentString("Reactor")
+    local reactor = item:GetComponentString("Reactor")
     local correctionvalue = reactor.CorrectTurbineOutput - reactor.TargetTurbineOutput
     if math.abs(correctionvalue) < 15 then return end
-    --Host Only!
+    -- Host Only!
     if correctionvalue > 0 then
       reactor.TargetTurbineOutput = reactor.TargetTurbineOutput + 5
     else
@@ -81,12 +81,12 @@ end)
 local heatspikePrefab = ItemPrefab.GetItemPrefab("heatspikeemitter")
 
 -- Incendium Fuel rod Special effect, Uncontrolled Reactor Temp! + Spawning "heat spikes"
-Hook.Add("incendiumrodspecial", "incendiumrodspecialed", function (effect, deltaTime, item, targets, worldPosition)
+Hook.Add("incendiumrodspecial", "incendiumrodspecialed", function(effect, deltaTime, item, targets, worldPosition)
   local rod = targets[1]
   if not rod then return end
 
-  local light = rod.GetComponentString("LightComponent")
-  local reactor = item.GetComponentString("Reactor")
+  local light = rod:GetComponentString("LightComponent")
+  local reactor = item:GetComponentString("Reactor")
 
   -- The higher the number, the worse it is!
   local luckynumber = math.random(1000)
@@ -132,16 +132,15 @@ end)
 
 -- To swap standard rods with corium
 local moltenRodPrefab = ItemPrefab.GetItemPrefab("molten_rods")
-Hook.Add("meltdownstandard", "rodswap", function (effect, deltaTime, item, targets, worldPosition)
+Hook.Add("meltdownstandard", "rodswap", function(effect, deltaTime, item, targets, worldPosition)
   local rod = targets[1]
   if not rod then return end
   replaceEntity(rod, moltenRodPrefab, item.ownInventory)
 end)
 
-
 -- To swap volatile rods with its critical variant
 local criticalFulguriumPrefab = ItemPrefab.GetItemPrefab("supercritical_fulgurium")
-Hook.Add("meltdownvolatile", "rodswap", function (effect, deltaTime, item, targets, worldPosition)
+Hook.Add("meltdownvolatile", "rodswap", function(effect, deltaTime, item, targets, worldPosition)
   local rod = targets[1]
   if not rod then return end
   replaceEntity(rod, criticalFulguriumPrefab, item.ownInventory)
@@ -149,7 +148,7 @@ end)
 
 -- To swap incendium rods with its critical variant
 local criticalIncendiumPrefab = ItemPrefab.GetItemPrefab("supercritical_incendium")
-Hook.Add("meltdownincendium", "rodswap", function (effect, deltaTime, item, targets, worldPosition)
+Hook.Add("meltdownincendium", "rodswap", function(effect, deltaTime, item, targets, worldPosition)
   local rod = targets[1]
   if not rod then return end
   replaceEntity(rod, criticalIncendiumPrefab, item.ownInventory)
