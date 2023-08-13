@@ -64,10 +64,10 @@
 <entitydescription.DNAstabiliser>Rare and complex compound able to slowly restore damaged DNA over a long period of time, dangerous if injected by untrained personel.</entitydescription.DNAstabiliser>
 
 <entityname.antirad>AntiRad</entityname.antirad>
-<entitydescription.antirad>Very potent medecine able to purge in seconds the body of all radioactive elementes alogn radiation, better kept for medical emergencies.</entitydescription.antirad>
+<entitydescription.antirad>Very potent medecine able to purge in seconds the body of all radioactive elementes along radiation, better kept for medical emergencies.</entitydescription.antirad>
 
 <entityname.radiotoxin>Radiotoxin</entityname.radiotoxin>
-<entitydescription.radiotoxin>An extremely radioactif element able to cause acute radiation syndrome.</entitydescription.radiotoxin>
+<entitydescription.radiotoxin>An extremely radioactive element able to cause acute radiation syndrome.</entitydescription.radiotoxin>
 
 			<!-- Containers -->
 
@@ -99,6 +99,7 @@
 <entitydescription.fulguriumfuelrod>Doesen't provide as much heat as other types of fuel rod, but lasts much longer and acts as a moderator, reducing fission spikes from other rods. Too stable to be used as is, and must be pre-heated to be used as fuel.</entitydescription.fulguriumfuelrod>
 
 <entityname.fulguriumfuelrodvolatile>Volatile Fulgurium Fuel Rod</entityname.fulguriumfuelrodvolatile>
+<!-- from Cognitive Cake: Very hard to understand the next line-->
 <entitydescription.fulguriumfuelrodvolatile>An amalgam rod of incendium and fulgurium, it doesn't have the potency of incendium and the longevity of fulgurium but has roughly half their respective strength but for nearly all their drawbacks.</entitydescription.fulguriumfuelrodvolatile>
 
 <entityname.ekutility_incendiumfuelrod>Incendium fuel rod</entityname.ekutility_incendiumfuelrod>
@@ -119,6 +120,7 @@
 			<!-- Weapons -->
 
 <entityname.nukerod>Crisis warhead</entityname.nukerod>
+<!-- from Cognitive Cake: What means "alien fuel rod"? It's just supercritical incendium or fulgurium fuel rod, isn't it?-->
 <entitydescription.nukerod>A stasis locked supercritical alien fuel rod, the stasis emitters are very impact sensitive and may fail if hitting anything making it a very potent warhead.</entitydescription.nukerod>
 
 <entityname.nukerodenhanced>Enhanced Crisis warhead</entityname.nukerodenhanced>
