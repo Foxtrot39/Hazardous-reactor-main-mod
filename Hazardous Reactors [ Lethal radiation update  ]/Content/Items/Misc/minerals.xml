@@ -179,7 +179,6 @@
       <LightTexture texture="Content/Lights/pointlight_rays.png" origin="0.5,0.5" />
       
     <!-- RADIATION EFFECT WHEN ON -->
-    <LightComponent lightcolor="0,0,0,0" range="0" ison="true" drawbehindsubs="true" castshadows="false">
       <StatusEffect type="OnActive" target="NearbyCharacters" range="180" interval="1" disabledeltatime="true">
         <Conditional InWater="true" />
         <Affliction identifier="radiationsickness" strength="0.05" />
@@ -321,7 +320,6 @@
       <LightTexture texture="Content/Lights/pointlight_rays.png" origin="0.5,0.5" />
       
     <!-- RADIATION EFFECT WHEN ON -->
-    <LightComponent lightcolor="0,0,0,0" range="0" ison="true" drawbehindsubs="true" castshadows="false">
       <StatusEffect type="OnActive" target="NearbyCharacters" range="180" interval="1" disabledeltatime="true">
         <Conditional InWater="true" />
         <Affliction identifier="radiationsickness" strength="0.05" />
