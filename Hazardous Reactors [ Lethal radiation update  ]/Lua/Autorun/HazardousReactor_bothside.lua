@@ -15,21 +15,20 @@ end)
 
 -- Reactor fire/meltdown delay override
 Hook.Add("roundStart", "ChangeReactorMeltdownTimers", function()
- main
   for k, v in pairs(Item.ItemList) do
     local reactor = v.GetComponentString("Reactor")
     if reactor then
       reactor.FireDelay = 15
       reactor.MeltdownDelay = 40
     end
-=======
+
    for k, v in pairs(Item.ItemList) do
      local reactor = v.GetComponentString("Reactor")
      if reactor then
         reactor.FireDelay = 15
         reactor.MeltdownDelay= 60
      end
- main
+  end
   end
 end)
 

@@ -275,7 +275,7 @@
     </Wearable>
     <!-- Only accept radioactive materials in certain slots -->
     <ItemContainer slotsperrow="2" capacity="2" maxstacksize="16" hideitems="true" >
-      <Containable items="reactorfuel,uranium,thorium,uraniumore,brockite,thorianite" />
+      <Containable items="reactorfuel,uranium,thorium,uraniumore,brockite,thorianite,depletedfuel" />
       <SlotIcon slotindex="0" texture="Content/UI/MainIconsAtlas.png" sourcerect="896,768,128,128" origin="0.5,0.5"/>
       <SlotIcon slotindex="1" texture="Content/UI/MainIconsAtlas.png" sourcerect="896,768,128,128" origin="0.5,0.5"/>
       <SubContainer slotsperrow="3" capacity="4" maxstacksize="16" hideitems="true" >

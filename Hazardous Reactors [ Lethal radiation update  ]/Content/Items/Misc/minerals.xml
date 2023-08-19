@@ -158,7 +158,7 @@
       </StatusEffect>
     </LightComponent>
   </Item>
-
+  
   <Item name="" identifier="uraniumore" category="Material" Tags="smallitem,ore,HRradioactive" maxstacksize="8" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="mineralcab" secondary="storagecab"/>
     <Price baseprice="200" sold="false">
@@ -174,9 +174,28 @@
       <Item identifier="uranium" />
       <Item identifier="deconcontaminationemitter" />
     </Deconstruct>
-    <!-- TODO: sprite and inventory icon -->
+    <!-- Sprite and inventory icon -->
     <LightComponent lightcolor="83,160,100,225" range="100" powerconsumption="0" flicker="0.0" flickerspeed="0.5" pulsefrequency="0.4" pulseamount="0" ison="true" drawbehindsubs="true">
       <LightTexture texture="Content/Lights/pointlight_rays.png" origin="0.5,0.5" />
+      
+    <!-- RADIATION EFFECT WHEN ON -->
+    <LightComponent lightcolor="0,0,0,0" range="0" ison="true" drawbehindsubs="true" castshadows="false">
+      <StatusEffect type="OnActive" target="NearbyCharacters" range="180" interval="1" disabledeltatime="true">
+        <Conditional InWater="true" />
+        <Affliction identifier="radiationsickness" strength="0.05" />
+        <Affliction identifier="radiationgeiger" strength="0.05" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="NearbyCharacters" range="180" interval="1" disabledeltatime="true">
+        <Conditional InWater="false" />
+        <Affliction identifier="radiationsickness" strength="0.1" />
+        <Affliction identifier="radiationgeiger" strength="0.1" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="NearbyCharacters" range="350" interval="1" disabledeltatime="true">
+        <Conditional InWater="false" />
+        <Affliction identifier="radiationsickness" strength="0.002" />
+        <Affliction identifier="radiationgeiger" strength="0.002" />
+      </StatusEffect>
+      
     </LightComponent>
     <ContainedSprite texture="Content/Items/Materials/MineralEnvironment.png" usewhenattached="true" decorativespritebehavior="HideWhenNotVisible" depth="0.55" sourcerect="768,731,86,147" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Materials/Minerals.png" depth="0.3" sourcerect="911,773,107,116" origin="0.5,0.5" />
@@ -196,7 +215,20 @@
       <Commonness commonness="0.65" leveltype="hydrothermalwastes" />
       <RequiredItem items="cuttingequipment" type="Equipped" />
     </LevelResource>
-    <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgUsePlasmaCutter" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false" />
+    
+    <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgUsePlasmaCutter" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false" >
+        <!-- TURNS ON THE RADIATION -->
+      <StatusEffect type="OnNotContained" target="This" IsOn="true"/>
+
+      <StatusEffect type="OnContained" target="This" IsOn="true">
+        <Conditional hastag="neq hazardcontainement" targetcontainer="true" />
+      </StatusEffect>
+
+      <!-- TURNS OFF THE RADIATION -->
+      <StatusEffect type="OnContained" target="This" IsOn="false">
+        <Conditional hastag="eq hazardcontainement" targetcontainer="true" />
+      </StatusEffect>
+    </Holdable>
   </Item>
 
   <Item name="" identifier="brockite" category="Material" Tags="smallitem,ore,HRradioactive" maxstacksize="8" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
@@ -216,6 +248,25 @@
     <!-- TODO: sprite and inventory icon -->
     <LightComponent lightcolor="178,108,109,225" range="100" powerconsumption="0" flicker="0.0" flickerspeed="0.5" pulsefrequency="0.4" pulseamount="0" ison="true" drawbehindsubs="true">
       <LightTexture texture="Content/Lights/pointlight_rays.png" origin="0.5,0.5" />
+      
+    <!-- RADIATION EFFECT WHEN ON -->
+    
+      <StatusEffect type="OnActive" target="NearbyCharacters" range="180" interval="1" disabledeltatime="true">
+        <Conditional InWater="true" />
+        <Affliction identifier="radiationsickness" strength="0.05" />
+        <Affliction identifier="radiationgeiger" strength="0.05" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="NearbyCharacters" range="180" interval="1" disabledeltatime="true">
+        <Conditional InWater="false" />
+        <Affliction identifier="radiationsickness" strength="0.1" />
+        <Affliction identifier="radiationgeiger" strength="0.1" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="NearbyCharacters" range="350" interval="1" disabledeltatime="true">
+        <Conditional InWater="false" />
+        <Affliction identifier="radiationsickness" strength="0.002" />
+        <Affliction identifier="radiationgeiger" strength="0.002" />
+      </StatusEffect>
+      
     </LightComponent>
     <ContainedSprite texture="Content/Items/Materials/MineralEnvironment.png" usewhenattached="true" decorativespritebehavior="HideWhenNotVisible" depth="0.55" sourcerect="0,731,86,147" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Materials/Minerals.png" depth="0.3" sourcerect="521,767,109,117" origin="0.5,0.5" />
@@ -235,7 +286,20 @@
       <Commonness commonness="0.75" leveltype="hydrothermalwastes" />
       <RequiredItem items="cuttingequipment" type="Equipped" />
     </LevelResource>
-    <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgUsePlasmaCutter" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false" />
+    <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgUsePlasmaCutter" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false" >
+    
+          <!-- TURNS ON THE RADIATION -->
+      <StatusEffect type="OnNotContained" target="This" IsOn="true"/>
+
+      <StatusEffect type="OnContained" target="This" IsOn="true">
+        <Conditional hastag="neq hazardcontainement" targetcontainer="true" />
+      </StatusEffect>
+
+      <!-- TURNS OFF THE RADIATION -->
+      <StatusEffect type="OnContained" target="This" IsOn="false">
+        <Conditional hastag="eq hazardcontainement" targetcontainer="true" />
+      </StatusEffect>
+    </Holdable>
   </Item>
 
   <Item name="" identifier="thorianite" category="Material" Tags="smallitem,ore,HRradioactive" maxstacksize="8" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
@@ -255,6 +319,25 @@
     <!-- TODO: sprite and inventory icon -->
     <LightComponent lightcolor="160,175,187,225" range="100" powerconsumption="0" flicker="0.0" flickerspeed="0.5" pulsefrequency="0.4" pulseamount="0" ison="true" drawbehindsubs="true">
       <LightTexture texture="Content/Lights/pointlight_rays.png" origin="0.5,0.5" />
+      
+    <!-- RADIATION EFFECT WHEN ON -->
+    <LightComponent lightcolor="0,0,0,0" range="0" ison="true" drawbehindsubs="true" castshadows="false">
+      <StatusEffect type="OnActive" target="NearbyCharacters" range="180" interval="1" disabledeltatime="true">
+        <Conditional InWater="true" />
+        <Affliction identifier="radiationsickness" strength="0.05" />
+        <Affliction identifier="radiationgeiger" strength="0.05" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="NearbyCharacters" range="180" interval="1" disabledeltatime="true">
+        <Conditional InWater="false" />
+        <Affliction identifier="radiationsickness" strength="0.1" />
+        <Affliction identifier="radiationgeiger" strength="0.1" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="NearbyCharacters" range="350" interval="1" disabledeltatime="true">
+        <Conditional InWater="false" />
+        <Affliction identifier="radiationsickness" strength="0.002" />
+        <Affliction identifier="radiationgeiger" strength="0.002" />
+      </StatusEffect>
+      
     </LightComponent>
     <ContainedSprite texture="Content/Items/Materials/MineralEnvironment.png" usewhenattached="true" decorativespritebehavior="HideWhenNotVisible" depth="0.55" sourcerect="85,877,88,147" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Materials/Minerals.png" depth="0.3" sourcerect="13,894,111,114" origin="0.5,0.5" />
@@ -274,7 +357,21 @@
       <Commonness commonness="0.50" leveltype="hydrothermalwastes" />
       <RequiredItem items="cuttingequipment" type="Equipped" />
     </LevelResource>
-    <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgUsePlasmaCutter" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false" />
+    <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgUsePlasmaCutter" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false" >
+    
+          <!-- TURNS ON THE RADIATION -->
+      <StatusEffect type="OnNotContained" target="This" IsOn="true"/>
+
+      <StatusEffect type="OnContained" target="This" IsOn="true">
+        <Conditional hastag="neq hazardcontainement" targetcontainer="true" />
+      </StatusEffect>
+
+      <!-- TURNS OFF THE RADIATION -->
+      <StatusEffect type="OnContained" target="This" IsOn="false">
+        <Conditional hastag="eq hazardcontainement" targetcontainer="true" />
+      </StatusEffect>
+    </Holdable>
+    
   </Item>
 
 </Override>
