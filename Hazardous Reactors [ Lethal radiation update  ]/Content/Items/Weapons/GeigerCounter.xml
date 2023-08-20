@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
   <Item name="" identifier="geigercounter" description="" category="Equipment" Tags="smallitem" cargocontaineridentifier="metalcrate" Scale="0.3" impactsoundtag="impact_metal_light">
     <InventoryIcon texture="%ModDir%/Content/Items/Weapons/geiger_counterinv.png" sourcerect="0,0,131,131" depth="0.55" origin="0.5,0.5" />
@@ -12,13 +13,11 @@
       <RequiredItem identifier="plastic" />
       <RequiredItem identifier="fpgacircuit" />
     </Fabricate>
-
     <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="0,-15" msg="ItemMsgPickUpSelect">
       <!-- LUA Geiger Counter-->
       <StatusEffect type="Always" target="Character" interval="1">
         <LuaHook name="geigercount" />
       </StatusEffect>
-
       <!-- Condition Based Sounds-->
       <!-- Low Rad 1-20 -->
       <StatusEffect type="Always" target="This" comparison="And">

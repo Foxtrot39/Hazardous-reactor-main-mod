@@ -730,7 +730,6 @@
       <Body radius="6" height="55" density="20" />
       <LightComponent range="350.0" lightcolor="60,200,150,150" powerconsumption="3" MinVoltage="0.99" IsOn="true" castshadows="true" allowingameediting="false" />
       <!-- Active effect and other SE -->
-      
       <Throwable characterusable="false" slots="Any,RightHand,LeftHand" throwforce="4.0" holdpos="0,0" handle1="0,0" msg="ItemMsgPickUpSelect">
         <StatusEffect type="OnImpact" target="This" disabledeltatime="true" stackable="false" condition="-20">
           <Conditional condition="gte 1" />
@@ -820,36 +819,27 @@
       </Quality>
     </Item>
   </Override>
-
-    <Item name="" category="fuel" identifier="control_rod" Tags="smallitem,reactorfuel,HRradioactive" health='100' maxstacksize="1" scale="0.5" cargocontaineridentifier="metalcrate" pickdistance="150" impactsoundtag="impact_metal_light">
-
-      <!-- Standard info-->
+  <Item name="" category="fuel" identifier="control_rod" Tags="smallitem,reactorfuel,HRradioactive" health="100" maxstacksize="1" scale="0.5" cargocontaineridentifier="metalcrate" pickdistance="150" impactsoundtag="impact_metal_light">
+    <!-- Standard info-->
     <InventoryIcon texture="%ModDir%/Content/Items/Reactor/controlrod2.png" sourcerect="0,0,63,62" origin="0.5,0.5" depth="0.55" />
     <Sprite texture="%ModDir%/Content/Items/Reactor/controlrod1.png" sourcerect="0,0,22,73" origin="0.5,0.5" depth="0.55" />
-      <Body radius="6" height="55" density="20" />
-
-      <!-- Crafting -->
-      <Deconstruct time="25">
-        <Item identifier="titaniumaluminiumalloy" />
-        <Item identifier="lead" />
-
-      </Deconstruct>
-      
-      <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="15">
-        <RequiredSkill identifier="electrical" level="45" />
-        <RequiredSkill identifier="mechanical" level="45" />
-        <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
-        <RequiredItem identifier="lead" />
-
-      </Fabricate>
-
-      <!-- Holding/Throwing & Status Effect -->
-      <Throwable characterusable="false" slots="RightHand,LeftHand" throwforce="4.0" holdpos="0,0" handle1="0,0" msg="ItemMsgPickUpSelect" >
-        <StatusEffect type="Always" target="This" condition="100" disabledeltatime="true" setvalue="true"/>
-      </Throwable>
-
-    </Item>
-  
+    <Body radius="6" height="55" density="20" />
+    <!-- Crafting -->
+    <Deconstruct time="25">
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="lead" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="15">
+      <RequiredSkill identifier="electrical" level="45" />
+      <RequiredSkill identifier="mechanical" level="45" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+      <RequiredItem identifier="lead" />
+    </Fabricate>
+    <!-- Holding/Throwing & Status Effect -->
+    <Throwable characterusable="false" slots="RightHand,LeftHand" throwforce="4.0" holdpos="0,0" handle1="0,0" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="Always" target="This" condition="100" disabledeltatime="true" setvalue="true" />
+    </Throwable>
+  </Item>
   <!-- CRISIS FUEL RODS -->
   <Item name="" category="fuel" identifier="supercritical_incendium" scale="0.5" tags="crisis,reactorfuel,HRradioactive" impacttolerance="3" impactsoundtag="impact_metal_light" description="" health="400">
     <!-- Texture and light -->
@@ -862,7 +852,7 @@
     </LightComponent>
     <Throwable characterusable="false" slots="Any,RightHand,LeftHand" throwforce="4.0" holdpos="0,0" handle1="0,0" msg="ItemMsgPickUpSelect">
       <!-- Applies flare effect -->
-      <StatusEffect type="OnContained" disabledeltatime="true" stackable="false" target="This" comparison="And" >
+      <StatusEffect type="OnContained" disabledeltatime="true" stackable="false" target="This" comparison="And">
         <Conditional condition="gt 1" />
         <Conditional targetcontainer="true" hastag="neq stasis" />
         <sound file="Content/Items/Tools/FlareLoop.ogg" range="800.0" loop="true" />
@@ -886,7 +876,6 @@
           <Affliction identifier="hazardexposure" strength="10" />
         </Explosion>
       </StatusEffect>
-      
       <StatusEffect type="OnNotContained" disabledeltatime="true" stackable="false" delay="1" target="This" comparison="And">
         <Conditional condition="gt 1" />
         <Explosion range="500" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
@@ -894,19 +883,16 @@
           <Affliction identifier="hazardexposure" strength="10" />
         </Explosion>
       </StatusEffect>
-      
       <StatusEffect type="OnContained" disabledeltatime="true" stackable="false" delay="1" target="This" comparison="And">
         <Conditional condition="gt 1" />
         <Conditional targetcontainer="true" hastag="neq stasis" />
         <Explosion range="350" structuredamage="10" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" />
       </StatusEffect>
-      
       <StatusEffect type="OnNotContained" disabledeltatime="true" stackable="false" delay="1" target="This" comparison="And">
         <Conditional condition="gt 1" />
         <Explosion range="350" structuredamage="10" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" />
       </StatusEffect>
-      
-      <StatusEffect type="InWater" target="This,Hull" WaterVolume="-20000" >
+      <StatusEffect type="InWater" target="This,Hull" WaterVolume="-20000">
         <Conditional condition="gt 1" />
         <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="1" velocitymin="0" velocitymax="50" scalemin="1" scalemax="1" />
         <ParticleEmitter particle="extinguisher" anglemin="0" anglemax="360" velocitymin="5.0" velocitymax="50.0" particlespersecond="40" />
@@ -917,12 +903,10 @@
         <Affliction identifier="burningrod" strength="100" />
       </StatusEffect>
       <!-- Burnout timer using item condition as countdown, deactivated in the reinforced fuel carrier -->
-      <StatusEffect type="Always" target="This" condition="-2.5" delay="1" stackable="false" disabledeltatime="true" >
+      <StatusEffect type="Always" target="This" condition="-2.5" delay="1" stackable="false" disabledeltatime="true">
         <Conditional targetcontainer="true" hastag="neq stasis" />
       </StatusEffect>
-
-    <!-- Powerfull explosion if impacting anything -->
-
+      <!-- Powerfull explosion if impacting anything -->
       <StatusEffect type="OnImpact" target="This" disabledeltatime="true" stackable="false">
         <Conditional condition="gt 1" />
         <use />
@@ -961,21 +945,18 @@
       <LightTexture texture="Content/Lights/pointlight_rays.png" origin="0.5,0.5" />
     </LightComponent>
     <!-- Active effect and other SE -->
-
-    <Throwable characterusable="false" slots="Any,RightHand,LeftHand" throwforce="1.0" holdpos="0,-50" handle1="-10,0" handle2="10,0" msg="ItemMsgPickUpSelect" >
+    <Throwable characterusable="false" slots="Any,RightHand,LeftHand" throwforce="1.0" holdpos="0,-50" handle1="-10,0" handle2="10,0" msg="ItemMsgPickUpSelect">
       <StatusEffect type="Always" target="This" interval="3">
         <Explosion range="1000" stun="0" force="0.001" smoke="false" flames="false" shockwave="false" sparks="false" underwaterbubble="false" camerashake="0.0" flash="false" flashRange="0" ignorecover="false">
           <Affliction identifier="radiationsickness" strength="25" />
           <Affliction identifier="lethalradiation" strength="25" />
         </Explosion>
       </StatusEffect>
-      
       <StatusEffect type="Always" target="This" interval="0">
         <Explosion range="1000" stun="0" force="0" showeffects="false" ignorecover="false">
           <Affliction identifier="radiationgeiger" strength="8" />
         </Explosion>
       </StatusEffect>
-      
       <StatusEffect type="Always" target="This" stackable="false" interval="1">
         <Explosion range="1000" stun="0" force="0.001" showeffects="false" ignorecover="false">
           <Affliction identifier="hazardexposure" strength="1000" />

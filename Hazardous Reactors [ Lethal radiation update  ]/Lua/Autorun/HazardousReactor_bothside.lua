@@ -15,20 +15,12 @@ end)
 
 -- Reactor fire/meltdown delay override
 Hook.Add("roundStart", "ChangeReactorMeltdownTimers", function()
-  for k, v in pairs(Item.ItemList) do
-    local reactor = v.GetComponentString("Reactor")
-    if reactor then
-      reactor.FireDelay = 15
-      reactor.MeltdownDelay = 40
-    end
-
    for k, v in pairs(Item.ItemList) do
      local reactor = v.GetComponentString("Reactor")
      if reactor then
         reactor.FireDelay = 15
         reactor.MeltdownDelay= 60
      end
-  end
   end
 end)
 
@@ -57,7 +49,7 @@ Hook.Patch(
     -- Only force update if reactorfuel tag is present
     if instance.item.HasTag("reactorfuel") then
       ptable.PreventExecution = true
-      instance.Update(ptable.deltaTime, ptable.cam)
+      instance.Update(ptable.cam)
     end
   end,
   Hook.HookMethodType.Before

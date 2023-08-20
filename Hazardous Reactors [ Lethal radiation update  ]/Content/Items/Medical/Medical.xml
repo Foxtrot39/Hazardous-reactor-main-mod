@@ -13,10 +13,9 @@
       <Price storeidentifier="merchantcity" sold="false" />
       <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
       <Price storeidentifier="merchantmilitary" sold="false" multiplier="1.25" />
-      <Price storeidentifier="merchantmine"  sold="false" />
+      <Price storeidentifier="merchantmine" sold="false" />
       <Price storeidentifier="merchantengineering" sold="false" minavailable="2" />
     </Price>
-	
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="30">
       <RequiredSkill identifier="medical" level="18" />
       <RequiredItem identifier="ethanol" />
@@ -32,7 +31,7 @@
     <Sprite texture="%ModDir%/Content/Items/Medical/radmedicines.png" sourcerect="0,0,24,47" origin="0.5,0.5" depth="0.6" />
     <InventoryIcon texture="%ModDir%/Content/Items/Medical/radmedicinesiconatlas.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
     <Body width="35" height="65" density="20" />
-    <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" handle1="-5,0" holdangle="0" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true" >
+    <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" handle1="-5,0" holdangle="0" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
       <StatusEffect type="OnFailure" target="This" Condition="-50.0" disabledeltatime="true" />
       <StatusEffect type="OnSuccess" target="This" Condition="-50.0" disabledeltatime="true" />
       <RequiredSkill identifier="medical" level="35" />
@@ -41,11 +40,9 @@
         <ReduceAffliction identifier="radiationsickness" amount="1.25" />
         <ReduceAffliction identifier="contamination" amount="1" />
       </StatusEffect>
-	  
-      <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" >
+      <StatusEffect tags="medical" type="OnSuccess" target="UseTarget">
         <Affliction identifier="antiradeffect" strength="60" />
       </StatusEffect>
-	 
       <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" condition="-50" duration="20">
         <conditional lethalradiation="lt 20" />
         <ReduceAffliction identifier="lethalradiation" amount="0.2" />
@@ -79,7 +76,7 @@
       <Price storeidentifier="merchantcity" sold="false" />
       <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
       <Price storeidentifier="merchantmilitary" sold="false" multiplier="1.25" />
-      <Price storeidentifier="merchantmine"  sold="false" />
+      <Price storeidentifier="merchantmine" sold="false" />
       <Price storeidentifier="merchantengineering" sold="false" minavailable="2" />
     </Price>
     <Sprite texture="%ModDir%/Content/Items/Medical/radmedicines.png" sourcerect="24,0,32,58" origin="0.5,0.5" depth="0.6" />
@@ -129,7 +126,7 @@
       <Price storeidentifier="merchantcity" sold="false" />
       <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
       <Price storeidentifier="merchantmilitary" sold="false" multiplier="1.25" />
-      <Price storeidentifier="merchantmine"  sold="false" />
+      <Price storeidentifier="merchantmine" sold="false" />
       <Price storeidentifier="merchantengineering" sold="false" minavailable="2" />
     </Price>
     <SuitableTreatment identifier="dnadamage" suitability="100" />
@@ -147,7 +144,7 @@
     <Sprite texture="%ModDir%/Content/Items/Medical/radmedicines.png" sourcerect="56,0,39,69" origin="0.5,0.5" depth="0.6" />
     <InventoryIcon texture="%ModDir%/Content/Items/Medical/radmedicinesiconatlas.png" sourcerect="0,64,64,64" origin="0.5,0.5" />
     <Body width="35" height="65" density="20" />
-    <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand"  aimpos="40,5" handle1="-4,0" holdangle="180" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+    <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-4,0" holdangle="180" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
       <RequiredSkill identifier="medical" level="70" />
       <StatusEffect type="OnFailure" target="This" Condition="-100.0" disabledeltatime="true" />
       <StatusEffect type="OnSuccess" target="This" Condition="-100.0" disabledeltatime="true" />
@@ -155,24 +152,18 @@
         <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
         <ReduceAffliction identifier="dnadamage" amount="0.16" />
       </StatusEffect>
-	  
-      <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" >
+      <StatusEffect tags="medical" type="OnSuccess" target="UseTarget">
         <Affliction identifier="dnaregeneration" strength="375" />
       </StatusEffect>
-	  
-      <StatusEffect tags="medical" type="OnFailure" target="UseTarget" >
+      <StatusEffect tags="medical" type="OnFailure" target="UseTarget">
         <Affliction identifier="dnaregeneration" strength="375" />
       </StatusEffect>
-	  
       <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="375">
         <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
         <Affliction identifier="internaldamage" strength="0.1" />
         <Affliction identifier="bloodvomit" amount="1.3" />
         <ReduceAffliction identifier="dnadamage" amount="0.06" />
       </StatusEffect>
-	  
-
-	  
       <!-- Remove the item when fully used -->
       <StatusEffect type="OnBroken" target="This">
         <Remove />
@@ -211,10 +202,8 @@
         </StatusEffect>
         <StatusEffect tags="poison" type="OnSuccess" target="UseTarget">
           <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
-
           <Affliction identifier="lethalradiation" amount="61" />
         </StatusEffect>
-		
         <!-- Remove the item when fully used -->
         <StatusEffect type="OnBroken" target="This">
           <Remove />
@@ -228,7 +217,7 @@
           <Affliction identifier="radiationsickness" amount="4" />
           <Affliction identifier="contamination" amount="4" />
         </StatusEffect>
-        <StatusEffect tags="poison" type="OnImpact" target="UseTarget" >
+        <StatusEffect tags="poison" type="OnImpact" target="UseTarget">
           <Affliction identifier="lethalradiation" amount="61" />
         </StatusEffect>
       </Projectile>
@@ -241,13 +230,13 @@
       <PreferredContainer primary="wreckmedcab,abandonedmedcab" minamount="0" maxamount="2" spawnprobability="0.5" />
       <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="2" spawnprobability="0.25" />
       <Price baseprice="125">
-      <Price storeidentifier="merchantoutpost" sold="false" />
-      <Price storeidentifier="merchantcity" sold="false" />
-      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
-      <Price storeidentifier="merchantmilitary" sold="false" multiplier="1.25" />
-      <Price storeidentifier="merchantmine"  sold="false" />
-      <Price storeidentifier="merchantengineering" sold="false" minavailable="2" />
-    </Price>
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
+        <Price storeidentifier="merchantmilitary" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" sold="false" />
+        <Price storeidentifier="merchantengineering" sold="false" minavailable="2" />
+      </Price>
       <Fabricate suitablefabricators="medicalfabricator" requiredtime="30">
         <RequiredSkill identifier="medical" level="35" />
         <RequiredItem identifier="radiotoxin" />
@@ -260,10 +249,10 @@
       <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="128,704,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="149,142,37,67" depth="0.6" origin="0.5,0.5" />
       <Body width="35" height="70" density="20" />
-      <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-4,0" holdangle="180" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true" >
+      <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-4,0" holdangle="180" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
         <StatusEffect type="OnFailure" target="This" Condition="-100.0" disabledeltatime="true" />
         <StatusEffect type="OnSuccess" target="This" Condition="-100.0" disabledeltatime="true" />
-        <RequiredSkill identifier="medical" level="5"/>
+        <RequiredSkill identifier="medical" level="5" />
         <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" duration="5.0">
           <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
           <ReduceAffliction identifier="radiationsickness" amount="25.0" />
@@ -281,7 +270,7 @@
           <Remove />
         </StatusEffect>
       </MeleeWeapon>
-      <Projectile characterusable="false" launchimpulse="20.0" sticktocharacters="true" launchrotation="-90" inheritStatusEffectsFrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" >
+      <Projectile characterusable="false" launchimpulse="20.0" sticktocharacters="true" launchrotation="-90" inheritStatusEffectsFrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon">
         <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
           <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
         </StatusEffect>

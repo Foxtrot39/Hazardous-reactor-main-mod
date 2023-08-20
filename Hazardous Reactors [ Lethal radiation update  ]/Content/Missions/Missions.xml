@@ -1,54 +1,17 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Missions>
-  <SalvageMission
-    identifier="salvagewreckwarheadcoalition"
-    tags="salvage,salvagewreck"
-    type="Salvage"
-    difficulty="3"
-    commonness="10"
-	description=""
-    reward="4500"
-    spawntype="wreck"
-    removeitem="true"
-    showmessagewhenpickedup="true"
-    itemidentifier="nukerodenhanced"
-    containertag="container"
-    requirewreck="true">
-    
+  <SalvageMission identifier="salvagewreckwarheadcoalition" tags="salvage,salvagewreck" type="Salvage" difficulty="3" commonness="10" description="" reward="4500" spawntype="wreck" removeitem="true" showmessagewhenpickedup="true" itemidentifier="nukerodenhanced" containertag="container" requirewreck="true">
     <Reputation identifier="coalition" amount="10" />
-    <Reputation identifier="separatists" amount="-10" /> 
-
-    <Icon texture="Content/UI/MissionIcons2.png" sourcerect="0,512,256,256" color="49,93,233"/>
-    
+    <Reputation identifier="separatists" amount="-10" />
+    <Icon texture="Content/UI/MissionIcons2.png" sourcerect="0,512,256,256" color="49,93,233" />
     <LocationType from="AnyOutpost" to="AnyOutpost" />
-
-    <message header="" text=""/>
+    <message header="" text="" />
   </SalvageMission>
-  
-  <SalvageMission
-    identifier="salvagewreckwarheadseparatist"
-    tags="salvage,salvagewreck"
-    type="Salvage"
-    difficulty="3"
-    commonness="10"
-	description=""
-    reward="0"
-    spawntype="wreck"
-    removeitem="false"
-    showmessagewhenpickedup="true"
-    itemidentifier="nukerodenhanced"
-    containertag="container"
-    requirewreck="true">
-    
+  <SalvageMission identifier="salvagewreckwarheadseparatist" tags="salvage,salvagewreck" type="Salvage" difficulty="3" commonness="10" description="" reward="0" spawntype="wreck" removeitem="false" showmessagewhenpickedup="true" itemidentifier="nukerodenhanced" containertag="container" requirewreck="true">
     <Reputation identifier="coalition" amount="-10" />
-    <Reputation identifier="separatists" amount="10" /> 
-
-    <Icon texture="Content/UI/MissionIcons.png" sourcerect="0,768,256,256" color="243,146,55"/>
-    
+    <Reputation identifier="separatists" amount="10" />
+    <Icon texture="Content/UI/MissionIcons.png" sourcerect="0,768,256,256" color="243,146,55" />
     <LocationType from="AnyOutpost" to="AnyOutpost" />
-
-    <message header="" text=""/>
+    <message header="" text="" />
   </SalvageMission>
-  
-  
 </Missions>

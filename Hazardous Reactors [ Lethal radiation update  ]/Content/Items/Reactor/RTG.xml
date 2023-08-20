@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
   <Item name="" identifier="rtg" tags="reactor,hazardcontainement" type="Reactor" scale="0.5" linkable="true" category="Machine" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
     <Upgrade gameversion="0.10.0.0" scale="*0.5" />
@@ -38,26 +38,19 @@
       </TempRangeIndicator>
       <RequiredSkill identifier="electrical" level="50" />
       <sound file="Content/Items/Reactor/Reactor.ogg" type="OnActive" range="2000.0" volumeproperty="FissionRate" volume="0.02" loop="true" />
-      
       <!--Evaporate water when submerged while running -->
-      
       <StatusEffect type="InWater" target="This,Hull" WaterVolume="-5000" allowwhenbroken="false">
         <Conditional targetitemcomponent="Reactor" temperature="gt 2" />
       </StatusEffect>
-      
       <!-- Kick out content when broken -->
-      
       <StatusEffect type="OnBroken" target="This" FissionRate="0.0" disabledeltatime="true">
         <Conditional AvailableFuel="gt 1" />
       </StatusEffect>
-      
-    <StatusEffect type="OnBroken" target="This">
-      <DropContainedItems/>
-    </StatusEffect >
-    
-        <SkillRequirementHint identifier="electrical" level="50" />
-      </Reactor>
-    
+      <StatusEffect type="OnBroken" target="This">
+        <DropContainedItems />
+      </StatusEffect>
+      <SkillRequirementHint identifier="electrical" level="50" />
+    </Reactor>
     <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="0" IsOn="false" castshadows="false" alphablend="false" allowingameediting="false">
       <Upgrade gameversion="0.9.600.0" lightcolor="255,255,255,0" />
       <IsActive targetitemcomponent="Reactor" temperature="gt 2" />
@@ -88,7 +81,7 @@
       <output name="power_out" displayname="connection.powerout" maxwires="1" />
       <output name="temperature_out" displayname="connection.temperatureout" />
       <input name="shutdown" displayname="connection.shutdown" />
-      <output name="meltdown_warning" displayname="connection.meltdownwarning"/>
+      <output name="meltdown_warning" displayname="connection.meltdownwarning" />
       <input name="set_fissionrate" displayname="connection.setfissionrate" />
       <input name="set_turbineoutput" displayname="connection.setturbineoutput" />
       <output name="power_value_out" displayname="connection.powervalueout" />
@@ -111,7 +104,6 @@
       <Containable items="fulguriumfuelrodvolatile">
         <StatusEffect type="OnContaining" target="This" AvailableFuel="150.0" disabledeltatime="true" />
       </Containable>
-      
     </ItemContainer>
     <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="720" MinDeteriorationCondition="10" minsabotagecondition="10" RepairThreshold="50" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
       <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />

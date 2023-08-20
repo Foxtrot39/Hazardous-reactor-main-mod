@@ -1,10 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--Credits to "Ksarper" on steam for this translation-->
 <infotexts language="Russian" nowhitespace="false" translatedname="Русский">
-
-
   <!-- Afflictions -->
-
   <afflictionname.dnadamage>Повреждение ДНК</afflictionname.dnadamage>
   <afflictiondescription.dnadamage>Пациент страдает от вызванного радиацией повреждения ДНК.</afflictiondescription.dnadamage>
   <afflictiondescription.dnadamage.high>ДНК пациента подверглась критическому радиационному повреждению. Начинают появляться признаки полного отказа органов.</afflictiondescription.dnadamage.high>
@@ -12,16 +9,13 @@
   <afflictiondescription.dnadamage.high.self>Вы можете чувствовать, как ваше тело не справляется даже с элементарным обменом веществ.</afflictiondescription.dnadamage.high.self>
   <afflictioncauseofdeath.dnadamage>ДНК повреждена сверх порога жизнеспособности</afflictioncauseofdeath.dnadamage>
   <afflictioncauseofdeathself.dnadamage>Ваша ДНК больше не может поддерживать жизненно важные функции организма.</afflictioncauseofdeathself.dnadamage>
-
   <afflictionname.radiationresistance>Радиопротектор</afflictionname.radiationresistance>
   <afflictiondescription.radiationresistance>Предотвращает радиоактивное загрязнение и значительно защищает от излучения.</afflictiondescription.radiationresistance>
-
   <afflictionname.contamination>Загрязнение радиоактивными материалами</afflictionname.contamination>
   <afflictiondescription.contamination>У пациента хроническое облучение от вдыхания радиоактивных частиц.</afflictiondescription.contamination>
   <afflictiondescription.contamination.high>У пациента появляются признаки тяжелой лучевой болезни, его начинает рвать кровью.</afflictiondescription.contamination.high>
   <afflictiondescription.contamination.self>Вы чувствуете слабость и кажется, что ожоги возникают из ниоткуда.</afflictiondescription.contamination.self>
   <afflictiondescription.contamination.high.self>Вы получаете ожоги по всему телу и начинаете рвать кровью. Надо было надеть водолазный костюм, прежде чем идти туда... </afflictiondescription.contamination.high.self>
-
   <afflictionname.lethalradiation>Острая лучевая болезнь</afflictionname.lethalradiation>
   <afflictiondescription.lethalradiation.low>У пациента наблюдаются признаки крайней степени лучевой болезни.</afflictiondescription.lethalradiation.low>
   <afflictiondescription.lethalradiation>Здоровье пациента ухудшается чрезвычайно быстро, поскольку организм ослабевает от повреждений, вызванных радиацией.</afflictiondescription.lethalradiation>
@@ -31,103 +25,64 @@
   <afflictiondescription.lethalradiation.high.self>Вы чувствуете, как ваши органы свариваются под воздействием экстремальной радиации, выходя из строя один за другим. У вас осталось не так много времени.</afflictiondescription.lethalradiation.high.self>
   <afflictioncauseofdeath.lethalradiation>Смертельная доза радиации.</afflictioncauseofdeath.lethalradiation>
   <afflictioncauseofdeathself.lethalradiation>Вы умерли от смертельного воздействия радиации.</afflictioncauseofdeathself.lethalradiation>
-
-
   <!-- QoL Afflictions -->
-
   <afflictionname.burningrod>Горячий стержень</afflictionname.burningrod>
   <afflictiondescription.burningrod>Вы держите раскаленный до 2800°C топливный стержень без соответствующего инструмента!</afflictiondescription.burningrod>
   <afflictioncauseofdeath.burningrod>Сгорел заживо, держа перегретый топливный стержень.</afflictioncauseofdeath.burningrod>
-
   <afflictionname.hazardexposure>Опасное воздействие стержня</afflictionname.hazardexposure>
   <afflictiondescription.hazardexposure>Вы находитесь в пределах досягаемости излучения топливного стержня. Наденьте соответствующую защиту.</afflictiondescription.hazardexposure>
-
   <afflictionname.dnaregeneration>Регенерация ДНК</afflictionname.dnaregeneration>
   <afflictiondescription.dnaregeneration>ДНК пациента медленно восстанавливается.</afflictiondescription.dnaregeneration>
-
   <afflictionname.antiradeffect>Противорадиационное лекарственное действие</afflictionname.antiradeffect>
   <afflictiondescription.antiradeffect>Тело пациента медленно очищается от радиоактивных загрязнений и радиации.</afflictiondescription.antiradeffect>
-
-
   <!-- Medical items -->
-
   <entityname.DTPA>DTPA</entityname.DTPA>
   <entitydescription.DTPA>Более доступная, но гораздо более медленно действующая альтернатива антирадиоактивным препаратам, бесполезна при острой лучевой болезни.</entitydescription.DTPA>
-
   <entityname.Potassiumiodide>Иодид калия</entityname.Potassiumiodide>
   <entitydescription.Potassiumiodide>Защищает от радиации и радиоактивного загрязнения. Необходимо принимать регулярно, чтобы сохранить его полный защитный эффект. Не защищает от смертельных источников радиации.</entitydescription.Potassiumiodide>
-
   <entityname.DNAstabiliser>ДНК-стабилизатор</entityname.DNAstabiliser>
   <entitydescription.DNAstabiliser>Редкое и сложное соединение, способное медленно восстанавливать поврежденную ДНК в течение длительного периода времени, опасное при введении неподготовленным человеком.</entitydescription.DNAstabiliser>
-
   <entityname.antirad>АнтиРад</entityname.antirad>
   <entitydescription.antirad>Очень сильнодействующее лекарство, способное за секунды очистить тело от всех радиоактивных элементов. Лучше хранить для неотложной медицинской помощи.</entitydescription.antirad>
-
   <entityname.radiotoxin>Радиотоксин</entityname.radiotoxin>
   <entitydescription.radiotoxin>Чрезвычайно радиоактивный элемент, способный вызвать острую лучевую болезнь.</entitydescription.radiotoxin>
-
-
   <!-- Containers -->
-
   <entityname.fuelcrate>Ящик для хранения радиоактивных материалов</entityname.fuelcrate>
   <entitydescription.fuelcrate>Тяжелый прочный ящик для транспортировки радиоактивных материалов и топливных стержней.</entitydescription.fuelcrate>
-
   <entityname.fueltransportcylinder>Одноблочный транспортер топливных стержней</entityname.fueltransportcylinder>
   <entitydescription.fueltransportcylinder>Односекционный контейнер для хранения стержней. Гораздо менее громоздкий, чем его аналог в виде ящика для топлива. Достаточно надежен, чтобы его можно было хранить в большинстве шкафчиков или ящиков.</entitydescription.fueltransportcylinder>
-
   <entityname.ekutility_handtruck_reactorfuel>Тележка для транспортировки топливных стержней</entityname.ekutility_handtruck_reactorfuel>
   <entitydescription.ekutility_handtruck_reactorfuel>Ручная тележка с экранированным подом для транспортировки топливных стержней.</entitydescription.ekutility_handtruck_reactorfuel>
-
   <entityname.fuelbackpack>Рюкзак с экранированием</entityname.fuelbackpack>
   <entitydescription.fuelbackpack>Экранированный ранец, позволяющий безопасно переносить радиоактивные материалы и топливные стержни. Оснащен встроенным счетчиком Гейгера и обеспечивает пользователю дополнительную защиту от радиации.</entitydescription.fuelbackpack>
-
   <entityname.HRtongs>Клещи для переноски топливных стержней</entityname.HRtongs>
   <entitydescription.HRtongs>Специальные клещи для удержания топливных стержней на расстоянии вытянутой руки. Может использоваться как двуручное оружие ближнего боя.</entitydescription.HRtongs>
-
-
   <!-- Reactor items -->
-
   <entityname.fuelrod>Урановый топливный стержень</entityname.fuelrod>
   <entitydescription.fuelrod>Обычный ядерный топливный стержень.</entitydescription.fuelrod>
-
   <entityname.thoriumfuelrod>Ториевый топливный стержень</entityname.thoriumfuelrod>
   <entitydescription.thoriumfuelrod>Может служить до трех раз дольше, чем урановые стержни.</entitydescription.thoriumfuelrod>
-
   <entityname.fulguriumfuelrod>Грозовиевый топливный стержень</entityname.fulguriumfuelrod>
   <entitydescription.fulguriumfuelrod>Не обеспечивает столько тепла, как другие топливные стержни, но служит гораздо дольше и обладает способностью контролировать деление. Уменьшает температурные всплески других стержней. Слишком стабильны, чтобы использоваться как есть, и нуждаются в предварительном нагреве для использования в качестве топлива.</entitydescription.fulguriumfuelrod>
-
   <entityname.fulguriumfuelrodvolatile>Нестабильный грозовиевый топливный стержень</entityname.fulguriumfuelrodvolatile>
   <entitydescription.fulguriumfuelrodvolatile>Aмальгамный стержень из воспламенита и грозовия, он не обладает силой воспламенита и долговечностью грозовия, имеет примерно половину их соответствующей силы, а также почти все их недостатки.</entitydescription.fulguriumfuelrodvolatile>
-
   <entityname.ekutility_incendiumfuelrod>Воспламенитовый топливный стержень</entityname.ekutility_incendiumfuelrod>
   <entitydescription.ekutility_incendiumfuelrod>Чрезвычайно мощный, но также очень нестабильный. Стержень самовоспламеняется если его не хранить соответствующим образом. Может взорваться и расплавить корпус если находится вне подходящего контейнера. Чувствителен к ударам даже в специальных контейнерах.</entitydescription.ekutility_incendiumfuelrod>
-
   <entityname.supercritical_incendium>Сверхнестабильный воспламенитовый топливный стержень</entityname.supercritical_incendium>
   <entitydescription.supercritical_incendium>Этот топливный стержень достиг сверхкритического состояния во время расплавления и может выпустить всю свою энергию сразу при малейшем ударе. Выпущенной энергии достаточно, чтобы повредить окружающий его корпус. Недолговечен.</entitydescription.supercritical_incendium>
-
   <entityname.supercritical_fulgurium>Сверхнестабильный грозовиевый топливный стержень</entityname.supercritical_fulgurium>
   <entitydescription.supercritical_fulgurium>Этот топливный стержень достиг сверхкритического состояния во время расплавления и может выпустить всю свою энергию сразу при малейшем ударе. Выпущенной энергии достаточно, чтобы повредить окружающий его корпус. Довольно долго остается в сверхнестабильном состоянии.</entitydescription.supercritical_fulgurium>
-
   <entityname.molten_rods>Кориум</entityname.molten_rods>
   <entitydescription.molten_rods>Застывшая радиоактивная магма, испускающая огромное количество радиации.</entitydescription.molten_rods>
-
   <entityname.control_rod>Регулирующий стержень</entityname.control_rod>
   <entitydescription.control_rod>Не дают тепла для выработки электроэнергии, но смягчают скачки температуры от других стержней в нормальных условиях.</entitydescription.control_rod>
-
-
   <!-- Weapons -->
-
   <entityname.nukerod>Нестабильная боеголовка</entityname.nukerod>
   <entitydescription.nukerod>Заблокированный в стазисе cверхнестабильный топливный стержень. Стазисные излучатели очень чувствительны к ударам и могут выйти из строя при столкновении с чем-либо, что делает его очень мощной боеголовкой.</entitydescription.nukerod>
-
   <entityname.nukerodenhanced>Усовершенствованная нестабильная боеголовка</entityname.nukerodenhanced>
   <entitydescription.nukerodenhanced>Нестабильная боеголовка, дополнительно усиленная делящимися материалами для увеличения тепловыделения при детонации. Также вызывает гамма-всплеск.</entitydescription.nukerodenhanced>
-
   <entitydescription.nucleargun>Прототип энергетического оружия, созданный с использованием уникальных инопланетных материалов на Европе. Опасен не только для цели, но и для пользователя данного оружия. Опасность для пользователя зависит от заряженного топливного стержня.</entitydescription.nucleargun>
-
-
   <!-- Mission text -->
-
   <!-- Coalition version -->
   <missionname.salvagewreckwarheadcoalition>Вернуть экспериментальное оружие</missionname.salvagewreckwarheadcoalition>
   <missiondescription.salvagewreckwarheadcoalition>Поблизости затонула военная подлодка Коалиции с экспериментальным взрывным устройством. Найдите обломки и извлеките груз для Коалиции пока кто-то другой этого не сделал.</missiondescription.salvagewreckwarheadcoalition>
@@ -136,7 +91,6 @@
   <missionfailure.salvagewreckwarheadcoalition>Не удалось извлечь боеголовку.</missionfailure.salvagewreckwarheadcoalition>
   <missionheader0.salvagewreckwarheadcoalition>Боеголовка извлечена.</missionheader0.salvagewreckwarheadcoalition>
   <missionmessage0.salvagewreckwarheadcoalition>Вы нашли потерянную боеголовку. Доставьте ее в [location2], не взрывая, чтобы получить вознаграждение. Учтите, что она очень чувствительна к любым повреждениям и ударам.</missionmessage0.salvagewreckwarheadcoalition>
-
   <!-- Separatist version -->
   <missionname.salvagewreckwarheadseparatist>Добыть экспериментальное оружие</missionname.salvagewreckwarheadseparatist>
   <missiondescription.salvagewreckwarheadseparatist>Поблизости затонула военная подлодка Коалиции с экспериментальным взрывным устройством. Найдите обломки и украдите груз пока кто-то другой этого не сделал. Груз можете оставить себе.</missiondescription.salvagewreckwarheadseparatist>
@@ -145,8 +99,6 @@
   <missionfailure.salvagewreckwarheadseparatist>Не удалось извлечь боеголовку.</missionfailure.salvagewreckwarheadseparatist>
   <missionheader0.salvagewreckwarheadseparatist>Боеголовка успешно украдена.</missionheader0.salvagewreckwarheadseparatist>
   <missionmessage0.salvagewreckwarheadseparatist>Вы украли потерянную боеголовку. Коалиция этому будет не рада.</missionmessage0.salvagewreckwarheadseparatist>
-
-
   <!-- Misc/material items -->
   <entityname.geigercounter>Счетчик Гейгера</entityname.geigercounter>
   <entitydescription.geigercounter>Небольшое устройство, переводящее уровни радиации поблизости в звуковые и визуальные сигналы. Также пассивно контролирует его носителя на предмет радиационного отравления.</entitydescription.geigercounter>

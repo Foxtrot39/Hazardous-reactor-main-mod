@@ -1,203 +1,129 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <infotexts language="English" nowhitespace="false" translatedname="English">
-
-			<!-- Afflictions -->
-
-<afflictionname.dnadamage>DNA damage</afflictionname.dnadamage>
-<afflictiondescription.dnadamage>The patient is suffering from radiation induced DNA damage.</afflictiondescription.dnadamage>
-<afflictiondescription.dnadamage.high>The patient's DNA has sufffered critical radiation damage. Signs of total organ failure start to appear.</afflictiondescription.dnadamage.high>
-
-<afflictiondescription.dnadamage.self>You're feeling weakened and pain grasp you from the inside of your body.</afflictiondescription.dnadamage.self>
-<afflictiondescription.dnadamage.high.self>You can feel your body shutdown as it start to be unable to sustain even basic metabolism.</afflictiondescription.dnadamage.high.self>
-
-<afflictioncauseofdeath.dnadamage>DNA damaged beyond viability threshold</afflictioncauseofdeath.dnadamage>
-<afflictioncauseofdeathself.dnadamage>Your DNA could no longer maintain vital body functions.</afflictioncauseofdeathself.dnadamage>
-
-<afflictionname.radiationresistance>Radio protectant</afflictionname.radiationresistance>
-<afflictiondescription.radiationresistance>Prevents contamination and greatly protects against radiation.</afflictiondescription.radiationresistance>
-
-<afflictionname.contamination>Radioactive material contamination</afflictionname.contamination>
-
-<afflictiondescription.contamination>The patient is having chronic irradiation from having inhaled radioactive particles.</afflictiondescription.contamination>
-<afflictiondescription.contamination.high>The patient start to show signs of severe radiation sickness and starts to vomit blood.</afflictiondescription.contamination.high>
-
-<afflictiondescription.contamination.self>You feel weak and seems to get burns out of nowhere.</afflictiondescription.contamination.self>
-<afflictiondescription.contamination.high.self>You're getting burns all over your body and start vomiting blood. Should have worn a diving suit before going there... </afflictiondescription.contamination.high.self>
-
-<afflictionname.lethalradiation>Acute radiation syndrome</afflictionname.lethalradiation>
-
-<afflictiondescription.lethalradiation.low>The patient shows signs of extreme radiation sickness.</afflictiondescription.lethalradiation.low>
-<afflictiondescription.lethalradiation>The patient's health is degrading extremely fast as the body weakens from the radiation induced damage.</afflictiondescription.lethalradiation>
-<afflictiondescription.lethalradiation.high>The patient's skin start to peel off and the organs start failing as the radiation is quickly degrading DNA below viability threshold.</afflictiondescription.lethalradiation.high>
-
-<afflictiondescription.lethalradiation.low.self>Your view is obstructed by some static and you get severe burns everywhere.</afflictiondescription.lethalradiation.low.self>
-<afflictiondescription.lethalradiation.self>You start to struggle to stay up as your condition worsen at an alarming rate.</afflictiondescription.lethalradiation.self>
-<afflictiondescription.lethalradiation.high.self>You can feel your organs getting cooked by the extreme radiation as they fail one by one, you don't have much time left.</afflictiondescription.lethalradiation.high.self>
-
-<afflictioncauseofdeath.lethalradiation>Lethal irradiation.</afflictioncauseofdeath.lethalradiation>
-<afflictioncauseofdeathself.lethalradiation>You've died of a lethal radiation exposure.</afflictioncauseofdeathself.lethalradiation>
-
-			<!-- QoL Afflictions -->
-			
-<afflictionname.burningrod>Hot rod</afflictionname.burningrod>
-<afflictiondescription.burningrod>You're holding a 2800°C hot fuel rod without appropriate tool!</afflictiondescription.burningrod>
-<afflictioncauseofdeath.burningrod>Burned to death holding an overheated fuel rod.</afflictioncauseofdeath.burningrod>
-
-<afflictionname.hazardexposure>Rod hazard exposure</afflictionname.hazardexposure>
-<afflictiondescription.hazardexposure>You're within range of a fuel rod's harmfull effect wear appropriate protection.</afflictiondescription.hazardexposure>
-
-<afflictionname.dnaregeneration>DNA regeneration</afflictionname.dnaregeneration>
-<afflictiondescription.dnaregeneration>The patient's DNA integrity is slowly getting restored.</afflictiondescription.dnaregeneration>
-
-<afflictionname.antiradeffect>Anti-radiation drug effect</afflictionname.antiradeffect>
-<afflictiondescription.antiradeffect>Patient's body is slowly getting purged from radioactive contaminants and radiation.</afflictiondescription.antiradeffect>
-
-			<!-- Medical items -->
-
-<entityname.DTPA>DTPA</entityname.DTPA>
-<entitydescription.DTPA>A more accessible but much slower acting alternative to anti-rad, useless against acute radiation syndrome.</entitydescription.DTPA>
-
-<entityname.Potassiumiodide>Potassium iodide</entityname.Potassiumiodide>
-<entitydescription.Potassiumiodide>Protects against radiation and radioactive contamination. Must be taken regulary in order to keep its full protective effects. Doesn't protect from lethal radiation sources.</entitydescription.Potassiumiodide>
-
-<entityname.DNAstabiliser>DNA stabiliser</entityname.DNAstabiliser>
-<entitydescription.DNAstabiliser>Rare and complex compound able to slowly restore damaged DNA over a long period of time, dangerous if injected by untrained personel.</entitydescription.DNAstabiliser>
-
-<entityname.antirad>AntiRad</entityname.antirad>
-<entitydescription.antirad>Very potent medecine able to purge in seconds the body of all radioactive elementes along radiation, better kept for medical emergencies.</entitydescription.antirad>
-
-<entityname.radiotoxin>Radiotoxin</entityname.radiotoxin>
-<entitydescription.radiotoxin>An extremely radioactive element able to cause acute radiation syndrome.</entitydescription.radiotoxin>
-
-			<!-- Containers -->
-
-<entityname.fuelcrate>Radioactive material storage crate</entityname.fuelcrate>
-<entitydescription.fuelcrate>A heavy secure storage crate to transport radioactive materials and fuel rods.</entitydescription.fuelcrate>
-
-<entityname.fueltransportcylinder>Single unit fuel rod carrier</entityname.fueltransportcylinder>
-<entitydescription.fueltransportcylinder>A single slot rod storage unit, a lot less bulky than its fuel crate counterpart, is secure enough to be able to store them in most lockers or crates.</entitydescription.fueltransportcylinder>
-
-<entityname.ekutility_handtruck_reactorfuel>Fuelrod Handling Truck</entityname.ekutility_handtruck_reactorfuel>
-<entitydescription.ekutility_handtruck_reactorfuel>A hand truck with shielded pig for moving around fuel rods.</entitydescription.ekutility_handtruck_reactorfuel>
-
-<entityname.fuelbackpack>Radiation shielded backpack</entityname.fuelbackpack>
-<entitydescription.fuelbackpack>A shielded backpack with an inbuilt geiger counter, able to monitor radiation levels and safely transport radioactive materials.</entitydescription.fuelbackpack>
-
-<entityname.HRtongs>Fuel Rod Handling Tongs</entityname.HRtongs>
-<entitydescription.HRtongs>A set of tongs for keeping fuel rods at arms length. Doubles as a melee weapon.</entitydescription.HRtongs>
-
-
-			<!-- Reactor items -->
-
-<entityname.fuelrod>Uranium fuel rod</entityname.fuelrod>
-<entitydescription.fuelrod>Standard nuclear fuel rod.</entitydescription.fuelrod>
-
-<entityname.thoriumfuelrod>Thorium fuel rod</entityname.thoriumfuelrod>
-<entitydescription.thoriumfuelrod>Can last up to three time as long as uranium rods.</entitydescription.thoriumfuelrod>
-
-<entityname.fulguriumfuelrod>Fulgurium fuel rod</entityname.fulguriumfuelrod>
-<entitydescription.fulguriumfuelrod>Doesen't provide as much heat as other types of fuel rod, but lasts much longer and acts as a moderator, reducing fission spikes from other rods. Too stable to be used as is, and must be pre-heated to be used as fuel.</entitydescription.fulguriumfuelrod>
-
-<entityname.fulguriumfuelrodvolatile>Volatile Fulgurium Fuel Rod</entityname.fulguriumfuelrodvolatile>
-<!-- from Cognitive Cake: Very hard to understand the next line-->
-<entitydescription.fulguriumfuelrodvolatile>An amalgam rod of incendium and fulgurium, it doesn't have the potency of incendium and the longevity of fulgurium but has roughly half their respective strength but for nearly all their drawbacks.</entitydescription.fulguriumfuelrodvolatile>
-
-<entityname.ekutility_incendiumfuelrod>Incendium fuel rod</entityname.ekutility_incendiumfuelrod>
-<entitydescription.ekutility_incendiumfuelrod>Extremely potent but also very unstable, self heating if left uncontained to the point of exploding and melting the hull. Impact sensitive even in secure containers.</entitydescription.ekutility_incendiumfuelrod>
-
-<entityname.supercritical_incendium>Supercritical incendium rod</entityname.supercritical_incendium>
-<entitydescription.supercritical_incendium>This fuel rod has reached a supercritical state during the meltdown and is at risk of unleashing all its energy at once at the slightest impact, its realeased energy is enough to damage the hull around it but also seem to drain it quickly.</entitydescription.supercritical_incendium>
-
-<entityname.supercritical_fulgurium>Supercritical volatile fulgurium rod</entityname.supercritical_fulgurium>
-<entitydescription.supercritical_fulgurium>This fuel rod has reached a supercritical state during the meltdown and is at risk of unleashing all its energy at once at the slightest impact, its realeased energy is enough to damage the hull around it but also seem to drain it quickly. However the fulgurium amalgam make it burn much longer</entitydescription.supercritical_fulgurium>
-
-<entityname.molten_rods>Corium</entityname.molten_rods>
-<entitydescription.molten_rods>Solidified radioactive magma, emits an extreme amount of radiation.</entitydescription.molten_rods>
-
-<entityname.control_rod>Control rod</entityname.control_rod>
-<entitydescription.control_rod>Doesn't provide any heat for electricity generation but mitigate temperature surges in normal conditions.</entitydescription.control_rod>
-
-			<!-- Weapons -->
-
-<entityname.nukerod>Crisis warhead</entityname.nukerod>
-<!-- from Cognitive Cake: What means "alien fuel rod"? It's just supercritical incendium or fulgurium fuel rod, isn't it?-->
-<entitydescription.nukerod>A stasis locked supercritical alien fuel rod, the stasis emitters are very impact sensitive and may fail if hitting anything making it a very potent warhead.</entitydescription.nukerod>
-
-<entityname.nukerodenhanced>Enhanced Crisis warhead</entityname.nukerodenhanced>
-<entitydescription.nukerodenhanced>Crisis warhead further enhanced with fissile materials for increased heat generation on detonation. Also cause a gamma-ray burst.</entitydescription.nukerodenhanced>
-
-<entitydescription.nucleargun>A prototype particle weapon constructed using the unique alien materials on Europa, utilizing fuel rods as a power source. Dangerous to those on both ends of the barrel, depending on the fissile material used to power it.</entitydescription.nucleargun>
-
-			<!-- Mission text -->
-
-			<!-- Coalition version -->
-
-<missionname.salvagewreckwarheadcoalition>Recover Experimental Weapon</missionname.salvagewreckwarheadcoalition>
-
-<missiondescription.salvagewreckwarheadcoalition>A military Coalition sub has sunk nearby carying an experimental explosive device. Find the wreck and secure its cargo for the Coalition before someone else does.</missiondescription.salvagewreckwarheadcoalition>
-
-<missionsonarlabel.salvagewreckwarheadcoalition>Coalition submarine wreck</missionsonarlabel.salvagewreckwarheadcoalition>
-
-<missionsuccess.salvagewreckwarheadcoalition>The warhead has been recovered.</missionsuccess.salvagewreckwarheadcoalition>
-
-<missionfailure.salvagewreckwarheadcoalition>Failed to recover the warhead.</missionfailure.salvagewreckwarheadcoalition>
-
-<missionheader0.salvagewreckwarheadcoalition>Warhead recovered.</missionheader0.salvagewreckwarheadcoalition>
-
-<missionmessage0.salvagewreckwarheadcoalition>You have found the lost warhead. Bring it to [location2] without detonating it to claim your reward. Be warned that it is extremely sensitive to any sort of damage or impact.</missionmessage0.salvagewreckwarheadcoalition>
-
-			<!-- Separatist version -->
-
-<missionname.salvagewreckwarheadseparatist>Loot Experimental Weapon</missionname.salvagewreckwarheadseparatist>
-
-<missiondescription.salvagewreckwarheadseparatist>A military Coalition sub has sunk nearby carying an experimental explosive device. Find the wreck and steal its cargo for yourself before someone else takes it.</missiondescription.salvagewreckwarheadseparatist>
-
-<missionsonarlabel.salvagewreckwarheadseparatist>Coalition submarine wreck</missionsonarlabel.salvagewreckwarheadseparatist>
-
-<missionsuccess.salvagewreckwarheadseparatist>Warhead recovered.</missionsuccess.salvagewreckwarheadseparatist>
-
-<missionfailure.salvagewreckwarheadseparatist>Failed to recover the warhead.</missionfailure.salvagewreckwarheadseparatist>
-
-<missionheader0.salvagewreckwarheadseparatist>Warhead looted.</missionheader0.salvagewreckwarheadseparatist>
-
-<missionmessage0.salvagewreckwarheadseparatist>You have stolen the lost warhead. The Coalition wont be happy about it.</missionmessage0.salvagewreckwarheadseparatist>
-
-
-			<!-- Misc/material items -->
-			
-<entityname.geigercounter>Geiger counter</entityname.geigercounter>
-<entitydescription.geigercounter>Small device translating nearby radiation levels into audio and visual cues. Also passively monitor its carrier for radiation poisoning.</entitydescription.geigercounter>
-
-<entityname.iodine>Iodine</entityname.iodine>
-<entitydescription.iodine>Most commonly used in the manufacture of radio-protectant drugs.</entitydescription.iodine>
-
-<entityname.du_p_alloy>Depleted uranium - physicorium alloy</entityname.du_p_alloy>
-<entitydescription.du_p_alloy>Extremely sturdy and heavy alloy.</entitydescription.du_p_alloy>
-
-<entityname.AI_microchip>AI microchip</entityname.AI_microchip>
-<entitydescription.AI_microchip>AI controller for stasis emitters.</entitydescription.AI_microchip>
-
-<entityname.stasisemitter>Stasis emitter array</entityname.stasisemitter>
-<entitydescription.stasisemitter>Emitter array of a stasis field generator used for reinforced rod storage container.</entitydescription.stasisemitter>
-
-<entityname.fueltrasnportcylinderreinforced>Reinforced single unit fuel rod carrier</entityname.fueltrasnportcylinderreinforced>
-<entitydescription.fueltrasnportcylinderreinforced>A heavely reinforced rod storage with build in stasis system for extreme hazards containement. Can only be filled at a fabricator.</entitydescription.fueltrasnportcylinderreinforced>
-
-<entityname.iodinecrystal>Diiodine crystal</entityname.iodinecrystal>
-<entitydescription.iodinecrystal>Crystals made exclusively out of iodine</entitydescription.iodinecrystal>
-
-<entityname.deconcontaminationemitter>Contamination hazard</entityname.deconcontaminationemitter>
-<entitydescription.deconcontaminationemitter>Warning : Deconstruction process will contaminate nearby unprotected personel.</entitydescription.deconcontaminationemitter>
-
-<entityname.nuclearmaterialprocessor>Fuel processor</entityname.nuclearmaterialprocessor>
-<entitydescription.nuclearmaterialprocessor>A heavely shielded fabricator allowing safe handling of hazardous materials.</entitydescription.nuclearmaterialprocessor>
-
-<entityname.fissiledeconstructor>Radiation shielded deconstructor</entityname.fissiledeconstructor>
-<entitydescription.fissiledeconstructor>A heavely shielded deconstructor allowing safe handling of hazardous materials.</entitydescription.fissiledeconstructor>
-
-<entityname.manual>Reactor operating manual</entityname.manual>
-<entitydescription.manual>Contains all important elements around nuclear reactors and its related hazards.</entitydescription.manual>
-<terminalwelcomemsg.manual>
+  <!-- Afflictions -->
+  <afflictionname.dnadamage>DNA damage</afflictionname.dnadamage>
+  <afflictiondescription.dnadamage>The patient is suffering from radiation induced DNA damage.</afflictiondescription.dnadamage>
+  <afflictiondescription.dnadamage.high>The patient's DNA has sufffered critical radiation damage. Signs of total organ failure start to appear.</afflictiondescription.dnadamage.high>
+  <afflictiondescription.dnadamage.self>You're feeling weakened and pain grasp you from the inside of your body.</afflictiondescription.dnadamage.self>
+  <afflictiondescription.dnadamage.high.self>You can feel your body shutdown as it start to be unable to sustain even basic metabolism.</afflictiondescription.dnadamage.high.self>
+  <afflictioncauseofdeath.dnadamage>DNA damaged beyond viability threshold</afflictioncauseofdeath.dnadamage>
+  <afflictioncauseofdeathself.dnadamage>Your DNA could no longer maintain vital body functions.</afflictioncauseofdeathself.dnadamage>
+  <afflictionname.radiationresistance>Radio protectant</afflictionname.radiationresistance>
+  <afflictiondescription.radiationresistance>Prevents contamination and greatly protects against radiation.</afflictiondescription.radiationresistance>
+  <afflictionname.contamination>Radioactive material contamination</afflictionname.contamination>
+  <afflictiondescription.contamination>The patient is having chronic irradiation from having inhaled radioactive particles.</afflictiondescription.contamination>
+  <afflictiondescription.contamination.high>The patient start to show signs of severe radiation sickness and starts to vomit blood.</afflictiondescription.contamination.high>
+  <afflictiondescription.contamination.self>You feel weak and seems to get burns out of nowhere.</afflictiondescription.contamination.self>
+  <afflictiondescription.contamination.high.self>You're getting burns all over your body and start vomiting blood. Should have worn a diving suit before going there... </afflictiondescription.contamination.high.self>
+  <afflictionname.lethalradiation>Acute radiation syndrome</afflictionname.lethalradiation>
+  <afflictiondescription.lethalradiation.low>The patient shows signs of extreme radiation sickness.</afflictiondescription.lethalradiation.low>
+  <afflictiondescription.lethalradiation>The patient's health is degrading extremely fast as the body weakens from the radiation induced damage.</afflictiondescription.lethalradiation>
+  <afflictiondescription.lethalradiation.high>The patient's skin start to peel off and the organs start failing as the radiation is quickly degrading DNA below viability threshold.</afflictiondescription.lethalradiation.high>
+  <afflictiondescription.lethalradiation.low.self>Your view is obstructed by some static and you get severe burns everywhere.</afflictiondescription.lethalradiation.low.self>
+  <afflictiondescription.lethalradiation.self>You start to struggle to stay up as your condition worsen at an alarming rate.</afflictiondescription.lethalradiation.self>
+  <afflictiondescription.lethalradiation.high.self>You can feel your organs getting cooked by the extreme radiation as they fail one by one, you don't have much time left.</afflictiondescription.lethalradiation.high.self>
+  <afflictioncauseofdeath.lethalradiation>Lethal irradiation.</afflictioncauseofdeath.lethalradiation>
+  <afflictioncauseofdeathself.lethalradiation>You've died of a lethal radiation exposure.</afflictioncauseofdeathself.lethalradiation>
+  <!-- QoL Afflictions -->
+  <afflictionname.burningrod>Hot rod</afflictionname.burningrod>
+  <afflictiondescription.burningrod>You're holding a 2800°C hot fuel rod without appropriate tool!</afflictiondescription.burningrod>
+  <afflictioncauseofdeath.burningrod>Burned to death holding an overheated fuel rod.</afflictioncauseofdeath.burningrod>
+  <afflictionname.hazardexposure>Rod hazard exposure</afflictionname.hazardexposure>
+  <afflictiondescription.hazardexposure>You're within range of a fuel rod's harmfull effect wear appropriate protection.</afflictiondescription.hazardexposure>
+  <afflictionname.dnaregeneration>DNA regeneration</afflictionname.dnaregeneration>
+  <afflictiondescription.dnaregeneration>The patient's DNA integrity is slowly getting restored.</afflictiondescription.dnaregeneration>
+  <afflictionname.antiradeffect>Anti-radiation drug effect</afflictionname.antiradeffect>
+  <afflictiondescription.antiradeffect>Patient's body is slowly getting purged from radioactive contaminants and radiation.</afflictiondescription.antiradeffect>
+  <!-- Medical items -->
+  <entityname.DTPA>DTPA</entityname.DTPA>
+  <entitydescription.DTPA>A more accessible but much slower acting alternative to anti-rad, useless against acute radiation syndrome.</entitydescription.DTPA>
+  <entityname.Potassiumiodide>Potassium iodide</entityname.Potassiumiodide>
+  <entitydescription.Potassiumiodide>Protects against radiation and radioactive contamination. Must be taken regulary in order to keep its full protective effects. Doesn't protect from lethal radiation sources.</entitydescription.Potassiumiodide>
+  <entityname.DNAstabiliser>DNA stabiliser</entityname.DNAstabiliser>
+  <entitydescription.DNAstabiliser>Rare and complex compound able to slowly restore damaged DNA over a long period of time, dangerous if injected by untrained personel.</entitydescription.DNAstabiliser>
+  <entityname.antirad>AntiRad</entityname.antirad>
+  <entitydescription.antirad>Very potent medecine able to purge in seconds the body of all radioactive elementes along radiation, better kept for medical emergencies.</entitydescription.antirad>
+  <entityname.radiotoxin>Radiotoxin</entityname.radiotoxin>
+  <entitydescription.radiotoxin>An extremely radioactive element able to cause acute radiation syndrome.</entitydescription.radiotoxin>
+  <!-- Containers -->
+  <entityname.fuelcrate>Radioactive material storage crate</entityname.fuelcrate>
+  <entitydescription.fuelcrate>A heavy secure storage crate to transport radioactive materials and fuel rods.</entitydescription.fuelcrate>
+  <entityname.fueltransportcylinder>Single unit fuel rod carrier</entityname.fueltransportcylinder>
+  <entitydescription.fueltransportcylinder>A single slot rod storage unit, a lot less bulky than its fuel crate counterpart, is secure enough to be able to store them in most lockers or crates.</entitydescription.fueltransportcylinder>
+  <entityname.ekutility_handtruck_reactorfuel>Fuelrod Handling Truck</entityname.ekutility_handtruck_reactorfuel>
+  <entitydescription.ekutility_handtruck_reactorfuel>A hand truck with shielded pig for moving around fuel rods.</entitydescription.ekutility_handtruck_reactorfuel>
+  <entityname.fuelbackpack>Radiation shielded backpack</entityname.fuelbackpack>
+  <entitydescription.fuelbackpack>A shielded backpack with an inbuilt geiger counter, able to monitor radiation levels and safely transport radioactive materials.</entitydescription.fuelbackpack>
+  <entityname.HRtongs>Fuel Rod Handling Tongs</entityname.HRtongs>
+  <entitydescription.HRtongs>A set of tongs for keeping fuel rods at arms length. Doubles as a melee weapon.</entitydescription.HRtongs>
+  <!-- Reactor items -->
+  <entityname.fuelrod>Uranium fuel rod</entityname.fuelrod>
+  <entitydescription.fuelrod>Standard nuclear fuel rod.</entitydescription.fuelrod>
+  <entityname.thoriumfuelrod>Thorium fuel rod</entityname.thoriumfuelrod>
+  <entitydescription.thoriumfuelrod>Can last up to three time as long as uranium rods.</entitydescription.thoriumfuelrod>
+  <entityname.fulguriumfuelrod>Fulgurium fuel rod</entityname.fulguriumfuelrod>
+  <entitydescription.fulguriumfuelrod>Doesen't provide as much heat as other types of fuel rod, but lasts much longer and acts as a moderator, reducing fission spikes from other rods. Too stable to be used as is, and must be pre-heated to be used as fuel.</entitydescription.fulguriumfuelrod>
+  <entityname.fulguriumfuelrodvolatile>Volatile Fulgurium Fuel Rod</entityname.fulguriumfuelrodvolatile>
+  <!-- from Cognitive Cake: Very hard to understand the next line-->
+  <entitydescription.fulguriumfuelrodvolatile>An amalgam rod of incendium and fulgurium, it doesn't have the potency of incendium and the longevity of fulgurium but has roughly half their respective strength but for nearly all their drawbacks.</entitydescription.fulguriumfuelrodvolatile>
+  <entityname.ekutility_incendiumfuelrod>Incendium fuel rod</entityname.ekutility_incendiumfuelrod>
+  <entitydescription.ekutility_incendiumfuelrod>Extremely potent but also very unstable, self heating if left uncontained to the point of exploding and melting the hull. Impact sensitive even in secure containers.</entitydescription.ekutility_incendiumfuelrod>
+  <entityname.supercritical_incendium>Supercritical incendium rod</entityname.supercritical_incendium>
+  <entitydescription.supercritical_incendium>This fuel rod has reached a supercritical state during the meltdown and is at risk of unleashing all its energy at once at the slightest impact, its realeased energy is enough to damage the hull around it but also seem to drain it quickly.</entitydescription.supercritical_incendium>
+  <entityname.supercritical_fulgurium>Supercritical volatile fulgurium rod</entityname.supercritical_fulgurium>
+  <entitydescription.supercritical_fulgurium>This fuel rod has reached a supercritical state during the meltdown and is at risk of unleashing all its energy at once at the slightest impact, its realeased energy is enough to damage the hull around it but also seem to drain it quickly. However the fulgurium amalgam make it burn much longer</entitydescription.supercritical_fulgurium>
+  <entityname.molten_rods>Corium</entityname.molten_rods>
+  <entitydescription.molten_rods>Solidified radioactive magma, emits an extreme amount of radiation.</entitydescription.molten_rods>
+  <entityname.control_rod>Control rod</entityname.control_rod>
+  <entitydescription.control_rod>Doesn't provide any heat for electricity generation but mitigate temperature surges in normal conditions.</entitydescription.control_rod>
+  <!-- Weapons -->
+  <entityname.nukerod>Crisis warhead</entityname.nukerod>
+  <!-- from Cognitive Cake: What means "alien fuel rod"? It's just supercritical incendium or fulgurium fuel rod, isn't it?-->
+  <entitydescription.nukerod>A stasis locked supercritical alien fuel rod, the stasis emitters are very impact sensitive and may fail if hitting anything making it a very potent warhead.</entitydescription.nukerod>
+  <entityname.nukerodenhanced>Enhanced Crisis warhead</entityname.nukerodenhanced>
+  <entitydescription.nukerodenhanced>Crisis warhead further enhanced with fissile materials for increased heat generation on detonation. Also cause a gamma-ray burst.</entitydescription.nukerodenhanced>
+  <entitydescription.nucleargun>A prototype particle weapon constructed using the unique alien materials on Europa, utilizing fuel rods as a power source. Dangerous to those on both ends of the barrel, depending on the fissile material used to power it.</entitydescription.nucleargun>
+  <!-- Mission text -->
+  <!-- Coalition version -->
+  <missionname.salvagewreckwarheadcoalition>Recover Experimental Weapon</missionname.salvagewreckwarheadcoalition>
+  <missiondescription.salvagewreckwarheadcoalition>A military Coalition sub has sunk nearby carying an experimental explosive device. Find the wreck and secure its cargo for the Coalition before someone else does.</missiondescription.salvagewreckwarheadcoalition>
+  <missionsonarlabel.salvagewreckwarheadcoalition>Coalition submarine wreck</missionsonarlabel.salvagewreckwarheadcoalition>
+  <missionsuccess.salvagewreckwarheadcoalition>The warhead has been recovered.</missionsuccess.salvagewreckwarheadcoalition>
+  <missionfailure.salvagewreckwarheadcoalition>Failed to recover the warhead.</missionfailure.salvagewreckwarheadcoalition>
+  <missionheader0.salvagewreckwarheadcoalition>Warhead recovered.</missionheader0.salvagewreckwarheadcoalition>
+  <missionmessage0.salvagewreckwarheadcoalition>You have found the lost warhead. Bring it to [location2] without detonating it to claim your reward. Be warned that it is extremely sensitive to any sort of damage or impact.</missionmessage0.salvagewreckwarheadcoalition>
+  <!-- Separatist version -->
+  <missionname.salvagewreckwarheadseparatist>Loot Experimental Weapon</missionname.salvagewreckwarheadseparatist>
+  <missiondescription.salvagewreckwarheadseparatist>A military Coalition sub has sunk nearby carying an experimental explosive device. Find the wreck and steal its cargo for yourself before someone else takes it.</missiondescription.salvagewreckwarheadseparatist>
+  <missionsonarlabel.salvagewreckwarheadseparatist>Coalition submarine wreck</missionsonarlabel.salvagewreckwarheadseparatist>
+  <missionsuccess.salvagewreckwarheadseparatist>Warhead recovered.</missionsuccess.salvagewreckwarheadseparatist>
+  <missionfailure.salvagewreckwarheadseparatist>Failed to recover the warhead.</missionfailure.salvagewreckwarheadseparatist>
+  <missionheader0.salvagewreckwarheadseparatist>Warhead looted.</missionheader0.salvagewreckwarheadseparatist>
+  <missionmessage0.salvagewreckwarheadseparatist>You have stolen the lost warhead. The Coalition wont be happy about it.</missionmessage0.salvagewreckwarheadseparatist>
+  <!-- Misc/material items -->
+  <entityname.geigercounter>Geiger counter</entityname.geigercounter>
+  <entitydescription.geigercounter>Small device translating nearby radiation levels into audio and visual cues. Also passively monitor its carrier for radiation poisoning.</entitydescription.geigercounter>
+  <entityname.iodine>Iodine</entityname.iodine>
+  <entitydescription.iodine>Most commonly used in the manufacture of radio-protectant drugs.</entitydescription.iodine>
+  <entityname.du_p_alloy>Depleted uranium - physicorium alloy</entityname.du_p_alloy>
+  <entitydescription.du_p_alloy>Extremely sturdy and heavy alloy.</entitydescription.du_p_alloy>
+  <entityname.AI_microchip>AI microchip</entityname.AI_microchip>
+  <entitydescription.AI_microchip>AI controller for stasis emitters.</entitydescription.AI_microchip>
+  <entityname.stasisemitter>Stasis emitter array</entityname.stasisemitter>
+  <entitydescription.stasisemitter>Emitter array of a stasis field generator used for reinforced rod storage container.</entitydescription.stasisemitter>
+  <entityname.fueltrasnportcylinderreinforced>Reinforced single unit fuel rod carrier</entityname.fueltrasnportcylinderreinforced>
+  <entitydescription.fueltrasnportcylinderreinforced>A heavely reinforced rod storage with build in stasis system for extreme hazards containement. Can only be filled at a fabricator.</entitydescription.fueltrasnportcylinderreinforced>
+  <entityname.iodinecrystal>Diiodine crystal</entityname.iodinecrystal>
+  <entitydescription.iodinecrystal>Crystals made exclusively out of iodine</entitydescription.iodinecrystal>
+  <entityname.deconcontaminationemitter>Contamination hazard</entityname.deconcontaminationemitter>
+  <entitydescription.deconcontaminationemitter>Warning : Deconstruction process will contaminate nearby unprotected personel.</entitydescription.deconcontaminationemitter>
+  <entityname.nuclearmaterialprocessor>Fuel processor</entityname.nuclearmaterialprocessor>
+  <entitydescription.nuclearmaterialprocessor>A heavely shielded fabricator allowing safe handling of hazardous materials.</entitydescription.nuclearmaterialprocessor>
+  <entityname.fissiledeconstructor>Radiation shielded deconstructor</entityname.fissiledeconstructor>
+  <entitydescription.fissiledeconstructor>A heavely shielded deconstructor allowing safe handling of hazardous materials.</entitydescription.fissiledeconstructor>
+  <entityname.manual>Reactor operating manual</entityname.manual>
+  <entitydescription.manual>Contains all important elements around nuclear reactors and its related hazards.</entitydescription.manual>
+  <terminalwelcomemsg.manual>
 
 ______________________________Europa's Nuclear submarine reactor operating manual v2.6____________________________
 
@@ -429,5 +355,4 @@ However the medecine is expensive and just as dangerous if not injected by a ski
 Reports of botched injections have been saying it to not only have little positive effects but also cause severe internal damage in the process.
  
  </terminalwelcomemsg.manual>
-
 </infotexts>

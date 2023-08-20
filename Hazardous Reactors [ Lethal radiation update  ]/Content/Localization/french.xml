@@ -1,200 +1,126 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <infotexts language="French" nowhitespace="false" translatedname="French">
-
-			<!-- Afflictions -->
-
-<afflictionname.dnadamage>Irradiation de l'ADN</afflictionname.dnadamage>
-
-<afflictiondescription.dnadamage>Le patient souffre de dénaturation de son ADN induit par la radiation.</afflictiondescription.dnadamage>
-<afflictiondescription.dnadamage.high>L'ADN de du patient a atteint un niveau critique de dégâts à l'ADN et montre des symptômes du syndrome de défaillance multiviscérale.</afflictiondescription.dnadamage.high>
-
-<afflictiondescription.dnadamage.self>Vous vous sentez affaiblie et plusieurs points de douleur vous tenaillent de l'intérieur.</afflictiondescription.dnadamage.self>
-<afflictiondescription.dnadamage.high.self>Vous sentez votre corps mourir alors que vos cellules peinent à maintenir leurs fonctions vitales.</afflictiondescription.dnadamage.high.self>
-
-<afflictioncauseofdeath.dnadamage>ADN endommagé au-delà du seuil de viabilité</afflictioncauseofdeath.dnadamage>
-<afflictioncauseofdeathself.dnadamage>Votre ADN a atteint un niveau létal de dégâts.</afflictioncauseofdeathself.dnadamage>
-
-<afflictionname.radiationresistance>Radioprotecteur</afflictionname.radiationresistance>
-<afflictiondescription.radiationresistance>Empêche la contamination et protège contre l'irradiation.</afflictiondescription.radiationresistance>
-
-<afflictionname.contamination>Contamination aux matériaux radioactif</afflictionname.contamination>
-
-<afflictiondescription.contamination>Le patient souffre d'irradiation chronique du à l'inhalation de particules radioactives.</afflictiondescription.contamination>
-<afflictiondescription.contamination.high>Le patient montre des signes sévères d'irradiation et commence à vomir du sang.</afflictiondescription.contamination.high>
-
-<afflictiondescription.contamination.self>Vous vous sentez affaiblie et semblez recevoir des brulures de null part.</afflictiondescription.contamination.self>
-<afflictiondescription.contamination.high.self>Vous souffrez de brulure sévère sur tout votre corps sans source apparente et commencez à vomir du sang. Vous auriez dû Porter une combinaison avant d'aller là-bas....</afflictiondescription.contamination.high.self>
-
-<afflictionname.lethalradiation>Syndrome d'irradiation aiguë</afflictionname.lethalradiation>
-
-<afflictiondescription.lethalradiation.low>le patient montre des signes irradiation extrême.</afflictiondescription.lethalradiation.low>
-<afflictiondescription.lethalradiation>La santé du patient se dégrade à une vitesse alarmante alors que les radiations ravagent son corps.</afflictiondescription.lethalradiation>
-<afflictiondescription.lethalradiation.high>La peau du patient commence à tomber en lambeaux et commencé montre des signes du syndrome de défaillance multiviscérale en raison de la dégradation rapide de son ADN.</afflictiondescription.lethalradiation.high>
-
-<afflictiondescription.lethalradiation.low.self>Votre vue est obstruée par une sorte de brouillard statique et vous souffrez de brulure sévère sur tout votre corps.</afflictiondescription.lethalradiation.low.self>
-<afflictiondescription.lethalradiation.self>Vous luttez ne serait-ce que pour rester debout alors que votre corps faibli à une vitesse alarmante.</afflictiondescription.lethalradiation.self>
-<afflictiondescription.lethalradiation.high.self>Vous sentez vos organes cuire et périr sous l'effet des radiations, il ne vous reste plus beaucoup de temps.</afflictiondescription.lethalradiation.high.self>
-
-<afflictioncauseofdeath.lethalradiation>Irradiation létale.</afflictioncauseofdeath.lethalradiation>
-<afflictioncauseofdeathself.lethalradiation>Vous êtes mort d'une irradiation létale.</afflictioncauseofdeathself.lethalradiation>
-
-			<!-- QoL Afflictions -->
-			
-<afflictionname.burningrod>Combustible surchauffé</afflictionname.burningrod>
-<afflictiondescription.burningrod>Vous tenez une barre de combustible surchauffé à 2800°C sans outil adapté!</afflictiondescription.burningrod>
-<afflictioncauseofdeath.burningrod>Brulé à mort en tenant une barre de combustible surchauffée.</afflictioncauseofdeath.burningrod>
-
-<afflictionname.hazardexposure>Exposition dangereuse aux barres de combustible</afflictionname.hazardexposure>
-<afflictiondescription.hazardexposure>Vous êtes à portée des effets néfastes d'une barre de combustible, équipez-vous de protections appropriées.</afflictiondescription.hazardexposure>
-
-<afflictionname.dnaregeneration>Régénération d'ADN</afflictionname.dnaregeneration>
-<afflictiondescription.dnaregeneration>L'ADN du patient se régénère lentement.</afflictiondescription.dnaregeneration>
-
-<afflictionname.antiradeffect>Effet de drogue antiradiation</afflictionname.antiradeffect>
-<afflictiondescription.antiradeffect>Le corps du patient est lentement purgé des radiations ainsi que des contaminants radioactifs.</afflictiondescription.antiradeffect>
-
-			<!-- Medical items -->
-
-<entityname.DTPA>DTPA</entityname.DTPA>
-<entitydescription.DTPA>Une alternative a l'anti-rad qui est beaucoup plus accessible mais aussi beaucoup plus lent à agir, inutile contre le syndrome d'irradiation aiguë.</entitydescription.DTPA>
-
-<entityname.Potassiumiodide>Iode de potassium</entityname.Potassiumiodide>
-<entitydescription.Potassiumiodide>Protège contre la contamination et les radiations. Doit être pris régulièrement pour maintenir ses effets protecteurs. Ne protège pas contre les sources de radiation létale.</entitydescription.Potassiumiodide>
-
-<entityname.DNAstabiliser>Stabilisateur d'ADN</entityname.DNAstabiliser>
-<entitydescription.DNAstabiliser>Un composé rare et complexe capable de restaurer lentement l'ADN endommagé sur une longue durée, dangereux si injecté pour du personnel sans aptitude médicale.</entitydescription.DNAstabiliser>
-
-<entityname.antirad>Anti-Rad</entityname.antirad>
-<entitydescription.antirad>Un médicament puissant capable de purger en quelques secondes le corps de toutes radiations et contaminant radioactif, il est préférable de le garder pour les urgences médicales.</entitydescription.antirad>
-
-<entityname.radiotoxin>Radiotoxine</entityname.radiotoxin>
-<entitydescription.radiotoxin>Un élément extrêmement radioactif capable de causer le syndrome d'irradiation aiguë.</entitydescription.radiotoxin>
-
-			<!-- Containers -->
-
-<entityname.fuelcrate>Caisse de stockage de materiaux radioactifs</entityname.fuelcrate>
-<entitydescription.fuelcrate>Une caisse lourdement renforcé pour transporter des barres de combustible ainsi que des minerais radioactifs.</entitydescription.fuelcrate>
-
-<entityname.fueltransportcylinder>Transporteur de barre à combustible</entityname.fueltransportcylinder>
-<entitydescription.fueltransportcylinder>Capable de transporter une seule barre de combustible, il est moins encombrant que son homologue à haute capacité. Suffisamment sécurisé pour le ranger dans la plupart des placards.</entitydescription.fueltransportcylinder>
-
-<entityname.ekutility_handtruck_reactorfuel>Chariot de manipulation à barre de combustible</entityname.ekutility_handtruck_reactorfuel>
-<entitydescription.ekutility_handtruck_reactorfuel>Un chariot à main avec un conteneur sécurisé pour le transport de barres à combustible.</entitydescription.ekutility_handtruck_reactorfuel>
-
-<entityname.fuelbackpack>Sac à dos avec bouclier anti-radiation</entityname.fuelbackpack>
-<entitydescription.fuelbackpack>Un sac à dos renforcé pouvant transporter des materiaux nucléaire en toute sécurité, possède un compteur geiger and offre une protection limitée contre les radiations.</entitydescription.fuelbackpack>
-
-<entityname.HRtongs>Pince pour carburant de réacteur</entityname.HRtongs>
-<entitydescription.HRtongs>Une pince pour maintenir une barre de combustible à une distance sécurisée de vos mains. Peut être utilisé en tant qu'arme contondante si besoin.</entitydescription.HRtongs>
-
-			<!-- Reactor items -->
-
-<entityname.fuelrod>Barre de combustible en uranium</entityname.fuelrod>
-<entitydescription.fuelrod>Combustible standard pour réacteur nucléaire.</entitydescription.fuelrod>
-
-<entityname.thoriumfuelrod>Barre de combustible en thorium</entityname.thoriumfuelrod>
-<entitydescription.thoriumfuelrod>Les barres de combustible en thorium peuvent durer jusqu'à trois fois plus longtemps que celle en uranium.</entitydescription.thoriumfuelrod>
-
-<entityname.fulguriumfuelrod>Barre de combustible en fulgurium</entityname.fulguriumfuelrod>
-<entitydescription.fulguriumfuelrod>Même si elles ne génèrent pas autant de chaleur que les autres combustibles mais compensent avec son extrême longévité, capable de réguler la fission des autres combustibles à un certain niveau ce qui en fait un bon combustible complémentaire. Trop stable pour être utilisé tel que et doit être préchauffé pour être utilisable.</entitydescription.fulguriumfuelrod>
-
-<entityname.fulguriumfuelrodvolatile>Barre de combustible en fulgurium volatile</entityname.fulguriumfuelrodvolatile>
-<entitydescription.fulguriumfuelrodvolatile>Un amalgame de fulgurium et d'incendium, s'il ne possède ni la longévité du fulgurium ou la production de chaleur de l'incendium il se situe entre les deux cependant possède la quasi-totalité de leurs points négatifs respectif.</entitydescription.fulguriumfuelrodvolatile>
-
-<entityname.ekutility_incendiumfuelrod>Barre de combustible en incendium</entityname.ekutility_incendiumfuelrod>
-<entitydescription.ekutility_incendiumfuelrod>Possède une énergie potentielle extrême mais est tout aussi instable. Autochauffantes sinon stocké dans un conteneur adéquat au point fondre à travers la coque du sous-marin. Sensible aux impactes même si stocké correctement.</entitydescription.ekutility_incendiumfuelrod>
-
-<entityname.supercritical_incendium>Barre de combustible d'incendium super critique</entityname.supercritical_incendium>
-<entitydescription.supercritical_incendium>Cette barre de combustible a atteint un état super-critique durant la fusion du coeur et risque de libérer toute son énergie dans une violente explosion au moindre impact, l'énergie ambiante libérée est suffisante pour faire fondre la coque du sous-marin mais semble s'épuiser rapidement.</entitydescription.supercritical_incendium>
-
-<entityname.supercritical_fulgurium>Barre de combustible en fulgurium volatile super critique</entityname.supercritical_fulgurium>
-<entitydescription.supercritical_fulgurium>Cette barre de combustible a atteint un état super-critique durant la fusion du coeur et risque de libérer toute son énergie dans une violente explosion au moindre impact, l'énergie ambiante libérée est suffisante pour faire fondre la coque du sous-marin mais semble s'épuiser rapidement. Cependant l'amalgame en fulgurium le fait bruler bien plus longtemps.</entitydescription.supercritical_fulgurium>
-
-<entityname.molten_rods>Corium</entityname.molten_rods>
-<entitydescription.molten_rods>Magma radioactif solidifié, émet une quantité extrême de radiation.</entitydescription.molten_rods>
-
-<entityname.control_rod>Barre de contrôle</entityname.control_rod>
-<entitydescription.control_rod>Ne fournit aucune chaleur pour la production d'électricité mais mitige grandement les pics de températures en conditions normales.</entitydescription.control_rod>
-
-			<!-- Weapon -->
-
-<entityname.nukerod>Ogive "Crisis"</entityname.nukerod>
-<entitydescription.nukerod>Une barre de combustible alien en état supercritique maintenu en stase, les générateurs de stases sont très fragiles et ne survivront pas un impact même modéré ce qui en fait une puissante ogive tactique.</entitydescription.nukerod>
-
-<entityname.nukerodenhanced>Ogive "Crisis" amélioré</entityname.nukerodenhanced>
-<entitydescription.nukerodenhanced>Ogive "Crisis" amélioré avec des matériaux fissibles pour augmenter son potentiel énergitique. Génère aussi un sursaut gamma.</entitydescription.nukerodenhanced>
-
-<entitydescription.nucleargun>Un prototype d'arme énergétique construite avec les matériaux aliens d'Europe. Le danger auquel l'utilisateur s'expose à l'utilisation dépend de la barre de combustible chargé.</entitydescription.nucleargun>
-
-			<!-- Mission text -->
-			
-			<!-- Coalition version -->
-
-<missionname.salvagewreckwarheadcoalition>Récupération d'arme expérimentale</missionname.salvagewreckwarheadcoalition>
-
-<missiondescription.salvagewreckwarheadcoalition>Un sous-marin militaire de la coalition a sombré à proximité avec à bord un explosif expérimental. Sécurisez sa cargaison pour la Coalition avant que quelqu'un d'autre ne le fasse.</missiondescription.salvagewreckwarheadcoalition>
-
-<missionsonarlabel.salvagewreckwarheadcoalition>Sous-marin de la Coalition</missionsonarlabel.salvagewreckwarheadcoalition>
-
-<missionsuccess.salvagewreckwarheadcoalition>L'ogive a été récupérée.</missionsuccess.salvagewreckwarheadcoalition>
-
-<missionfailure.salvagewreckwarheadcoalition>Vous n'avez pas réussi à récupérer l'ogive.</missionfailure.salvagewreckwarheadcoalition>
-
-<missionheader0.salvagewreckwarheadcoalition>Ogive récupérée.</missionheader0.salvagewreckwarheadcoalition>
-
-<missionmessage0.salvagewreckwarheadcoalition>Vous avez trouvé l'ogive perdue. Amenez-la à [location2] sans la faire exploser pour toucher votre récompense. Soyez prévenu : l'ogive est extrêmement sensible à tout type de dégâts ou impact.</missionmessage0.salvagewreckwarheadcoalition>
-
-			<!-- Separatist version -->
-
-<missionname.salvagewreckwarheadseparatist>Pillage d'arme expérimentale</missionname.salvagewreckwarheadseparatist>
-
-<missiondescription.salvagewreckwarheadseparatist>Un sous-marin militaire de la coalition a sombré à proximité avec à bord un explosif expérimental. Voler la cargaison pour vous-même avant que quelqu'un d'autre ne la récupère.</missiondescription.salvagewreckwarheadseparatist>
-
-<missionsonarlabel.salvagewreckwarheadseparatist>Sous-marin de la Coalition</missionsonarlabel.salvagewreckwarheadseparatist>
-
-<missionsuccess.salvagewreckwarheadseparatist>L'ogive a été récupérée.</missionsuccess.salvagewreckwarheadseparatist>
-
-<missionfailure.salvagewreckwarheadseparatist>Vous n'avez pas réussi à récupérer l'ogive.</missionfailure.salvagewreckwarheadseparatist>
-
-<missionheader0.salvagewreckwarheadseparatist>Ogive dérobée.</missionheader0.salvagewreckwarheadseparatist>
-
-<missionmessage0.salvagewreckwarheadseparatist>Vous avez voler l'ogive perdue. La Coalition ne sera heureuse de l'apprendre.</missionmessage0.salvagewreckwarheadseparatist>
-
-			<!-- Misc/material items -->
-			
-<entityname.geigercounter>Compteur Geiger</entityname.geigercounter>
-<entitydescription.geigercounter>Petit appareil traduisant les niveaux de radiations à proximité en signaux audio et visuels. Vérifie également passivement son porteur en cas d'irradiation.</entitydescription.geigercounter>
-
-<entityname.iodine>Iodine</entityname.iodine>
-
-
-<entityname.du_p_alloy>Alliage uranium appauvri - physicorium</entityname.du_p_alloy>
-<entitydescription.du_p_alloy>Un alliage extrêmement résistant et lourd.</entitydescription.du_p_alloy>
-
-<entityname.AI_microchip>Contrôleur IA</entityname.AI_microchip>
-<entitydescription.AI_microchip>Un contrôleur avec IA pour émetteur de stase.</entitydescription.AI_microchip>
-
-<entityname.stasisemitter>Générateur de stase</entityname.stasisemitter>
-<entitydescription.stasisemitter>Une série d'émetteurs de stases pour transporteur à barre de combustible renforcé.</entitydescription.stasisemitter>
-
-<entityname.fueltrasnportcylinderreinforced>Transporteur à barre de combustible renforcé</entityname.fueltrasnportcylinderreinforced>
-<entitydescription.fueltrasnportcylinderreinforced>Un transporteur équipé de générateur de stase capable de contenir des combustibles en état super-critique. Uniquement utilisable avec un fabricateur.</entitydescription.fueltrasnportcylinderreinforced>
-
-<entityname.iodinecrystal>Cristaux de d'iodine</entityname.iodinecrystal>
-<entitydescription.iodinecrystal>Cristaux fait exclusivement d'iode.</entitydescription.iodinecrystal>
-
-<entityname.deconcontaminationemitter>Danger de contamination</entityname.deconcontaminationemitter>
-<entitydescription.deconcontaminationemitter>Attention : Le processus de déconstruction contaminera le personnel non protégé à proximité..</entitydescription.deconcontaminationemitter>
-
-<entityname.nuclearmaterialprocessor>Fabricateur de materiaux nucléaire</entityname.nuclearmaterialprocessor>
-<entitydescription.nuclearmaterialprocessor>Un fabricateur spécialisé équipé d'un bouclier anti-radiation permettant la manipulation sans risque de matériaux dangereux.</entitydescription.nuclearmaterialprocessor>
-
-<entityname.fissiledeconstructor>Déconstructeur avec blindage anti radiation</entityname.fissiledeconstructor>
-<entitydescription.fissiledeconstructor>Un déconstructeur equipé d'un bouclier anti-radiation permettant la manipulation sans risque de matériaux dangereux.</entitydescription.fissiledeconstructor>
-
-<entityname.manual>Guide d'opération du réacteur</entityname.manual>
-<entitydescription.manual>Contient toutes les informations importantes en relation du réacteur nucléaire et ses dangers.</entitydescription.manual>
-<terminalwelcomemsg.manual>
+  <!-- Afflictions -->
+  <afflictionname.dnadamage>Irradiation de l'ADN</afflictionname.dnadamage>
+  <afflictiondescription.dnadamage>Le patient souffre de dénaturation de son ADN induit par la radiation.</afflictiondescription.dnadamage>
+  <afflictiondescription.dnadamage.high>L'ADN de du patient a atteint un niveau critique de dégâts à l'ADN et montre des symptômes du syndrome de défaillance multiviscérale.</afflictiondescription.dnadamage.high>
+  <afflictiondescription.dnadamage.self>Vous vous sentez affaiblie et plusieurs points de douleur vous tenaillent de l'intérieur.</afflictiondescription.dnadamage.self>
+  <afflictiondescription.dnadamage.high.self>Vous sentez votre corps mourir alors que vos cellules peinent à maintenir leurs fonctions vitales.</afflictiondescription.dnadamage.high.self>
+  <afflictioncauseofdeath.dnadamage>ADN endommagé au-delà du seuil de viabilité</afflictioncauseofdeath.dnadamage>
+  <afflictioncauseofdeathself.dnadamage>Votre ADN a atteint un niveau létal de dégâts.</afflictioncauseofdeathself.dnadamage>
+  <afflictionname.radiationresistance>Radioprotecteur</afflictionname.radiationresistance>
+  <afflictiondescription.radiationresistance>Empêche la contamination et protège contre l'irradiation.</afflictiondescription.radiationresistance>
+  <afflictionname.contamination>Contamination aux matériaux radioactif</afflictionname.contamination>
+  <afflictiondescription.contamination>Le patient souffre d'irradiation chronique du à l'inhalation de particules radioactives.</afflictiondescription.contamination>
+  <afflictiondescription.contamination.high>Le patient montre des signes sévères d'irradiation et commence à vomir du sang.</afflictiondescription.contamination.high>
+  <afflictiondescription.contamination.self>Vous vous sentez affaiblie et semblez recevoir des brulures de null part.</afflictiondescription.contamination.self>
+  <afflictiondescription.contamination.high.self>Vous souffrez de brulure sévère sur tout votre corps sans source apparente et commencez à vomir du sang. Vous auriez dû Porter une combinaison avant d'aller là-bas....</afflictiondescription.contamination.high.self>
+  <afflictionname.lethalradiation>Syndrome d'irradiation aiguë</afflictionname.lethalradiation>
+  <afflictiondescription.lethalradiation.low>le patient montre des signes irradiation extrême.</afflictiondescription.lethalradiation.low>
+  <afflictiondescription.lethalradiation>La santé du patient se dégrade à une vitesse alarmante alors que les radiations ravagent son corps.</afflictiondescription.lethalradiation>
+  <afflictiondescription.lethalradiation.high>La peau du patient commence à tomber en lambeaux et commencé montre des signes du syndrome de défaillance multiviscérale en raison de la dégradation rapide de son ADN.</afflictiondescription.lethalradiation.high>
+  <afflictiondescription.lethalradiation.low.self>Votre vue est obstruée par une sorte de brouillard statique et vous souffrez de brulure sévère sur tout votre corps.</afflictiondescription.lethalradiation.low.self>
+  <afflictiondescription.lethalradiation.self>Vous luttez ne serait-ce que pour rester debout alors que votre corps faibli à une vitesse alarmante.</afflictiondescription.lethalradiation.self>
+  <afflictiondescription.lethalradiation.high.self>Vous sentez vos organes cuire et périr sous l'effet des radiations, il ne vous reste plus beaucoup de temps.</afflictiondescription.lethalradiation.high.self>
+  <afflictioncauseofdeath.lethalradiation>Irradiation létale.</afflictioncauseofdeath.lethalradiation>
+  <afflictioncauseofdeathself.lethalradiation>Vous êtes mort d'une irradiation létale.</afflictioncauseofdeathself.lethalradiation>
+  <!-- QoL Afflictions -->
+  <afflictionname.burningrod>Combustible surchauffé</afflictionname.burningrod>
+  <afflictiondescription.burningrod>Vous tenez une barre de combustible surchauffé à 2800°C sans outil adapté!</afflictiondescription.burningrod>
+  <afflictioncauseofdeath.burningrod>Brulé à mort en tenant une barre de combustible surchauffée.</afflictioncauseofdeath.burningrod>
+  <afflictionname.hazardexposure>Exposition dangereuse aux barres de combustible</afflictionname.hazardexposure>
+  <afflictiondescription.hazardexposure>Vous êtes à portée des effets néfastes d'une barre de combustible, équipez-vous de protections appropriées.</afflictiondescription.hazardexposure>
+  <afflictionname.dnaregeneration>Régénération d'ADN</afflictionname.dnaregeneration>
+  <afflictiondescription.dnaregeneration>L'ADN du patient se régénère lentement.</afflictiondescription.dnaregeneration>
+  <afflictionname.antiradeffect>Effet de drogue antiradiation</afflictionname.antiradeffect>
+  <afflictiondescription.antiradeffect>Le corps du patient est lentement purgé des radiations ainsi que des contaminants radioactifs.</afflictiondescription.antiradeffect>
+  <!-- Medical items -->
+  <entityname.DTPA>DTPA</entityname.DTPA>
+  <entitydescription.DTPA>Une alternative a l'anti-rad qui est beaucoup plus accessible mais aussi beaucoup plus lent à agir, inutile contre le syndrome d'irradiation aiguë.</entitydescription.DTPA>
+  <entityname.Potassiumiodide>Iode de potassium</entityname.Potassiumiodide>
+  <entitydescription.Potassiumiodide>Protège contre la contamination et les radiations. Doit être pris régulièrement pour maintenir ses effets protecteurs. Ne protège pas contre les sources de radiation létale.</entitydescription.Potassiumiodide>
+  <entityname.DNAstabiliser>Stabilisateur d'ADN</entityname.DNAstabiliser>
+  <entitydescription.DNAstabiliser>Un composé rare et complexe capable de restaurer lentement l'ADN endommagé sur une longue durée, dangereux si injecté pour du personnel sans aptitude médicale.</entitydescription.DNAstabiliser>
+  <entityname.antirad>Anti-Rad</entityname.antirad>
+  <entitydescription.antirad>Un médicament puissant capable de purger en quelques secondes le corps de toutes radiations et contaminant radioactif, il est préférable de le garder pour les urgences médicales.</entitydescription.antirad>
+  <entityname.radiotoxin>Radiotoxine</entityname.radiotoxin>
+  <entitydescription.radiotoxin>Un élément extrêmement radioactif capable de causer le syndrome d'irradiation aiguë.</entitydescription.radiotoxin>
+  <!-- Containers -->
+  <entityname.fuelcrate>Caisse de stockage de materiaux radioactifs</entityname.fuelcrate>
+  <entitydescription.fuelcrate>Une caisse lourdement renforcé pour transporter des barres de combustible ainsi que des minerais radioactifs.</entitydescription.fuelcrate>
+  <entityname.fueltransportcylinder>Transporteur de barre à combustible</entityname.fueltransportcylinder>
+  <entitydescription.fueltransportcylinder>Capable de transporter une seule barre de combustible, il est moins encombrant que son homologue à haute capacité. Suffisamment sécurisé pour le ranger dans la plupart des placards.</entitydescription.fueltransportcylinder>
+  <entityname.ekutility_handtruck_reactorfuel>Chariot de manipulation à barre de combustible</entityname.ekutility_handtruck_reactorfuel>
+  <entitydescription.ekutility_handtruck_reactorfuel>Un chariot à main avec un conteneur sécurisé pour le transport de barres à combustible.</entitydescription.ekutility_handtruck_reactorfuel>
+  <entityname.fuelbackpack>Sac à dos avec bouclier anti-radiation</entityname.fuelbackpack>
+  <entitydescription.fuelbackpack>Un sac à dos renforcé pouvant transporter des materiaux nucléaire en toute sécurité, possède un compteur geiger and offre une protection limitée contre les radiations.</entitydescription.fuelbackpack>
+  <entityname.HRtongs>Pince pour carburant de réacteur</entityname.HRtongs>
+  <entitydescription.HRtongs>Une pince pour maintenir une barre de combustible à une distance sécurisée de vos mains. Peut être utilisé en tant qu'arme contondante si besoin.</entitydescription.HRtongs>
+  <!-- Reactor items -->
+  <entityname.fuelrod>Barre de combustible en uranium</entityname.fuelrod>
+  <entitydescription.fuelrod>Combustible standard pour réacteur nucléaire.</entitydescription.fuelrod>
+  <entityname.thoriumfuelrod>Barre de combustible en thorium</entityname.thoriumfuelrod>
+  <entitydescription.thoriumfuelrod>Les barres de combustible en thorium peuvent durer jusqu'à trois fois plus longtemps que celle en uranium.</entitydescription.thoriumfuelrod>
+  <entityname.fulguriumfuelrod>Barre de combustible en fulgurium</entityname.fulguriumfuelrod>
+  <entitydescription.fulguriumfuelrod>Même si elles ne génèrent pas autant de chaleur que les autres combustibles mais compensent avec son extrême longévité, capable de réguler la fission des autres combustibles à un certain niveau ce qui en fait un bon combustible complémentaire. Trop stable pour être utilisé tel que et doit être préchauffé pour être utilisable.</entitydescription.fulguriumfuelrod>
+  <entityname.fulguriumfuelrodvolatile>Barre de combustible en fulgurium volatile</entityname.fulguriumfuelrodvolatile>
+  <entitydescription.fulguriumfuelrodvolatile>Un amalgame de fulgurium et d'incendium, s'il ne possède ni la longévité du fulgurium ou la production de chaleur de l'incendium il se situe entre les deux cependant possède la quasi-totalité de leurs points négatifs respectif.</entitydescription.fulguriumfuelrodvolatile>
+  <entityname.ekutility_incendiumfuelrod>Barre de combustible en incendium</entityname.ekutility_incendiumfuelrod>
+  <entitydescription.ekutility_incendiumfuelrod>Possède une énergie potentielle extrême mais est tout aussi instable. Autochauffantes sinon stocké dans un conteneur adéquat au point fondre à travers la coque du sous-marin. Sensible aux impactes même si stocké correctement.</entitydescription.ekutility_incendiumfuelrod>
+  <entityname.supercritical_incendium>Barre de combustible d'incendium super critique</entityname.supercritical_incendium>
+  <entitydescription.supercritical_incendium>Cette barre de combustible a atteint un état super-critique durant la fusion du coeur et risque de libérer toute son énergie dans une violente explosion au moindre impact, l'énergie ambiante libérée est suffisante pour faire fondre la coque du sous-marin mais semble s'épuiser rapidement.</entitydescription.supercritical_incendium>
+  <entityname.supercritical_fulgurium>Barre de combustible en fulgurium volatile super critique</entityname.supercritical_fulgurium>
+  <entitydescription.supercritical_fulgurium>Cette barre de combustible a atteint un état super-critique durant la fusion du coeur et risque de libérer toute son énergie dans une violente explosion au moindre impact, l'énergie ambiante libérée est suffisante pour faire fondre la coque du sous-marin mais semble s'épuiser rapidement. Cependant l'amalgame en fulgurium le fait bruler bien plus longtemps.</entitydescription.supercritical_fulgurium>
+  <entityname.molten_rods>Corium</entityname.molten_rods>
+  <entitydescription.molten_rods>Magma radioactif solidifié, émet une quantité extrême de radiation.</entitydescription.molten_rods>
+  <entityname.control_rod>Barre de contrôle</entityname.control_rod>
+  <entitydescription.control_rod>Ne fournit aucune chaleur pour la production d'électricité mais mitige grandement les pics de températures en conditions normales.</entitydescription.control_rod>
+  <!-- Weapon -->
+  <entityname.nukerod>Ogive "Crisis"</entityname.nukerod>
+  <entitydescription.nukerod>Une barre de combustible alien en état supercritique maintenu en stase, les générateurs de stases sont très fragiles et ne survivront pas un impact même modéré ce qui en fait une puissante ogive tactique.</entitydescription.nukerod>
+  <entityname.nukerodenhanced>Ogive "Crisis" amélioré</entityname.nukerodenhanced>
+  <entitydescription.nukerodenhanced>Ogive "Crisis" amélioré avec des matériaux fissibles pour augmenter son potentiel énergitique. Génère aussi un sursaut gamma.</entitydescription.nukerodenhanced>
+  <entitydescription.nucleargun>Un prototype d'arme énergétique construite avec les matériaux aliens d'Europe. Le danger auquel l'utilisateur s'expose à l'utilisation dépend de la barre de combustible chargé.</entitydescription.nucleargun>
+  <!-- Mission text -->
+  <!-- Coalition version -->
+  <missionname.salvagewreckwarheadcoalition>Récupération d'arme expérimentale</missionname.salvagewreckwarheadcoalition>
+  <missiondescription.salvagewreckwarheadcoalition>Un sous-marin militaire de la coalition a sombré à proximité avec à bord un explosif expérimental. Sécurisez sa cargaison pour la Coalition avant que quelqu'un d'autre ne le fasse.</missiondescription.salvagewreckwarheadcoalition>
+  <missionsonarlabel.salvagewreckwarheadcoalition>Sous-marin de la Coalition</missionsonarlabel.salvagewreckwarheadcoalition>
+  <missionsuccess.salvagewreckwarheadcoalition>L'ogive a été récupérée.</missionsuccess.salvagewreckwarheadcoalition>
+  <missionfailure.salvagewreckwarheadcoalition>Vous n'avez pas réussi à récupérer l'ogive.</missionfailure.salvagewreckwarheadcoalition>
+  <missionheader0.salvagewreckwarheadcoalition>Ogive récupérée.</missionheader0.salvagewreckwarheadcoalition>
+  <missionmessage0.salvagewreckwarheadcoalition>Vous avez trouvé l'ogive perdue. Amenez-la à [location2] sans la faire exploser pour toucher votre récompense. Soyez prévenu : l'ogive est extrêmement sensible à tout type de dégâts ou impact.</missionmessage0.salvagewreckwarheadcoalition>
+  <!-- Separatist version -->
+  <missionname.salvagewreckwarheadseparatist>Pillage d'arme expérimentale</missionname.salvagewreckwarheadseparatist>
+  <missiondescription.salvagewreckwarheadseparatist>Un sous-marin militaire de la coalition a sombré à proximité avec à bord un explosif expérimental. Voler la cargaison pour vous-même avant que quelqu'un d'autre ne la récupère.</missiondescription.salvagewreckwarheadseparatist>
+  <missionsonarlabel.salvagewreckwarheadseparatist>Sous-marin de la Coalition</missionsonarlabel.salvagewreckwarheadseparatist>
+  <missionsuccess.salvagewreckwarheadseparatist>L'ogive a été récupérée.</missionsuccess.salvagewreckwarheadseparatist>
+  <missionfailure.salvagewreckwarheadseparatist>Vous n'avez pas réussi à récupérer l'ogive.</missionfailure.salvagewreckwarheadseparatist>
+  <missionheader0.salvagewreckwarheadseparatist>Ogive dérobée.</missionheader0.salvagewreckwarheadseparatist>
+  <missionmessage0.salvagewreckwarheadseparatist>Vous avez voler l'ogive perdue. La Coalition ne sera heureuse de l'apprendre.</missionmessage0.salvagewreckwarheadseparatist>
+  <!-- Misc/material items -->
+  <entityname.geigercounter>Compteur Geiger</entityname.geigercounter>
+  <entitydescription.geigercounter>Petit appareil traduisant les niveaux de radiations à proximité en signaux audio et visuels. Vérifie également passivement son porteur en cas d'irradiation.</entitydescription.geigercounter>
+  <entityname.iodine>Iodine</entityname.iodine>
+  <entityname.du_p_alloy>Alliage uranium appauvri - physicorium</entityname.du_p_alloy>
+  <entitydescription.du_p_alloy>Un alliage extrêmement résistant et lourd.</entitydescription.du_p_alloy>
+  <entityname.AI_microchip>Contrôleur IA</entityname.AI_microchip>
+  <entitydescription.AI_microchip>Un contrôleur avec IA pour émetteur de stase.</entitydescription.AI_microchip>
+  <entityname.stasisemitter>Générateur de stase</entityname.stasisemitter>
+  <entitydescription.stasisemitter>Une série d'émetteurs de stases pour transporteur à barre de combustible renforcé.</entitydescription.stasisemitter>
+  <entityname.fueltrasnportcylinderreinforced>Transporteur à barre de combustible renforcé</entityname.fueltrasnportcylinderreinforced>
+  <entitydescription.fueltrasnportcylinderreinforced>Un transporteur équipé de générateur de stase capable de contenir des combustibles en état super-critique. Uniquement utilisable avec un fabricateur.</entitydescription.fueltrasnportcylinderreinforced>
+  <entityname.iodinecrystal>Cristaux de d'iodine</entityname.iodinecrystal>
+  <entitydescription.iodinecrystal>Cristaux fait exclusivement d'iode.</entitydescription.iodinecrystal>
+  <entityname.deconcontaminationemitter>Danger de contamination</entityname.deconcontaminationemitter>
+  <entitydescription.deconcontaminationemitter>Attention : Le processus de déconstruction contaminera le personnel non protégé à proximité..</entitydescription.deconcontaminationemitter>
+  <entityname.nuclearmaterialprocessor>Fabricateur de materiaux nucléaire</entityname.nuclearmaterialprocessor>
+  <entitydescription.nuclearmaterialprocessor>Un fabricateur spécialisé équipé d'un bouclier anti-radiation permettant la manipulation sans risque de matériaux dangereux.</entitydescription.nuclearmaterialprocessor>
+  <entityname.fissiledeconstructor>Déconstructeur avec blindage anti radiation</entityname.fissiledeconstructor>
+  <entitydescription.fissiledeconstructor>Un déconstructeur equipé d'un bouclier anti-radiation permettant la manipulation sans risque de matériaux dangereux.</entitydescription.fissiledeconstructor>
+  <entityname.manual>Guide d'opération du réacteur</entityname.manual>
+  <entitydescription.manual>Contient toutes les informations importantes en relation du réacteur nucléaire et ses dangers.</entitydescription.manual>
+  <terminalwelcomemsg.manual>
 
 _______________________________Manuel d'Europe pour opération de réacteur nucléaire v2.6_____________________________
 
@@ -431,5 +357,4 @@ Par contre le stabilisateur d'ADN est onéreux et tout aussi dangereux si inject
 Les injections ratées ont que très peu d'effets positifs et peuvent même causer de sérieux dégâts aux organes.
  
  </terminalwelcomemsg.manual>
-
 </infotexts>

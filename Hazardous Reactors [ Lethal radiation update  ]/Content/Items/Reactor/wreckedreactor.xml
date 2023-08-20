@@ -9,7 +9,7 @@
       <ParticleEmitter mincondition="1.0" />
       <ParticleEmitter mincondition="1.0" />
     </Repairable>
-    <ItemContainer capacity="4" maxstacksize="1" canbeselected="true" hudpos="0.5,0.15" slotsperrow="1" >
+    <ItemContainer capacity="4" maxstacksize="1" canbeselected="true" hudpos="0.5,0.15" slotsperrow="1">
       <Containable items="smallitem,mediumitem" />
       <StatusEffect type="Always" target="This" delay="0" disabledeltatime="true" stackable="false" comparison="And">
         <sound file="%ModDir%/Content/Items/Reactor/highradiation.ogg" type="OnUse" range="500.0" loop="true" volume="0.5" />

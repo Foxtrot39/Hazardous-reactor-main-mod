@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Hazardous Reactors" modversion="1.0.53" corepackage="False" steamworkshopid="2547888957" gameversion="1.0.21.0" altnames="Hazardous Reactors">
+<contentpackage name="Hazardous Reactors" steamworkshopid="2547888957" corepackage="false" modversion="1.0.55" gameversion="1.0.21.0" installtime="1692537975" expectedhash="1A494ED2023F20DAA7F3691AEA4500D1">
   <Item file="%ModDir%/Content/Items/Reactor/reactor.xml" />
   <Afflictions file="%ModDir%/Content/Items/Medical/Afflictions.xml" />
   <Item file="%ModDir%/Content/Items/Medical/Medical.xml" />
