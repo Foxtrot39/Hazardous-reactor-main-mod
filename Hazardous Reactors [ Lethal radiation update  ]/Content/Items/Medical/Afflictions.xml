@@ -5,7 +5,7 @@
       <Description textidentifier="afflictiondescription.dnadamage" minstrength="0" maxstrength="70" />
       <Description textidentifier="afflictiondescription.dnadamage.high" minstrength="70" maxstrength="100" />
       <Effect minstrength="0" maxstrength="60" minvitalitydecrease="0" maxvitalitydecrease="20" minchromaticaberration="0.0" maxchromaticaberration="2.5" />
-      <Effect minstrength="60" maxstrength="80" minvitalitydecrease="20" maxvitalitydecrease="40" minchromaticaberration="2.5" maxchromaticaberration="5">
+      <Effect minstrength="61" maxstrength="80" minvitalitydecrease="20" maxvitalitydecrease="40" minchromaticaberration="2.5" maxchromaticaberration="5">
         <StatusEffect target="Character" targetlimb="Torso" interval="3">
           <Affliction identifier="internaldamage" amount="5" />
         </StatusEffect>
@@ -13,13 +13,13 @@
           <Affliction identifier="bloodvomit" amount="100" />
         </StatusEffect>
       </Effect>
-      <Effect minstrength="80" maxstrength="99" minvitalitydecrease="40" maxvitalitydecrease="60" minchromaticaberration="5" maxchromaticaberration="5">
+      <Effect minstrength="81" maxstrength="99" minvitalitydecrease="40" maxvitalitydecrease="60" minchromaticaberration="5" maxchromaticaberration="5">
         <StatusEffect target="Character" interval="3">
           <Affliction identifier="organdamage" amount="13" />
           <Affliction identifier="internaldamage" amount="8" />
         </StatusEffect>
       </Effect>
-      <Effect minstrength="99" maxstrength="100" minvitalitydecrease="60" maxvitalitydecrease="70" minchromaticaberration="5" maxchromaticaberration="5">
+      <Effect minstrength="100"  minvitalitydecrease="60" maxvitalitydecrease="70" minchromaticaberration="5" maxchromaticaberration="5">
         <StatusEffect target="Character" setvalue="true">
           <Affliction identifier="deathpuke" amount="1" />
         </StatusEffect>
