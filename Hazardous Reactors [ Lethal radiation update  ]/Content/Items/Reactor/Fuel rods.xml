@@ -35,6 +35,17 @@
       <Quality>
         <QualityStat stattype="Condition" value="0.1" />
       </Quality>
+      
+      <!-- Allow rod to be used with fission accelerator -->
+      <ItemContainer hideitems="true" capacity="1" itemrotation="90" drawinventory="false" canbeselected="false" SpawnWithId="incendiumgunbolt" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false">
+        <Containable items="nucleargunbolt" />
+        <!-- SHOOTY = ROD HAZARD ACTIVE!-->
+        <!-- Increase Heat when Fired! -->
+        <StatusEffect type="OnUse" target="This" IsOn="true" condition="-5" Range="125" disabledeltatime="true">
+          <SpawnItem identifiers="nucleargunbolt" spawnposition="ThisInventory" />
+        </StatusEffect>
+      </ItemContainer>
+        
       <!-- Slow Decon Time, create contamination hazard, gives lead if empty -->
       <Deconstruct time="25">
         <Item identifier="iron" />
@@ -81,7 +92,6 @@
   
         <StatusEffect type="OnContained" target="This" interval="1" range="200" comparison="And" allowwhenbroken="true" comparaison="And">
           <Conditional targetcontainer="true" targetitemcomponent="Reactor" temperature="gt 20" />
-          <Conditional targetcontainer="true" tag="neq noheat" />
         </StatusEffect>
         
         <!-- DECREASE HEAT IF IN WATER-->
@@ -193,6 +203,17 @@
         <RequiredItem identifier="copper" />
         <RequiredItem identifier="thorium" />
       </Fabricate>
+      
+      <!-- Allow rod to be used with fission accelerator -->
+      <ItemContainer hideitems="true" capacity="1" itemrotation="90" drawinventory="false" canbeselected="false" SpawnWithId="incendiumgunbolt" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false">
+        <Containable items="nucleargunbolt" />
+        <!-- SHOOTY = ROD HAZARD ACTIVE!-->
+        <!-- Increase Heat when Fired! -->
+        <StatusEffect type="OnUse" target="This" IsOn="true" condition="-5" Range="125" disabledeltatime="true">
+          <SpawnItem identifiers="nucleargunbolt" spawnposition="ThisInventory" />
+        </StatusEffect>
+      </ItemContainer>
+      
       <!-- Holding/Throwing & Status Effect -->
       <Throwable characterusable="false" slots="RightHand,LeftHand" throwforce="4.0" holdpos="0,0" handle1="0,0" msg="ItemMsgPickUpSelect">
         <!-- ON SPAWN RETURN CONDITION TO 100% -->
@@ -225,7 +246,6 @@
   
         <StatusEffect type="OnContained" target="This" interval="1" range="200" comparison="And" allowwhenbroken="true" comparaison="And">
           <Conditional targetcontainer="true" targetitemcomponent="Reactor" temperature="gt 20" />
-          <Conditional targetcontainer="true" tag="neq noheat" />
         </StatusEffect>
         
         <!-- DECREASE HEAT IF IN WATER-->
@@ -1044,6 +1064,7 @@
       <RequiredItem identifier="uranium" />
       <RequiredItem identifier="uranium" />
       <RequiredItem identifier="c4block" />
+      <RequiredItem identifier="dirtybomb" /> 
     </Fabricate>
     <!-- Texture and light -->
     <Sprite texture="%ModDir%/Content/Items/Misc/RodCylinderSpritesheet.png" depth="0.55" SourceRect="1,78,158,39" Origin="0.5,0.5" />

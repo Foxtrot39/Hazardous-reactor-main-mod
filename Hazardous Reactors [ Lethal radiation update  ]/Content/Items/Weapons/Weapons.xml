@@ -268,18 +268,17 @@
         <SubContainer capacity="1" maxstacksize="1">
           <Containable items="flashlight" hide="false" itempos="25,0" setactive="true" />
         </SubContainer>
-        <!--Uranium Fuel Rod Switch-->
-        <Containable items="fuelrod">
-          <StatusEffect type="OnContaining" target="Contained" duration="1" stackable="false">
-            <LuaHook name="fuelrodswap" />
-          </StatusEffect>
-        </Containable>
-        <!--Thorium Fuel Rod Switch-->
-        <Containable items="thoriumfuelrod">
-          <StatusEffect type="OnContaining" target="Contained" duration="1" stackable="false">
-            <LuaHook name="fuelrodswap" />
-          </StatusEffect>
-        </Containable>
+
+        <Containable items="fuelrod" />
+
+        <Containable items="thoriumfuelrod"/>
+        
+        <Containable items="fulguriumfuelrod"/>
+        
+        <Containable items="fulguriumfuelrodvolatile"/>
+        
+        <Containable items="ekutility_incendiumfuelrod"/> 
+        
       </ItemContainer>
       <aitarget sightrange="3000" soundrange="5000" fadeouttime="5" />
       <Quality>

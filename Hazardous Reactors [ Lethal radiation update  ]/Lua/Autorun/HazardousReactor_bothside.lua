@@ -50,7 +50,7 @@ Hook.Patch(
     -- Only force update if reactorfuel tag is present
     if instance.item.HasTag("reactorfuel") then
       ptable.PreventExecution = true
-      instance.Update(ptable["cam"])
+      instance.Update(ptable["deltaTime"], ptable["cam"])
     end
   end,
   Hook.HookMethodType.Before
@@ -65,7 +65,7 @@ Hook.Add("fulguriumavailablefuel", "fulguriumfuel", function(effect, deltaTime, 
 
   if light.Range > 0 then
     local reactor = item.GetComponentString("Reactor")
-    reactor.AvailableFuel = reactor.AvailableFuel + 40.0
+    reactor.AvailableFuel = reactor.AvailableFuel + 60.0
   end
 end)
 
