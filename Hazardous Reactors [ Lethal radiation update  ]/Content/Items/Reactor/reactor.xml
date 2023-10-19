@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
-  <Item name="" identifier="reactor1" tags="reactor,hazardcontainement,luaoverride" type="Reactor" scale="0.5" linkable="true" category="Machine" damagedbyexplosions="true" explosiondamagemultiplier="0.2" fireproof="false" waterproof="false">
+  <Item name="" identifier="reactor1" tags="reactor,hazardcontainment,hazardcontainement,luaoverride" type="Reactor" scale="0.5" linkable="true" category="Machine" damagedbyexplosions="true" explosiondamagemultiplier="0.2" fireproof="false" waterproof="false">
     <Upgrade gameversion="0.10.0.0" scale="*0.5" />
     <trigger />
     <Sprite texture="Content/Items/Reactor/reactor.png" sourcerect="0,0,528,336" origin="0.5,0.45" depth="0.8" />

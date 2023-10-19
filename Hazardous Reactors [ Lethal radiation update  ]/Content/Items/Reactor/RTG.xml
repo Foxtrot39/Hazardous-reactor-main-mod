@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
-  <Item name="Reactor" identifier="rtg" tags="reactor,hazardcontainement,noheat" type="Reactor" scale="0.2" linkable="true" category="Machine" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+  <Item name="Reactor" identifier="rtg" tags="reactor,hazardcontainment,hazardcontainement,noheat" type="Reactor" scale="0.2" linkable="true" category="Machine" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
     <Upgrade gameversion="0.10.0.0" scale="*0.5" />
       <Price baseprice="2500">
         <Price storeidentifier="merchantoutpost" sold="false" />

@@ -70,11 +70,11 @@
         </StatusEffect>
         <StatusEffect type="OnContained" target="This" IsOn="true" comparison="And" allowwhenbroken="true">
           <Conditional Range="gt 1" targetitemcomponent="LightComponent" />
-          <Conditional hastag="neq hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment,hazardcontainement" targetcontainer="true" />
         </StatusEffect>
         <!-- TURNS OFF THE HAZARD -->
         <StatusEffect type="OnContained" target="This" IsOn="false" comparison="And" allowwhenbroken="true">
-          <Conditional hastag="eq hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="eq hazardcontainment,hazardcontainement" targetcontainer="true" />
           <Conditional HasStatusTag="neq hazardactive" targetcontainer="true" />
         </StatusEffect>
         <!-- Burns whoever holds it -->
@@ -224,11 +224,11 @@
         </StatusEffect>
         <StatusEffect type="OnContained" target="This" IsOn="true" comparison="And" allowwhenbroken="true">
           <Conditional Range="gt 1" targetitemcomponent="LightComponent" />
-          <Conditional hastag="neq hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment,hazardcontainement" targetcontainer="true" />
         </StatusEffect>
         <!-- TURNS OFF THE HAZARD -->
         <StatusEffect type="OnContained" target="This" IsOn="false" comparison="And" allowwhenbroken="true">
-          <Conditional hastag="eq hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="eq hazardcontainment,hazardcontainement" targetcontainer="true" />
           <Conditional HasStatusTag="neq hazardactive" targetcontainer="true" />
         </StatusEffect>
         <!-- Burns whoever holds it -->
@@ -420,11 +420,11 @@
         </StatusEffect>
         <StatusEffect type="OnContained" target="This" IsOn="true" comparison="And" allowwhenbroken="true">
           <Conditional Range="gt 1" targetitemcomponent="LightComponent" />
-          <Conditional hastag="neq hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment,hazardcontainement" targetcontainer="true" />
         </StatusEffect>
         <!-- TURNS OFF THE HAZARD -->
         <StatusEffect type="OnContained" target="This" IsOn="false" comparison="And" allowwhenbroken="true">
-          <Conditional hastag="eq hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="eq hazardcontainment,hazardcontainement" targetcontainer="true" />
           <Conditional HasStatusTag="neq hazardactive" targetcontainer="true" />
         </StatusEffect>
         <!-- Burns whoever holds it -->
@@ -585,11 +585,11 @@
         </StatusEffect>
         <StatusEffect type="OnContained" target="This" IsOn="true" comparison="And" allowwhenbroken="true">
           <Conditional Range="gt 1" targetitemcomponent="LightComponent" />
-          <Conditional hastag="neq hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment,hazardcontainement" targetcontainer="true" />
         </StatusEffect>
         <!-- TURNS OFF THE HAZARD -->
         <StatusEffect type="OnContained" target="This" IsOn="false" comparison="And" allowwhenbroken="true">
-          <Conditional hastag="eq hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="eq hazardcontainment,hazardcontainement" targetcontainer="true" />
           <Conditional HasStatusTag="neq hazardactive" targetcontainer="true" />
         </StatusEffect>
         <!-- Burns whoever holds it -->
@@ -620,7 +620,7 @@
         </StatusEffect>
         <!-- Impact sensivity need to make this into a trigger component-->
         <StatusEffect type="OnImpact" target="This" Range="100" Condition="-10" comparison="Or" disabledeltatime="true">
-          <Conditional hastag="neq hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment,hazardcontainement" targetcontainer="true" />
           <!-- <Conditional HasStatusTag="eq hazardactive" targetcontainer="true" /> -->
           <Conditional InWater="false" />
           <Explosion range="200" structuredamage="15" stun="1.5" force="4">
@@ -793,7 +793,7 @@
         </StatusEffect>
         <StatusEffect type="OnContained" target="This" disabledeltatime="true" stackable="false" delay="1" comparison="And">
           <Conditional IsFullCondition="false" />
-          <Conditional hastag="neq hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment,hazardcontainement" targetcontainer="true" />
           <Explosion range="500" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
             <Affliction identifier="burn_emitter" strength="100" />
             <Affliction identifier="hazardexposure" strength="10" />
@@ -805,7 +805,7 @@
         </StatusEffect>
         <StatusEffect type="OnContained" target="This" disabledeltatime="true" stackable="false" delay="2" comparison="And">
           <Conditional IsFullCondition="false" />
-          <Conditional hastag="neq hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment,hazardcontainement" targetcontainer="true" />
           <Explosion range="100" structuredamage="25" force="0.01" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" stackable="false" delay="3" underwaterbubble="false" />
         </StatusEffect>
         <StatusEffect type="OnNotContained" target="This" disabledeltatime="true" stackable="false" delay="4">
@@ -828,11 +828,11 @@
           <sound file="%ModDir%/Content/Items/Reactor/shock4.ogg" />
         </StatusEffect>
         <StatusEffect type="OnContained" target="This">
-          <Conditional hastag="neq hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment,hazardcontainement" targetcontainer="true" />
           <ParticleEmitter particle="ElectricShock" distancemax="1" particlespersecond="2.0" particleamount="2" emitinterval="2.1" anglemin="0" anglemax="360" scalemin="0.1" scalemax="0.2" />
         </StatusEffect>
         <StatusEffect type="OnContained" target="This" delay="5" disabledeltatime="true" stackable="false" dontmuffle="false">
-          <Conditional hastag="neq hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment,hazardcontainement" targetcontainer="true" />
           <sound file="%ModDir%/Content/Items/Reactor/shock1.ogg" selectionmode="Random" />
           <sound file="%ModDir%/Content/Items/Reactor/shock2.ogg" />
           <sound file="%ModDir%/Content/Items/Reactor/shock3.ogg" />

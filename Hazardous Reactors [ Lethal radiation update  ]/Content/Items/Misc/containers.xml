@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
-  <Item name="" identifier="fueltransportcylinder" tags="mediumitem,mobilecontainer,tool,hazardcontainement" description="" showcontentsintooltip="true" scale="0.5" linkable="true" pickdistance="150" impactsoundtag="impact_metal_heavy" waterproof="true" fireproof="true">
+  <Item name="" identifier="fueltransportcylinder" tags="mediumitem,mobilecontainer,tool,hazardcontainment,hazardcontainement" description="" showcontentsintooltip="true" scale="0.5" linkable="true" pickdistance="150" impactsoundtag="impact_metal_heavy" waterproof="true" fireproof="true">
     <PreferredContainer primary="reactorcab" minamount="1" maxamount="1" spawnprobability="1" />
     <Price baseprice="150">
       <Price storeidentifier="merchantoutpost" sold="false" />
@@ -30,7 +30,7 @@
       <Containable items="reactorfuel,depletedfuel" />
     </ItemContainer>
   </Item>
-  <Item name="" identifier="fuelcrate" tags="crate,rodstorage,hazardcontainement" description="" scale="0.5" showcontentsintooltip="true" linkable="true" pickdistance="150" impactsoundtag="impact_metal_heavy" waterproof="true" fireproof="true">
+  <Item name="" identifier="fuelcrate" tags="crate,rodstorage,hazardcontainment,hazardcontainement" description="" scale="0.5" showcontentsintooltip="true" linkable="true" pickdistance="150" impactsoundtag="impact_metal_heavy" waterproof="true" fireproof="true">
     <Price baseprice="400" displaynonempty="true">
       <Price storeidentifier="merchantoutpost" sold="false" />
       <Price storeidentifier="merchantcity" minavailable="1" />
@@ -63,7 +63,7 @@
   </Item>
   <Override>
     <!-- End Game item, a large movable storage for Fuel Rods or material -->
-    <Item name="" identifier="ekutility_handtruck_reactorfuel" category="Equipment" Tags="ekutility_compatiblefuelstorage,hazardcontainement" showcontentsintooltip="true" pickdistance="75" scale="0.6" description="" waterproof="true" fireproof="true">
+    <Item name="" identifier="ekutility_handtruck_reactorfuel" category="Equipment" Tags="ekutility_compatiblefuelstorage,hazardcontainment,hazardcontainement" showcontentsintooltip="true" pickdistance="75" scale="0.6" description="" waterproof="true" fireproof="true">
       <Price baseprice="500" buyingpricemultiplier="7" minleveldifficulty="65" soldbydefault="false" soldeverywhere="false" minavailable="0" maxavailable="1">
         <Price storeidentifier="merchantmine" sold="true" minavailable="1" />
         <Price storeidentifier="merchantengineering" sold="true" multiplier="2.5" />
@@ -219,7 +219,7 @@
     </ItemContainer>
       
   </Item> -->
-  <Item name="" identifier="fuelbackpack" tags="largeitem,mobilecontainer,hazardcontainement" description="" showcontentsintooltip="true" scale="0.5" linkable="true" pickdistance="150" impactsoundtag="impact_metal_heavy" waterproof="true" fireproof="true">
+  <Item name="" identifier="fuelbackpack" tags="largeitem,mobilecontainer,hazardcontainment,hazardcontainement" description="" showcontentsintooltip="true" scale="0.5" linkable="true" pickdistance="150" impactsoundtag="impact_metal_heavy" waterproof="true" fireproof="true">
     <Fabricate suitablefabricators="fabricator" requiredtime="60">
       <RequiredSkill identifier="electrical" level="70" />
       <RequiredSkill identifier="mechanical" level="50" />
@@ -276,7 +276,7 @@
       </SubContainer>
     </ItemContainer>
   </Item>
-  <Item name="" identifier="fueltrasnportcylinderreinforced" tags="mediumitem,mobilecontainer,tool,stasis,hazardcontainement" description="" scale="0.5" linkable="true" pickdistance="150" impactsoundtag="impact_metal_heavy">
+  <Item name="" identifier="fueltrasnportcylinderreinforced" tags="mediumitem,mobilecontainer,tool,stasis,hazardcontainment,hazardcontainement" description="" scale="0.5" linkable="true" pickdistance="150" impactsoundtag="impact_metal_heavy">
     <Price baseprice="800" soldeverywhere="false">
       <Price locationtype="outpost" multiplier="1" minavailable="1" />
       <Price locationtype="city" multiplier="0.9" minavailable="1" />
@@ -352,7 +352,7 @@
     <!-- -->
   </Item>
   <!-- Custome fabricator/deconstructor -->
-  <Item name="" identifier="nuclearmaterialprocessor" tags="nuclearmaterialprocessor,hazardcontainement,donttakeitems,dontsellitems" category="Machine" linkable="true" allowedlinks="deconstructor,locker,fissiledeconstructor" description="" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+  <Item name="" identifier="nuclearmaterialprocessor" tags="nuclearmaterialprocessor,hazardcontainment,hazardcontainement,donttakeitems,dontsellitems" category="Machine" linkable="true" allowedlinks="deconstructor,locker,fissiledeconstructor" description="" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
     <Body width="336" height="395" density="40" />
     <Price baseprice="1500" minleveldifficulty="0" soldbydefault="true" soldeverywhere="false" minavailable="0" maxavailable="1">
       <Price storeidentifier="merchantmine" sold="true" minavailable="1" />
@@ -422,7 +422,7 @@
     <ItemContainer capacity="5" canbeselected="true" hideitems="true" slotsperrow="5" uilabel="" allowuioverlap="true" />
     <ItemContainer capacity="1" canbeselected="true" hideitems="true" slotsperrow="1" uilabel="" allowuioverlap="true" />
   </Item>
-  <Item name="" identifier="fissiledeconstructor" tags="deconstructor,hazardcontainement,donttakeitems,dontsellitems" category="Machine" linkable="true" allowedlinks="fabricator,medicalfabricator,locker" description="" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+  <Item name="" identifier="fissiledeconstructor" tags="deconstructor,hazardcontainment,hazardcontainement,donttakeitems,dontsellitems" category="Machine" linkable="true" allowedlinks="fabricator,medicalfabricator,locker" description="" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
     <Body width="256" height="315" density="40" />
     <Price baseprice="1500" minleveldifficulty="0" soldbydefault="true" soldeverywhere="false" minavailable="0" maxavailable="1">
       <Price storeidentifier="merchantmine" sold="true" minavailable="1" />

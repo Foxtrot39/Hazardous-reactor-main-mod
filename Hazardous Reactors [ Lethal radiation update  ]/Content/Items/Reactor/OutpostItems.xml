@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <!--Outpost Machines-->
-  <Item name="" nameidentifier="reactor1" identifier="outpostreactor" tags="reactor,hazardcontainement,luaoverride" type="Reactor" linkable="true" category="Machine" damagedbyexplosions="true" scale="0.5" explosiondamagemultiplier="0.2">
+  <Item name="" nameidentifier="reactor1" identifier="outpostreactor" tags="reactor,hazardcontainment,hazardcontainement,luaoverride" type="Reactor" linkable="true" category="Machine" damagedbyexplosions="true" scale="0.5" explosiondamagemultiplier="0.2">
     <trigger />
     <sprite texture="Content/Map/Outposts/Art/GenericAssets2.png" sourcerect="38,336,575,849" depth="0.8" origin="0.5,0.5" />
     <UpgradePreviewSprite scale="3.0" texture="Content/UI/WeaponUI.png" sourcerect="0,960,64,64" origin="0.5,0.45" />
