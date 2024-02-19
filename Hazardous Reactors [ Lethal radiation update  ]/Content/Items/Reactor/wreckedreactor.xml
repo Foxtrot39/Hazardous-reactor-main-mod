@@ -20,13 +20,19 @@
         <Conditional condition="e 0" />
       </StatusEffect>
       <StatusEffect type="Always" target="This" stackable="false" delay="1">
-        <Conditional condition="e 0" />
+        <Conditional condition="lt 20" />
         <Explosion range="500" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false">
           <Affliction identifier="radiationsickness" strength="40" />
           <Affliction identifier="radiationgeiger" strength="20" />
-          <Affliction identifier="contamination" strength="20" />
+          <Affliction identifier="radiation_source_visual" strength="25" />
         </Explosion>
       </StatusEffect>
+      <!-- RADIATION BASED RADIO JAMMING EFFECT -->
+      <StatusEffect type="Always" target="This" Interval="10">
+        <SpawnItem identifier="radiation_radio_jammer" spawnposition="This" />
+        <Conditional condition="e 0" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="NearbyItems" Interval="1" Range="5000" targetidentifiers="mobileradio" JamTimer="10" setvalue="true" />
     </ItemContainer>
   </Item>
 </Override>

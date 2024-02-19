@@ -99,6 +99,12 @@
   <missionheader0.salvagewreckwarheadseparatist>Ogive dérobée.</missionheader0.salvagewreckwarheadseparatist>
   <missionmessage0.salvagewreckwarheadseparatist>Vous avez voler l'ogive perdue. La Coalition ne sera heureuse de l'apprendre.</missionmessage0.salvagewreckwarheadseparatist>
   <!-- Misc/material items -->
+  <talentname.RTG>Technicien GTR</talentname.RTG>
+  <talentdescription.RTGTech>Permet la fabrication et le placement de Générateurs Thermoélectrique à Radioisotope comme source d'énergie auxiliaire pour le sous-marin.</talentdescription.RTGTech>
+  <entityname.RTG>Générateur Thermoélectrique à Radioisotope</entityname.RTG>
+  <entitydescription.RTG>Le générateur thermoélectrique à Radioisotope, où GTR, est un type de batterie nucléaire convertissant directement la chaleur issue de la fission de matériaux adaptés en électricité. Bien que moins efficace qu'un réacteur couplé à une turbine. While les efficients than à reactor's turbine, le thermocouple permet essentiellement d'utiliser toutes sources de radiations comme carburant même si les faibles sources de radiation ont une production négligeable. Conçu pour être portable, la protection est minimal, les barres de combustible enrichis irradieront les environs.</entitydescription.RTG>
+  <entityname.RTG_manual>Livre d'instruction pour GTR</entityname.RTG_manual>
+  <entitydescription.RTG_manual>Une fois lu, permet de fabriquer et de placer des générateur thermoélectrique à Radioisotope.</entitydescription.RTG_manual>
   <entityname.geigercounter>Compteur Geiger</entityname.geigercounter>
   <entitydescription.geigercounter>Petit appareil traduisant les niveaux de radiations à proximité en signaux audio et visuels. Vérifie également passivement son porteur en cas d'irradiation.</entitydescription.geigercounter>
   <entityname.iodine>Iodine</entityname.iodine>

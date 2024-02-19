@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Talents>
+  <Talent identifier="RTG">
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="6,0" sheetelementsize="128,128" />
+    <Description tag="talentdescription.RTGTech" />
+    <Description tag="talentdescription.letitdrainreminder">
+      <Replace tag="[itemcount]" value="2" color="gui.green" />
+    </Description>
+    <Description tag="talentdescription.unlockrecipe">
+      <Replace tag="[itemname]" value="entityname.RTG" color="gui.orange" />
+    </Description>
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGivePermanentStat statidentifier="RTG" stattype="MaxAttachableCount" value="2" />
+      </Abilities>
+    </AbilityGroupEffect>
+    <AddedRecipe itemidentifier="RTG" />
+  </Talent>
+</Talents>

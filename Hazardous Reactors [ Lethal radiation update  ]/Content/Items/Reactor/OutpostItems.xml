@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <!--Outpost Machines-->
-  <Item name="" nameidentifier="reactor1" identifier="outpostreactor" tags="reactor,hazardcontainment,hazardcontainement,luaoverride" type="Reactor" linkable="true" category="Machine" damagedbyexplosions="true" scale="0.5" explosiondamagemultiplier="0.2">
+  <Item name="" nameidentifier="reactor1" identifier="outpostreactor" tags="reactor,hazardcontainment,luaoverride" type="Reactor" linkable="true" category="Machine" damagedbyexplosions="true" scale="0.5" explosiondamagemultiplier="0.2">
     <trigger />
     <sprite texture="Content/Map/Outposts/Art/GenericAssets2.png" sourcerect="38,336,575,849" depth="0.8" origin="0.5,0.5" />
     <UpgradePreviewSprite scale="3.0" texture="Content/UI/WeaponUI.png" sourcerect="0,960,64,64" origin="0.5,0.45" />
@@ -170,7 +170,7 @@
         <Conditional targetitemcomponent="Reactor" temperature="gt 2" />
         <Explosion range="500" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
           <Affliction identifier="radiationsickness" strength="1" />
-          <Affliction identifier="radiationgeiger" strength="2" />
+          <Affliction identifier="radiationgeiger" strength="10" />
         </Explosion>
       </StatusEffect>
       <StatusEffect type="Always" target="This" delay="1" disabledeltatime="true" stackable="false" comparison="And">
@@ -181,6 +181,7 @@
           <Affliction identifier="radiationsickness" strength="4" />
           <Affliction identifier="radiationgeiger" strength="4" />
           <Affliction identifier="contamination" strength="4" />
+          <Affliction identifier="radiation_source_visual" strength="15" />
         </Explosion>
       </StatusEffect>
       <StatusEffect type="Always" target="This" delay="1" disabledeltatime="true" stackable="false" comparison="And">
@@ -190,6 +191,7 @@
           <Affliction identifier="radiationsickness" strength="5" />
           <Affliction identifier="radiationgeiger" strength="5" />
           <Affliction identifier="contamination" strength="4" />
+          <Affliction identifier="radiation_source_visual" strength="20" />
         </Explosion>
       </StatusEffect>
       <StatusEffect type="Always" target="This">
@@ -203,8 +205,15 @@
           <Affliction identifier="radiationsickness" strength="40" />
           <Affliction identifier="radiationgeiger" strength="40" />
           <Affliction identifier="contamination" strength="20" />
+          <Affliction identifier="radiation_source_visual" strength="25" />
         </Explosion>
       </StatusEffect>
+      <!-- RADIATION BASED RADIO JAMMING EFFECT -->
+      <StatusEffect type="Always" target="This" Interval="10">
+        <SpawnItem identifier="radiation_radio_jammer" spawnposition="This" />
+        <Conditional condition="e 0" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="NearbyItems" Interval="1" Range="5000" targetidentifiers="mobileradio" JamTimer="10" setvalue="true" />
       <!-- GEIGER COUNTER SOUND EFFECT -->
       <StatusEffect type="OnActive" target="This" delay="0" disabledeltatime="true" stackable="false" comparison="And">
         <Conditional condition="lte 80" />
@@ -402,27 +411,21 @@
     </ConnectionPanel>
     <!-- FUEL HEAT PRODUCTION AND MELTDOWN ITEM SPAWN-->
     <ItemContainer capacity="4" maxstacksize="1" canbeselected="true" hudpos="0.5,0.15" slotsperrow="1" uilabel="FuelRods">
-    
       <!--Uranium Fuel Rod-->
-      
       <Containable items="fuelrod">
         <StatusEffect type="OnContaining" target="This" AvailableFuel="80" disabledeltatime="true" />
-        
         <!-- uranium rod overheat meltdown -->
-        
-        <StatusEffect type="OnContaining" delay="45" target="Contained" interval="1" Checkconditionalalways="true" >
+        <StatusEffect type="OnContaining" delay="45" target="Contained" interval="1" Checkconditionalalways="true">
           <LuaHook name="meltdownstandard" />
           <Conditional targetcontainer="true" targetitemcomponent="Reactor" temperaturecritical="eq true" />
           <Conditional targetcontainer="true" targetitemcomponent="Reactor" fissionrate="gt 90" />
         </StatusEffect>
       </Containable>
-      
       <!--Thorium Fuel Rod-->
-      
       <Containable items="thoriumfuelrod">
         <StatusEffect type="OnContaining" target="This" AvailableFuel="100.0" disabledeltatime="true" />
         <!-- thorium rod overheat meltdown -->
-        <StatusEffect type="OnContaining" delay="45" target="Contained" interval="1" Checkconditionalalways="true" >
+        <StatusEffect type="OnContaining" delay="45" target="Contained" interval="1" Checkconditionalalways="true">
           <LuaHook name="meltdownstandard" />
           <Conditional targetcontainer="true" targetitemcomponent="Reactor" temperaturecritical="eq true" />
           <Conditional targetcontainer="true" targetitemcomponent="Reactor" fissionrate="gt 90" />

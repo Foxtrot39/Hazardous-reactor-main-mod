@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
-  <Item name="" identifier="fueltransportcylinder" tags="mediumitem,mobilecontainer,tool,hazardcontainment,hazardcontainement" description="" showcontentsintooltip="true" scale="0.5" linkable="true" pickdistance="150" impactsoundtag="impact_metal_heavy" waterproof="true" fireproof="true">
+  <Item name="" identifier="fueltransportcylinder" tags="mediumitem,mobilecontainer,tool,hazardcontainment" description="" showcontentsintooltip="true" scale="0.5" linkable="true" pickdistance="150" impactsoundtag="impact_metal_heavy" waterproof="true" fireproof="true">
     <PreferredContainer primary="reactorcab" minamount="1" maxamount="1" spawnprobability="1" />
     <Price baseprice="150">
       <Price storeidentifier="merchantoutpost" sold="false" />
@@ -30,7 +30,7 @@
       <Containable items="reactorfuel,depletedfuel" />
     </ItemContainer>
   </Item>
-  <Item name="" identifier="fuelcrate" tags="crate,rodstorage,hazardcontainment,hazardcontainement" description="" scale="0.5" showcontentsintooltip="true" linkable="true" pickdistance="150" impactsoundtag="impact_metal_heavy" waterproof="true" fireproof="true">
+  <Item name="" identifier="fuelcrate" tags="crate,rodstorage,hazardcontainment" description="" scale="0.5" showcontentsintooltip="true" linkable="true" pickdistance="150" impactsoundtag="impact_metal_heavy" waterproof="true" fireproof="true">
     <Price baseprice="400" displaynonempty="true">
       <Price storeidentifier="merchantoutpost" sold="false" />
       <Price storeidentifier="merchantcity" minavailable="1" />
@@ -63,7 +63,7 @@
   </Item>
   <Override>
     <!-- End Game item, a large movable storage for Fuel Rods or material -->
-    <Item name="" identifier="ekutility_handtruck_reactorfuel" category="Equipment" Tags="ekutility_compatiblefuelstorage,hazardcontainment,hazardcontainement" showcontentsintooltip="true" pickdistance="75" scale="0.6" description="" waterproof="true" fireproof="true">
+    <Item name="" identifier="ekutility_handtruck_reactorfuel" category="Equipment" Tags="ekutility_compatiblefuelstorage,hazardcontainment" showcontentsintooltip="true" pickdistance="75" scale="0.6" description="" waterproof="true" fireproof="true">
       <Price baseprice="500" buyingpricemultiplier="7" minleveldifficulty="65" soldbydefault="false" soldeverywhere="false" minavailable="0" maxavailable="1">
         <Price storeidentifier="merchantmine" sold="true" minavailable="1" />
         <Price storeidentifier="merchantengineering" sold="true" multiplier="2.5" />
@@ -219,7 +219,7 @@
     </ItemContainer>
       
   </Item> -->
-  <Item name="" identifier="fuelbackpack" tags="largeitem,mobilecontainer,hazardcontainment,hazardcontainement" description="" showcontentsintooltip="true" scale="0.5" linkable="true" pickdistance="150" impactsoundtag="impact_metal_heavy" waterproof="true" fireproof="true">
+  <Item name="" identifier="fuelbackpack" tags="largeitem,mobilecontainer,hazardcontainment" description="" showcontentsintooltip="true" scale="0.5" linkable="true" pickdistance="150" impactsoundtag="impact_metal_heavy" waterproof="true" fireproof="true">
     <Fabricate suitablefabricators="fabricator" requiredtime="60">
       <RequiredSkill identifier="electrical" level="70" />
       <RequiredSkill identifier="mechanical" level="50" />
@@ -240,7 +240,7 @@
       <!-- Condition Based Sounds-->
       <!-- Low Rad 1-20 -->
       <StatusEffect type="Always" target="This" comparison="And">
-        <Conditional Condition="neq 100" />
+        <Conditional Condition="lt 100" />
         <Conditional Condition="gte 80" />
         <sound file="%ModDir%/Content/Items/Reactor/lowradiation.ogg" range="500.0" loop="true" volume="0.5" dontmuffle="true" />
       </StatusEffect>
@@ -276,7 +276,7 @@
       </SubContainer>
     </ItemContainer>
   </Item>
-  <Item name="" identifier="fueltrasnportcylinderreinforced" tags="mediumitem,mobilecontainer,tool,stasis,hazardcontainment,hazardcontainement" description="" scale="0.5" linkable="true" pickdistance="150" impactsoundtag="impact_metal_heavy">
+  <Item name="" identifier="fueltrasnportcylinderreinforced" tags="mediumitem,mobilecontainer,tool,stasis,hazardcontainment" description="" scale="0.5" linkable="true" pickdistance="150" impactsoundtag="impact_metal_heavy">
     <Price baseprice="800" soldeverywhere="false">
       <Price locationtype="outpost" multiplier="1" minavailable="1" />
       <Price locationtype="city" multiplier="0.9" minavailable="1" />
@@ -308,10 +308,8 @@
     <InventoryIcon texture="%ModDir%/Content/Items/Misc/RodCylinderInvSpritesheet.png" sourcerect="6,7,51,50" origin="0.5,0.5" />
     <Body width="215" height="30" density="30" />
     <Holdable slots="RightHand,LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use">
-    
       <!-- Cause crisis rod effect when unpowered/inactive WIP  -->
-    
-    <!-- Flare effect 
+      <!-- Flare effect 
       <StatusEffect type="Always" disabledeltatime="true" stackable="false" target="This" comparison="And" >
         <RequiredItem identifier="supercritical_fulgurium,supercritical_incendium" type="contained" condition="gte 1" />
         <Conditional voltage="lt 2" />
@@ -320,8 +318,7 @@
         <ParticleEmitter particle="ekthermiteflare1" emitinterval="2.1" particleamount="10" particlespersecond="25" anglemin="70" anglemax="100" velocitymin="100" velocitymax="200" scalemin="0.7" scalemax="0.7" />
         <ParticleEmitter particle="FlareBubbles" particlespersecond="40" anglemin="70" anglemax="100" velocitymin="100" velocitymax="200" scalemin="0.8" scalemax="1.2" />
       </StatusEffect> -->
-
-    <!-- Intended AOE effect 
+      <!-- Intended AOE effect 
        
       <StatusEffect type="Always" disabledeltatime="true" stackable="false" delay="1" target="This" comparison="And">
         <Conditional condition="gt 1" />
@@ -332,13 +329,11 @@
           <Affliction identifier="hazardexposure" strength="10" />
         </Explosion>
       </StatusEffect> -->
-
     </Holdable>
     <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
       <sprite name="Rod storage worn" texture="%ModDir%/Content/Items/Misc/RodCylinderSpritesheet.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="22,2,116,31" origin="0.5,2" limb="Torso" ignorelimbscale="true" scale="0.5" />
     </Wearable>
-
-      <!-- <ItemContainer autofill="False" capacity="1" slotsperrow="1" maxstacksize="1" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="false" >
+    <!-- <ItemContainer autofill="False" capacity="1" slotsperrow="1" maxstacksize="1" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="false" >
       <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="192,448,64,64" origin="0.5,0.5" />
       <Containable items="reactorfuel,depletedfuel" />
       <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
@@ -348,11 +343,11 @@
         <StatusEffect type="OnContaining" targettype="This" condition="-0.5" interval="1" />
       </Containable>
       </SubContainer>
-    </ItemContainer> --> 
+    </ItemContainer> -->
     <!-- -->
   </Item>
   <!-- Custome fabricator/deconstructor -->
-  <Item name="" identifier="nuclearmaterialprocessor" tags="nuclearmaterialprocessor,hazardcontainment,hazardcontainement,donttakeitems,dontsellitems" category="Machine" linkable="true" allowedlinks="deconstructor,locker,fissiledeconstructor" description="" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+  <Item name="" identifier="nuclearmaterialprocessor" tags="nuclearmaterialprocessor,hazardcontainment,donttakeitems,dontsellitems" category="Machine" linkable="true" allowedlinks="deconstructor,locker,fissiledeconstructor" description="" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
     <Body width="336" height="395" density="40" />
     <Price baseprice="1500" minleveldifficulty="0" soldbydefault="true" soldeverywhere="false" minavailable="0" maxavailable="1">
       <Price storeidentifier="merchantmine" sold="true" minavailable="1" />
@@ -422,7 +417,7 @@
     <ItemContainer capacity="5" canbeselected="true" hideitems="true" slotsperrow="5" uilabel="" allowuioverlap="true" />
     <ItemContainer capacity="1" canbeselected="true" hideitems="true" slotsperrow="1" uilabel="" allowuioverlap="true" />
   </Item>
-  <Item name="" identifier="fissiledeconstructor" tags="deconstructor,hazardcontainment,hazardcontainement,donttakeitems,dontsellitems" category="Machine" linkable="true" allowedlinks="fabricator,medicalfabricator,locker" description="" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+  <Item name="" identifier="fissiledeconstructor" tags="deconstructor,hazardcontainment,donttakeitems,dontsellitems" category="Machine" linkable="true" allowedlinks="fabricator,medicalfabricator,locker" description="" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
     <Body width="256" height="315" density="40" />
     <Price baseprice="1500" minleveldifficulty="0" soldbydefault="true" soldeverywhere="false" minavailable="0" maxavailable="1">
       <Price storeidentifier="merchantmine" sold="true" minavailable="1" />
@@ -460,8 +455,7 @@
       <IsActiveConditional Condition="gt 0.0" />
     </DecorativeSprite>'
     <DecorativeSprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" depth="0.82" offset="40,-30" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="718"><AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" /><AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" /><IsActiveConditional Condition="gt 0.0" /></DecorativeSprite><DecorativeSprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" depth="0.81" offset="41,-40" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed=" 720"><AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" /><AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" /><IsActiveConditional Condition="gt 0.0" /></DecorativeSprite><Deconstructor canbeselected="true" powerconsumption="500.0" msg="ItemMsgInteractSelect"><GuiFrame relativesize="0.25,0.37" minsize="320,266" style="ItemUI" anchor="Center" /><sound file="Content/Items/Fabricators/Deconstructor.ogg" type="OnActive" range="1000.0" volumeproperty="RelativeVoltage" loop="true" /><poweronsound file="Content/Items/PowerOnLight3.ogg" range="600" loop="false" /><StatusEffect type="InWater" target="This" condition="-0.5" /></Deconstructor><Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="[E] Detach (Crowbar)" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="false"><RequiredItem identifier="crowbar" type="Equipped" /><StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.25" setvalue="true" /></Holdable><ConnectionPanel selectkey="Action" canbeselected="true" hudpriority="10" msg="ItemMsgRewireScrewdriver"><GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" /><RequiredSkill identifier="electrical" level="55" /><StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true"><Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" /><Explosion range="100.0" force="1.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" /><Affliction identifier="stun" strength="4" /><Affliction identifier="burn" strength="5" /></StatusEffect><RequiredItem items="screwdriver" type="Equipped" /><input name="power_in" displayname="connection.powerin" /><output name="condition_out" displayname="connection.conditionout" /></ConnectionPanel><Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.50" mindeteriorationdelay="60" maxdeteriorationdelay="120" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10"><GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" /><RequiredSkill identifier="mechanical" level="55" /><RequiredItem items="wrench" type="equipped" /><ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" /><ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" /><ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" /><StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true"><Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" /><Affliction identifier="lacerations" strength="5" /><Affliction identifier="stun" strength="4" /></StatusEffect></Repairable><ItemContainer capacity="3" canbeselected="true" hideitems="true" hudpos="0.5, 0.4" slotsperrow="3" uilabel="" allowuioverlap="true" /><ItemContainer capacity="5" canbeselected="true" hideitems="true" hudpos="0.5, 0.8" slotsperrow="5" uilabel="" allowuioverlap="true" /></Item>
-  
-  <Item name="Fuel Rod Handling Tongs" identifier="HRtongs" category="Equipment" Tags="mediumitem,tool,simpletool,mountableweapon" scale="0.6" allowasextracargo="true" requireaimtouse="true" impactsoundtag="impact_metal_light">
+  <Item name="Fuel Rod Handling Tongs" identifier="HRtongs" category="Equipment" Tags="mediumitem,tool,simpletool,mountableweapon,crowbaritem" scale="0.6" allowasextracargo="true" requireaimtouse="true" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="engcab" amount="1" spawnprobability="0.08" />
     <PreferredContainer primary="wreckengcab,abandonedengcab,outpostengcab,beaconengcab" amount="1" spawnprobability="0.1" />
     <Price baseprice="100" sold="true" minavailable="1" maxavailable="1">
@@ -504,6 +498,16 @@
         <ParticleEmitter particle="shockwave" particlespersecond="1" scalemin="8" scalemax="10" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" />
         <ParticleEmitter particle="explosionfire" particleamount="3" scalemin="0.4" scalemax="0.41" anglemin="0" anglemax="360" />
       </StatusEffect>
+      <!-- Forbidden bonk -->
+      <StatusEffect type="OnUse" target="UseTarget,Contained" condition="-1000">
+        <RequiredItem identifier="supercritical_fulgurium,supercritical_incendium" type="contained" />
+        <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="8000" selectionmode="All" />
+        <sound file="Content/Items/Weapons/ExplosionDebris5.ogg" range="8000" />
+        <Explosion range="1500" structuredamage="100" force="4" flashrange="10000" flashduration="5" screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="3.0" ignorecover="true" stackable="false" underwaterbubble="false">
+          <Affliction identifier="burn" strength="300" />
+          <Affliction identifier="explosiondamage" strength="150" />
+        </Explosion>
+      </StatusEffect>
       <StatusEffect type="OnUse" target="UseTarget,Contained" Condition="-20">
         <!-- The number to the left controls how many impacts before the rod is depleted and no longer has the added effects -->
         <RequiredItem identifier="fulguriumfuelrodvolatile" type="contained" targetcontainer="true" />
@@ -521,7 +525,7 @@
       </StatusEffect>
     </MeleeWeapon>
     <ItemContainer capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="47,-10" containedspritedepths="0.565" containedstateindicatorstyle="default" containedstateindicatorslot="0">
-      <Containable items="reactorfuel" rotation="0" />
+      <Containable items="reactorfuel" rotation="45" />
       <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="192,448,64,64" origin="0.5,0.5" />
     </ItemContainer>
     <aitarget sightrange="500" soundrange="250" fadeouttime="1" />

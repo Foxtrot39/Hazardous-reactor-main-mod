@@ -19,7 +19,7 @@
           <Affliction identifier="internaldamage" amount="8" />
         </StatusEffect>
       </Effect>
-      <Effect minstrength="100"  minvitalitydecrease="60" maxvitalitydecrease="70" minchromaticaberration="5" maxchromaticaberration="5">
+      <Effect minstrength="100" minvitalitydecrease="60" maxvitalitydecrease="70" minchromaticaberration="5" maxchromaticaberration="5">
         <StatusEffect target="Character" setvalue="true">
           <Affliction identifier="deathpuke" amount="1" />
         </StatusEffect>
@@ -32,10 +32,10 @@
     </Affliction>
   </Override>
   <Override>
-    <Affliction name="" identifier="radiationsickness" description="" type="poison" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Torso" showiconthreshold="101" showinhealthscannerthreshold="101" karmachangeonapplied="-1" treatmentthreshold="1" maxstrength="100">
+    <Affliction name="" identifier="radiationsickness" description="" type="poison" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Torso" showiconthreshold="101" showinhealthscannerthreshold="25" karmachangeonapplied="-1" treatmentthreshold="1" maxstrength="100" damageoverlayalpha="0">
       <!-- Cause nausea, burns & organ damage DNA damage depending on strength + radiation geiger -->
       <Effect minstrength="5" maxstrength="25" strengthchange="-0.05" minchromaticaberration="0.0" maxchromaticaberration="0" />
-      <Effect minstrength="25" maxstrength="50" strengthchange="-0.05" disabledeltatime="true">
+      <Effect minstrength="26" maxstrength="50" strengthchange="-0.05" disabledeltatime="true">
         <StatusEffect target="Character" interval="3">
           <Affliction identifier="dnadamage" amount="10" />
         </StatusEffect>
@@ -43,7 +43,7 @@
           <Affliction identifier="radiationgeiger" amount="2" />
         </StatusEffect>
       </Effect>
-      <Effect minstrength="50" maxstrength="75" strengthchange="-0.05" MinScreenBlur="0" MaxScreenBlur="0.25">
+      <Effect minstrength="51" maxstrength="75" strengthchange="-0.05" MinScreenBlur="0" MaxScreenBlur="0.25" dialogueflag="radiationsicknessmedium">
         <StatusEffect target="Character" interval="3">
           <Affliction identifier="nausea" amount="10" />
           <Affliction identifier="dnadamage" amount="20" />
@@ -52,7 +52,7 @@
           <Affliction identifier="radiationgeiger" amount="4" />
         </StatusEffect>
       </Effect>
-      <Effect minstrength="75" maxstrength="90" strengthchange="-0.05" minchromaticaberration="1" maxchromaticaberration="3" mingrainstrength="0.0" maxgrainstrength="1" MinScreenBlur="0.25" MaxScreenBlur="0.6">
+      <Effect minstrength="76" maxstrength="90" strengthchange="-0.05" minchromaticaberration="1" maxchromaticaberration="3" mingrainstrength="0.0" maxgrainstrength="1" MinScreenBlur="0.25" MaxScreenBlur="0.6" dialogueflag="radiationsicknessheavy">
         <StatusEffect target="Character" interval="3">
           <Affliction identifier="nausea" amount="10" />
           <Affliction identifier="burn" amount="3" />
@@ -62,7 +62,7 @@
           <Affliction identifier="radiationgeiger" amount="5" />
         </StatusEffect>
       </Effect>
-      <Effect minstrength="90" maxstrength="100" strengthchange="-0.05" minchromaticaberration="3" maxchromaticaberration="5" mingrainstrength="1" maxgrainstrength="2" MinScreenBlur="0.6" MaxScreenBlur="0.75">
+      <Effect minstrength="91" maxstrength="100" strengthchange="-0.05" minchromaticaberration="3" maxchromaticaberration="5" mingrainstrength="1" maxgrainstrength="2" MinScreenBlur="0.6" MaxScreenBlur="0.75" dialogueflag="radiationsicknessheavy">
         <StatusEffect target="Character" interval="3">
           <Affliction identifier="burn" amount="12" />
           <Affliction identifier="internaldamage" amount="3" />
@@ -99,7 +99,7 @@
     </Affliction>
   </Override>
   <Override>
-    <Affliction name="" identifier="contamination" description="airbornhazard" limbspecific="false" indicatorlimb="Torso" showiconthreshold="50" showinhealthscannerthreshold="45" karmachangeonapplied="-1" treatmentthreshold="0" maxstrength="100" grainburst="3">
+    <Affliction name="" identifier="contamination" description="airbornhazard" limbspecific="false" indicatorlimb="Torso" showiconthreshold="50" showinhealthscannerthreshold="45" karmachangeonapplied="-1" treatmentthreshold="0" maxstrength="100" grainburst="3" damageoverlayalpha="0">
       <Description textidentifier="afflictiondescription.contamination" minstrength="0" maxstrength="70" />
       <Description textidentifier="afflictiondescription.contamination.high" minstrength="75" maxstrength="100" />
       <!-- Radioactive dust inhaled, have fun -->
@@ -111,7 +111,7 @@
           <Affliction identifier="radiationgeiger" amount="1" />
         </StatusEffect>
       </Effect>
-      <Effect minstrength="25" maxstrength="50">
+      <Effect minstrength="26" maxstrength="50">
         <StatusEffect target="Character" interval="3">
           <Affliction identifier="radiationsickness" amount="300" />
           <Affliction identifier="dnadamage" amount="21" />
@@ -120,7 +120,7 @@
           <Affliction identifier="radiationgeiger" amount="2" />
         </StatusEffect>
       </Effect>
-      <Effect minstrength="50" maxstrength="75">
+      <Effect minstrength="51" maxstrength="75">
         <StatusEffect target="Character" interval="3">
           <Affliction identifier="radiationsickness" amount="450" />
           <Affliction identifier="dnadamage" amount="21" />
@@ -129,7 +129,7 @@
           <Affliction identifier="radiationgeiger" amount="4" />
         </StatusEffect>
       </Effect>
-      <Effect minstrength="75" maxstrength="95">
+      <Effect minstrength="76" maxstrength="95">
         <StatusEffect target="Character" interval="3">
           <Affliction identifier="radiationsickness" amount="600" />
           <Affliction identifier="dnadamage" amount="21" />
@@ -141,7 +141,7 @@
           <Affliction identifier="bloodvomit" amount="100" />
         </StatusEffect>
       </Effect>
-      <Effect minstrength="95" maxstrength="100">
+      <Effect minstrength="96" maxstrength="100">
         <StatusEffect target="Character" interval="3">
           <Affliction identifier="radiationsickness" amount="700" />
           <Affliction identifier="dnadamage" amount="12" />
@@ -155,59 +155,6 @@
         </StatusEffect>
       </Effect>
       <icon texture="%ModDir%/Content/UI/HazardousIconsAtlas.png" sourcerect="256,0,128,128" color="139,60,42,255" origin="0,0" />
-    </Affliction>
-  </Override>
-  <Override>
-    <Affliction name="burn emitter" identifier="burn_emitter" description="cause burn damage" limbspecific="false" indicatorlimb="Torso" showiconthreshold="110" showinhealthscannerthreshold="110" karmachangeonapplied="-1" treatmentthreshold="0" maxstrength="100" grainburst="3">
-      <Effect minstrength="0" maxstrength="100" strengthchange="-100">
-        <StatusEffect target="Character" interval="0.5">
-          <Affliction identifier="burn" amount="5" />
-        </StatusEffect>
-      </Effect>
-      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,104,60,255" origin="0,0" />
-    </Affliction>
-  </Override>
-  <Override>
-    <Affliction name="burn emitter meltdown with incendium" identifier="burn_emitter_with_incendium" description="cause burn damage" limbspecific="false" indicatorlimb="Torso" showiconthreshold="110" showinhealthscannerthreshold="110" karmachangeonapplied="-1" treatmentthreshold="0" maxstrength="100" grainburst="3">
-      <Effect minstrength="0" maxstrength="100" strengthchange="-100">
-        <StatusEffect target="Character" interval="0.5">
-          <Affliction identifier="burn" amount="10" />
-        </StatusEffect>
-      </Effect>
-      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,104,60,255" origin="0,0" />
-    </Affliction>
-  </Override>
-  <Override>
-    <Affliction name="burn emitter" identifier="burn_emitter_rod" description="cause burn damage" limbspecific="false" indicatorlimb="Torso" showiconthreshold="110" showinhealthscannerthreshold="110" karmachangeonapplied="-1" treatmentthreshold="0" maxstrength="100" grainburst="3">
-      <Effect minstrength="0" maxstrength="100" strengthchange="-200">
-        <StatusEffect target="Character" interval="1">
-          <Affliction identifier="burn" amount="20" />
-        </StatusEffect>
-      </Effect>
-      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,104,60,255" origin="0,0" />
-    </Affliction>
-  </Override>
-  <Override>
-    <Affliction name="burn emitter" identifier="criticalrod_burn_emitter" description="cause burn damage" limbspecific="false" indicatorlimb="Torso" showiconthreshold="110" showinhealthscannerthreshold="110" karmachangeonapplied="-1" treatmentthreshold="0" maxstrength="100" grainburst="3">
-      <Effect minstrength="0" maxstrength="100" strengthchange="-100">
-        <StatusEffect target="Character" interval="1">
-          <Affliction identifier="burn" amount="50" />
-        </StatusEffect>
-      </Effect>
-      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,104,60,255" origin="0,0" />
-    </Affliction>
-  </Override>
-  <Override>
-    <Affliction name="" identifier="burningrod" description="" showiconthreshold="0" causeofdeathdescription="" selfcauseofdeathdescription="" showinhealthscannerthreshold="110" karmachangeonapplied="-1" treatmentthreshold="0" maxstrength="100">
-      <Effect minstrength="0" maxstrength="100" strengthchange="-200">
-        <StatusEffect target="Character" intervale="1" targetlimbs="LeftHand,RightHand">
-          <Affliction identifier="burn" amount="5" />
-        </StatusEffect>
-        <StatusEffect target="Character">
-          <sound file="%ModDir%/Content/Items/Medical/fleshburn.ogg" type="OnUse" range="250.0" loop="true" volume="0.8" />
-        </StatusEffect>
-      </Effect>
-      <icon texture="%ModDir%/Content/UI/HazardousIconsAtlas.png" sourcerect="384,0,128,128" color="139,60,42,255" origin="0,0" />
     </Affliction>
   </Override>
   <Override>
@@ -246,7 +193,7 @@
     </Affliction>
   </Override>
   <Override>
-    <Affliction name="" identifier="deathpuke" description="" type="nausea" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" maxstrength="100" treatmentthreshold="1000" karmachangeonapplied="-0.1" damageoverlayalpha="1" showiconthreshold="101" showinhealthscannerthreshold="101">
+    <Affliction name="" identifier="deathpuke" description="" type="nausea" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" maxstrength="100" treatmentthreshold="1000" karmachangeonapplied="-0.1" showiconthreshold="101" showinhealthscannerthreshold="101">
       <PeriodicEffect mininterval="1" maxinterval="1">
         <StatusEffect target="Character" SpeedMultiplier="0.0" setvalue="true" duration="1.0" />
         <StatusEffect target="Character" comparison="and">
@@ -280,7 +227,7 @@
     </Affliction>
   </Override>
   <Override>
-    <Affliction name="" identifier="bloodvomit" description="" type="highradiation" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" maxstrength="100" treatmentthreshold="1000" karmachangeonapplied="-0.1" damageoverlayalpha="1" showiconthreshold="101" showinhealthscannerthreshold="101">
+    <Affliction name="" identifier="bloodvomit" description="" type="highradiation" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" maxstrength="100" treatmentthreshold="1000" karmachangeonapplied="-0.1" showiconthreshold="101" showinhealthscannerthreshold="101" damageoverlayalpha="0">
       <Effect minstrength="0" maxstrength="100">
         <StatusEffect target="Character" comparison="Or" interval="10">
           <Conditional lethalradiation="gte 60" />
@@ -319,8 +266,10 @@
     </Affliction>
   </Override>
   <Override>
-    <Affliction name="" identifier="hazardexposure" description="" type="hazardexposure" isbuff="true" limbspecific="false" maxstrength="10" treatmentthreshold="1000" showiconthreshold="1" showinhealthscannerthreshold="110" iconcolors="255,255,0,255">&gt;
-    <Effect minstrength="0" maxstrength="10" strengthchange="-4" /><icon texture="%ModDir%/Content/UI/HazardousIconsAtlas.png" sourcerect="512,0,128,128" color="139,60,42,255" origin="0,0" /></Affliction>
+    <Affliction name="" identifier="hazardexposure" description="" type="hazardexposure" isbuff="true" limbspecific="false" maxstrength="10" treatmentthreshold="1000" showiconthreshold="1" showinhealthscannerthreshold="110" iconcolors="255,255,0,255" damageoverlayalpha="0">
+      <Effect minstrength="0" maxstrength="10" strengthchange="-4" />
+      <icon texture="%ModDir%/Content/UI/HazardousIconsAtlas.png" sourcerect="512,0,128,128" color="139,60,42,255" origin="0,0" />
+    </Affliction>
   </Override>
   <Override>
     <Affliction name="" identifier="dnaregeneration" description="" isbuff="true" limbspecific="false" indicatorlimb="Torso" showiconthreshold="0" showinhealthscannerthreshold="0" karmachangeonapplied="-1" treatmentthreshold="0" minstrength="0" maxstrength="375" iconcolors="10,193,114,255;10,193,114,255;10,193,114,255;10,193,114,255">
@@ -335,11 +284,11 @@
     </Affliction>
   </Override>
   <Override>
-    <Affliction name="" identifier="lethalradiation" description="" type="poison" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Torso" showiconthreshold="60" showinhealthscannerthreshold="60" karmachangeonapplied="-1" treatmentthreshold="0" minstrength="0" maxstrength="300" iconcolors="255,255,0,255">
+    <Affliction name="" identifier="lethalradiation" description="" type="poison" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Torso" showiconthreshold="60" showinhealthscannerthreshold="60" karmachangeonapplied="-1" treatmentthreshold="0" minstrength="0" maxstrength="300" iconcolors="255,255,0,255" damageoverlayalpha="0">
       <Description textidentifier="afflictiondescription.lethalradiation.low" minstrength="0" maxstrength="200" />
       <Description textidentifier="afflictiondescription.lethalradiation" minstrength="200" maxstrength="300" />
       <Effect minstrength="0" maxstrength="60" strengthchange="-0.2" />
-      <Effect minstrength="60" maxstrength="120" minchromaticaberration="2" maxchromaticaberration="2" mingrainstrength="2" maxgrainstrength="2" MinScreenBlur="2" MaxScreenBlur="2" resistancefor="radiationsickness" minresistance="1" maxresistance="1">
+      <Effect minstrength="61" maxstrength="120" minchromaticaberration="2" maxchromaticaberration="2" mingrainstrength="2" maxgrainstrength="2" MinScreenBlur="2" MaxScreenBlur="2" resistancefor="radiationsickness" minresistance="1" maxresistance="1">
         <StatusEffect target="Character" interval="3">
           <Affliction identifier="burn" amount="15" />
           <Affliction identifier="dnadamage" amount="100" />
@@ -358,7 +307,7 @@
         </StatusEffect>
         <StatusEffect target="Character" SpeedMultiplier="0.8" setvalue="true" />
       </Effect>
-      <Effect minstrength="120" maxstrength="240" minchromaticaberration="2" maxchromaticaberration="2" mingrainstrength="2" maxgrainstrength="2" MinScreenBlur="2" MaxScreenBlur="2" resistancefor="radiationsickness" minresistance="1" maxresistance="1">
+      <Effect minstrength="121" maxstrength="240" minchromaticaberration="2" maxchromaticaberration="2" mingrainstrength="2" maxgrainstrength="2" MinScreenBlur="2" MaxScreenBlur="2" resistancefor="radiationsickness" minresistance="1" maxresistance="1">
         <StatusEffect target="Character" interval="3">
           <Affliction identifier="burn" amount="20" />
           <Affliction identifier="dnadamage" amount="80" />
@@ -373,7 +322,7 @@
         </StatusEffect>
         <StatusEffect target="Character" SpeedMultiplier="0.6" setvalue="true" />
       </Effect>
-      <Effect minstrength="240" maxstrength="300" minchromaticaberration="2" maxchromaticaberration="2" mingrainstrength="2" maxgrainstrength="2" MinScreenBlur="2" MaxScreenBlur="2" resistancefor="radiationsickness" minresistance="1" maxresistance="1">
+      <Effect minstrength="241" maxstrength="300" minchromaticaberration="2" maxchromaticaberration="2" mingrainstrength="2" maxgrainstrength="2" MinScreenBlur="2" MaxScreenBlur="2" resistancefor="radiationsickness" minresistance="1" maxresistance="1">
         <StatusEffect target="Character" interval="3">
           <Affliction identifier="burn" amount="25" />
           <Affliction identifier="dnadamage" amount="80" />
@@ -392,6 +341,81 @@
         <StatusEffect target="Character" SpeedMultiplier="0.4" setvalue="true" />
       </Effect>
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,768,128,128" origin="0,0" />
+    </Affliction>
+  </Override>
+  
+  <!-- MISC AND QOL AFFLICTIONS -->
+  <Override>
+    <Affliction name="burn emitter" identifier="burn_emitter" description="cause burn damage" limbspecific="false" indicatorlimb="Torso" showiconthreshold="110" showinhealthscannerthreshold="110" karmachangeonapplied="-1" treatmentthreshold="0" maxstrength="100" grainburst="3" damageoverlayalpha="0">
+      <Effect minstrength="0" maxstrength="100" strengthchange="-100">
+        <StatusEffect target="Character" interval="0.5">
+          <Affliction identifier="burn" amount="5" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,104,60,255" origin="0,0" />
+    </Affliction>
+  </Override>
+  <Override>
+    <Affliction name="burn emitter meltdown with incendium" identifier="burn_emitter_with_incendium" description="cause burn damage" limbspecific="false" indicatorlimb="Torso" showiconthreshold="110" showinhealthscannerthreshold="110" karmachangeonapplied="-1" treatmentthreshold="0" maxstrength="100" grainburst="3" damageoverlayalpha="0">
+      <Effect minstrength="0" maxstrength="100" strengthchange="-100">
+        <StatusEffect target="Character" interval="0.5">
+          <Affliction identifier="burn" amount="10" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,104,60,255" origin="0,0" />
+    </Affliction>
+  </Override>
+  <Override>
+    <Affliction name="burn emitter" identifier="burn_emitter_rod" description="cause burn damage" limbspecific="false" indicatorlimb="Torso" showiconthreshold="110" showinhealthscannerthreshold="110" karmachangeonapplied="-1" treatmentthreshold="0" maxstrength="100" grainburst="3" damageoverlayalpha="0">
+      <Effect minstrength="0" maxstrength="100" strengthchange="-200">
+        <StatusEffect target="Character" interval="1">
+          <Affliction identifier="burn" amount="20" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,104,60,255" origin="0,0" />
+    </Affliction>
+  </Override>
+  <Override>
+    <Affliction name="burn emitter" identifier="criticalrod_burn_emitter" description="cause burn damage" limbspecific="false" indicatorlimb="Torso" showiconthreshold="110" showinhealthscannerthreshold="110" karmachangeonapplied="-1" treatmentthreshold="0" maxstrength="100" grainburst="3" damageoverlayalpha="0">
+      <Effect minstrength="0" maxstrength="100" strengthchange="-100">
+        <StatusEffect target="Character" interval="1">
+          <Affliction identifier="burn" amount="50" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,104,60,255" origin="0,0" />
+    </Affliction>
+  </Override>
+  <Override>
+    <Affliction name="" identifier="burningrod" description="" showiconthreshold="0" causeofdeathdescription="" selfcauseofdeathdescription="" showinhealthscannerthreshold="110" karmachangeonapplied="-1" treatmentthreshold="0" maxstrength="100" damageoverlayalpha="0">
+      <Effect minstrength="0" maxstrength="100" strengthchange="-200">
+        <StatusEffect target="Character" intervale="1" targetlimbs="LeftHand,RightHand">
+          <Affliction identifier="burn" amount="5" />
+          <Conditional IsPlayer="true" />
+        </StatusEffect>
+        <StatusEffect target="Character">
+          <sound file="%ModDir%/Content/Items/Medical/fleshburn.ogg" type="OnUse" range="250.0" loop="true" volume="0.8" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="%ModDir%/Content/UI/HazardousIconsAtlas.png" sourcerect="384,0,128,128" color="139,60,42,255" origin="0,0" />
+    </Affliction>
+  </Override>
+  <Override>
+    <Affliction name="" identifier="radiation_source_visual" type="poison" description="" causeofdeathdescription="" selfcauseofdeathdescription="" showiconthreshold="200" showinhealthscannerthreshold="200" karmachangeonapplied="-1" treatmentthreshold="0" maxstrength="100" damageoverlayalpha="0">
+      <Effect minstrength="0" maxstrength="49" strengthchange="-10" />
+      <Effect minstrength="50" maxstrength="100" strengthchange="-10" mingrainstrength="0" maxgrainstrength="15" />
+      <icon texture="%ModDir%/Content/UI/HazardousIconsAtlas.png" sourcerect="384,0,128,128" color="139,60,42,255" origin="0,0" />
+    </Affliction>
+  </Override>
+  <Override>
+    <Affliction name="" identifier="radiation_source_visual_static" type="poison" description="" causeofdeathdescription="" selfcauseofdeathdescription="" showiconthreshold="200" showinhealthscannerthreshold="200" karmachangeonapplied="-1" treatmentthreshold="0" maxstrength="100" damageoverlayalpha="0">
+      <Effect minstrength="1" maxstrength="10" strengthchange="-2" mingrainstrength="0" maxgrainstrength="0" />
+      <icon texture="%ModDir%/Content/UI/HazardousIconsAtlas.png" sourcerect="384,0,128,128" color="139,60,42,255" origin="0,0" />
+    </Affliction>
+  </Override>
+  <Override>
+    <Affliction name="" identifier="radiation_source_visual_static_rod" type="poison" description="" causeofdeathdescription="" selfcauseofdeathdescription="" showiconthreshold="200" showinhealthscannerthreshold="200" karmachangeonapplied="-1" treatmentthreshold="0" maxstrength="100" damageoverlayalpha="0">
+      <Effect minstrength="1" maxstrength="10" strengthchange="-2" mingrainstrength="0" maxgrainstrength="0" />
+      <icon texture="%ModDir%/Content/UI/HazardousIconsAtlas.png" sourcerect="384,0,128,128" color="139,60,42,255" origin="0,0" />
     </Affliction>
   </Override>
 </Afflictions>

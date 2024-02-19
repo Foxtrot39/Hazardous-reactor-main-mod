@@ -2,18 +2,13 @@
 <Items>
   <Override>
     <!-- STANDARD FUEL RODS -->
-    <!-- Fuel rods are now two different items -->
-    <!--
-    One Inactive item
-    One Active (Hazard) item
-
-    Inactive item will be switched for active item when:
-    Inside Items that uses them (Reactor or RFA)
-    ~~Upon taking damage?~~
-
-  -->
-    <!-- Uranium Fuel Rod  -->
-    <Item name="" category="fuel" identifier="fuelrod" Tags="smallitem,reactorfuel,HRradioactive,medical" maxstacksize="4" scale="0.5" health="90" pickdistance="150" cargocontaineridentifier="fuelcrate" impactsoundtag="impact_metal_light">
+    <!-- Dummy Uranium Fuel Rod -->
+    <Item name="DummyRodUranium" identifier="dummyrod_ur" hideinmenus="true" maxstacksize="1" scale="0.5" tags="smallitem">
+      <Sprite texture="Content/Items/Tools/tools.png" depth="0.55" sourcerect="410,1,19,68" />
+      <Body height="1" width="1" density="1" />
+    </Item>
+    <!-- Uranium Fuel Rod -->
+    <Item name="" category="fuel" identifier="fuelrod" Tags="smallitem,reactorfuel,HRradioactive" maxstacksize="4" scale="0.5" pickdistance="150" health="90" cargocontaineridentifier="fuelcrate" impactsoundtag="impact_metal_light">
       <!-- Spawn/PrefContainer(Vanilla) & Store Availability-->
       <PreferredContainer primary="reactorcab" />
       <PreferredContainer secondary="nucleargun" minamount="1" maxamount="1" spawnprobability="1" />
@@ -29,23 +24,24 @@
         <Price storeidentifier="merchantengineering" multiplier="0.9" minavailable="3" />
       </Price>
       <!-- Standard info-->
-      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="576,64,64,64" origin="0.5,0.5" />
-      <Sprite texture="Content/Items/Tools/tools.png" depth="0.55" sourcerect="410,1,19,68" />
-      <Body radius="6" height="55" density="20" />
+      <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="576,64,64,64" origin="0.5,0.5" />
+      <BrokenSprite texture="%ModDir%/Content/Items/Reactor/HotRods.png" depth="0.55" sourcerect="272,64,67,65" fadein="false" maxcondition="99.9" />
+      <Body height="55" width="15" density="20" />
       <Quality>
         <QualityStat stattype="Condition" value="0.1" />
       </Quality>
-      
-      <!-- Allow rod to be used with fission accelerator -->
-      <ItemContainer hideitems="true" capacity="1" itemrotation="90" drawinventory="false" canbeselected="false" SpawnWithId="incendiumgunbolt" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false">
-        <Containable items="nucleargunbolt" />
+      <!-- Allow rod to be used with fission accelerator, spawns dummyrod -->
+      <ItemContainer hideitems="false" capacity="1" itemrotation="0" drawinventory="false" canbeselected="false" SpawnWithId="incendiumgunbolt,dummyrod_ur" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false" containedspritedepth="0.56">
+        <Containable items="dummyrod_ur" hide="false" itempos="0,0" rotation="180" />
+        <SubContainer capacity="1">
+          <Containable hideitems="true" items="nucleargunbolt" />
+        </SubContainer>
         <!-- SHOOTY = ROD HAZARD ACTIVE!-->
         <!-- Increase Heat when Fired! -->
         <StatusEffect type="OnUse" target="This" IsOn="true" condition="-5" Range="125" disabledeltatime="true">
           <SpawnItem identifiers="nucleargunbolt" spawnposition="ThisInventory" />
         </StatusEffect>
       </ItemContainer>
-        
       <!-- Slow Decon Time, create contamination hazard, gives lead if empty -->
       <Deconstruct time="25">
         <Item identifier="iron" />
@@ -70,11 +66,11 @@
         </StatusEffect>
         <StatusEffect type="OnContained" target="This" IsOn="true" comparison="And" allowwhenbroken="true">
           <Conditional Range="gt 1" targetitemcomponent="LightComponent" />
-          <Conditional hastag="neq hazardcontainment,hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment" targetcontainer="true" />
         </StatusEffect>
         <!-- TURNS OFF THE HAZARD -->
         <StatusEffect type="OnContained" target="This" IsOn="false" comparison="And" allowwhenbroken="true">
-          <Conditional hastag="eq hazardcontainment,hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="eq hazardcontainment" targetcontainer="true" />
           <Conditional HasStatusTag="neq hazardactive" targetcontainer="true" />
         </StatusEffect>
         <!-- Burns whoever holds it -->
@@ -84,18 +80,15 @@
         </StatusEffect>
         <!-- HEAT STUFF-->
         <!-- DON'T GO ABOVE LIMIT -->
-        <StatusEffect type="Always" target="This" Range="799" interval="3" disabledeltatime="true" setvalue="true" checkconditionalalways="true" >
+        <StatusEffect type="Always" target="This" Range="799" interval="3" disabledeltatime="true" setvalue="true" checkconditionalalways="true">
           <Conditional Range="gt 800" targetitemcomponent="LightComponent" />
         </StatusEffect>
-
         <!-- ROD HEATING WITHIN REACTOR VIA THRESHOLD SYSTEM -->
-  
         <StatusEffect type="OnContained" target="This" interval="1" range="200" comparison="And" allowwhenbroken="true" comparaison="And">
           <Conditional targetcontainer="true" targetitemcomponent="Reactor" temperature="gt 20" />
         </StatusEffect>
-        
         <!-- DECREASE HEAT IF IN WATER-->
-        <StatusEffect type="InWater" target="This" Range="-50" allowwhenbroken="true" interval="1" >
+        <StatusEffect type="InWater" target="This" Range="-50" allowwhenbroken="true" interval="1">
           <Conditional Range="gt 1" targetitemcomponent="LightComponent" />
           <!-- Visual Effects for losing heat -->
           <ParticleEmitter particle="bubbles" emitinterval="0.07" anglemin="0" anglemax="360" particleamount="1" velocitymin="0" velocitymax="50" scalemin="1" scalemax="1" />
@@ -103,22 +96,21 @@
         </StatusEffect>
       </Throwable>
       <!-- LETHAL LIGHT, ONLY ACTIVE WHEN NOT SAFELY CONTAINED-->
-      <LightComponent lightcolor="26, 0, 219,180" range="0" ison="true" castshadows="false" powerconsumption="0" >
+      <LightComponent lightcolor="0, 255, 0" range="0" ison="false" castshadows="false" powerconsumption="0">
         <!-- Turns itself off when it loses heat and becomes too stable-->
         <StatusEffect type="OnActive" target="This" IsOn="false" allowwhenbroken="true">
           <Conditional Range="lt 1" targetitemcomponent="LightComponent" />
         </StatusEffect>
         <StatusEffect type="OnActive" target="This" voltage="1" setvalue="true" />
-        
-        <!-- Change Icon Colour -->
-        <StatusEffect type="Always" target="This" InventoryIconColor="75,75,75,255" interval="1.1">
-          <Conditional Range="lt 1" targetitemcomponent="LightComponent" />
+        <!-- Change Rod & DummyRod Vsisibility -->
+        <StatusEffect type="OnContained" target="This" SpriteColor="255,255,255,255"></StatusEffect>
+        <StatusEffect type="OnNotContained" target="This" SpriteColor="255,255,255,0"></StatusEffect>
+        <StatusEffect type="OnContained" targettype="contained" targets="dummyrod_ur" SpriteColor="255,255,255,0">
+          <RequiredItem items="dummyrod_ur" targetslot="0" type="Contained" />
         </StatusEffect>
-        
-        <StatusEffect type="Always" target="This" InventoryIconColor="255,255,255,255" interval="1.1">
-          <Conditional Range="gt 1" targetitemcomponent="LightComponent" />
+        <StatusEffect type="OnNotContained" targettype="contained" targets="dummyrod_ur" SpriteColor="255,255,255,255">
+          <RequiredItem items="dummyrod_ur" targetslot="0" type="Contained" />
         </StatusEffect>
-
         <!-- Radiation Hazard! (When not in water) -->
         <StatusEffect type="OnActive" target="This" interval="1" Condition="-0.3" disabledeltatime="true" allowwhenbroken="true">
           <Conditional InWater="false" />
@@ -126,6 +118,7 @@
             <Affliction identifier="radiationsickness" strength="4" />
             <Affliction identifier="radiationgeiger" strength="4" />
             <Affliction identifier="hazardexposure" strength="10" />
+            <Affliction identifier="radiation_source_visual" strength="10" />
           </Explosion>
         </StatusEffect>
         <!-- Radiation Hazard InWater! Range halved -->
@@ -135,9 +128,9 @@
             <Affliction identifier="radiationsickness" strength="4" />
             <Affliction identifier="radiationgeiger" strength="4" />
             <Affliction identifier="hazardexposure" strength="10" />
+            <Affliction identifier="radiation_source_visual" strength="10" />
           </Explosion>
         </StatusEffect>
-        
         <!-- Spawn fire! After 12s of not contained or in water -->
         <StatusEffect type="OnActive" target="This" comparison="And" delay="12" stackable="false" interval="1" checkconditionalalways="true" allowwhenbroken="true">
           <Conditional InWater="false" />
@@ -150,7 +143,6 @@
           <Conditional IsOn="true" />
           <ParticleEmitter particle="DarkSmoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="20" scalemin="2.5" scalemax="3.5" anglemin="50" anglemax="130" velocitymin="10" velocitymax="50" />
         </StatusEffect>
-        
         <!-- Visual Effects NotInWater, Smoke -->
         <StatusEffect type="OnActive" target="This" allowwhenbroken="true">
           <Conditional InWater="false" />
@@ -162,13 +154,15 @@
           <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" emitinterval="0.07" particleamount="1" velocitymin="0" velocitymax="50" scalemin="1" scalemax="1" />
           <ParticleEmitter particle="extinguisher" anglemin="0" anglemax="360" emitinterval="0.07" velocitymin="5.0" velocitymax="50.0" particlespersecond="40" />
         </StatusEffect>
-        
       </LightComponent>
-      
     </Item>
-    
- <!-- Thorium Fuel Rod -->
-    <Item name="" category="fuel" identifier="thoriumfuelrod" Tags="reactorfuel,HRradioactive" maxstacksize="4" cargocontaineridentifier="fuelcrate" scale="0.5" health="300" pickdistance="150" impactsoundtag="impact_metal_light">
+    <!-- Dummy Thorium Fuel Rod -->
+    <Item name="DummyRodThorium" identifier="dummyrod_thorium" hideinmenus="true" maxstacksize="1" scale="0.5" tags="smallitem">
+      <Sprite texture="Content/Items/Tools/tools.png" depth="0.55" sourcerect="452,1,19,68" />
+      <Body height="1" width="1" density="1" />
+    </Item>
+    <!-- Thorium Fuel Rod -->
+    <Item name="" category="fuel" identifier="thoriumfuelrod" Tags="smallitem,reactorfuel,HRradioactive" maxstacksize="4" cargocontaineridentifier="fuelcrate" scale="0.5" health="300" pickdistance="150" impactsoundtag="impact_metal_light">
       <!-- Spawn/PrefContainer(Vanilla) & Store Availability-->
       <PreferredContainer primary="reactorcab" />
       <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" amount="1" spawnprobability="0.1" />
@@ -183,9 +177,9 @@
         <Price storeidentifier="merchantengineering" multiplier="0.9" minavailable="2" />
       </Price>
       <!-- Standard info-->
-      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="384,64,64,64" origin="0.5,0.5" />
-      <Sprite texture="Content/Items/Tools/tools.png" depth="0.56" sourcerect="452,1,19,68" />
-      <Body radius="6" height="55" density="20" />
+      <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="384,64,64,64" origin="0.5,0.5" />
+      <Body height="55" width="15" density="20" />
+      <BrokenSprite texture="%ModDir%/Content/Items/Reactor/HotRods.png" depth="0.55" sourcerect="200,63,67,66" fadein="false" maxcondition="99.9" />
       <Quality>
         <QualityStat stattype="Condition" value="0.1" />
       </Quality>
@@ -203,17 +197,18 @@
         <RequiredItem identifier="copper" />
         <RequiredItem identifier="thorium" />
       </Fabricate>
-      
       <!-- Allow rod to be used with fission accelerator -->
-      <ItemContainer hideitems="true" capacity="1" itemrotation="90" drawinventory="false" canbeselected="false" SpawnWithId="incendiumgunbolt" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false">
-        <Containable items="nucleargunbolt" />
+      <ItemContainer hideitems="false" capacity="1" itemrotation="0" drawinventory="false" canbeselected="false" SpawnWithId="incendiumgunbolt,dummyrod_thorium" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false" containedspritedepth="0.56">
+        <Containable items="dummyrod_thorium" hide="false" itempos="0,0" rotation="180" />
+        <SubContainer capacity="1">
+          <Containable hideitems="true" items="nucleargunbolt" />
+        </SubContainer>
         <!-- SHOOTY = ROD HAZARD ACTIVE!-->
         <!-- Increase Heat when Fired! -->
         <StatusEffect type="OnUse" target="This" IsOn="true" condition="-5" Range="125" disabledeltatime="true">
           <SpawnItem identifiers="nucleargunbolt" spawnposition="ThisInventory" />
         </StatusEffect>
       </ItemContainer>
-      
       <!-- Holding/Throwing & Status Effect -->
       <Throwable characterusable="false" slots="RightHand,LeftHand" throwforce="4.0" holdpos="0,0" handle1="0,0" msg="ItemMsgPickUpSelect">
         <!-- ON SPAWN RETURN CONDITION TO 100% -->
@@ -224,11 +219,11 @@
         </StatusEffect>
         <StatusEffect type="OnContained" target="This" IsOn="true" comparison="And" allowwhenbroken="true">
           <Conditional Range="gt 1" targetitemcomponent="LightComponent" />
-          <Conditional hastag="neq hazardcontainment,hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment" targetcontainer="true" />
         </StatusEffect>
         <!-- TURNS OFF THE HAZARD -->
         <StatusEffect type="OnContained" target="This" IsOn="false" comparison="And" allowwhenbroken="true">
-          <Conditional hastag="eq hazardcontainment,hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="eq hazardcontainment" targetcontainer="true" />
           <Conditional HasStatusTag="neq hazardactive" targetcontainer="true" />
         </StatusEffect>
         <!-- Burns whoever holds it -->
@@ -238,42 +233,37 @@
         </StatusEffect>
         <!-- HEAT STUFF-->
         <!-- DON'T GO ABOVE LIMIT -->
-        <StatusEffect type="Always" target="This" Range="799" interval="3" disabledeltatime="true" setvalue="true" checkconditionalalways="true" >
+        <StatusEffect type="Always" target="This" Range="799" interval="3" disabledeltatime="true" setvalue="true" checkconditionalalways="true">
           <Conditional Range="gt 800" targetitemcomponent="LightComponent" />
         </StatusEffect>
-        
         <!-- ROD HEATING WITHIN REACTOR VIA THRESHOLD SYSTEM -->
-  
         <StatusEffect type="OnContained" target="This" interval="1" range="200" comparison="And" allowwhenbroken="true" comparaison="And">
           <Conditional targetcontainer="true" targetitemcomponent="Reactor" temperature="gt 20" />
         </StatusEffect>
-        
         <!-- DECREASE HEAT IF IN WATER-->
-        <StatusEffect type="InWater" target="This" Range="-50" allowwhenbroken="true" interval="1" >
+        <StatusEffect type="InWater" target="This" Range="-50" allowwhenbroken="true" interval="1">
           <Conditional Range="gt 1" targetitemcomponent="LightComponent" />
           <!-- Visual Effects for losing heat -->
           <ParticleEmitter particle="bubbles" emitinterval="0.07" anglemin="0" anglemax="360" particleamount="1" velocitymin="0" velocitymax="50" scalemin="1" scalemax="1" />
           <ParticleEmitter particle="extinguisher" emitinterval="0.07" anglemin="0" anglemax="360" velocitymin="5.0" velocitymax="50.0" particlespersecond="40" />
         </StatusEffect>
       </Throwable>
-      
       <!-- LETHAL LIGHT, ONLY ACTIVE WHEN NOT SAFELY CONTAINED-->
-      <LightComponent lightcolor="26, 0, 219,180" range="0" ison="true" castshadows="false" powerconsumption="0" >
+      <LightComponent lightcolor="26, 0, 219,180" range="0" ison="false" castshadows="false" powerconsumption="0">
         <!-- Turns itself off when it loses heat and becomes too stable-->
         <StatusEffect type="OnActive" target="This" IsOn="false" allowwhenbroken="true">
           <Conditional Range="lt 1" targetitemcomponent="LightComponent" />
         </StatusEffect>
         <StatusEffect type="OnActive" target="This" voltage="1" setvalue="true" />
-        
-        <!-- Change Icon Colour -->
-        <StatusEffect type="Always" target="This" InventoryIconColor="75,75,75,255" interval="1.1">
-          <Conditional Range="lt 1" targetitemcomponent="LightComponent" />
+        <!-- Change Rod & Dummy Rod visibility -->
+        <StatusEffect type="OnContained" target="This" SpriteColor="255,255,255,255"></StatusEffect>
+        <StatusEffect type="OnNotContained" target="This" SpriteColor="255,255,255,0"></StatusEffect>
+        <StatusEffect type="OnContained" targettype="contained" targets="dummyrod_thorium" SpriteColor="255,255,255,0">
+          <RequiredItem items="dummyrod_thorium" targetslot="0" type="Contained" />
         </StatusEffect>
-        
-        <StatusEffect type="Always" target="This" InventoryIconColor="255,255,255,255" interval="1.1">
-          <Conditional Range="gt 1" targetitemcomponent="LightComponent" />
+        <StatusEffect type="OnNotContained" targettype="contained" targets="dummyrod_thorium" SpriteColor="255,255,255,255">
+          <RequiredItem items="dummyrod_thorium" targetslot="0" type="Contained" />
         </StatusEffect>
-
         <!-- Radiation Hazard! (When not in water) -->
         <StatusEffect type="OnActive" target="This" interval="1" Condition="-0.3" disabledeltatime="true" allowwhenbroken="true">
           <Conditional InWater="false" />
@@ -281,6 +271,7 @@
             <Affliction identifier="radiationsickness" strength="5" />
             <Affliction identifier="radiationgeiger" strength="5" />
             <Affliction identifier="hazardexposure" strength="10" />
+            <Affliction identifier="radiation_source_visual" strength="10" />
           </Explosion>
         </StatusEffect>
         <!-- Radiation Hazard InWater! Range halved -->
@@ -290,9 +281,9 @@
             <Affliction identifier="radiationsickness" strength="2.5" />
             <Affliction identifier="radiationgeiger" strength="2.5" />
             <Affliction identifier="hazardexposure" strength="10" />
+            <Affliction identifier="radiation_source_visual" strength="10" />
           </Explosion>
         </StatusEffect>
-        
         <!-- Spawn fire! After 12s of not contained or in water -->
         <StatusEffect type="OnActive" target="This" comparison="And" delay="12" stackable="false" interval="1" checkconditionalalways="true" allowwhenbroken="true">
           <Conditional InWater="false" />
@@ -305,7 +296,6 @@
           <Conditional IsOn="true" />
           <ParticleEmitter particle="DarkSmoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="20" scalemin="2.5" scalemax="3.5" anglemin="50" anglemax="130" velocitymin="10" velocitymax="50" />
         </StatusEffect>
-        
         <!-- Visual Effects NotInWater, Smoke -->
         <StatusEffect type="OnActive" target="This" allowwhenbroken="true">
           <Conditional InWater="false" />
@@ -317,9 +307,7 @@
           <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" emitinterval="0.07" particleamount="1" velocitymin="0" velocitymax="50" scalemin="1" scalemax="1" />
           <ParticleEmitter particle="extinguisher" anglemin="0" anglemax="360" emitinterval="0.07" velocitymin="5.0" velocitymax="50.0" particlespersecond="40" />
         </StatusEffect>
-        
       </LightComponent>
-      
     </Item>
     <!-- ALIEN FUEL RODS -->
     <!-- 
@@ -366,9 +354,13 @@
         Stablize the power grid
         completely inert when on 0% condition
     -->
-
+    <!-- Dummy Fulgurium Fuel Rod -->
+    <Item name="DummyRodFulgurium" identifier="dummyrod_fulgurium" hideinmenus="true" maxstacksize="1" scale="0.5" tags="smallitem">
+      <Sprite texture="Content/Items/Tools/tools.png" depth="0.55" sourcerect="431,1,19,68" />
+      <Body height="1" width="1" density="1" />
+    </Item>
     <!-- Fulgurium Fuel Rod (Active) -->
-    <Item name="" category="fuel" identifier="fulguriumfuelrod" Tags="reactorfuel,HRradioactive" maxstacksize="4" scale="0.5" health="1500" cargocontaineridentifier="fuelcrate" pickdistance="150" impactsoundtag="impact_metal_light">
+    <Item name="" category="fuel" identifier="fulguriumfuelrod" Tags="smallitem,reactorfuel,HRradioactive" maxstacksize="4" scale="0.5" health="1500" cargocontaineridentifier="fuelcrate" pickdistance="150" impactsoundtag="impact_metal_light">
       <!-- Spawn/PrefContainer(Vanilla) & Store Availability || Removed to be more Bot Friendly
     <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" amount="1" spawnprobability="0.2"/>
     <PreferredContainer secondary="beaconengcab" amount="1" spawnprobability="0.05"/>
@@ -381,8 +373,8 @@
         <Price locationtype="mine" multiplier="1.1" sold="false" />
       </Price>
       <!-- Standard info-->
-      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="640,64,64,64" origin="0.5,0.5" />
-      <Sprite texture="Content/Items/Tools/tools.png" depth="0.55" sourcerect="431,1,19,68" />
+      <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="640,64,64,64" depth="0.55" />
+      <BrokenSprite texture="%ModDir%/Content/Items/Reactor/HotRods.png" depth="0.55" sourcerect="349,64,65,65" fadein="false" maxcondition="99.9" />
       <Body radius="6" height="55" density="20" />
       <Quality>
         <QualityStat stattype="Condition" value="0.1" />
@@ -402,8 +394,11 @@
         <RequiredItem identifier="fulgurium" />
       </Fabricate>
       <!-- Allow rod to be used with fission accelerator -->
-      <ItemContainer hideitems="true" capacity="1" itemrotation="90" drawinventory="false" canbeselected="false" SpawnWithId="fulguriumgunbolt" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false">
-        <Containable items="fulguriumgunbolt" />
+      <ItemContainer hideitems="false" capacity="1" itemrotation="0" drawinventory="false" canbeselected="false" SpawnWithId="fulguriumgunbolt,dummyrod_fulgurium" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false" containedspritedepth="0.56">
+        <Containable items="dummyrod_fulgurium" hide="false" itempos="0,0" rotation="180" />
+        <SubContainer capacity="1">
+          <Containable hideitems="true" items="fulguriumgunbolt" />
+        </SubContainer>
         <!-- SHOOTY = ROD HAZARD ACTIVE!-->
         <!-- Increase Heat when Fired! -->
         <StatusEffect type="OnUse" target="This" IsOn="true" condition="-50.0" Range="180" disabledeltatime="true">
@@ -420,11 +415,11 @@
         </StatusEffect>
         <StatusEffect type="OnContained" target="This" IsOn="true" comparison="And" allowwhenbroken="true">
           <Conditional Range="gt 1" targetitemcomponent="LightComponent" />
-          <Conditional hastag="neq hazardcontainment,hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment" targetcontainer="true" />
         </StatusEffect>
         <!-- TURNS OFF THE HAZARD -->
         <StatusEffect type="OnContained" target="This" IsOn="false" comparison="And" allowwhenbroken="true">
-          <Conditional hastag="eq hazardcontainment,hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="eq hazardcontainment" targetcontainer="true" />
           <Conditional HasStatusTag="neq hazardactive" targetcontainer="true" />
         </StatusEffect>
         <!-- Burns whoever holds it -->
@@ -437,16 +432,14 @@
         <StatusEffect type="Always" target="This" Range="-40" interval="2.6" disabledeltatime="true">
           <Conditional Range="gt 470" targetitemcomponent="LightComponent" />
         </StatusEffect>
-        <!-- Change Icon Colour -->
-        <StatusEffect type="Always" target="This" InventoryIconColor="55,60,55,255" interval="1.1">
-          <Conditional Range="lt 200" targetitemcomponent="LightComponent" />
+        <!-- Changes Rod & Dummyrod visibility -->
+        <StatusEffect type="OnContained" target="This" SpriteColor="255,255,255,255"></StatusEffect>
+        <StatusEffect type="OnNotContained" target="This" SpriteColor="255,255,255,0"></StatusEffect>
+        <StatusEffect type="OnContained" targettype="contained" targets="dummyrod_fulgurium" SpriteColor="255,255,255,0">
+          <RequiredItem items="dummyrod_fulgurium" targetslot="0" type="Contained" />
         </StatusEffect>
-        <StatusEffect type="Always" target="This" InventoryIconColor="110,120,110,255" interval="1.1" comparison="And">
-          <Conditional Range="lt 400" targetitemcomponent="LightComponent" />
-          <Conditional Range="gt 200" targetitemcomponent="LightComponent" />
-        </StatusEffect>
-        <StatusEffect type="Always" target="This" InventoryIconColor="255,255,255,255" interval="1.1">
-          <Conditional Range="gt 400" targetitemcomponent="LightComponent" />
+        <StatusEffect type="OnNotContained" targettype="contained" targets="dummyrod_fulgurium" SpriteColor="255,255,255,255">
+          <RequiredItem items="dummyrod_fulgurium" targetslot="0" type="Contained" />
         </StatusEffect>
         <!-- INCREASE HEAT IF ON FIRE-->
         <StatusEffect type="OnFire" target="This" Range="100">
@@ -527,8 +520,13 @@
         Deal Extra Hot Rod Damage (Held in hand)
 
       -->
+    <!-- Dummy Incendium Fuel Rod -->
+    <Item name="DummyRodIncendium" identifier="dummyrod_incendium" hideinmenus="true" maxstacksize="1" scale="0.5" tags="smallitem">
+      <Sprite texture="%ModDir%/Content/Items/Reactor/ekutility_tools.png" depth="0.55" sourcerect="704,368,32,80" />
+      <Body height="1" width="1" density="1" />
+    </Item>
     <!-- Incendium Fuel Rod (Active) -->
-    <Item name="" category="fuel" identifier="ekutility_incendiumfuelrod" Tags="reactorfuel,HRradioactive" maxstacksize="4" scale="0.5" health="70" cargocontaineridentifier="fuelcrate" pickdistance="150" impacttolerance="4" impactsoundtag="impact_metal_light">
+    <Item name="" category="fuel" identifier="ekutility_incendiumfuelrod" Tags="smallitem,reactorfuel,HRradioactive" maxstacksize="4" scale="0.5" health="70" cargocontaineridentifier="fuelcrate" pickdistance="150" impacttolerance="4" impactsoundtag="impact_metal_light">
       <!-- Spawn/PrefContainer(Vanilla) & Store Availability || Removed to be more Bot Friendly
     <PreferredContainer primary="reactorcab" />
     <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" amount="1" spawnprobability="0.2"/>
@@ -542,9 +540,8 @@
         <Price locationtype="mine" multiplier="1.1" sold="false" />
       </Price>
       <!-- Standard info-->
-      <InventoryIcon texture="%ModDir%/Content/Items/Reactor/ekutility_tools.png" sourcerect="768,64,64,64" origin="0.5,0.5" />
-      <Sprite texture="%ModDir%/Content/Items/Reactor/ekutility_tools.png" depth="0.55" sourcerect="704,368,32,80" />
-      <Body radius="6" height="55" density="50" />
+      <Sprite texture="%ModDir%/Content/Items/Reactor/HotRods.png" depth="0.55" sourcerect="426,64,65,65" />
+      <Body height="55" width="15" density="20" />
       <Quality>
         <QualityStat stattype="Condition" value="0.1" />
       </Quality>
@@ -563,8 +560,11 @@
         <RequiredItem identifier="incendium" />
       </Fabricate>
       <!-- Allow rod to be used with fission accelerator -->
-      <ItemContainer hideitems="true" capacity="1" itemrotation="90" drawinventory="false" canbeselected="false" SpawnWithId="incendiumgunbolt" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false">
-        <Containable items="incendiumgunbolt" />
+      <ItemContainer hideitems="false" capacity="1" itemrotation="0" drawinventory="false" canbeselected="false" SpawnWithId="incendiumgunbolt,dummyrod_incendium" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false" containedspritedepth="0.56">
+        <Containable items="dummyrod_incendium" hide="false" itempos="0,0" rotation="180" />
+        <SubContainer capacity="1">
+          <Containable hideitems="true" items="incendiumgunbolt" />
+        </SubContainer>
         <!-- SHOOTY = ROD HAZARD ACTIVE!-->
         <!-- Increase Heat when Fired! -->
         <StatusEffect type="OnUse" target="This" IsOn="true" condition="-5" Range="125" disabledeltatime="true">
@@ -585,11 +585,11 @@
         </StatusEffect>
         <StatusEffect type="OnContained" target="This" IsOn="true" comparison="And" allowwhenbroken="true">
           <Conditional Range="gt 1" targetitemcomponent="LightComponent" />
-          <Conditional hastag="neq hazardcontainment,hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment" targetcontainer="true" />
         </StatusEffect>
         <!-- TURNS OFF THE HAZARD -->
         <StatusEffect type="OnContained" target="This" IsOn="false" comparison="And" allowwhenbroken="true">
-          <Conditional hastag="eq hazardcontainment,hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="eq hazardcontainment" targetcontainer="true" />
           <Conditional HasStatusTag="neq hazardactive" targetcontainer="true" />
         </StatusEffect>
         <!-- Burns whoever holds it -->
@@ -602,15 +602,13 @@
           <Conditional Range="gt 500" targetitemcomponent="LightComponent" />
         </StatusEffect>
         <!-- Change Icon Colour -->
-        <StatusEffect type="Always" target="This" InventoryIconColor="255,255,255,255" interval="1.1">
-          <Conditional Range="lt 200" targetitemcomponent="LightComponent" />
+        <StatusEffect type="OnContained" target="This" SpriteColor="255,255,255,255"></StatusEffect>
+        <StatusEffect type="OnNotContained" target="This" SpriteColor="255,255,255,0"></StatusEffect>
+        <StatusEffect type="OnContained" targettype="contained" targets="dummyrod_incendium" SpriteColor="255,255,255,0">
+          <RequiredItem items="dummyrod_incendium" targetslot="0" type="Contained" />
         </StatusEffect>
-        <StatusEffect type="Always" target="This" InventoryIconColor="255,120,120,255" interval="1.1" comparison="And">
-          <Conditional Range="lt 400" targetitemcomponent="LightComponent" />
-          <Conditional Range="gt 200" targetitemcomponent="LightComponent" />
-        </StatusEffect>
-        <StatusEffect type="Always" target="This" InventoryIconColor="255,60,60,255" interval="1.1">
-          <Conditional Range="gt 400" targetitemcomponent="LightComponent" />
+        <StatusEffect type="OnNotContained" targettype="contained" targets="dummyrod_incendium" SpriteColor="255,255,255,255">
+          <RequiredItem items="dummyrod_incendium" targetslot="0" type="Contained" />
         </StatusEffect>
         <!-- DECREASE HEAT IF IN WATER-->
         <StatusEffect type="InWater" target="This,Hull" Range="-40" WaterVolume="-10000" allowwhenbroken="true">
@@ -620,7 +618,7 @@
         </StatusEffect>
         <!-- Impact sensivity need to make this into a trigger component-->
         <StatusEffect type="OnImpact" target="This" Range="100" Condition="-10" comparison="Or" disabledeltatime="true">
-          <Conditional hastag="neq hazardcontainment,hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment" targetcontainer="true" />
           <!-- <Conditional HasStatusTag="eq hazardactive" targetcontainer="true" /> -->
           <Conditional InWater="false" />
           <Explosion range="200" structuredamage="15" stun="1.5" force="4">
@@ -724,7 +722,13 @@
     </Item>
   </Override>
   <Override>
-    <Item name="" identifier="fulguriumfuelrodvolatile" category="fuel" Tags="reactorfuel,HRradioactive" maxstacksize="4" impacttolerance="6" description="" cargocontaineridentifier="fuelcrate" health="750" scale="0.5">
+    <!-- Dummy Voliatile Fulgurium Fuel Rod -->
+    <Item name="DummyRodVoliatileFulgurium" identifier="dummyrod_voliatilefulgurium" hideinmenus="true" maxstacksize="1" scale="0.5" tags="smallitem">
+      <Sprite texture="Content/Items/JobGear/TalentGear.png" depth="0.55" sourcerect="190,60,20,71" />
+      <Body height="1" width="1" density="1" />
+    </Item>
+    <!-- Voliatile Fulgurium Fuel Rod -->
+    <Item name="" identifier="fulguriumfuelrodvolatile" category="fuel" Tags="smallitem,reactorfuel,HRradioactive" maxstacksize="4" impacttolerance="6" description="" cargocontaineridentifier="fuelcrate" health="750" scale="0.5">
       <!-- Pricing -->
       <Price baseprice="400" soldeverywhere="false">
         <Price locationtype="outpost" multiplier="0" sold="false" />
@@ -758,9 +762,8 @@
       <RequiredItem identifier="fulguriumfuelrodvolatile" mincondition="0.0" usecondition="false" />
     </Fabricate> -->
       <!-- Texture and light -->
-      <InventoryIcon texture="Content/Items/JobGear/TalentGear.png" sourcerect="67,176,62,61" origin="0.5,0.5" />
-      <Sprite texture="Content/Items/JobGear/TalentGear.png" depth="0.55" sourcerect="190,60,20,71" origin="0.5,0.5" />
-      <Body radius="6" height="55" density="20" />
+      <Sprite texture="Content/Items/JobGear/TalentGear.png" sourcerect="67,176,62,61" depth="0.55" />
+      <Body height="55" width="15" density="20" />
       <LightComponent range="350.0" lightcolor="60,200,150,150" powerconsumption="3" MinVoltage="0.99" IsOn="true" castshadows="true" allowingameediting="false" />
       <!-- Active effect and other SE -->
       <Throwable characterusable="false" slots="Any,RightHand,LeftHand" throwforce="4.0" holdpos="0,0" handle1="0,0" msg="ItemMsgPickUpSelect">
@@ -793,7 +796,7 @@
         </StatusEffect>
         <StatusEffect type="OnContained" target="This" disabledeltatime="true" stackable="false" delay="1" comparison="And">
           <Conditional IsFullCondition="false" />
-          <Conditional hastag="neq hazardcontainment,hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment" targetcontainer="true" />
           <Explosion range="500" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
             <Affliction identifier="burn_emitter" strength="100" />
             <Affliction identifier="hazardexposure" strength="10" />
@@ -805,7 +808,7 @@
         </StatusEffect>
         <StatusEffect type="OnContained" target="This" disabledeltatime="true" stackable="false" delay="2" comparison="And">
           <Conditional IsFullCondition="false" />
-          <Conditional hastag="neq hazardcontainment,hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment" targetcontainer="true" />
           <Explosion range="100" structuredamage="25" force="0.01" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" stackable="false" delay="3" underwaterbubble="false" />
         </StatusEffect>
         <StatusEffect type="OnNotContained" target="This" disabledeltatime="true" stackable="false" delay="4">
@@ -828,11 +831,11 @@
           <sound file="%ModDir%/Content/Items/Reactor/shock4.ogg" />
         </StatusEffect>
         <StatusEffect type="OnContained" target="This">
-          <Conditional hastag="neq hazardcontainment,hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment" targetcontainer="true" />
           <ParticleEmitter particle="ElectricShock" distancemax="1" particlespersecond="2.0" particleamount="2" emitinterval="2.1" anglemin="0" anglemax="360" scalemin="0.1" scalemax="0.2" />
         </StatusEffect>
         <StatusEffect type="OnContained" target="This" delay="5" disabledeltatime="true" stackable="false" dontmuffle="false">
-          <Conditional hastag="neq hazardcontainment,hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment" targetcontainer="true" />
           <sound file="%ModDir%/Content/Items/Reactor/shock1.ogg" selectionmode="Random" />
           <sound file="%ModDir%/Content/Items/Reactor/shock2.ogg" />
           <sound file="%ModDir%/Content/Items/Reactor/shock3.ogg" />
@@ -840,9 +843,14 @@
         </StatusEffect>
       </Throwable>
       <!-- Allow rod to be used with fission accelerator -->
-      <ItemContainer hideitems="true" capacity="1" itemrotation="90" drawinventory="false" canbeselected="false" SpawnWithId="volatilefulguriumgunbolt" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false">
-        <Containable items="volatilefulguriumgunbolt" />
-        <StatusEffect type="OnUse" target="This" condition="-25.0" disabledeltatime="true">
+      <ItemContainer hideitems="false" capacity="1" itemrotation="0" drawinventory="false" canbeselected="false" SpawnWithId="volatilefulguriumgunbolt,dummyrod_voliatilefulgurium" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false" containedspritedepth="0.56">
+        <Containable items="dummyrod_voliatilefulgurium" hide="false" itempos="0,0" rotation="180" />
+        <SubContainer capacity="1">
+          <Containable hideitems="true" items="volatilefulguriumgunbolt" />
+        </SubContainer>
+        <!-- SHOOTY = ROD HAZARD ACTIVE!-->
+        <!-- Increase Heat when Fired! -->
+        <StatusEffect type="OnUse" target="This" IsOn="true" condition="-25" Range="125" disabledeltatime="true">
           <SpawnItem identifiers="volatilefulguriumgunbolt" spawnposition="ThisInventory" />
         </StatusEffect>
       </ItemContainer>
@@ -850,6 +858,17 @@
       <Quality>
         <QualityStat stattype="Condition" value="0.1" />
       </Quality>
+      <LightComponent>
+        <!-- Change Rod & DummyRod Visibility -->
+        <StatusEffect type="OnContained" target="This" SpriteColor="255,255,255,255"></StatusEffect>
+        <StatusEffect type="OnNotContained" target="This" SpriteColor="255,255,255,0"></StatusEffect>
+        <StatusEffect type="OnContained" targettype="contained" targets="dummyrod_voliatilefulgurium" SpriteColor="255,255,255,0">
+          <RequiredItem items="dummyrod_voliatilefulgurium" targetslot="0" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnNotContained" targettype="contained" targets="dummyrod_voliatilefulgurium" SpriteColor="255,255,255,255">
+          <RequiredItem items="dummyrod_voliatilefulgurium" targetslot="0" type="Contained" />
+        </StatusEffect>
+      </LightComponent>
     </Item>
   </Override>
   <Item name="" category="fuel" identifier="control_rod" Tags="smallitem,reactorfuel,HRradioactive" health="100" maxstacksize="1" scale="0.5" cargocontaineridentifier="metalcrate" pickdistance="150" impactsoundtag="impact_metal_light">
@@ -986,9 +1005,13 @@
         </Explosion>
       </StatusEffect>
       <StatusEffect type="Always" target="This" interval="1">
-        <Explosion range="1000" stun="0" force="0" showeffects="false" ignorecover="false">
+        <Explosion range="1000" stun="0" force="0.01" showeffects="false" ignorecover="false">
           <Affliction identifier="radiationgeiger" strength="8" />
+          <Affliction identifier="radiation_source_visual" strength="100" />
         </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This" interval="3">
+        <Explosion range="200" stun="0" structuredamage="15" force="0.01" showeffects="false" ignorecover="false" />
       </StatusEffect>
       <StatusEffect type="Always" target="This" stackable="false" interval="1">
         <Explosion range="1000" stun="0" force="0.001" showeffects="false" ignorecover="false">
@@ -1012,6 +1035,8 @@
         <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="1" velocitymin="0" velocitymax="50" scalemin="1" scalemax="1" />
         <ParticleEmitter particle="extinguisher" anglemin="0" anglemax="360" velocitymin="5.0" velocitymax="50.0" particlespersecond="40" />
       </StatusEffect>
+      <!-- RADIATION BASED RADIO JAMMING EFFECT -->
+      <StatusEffect type="Always" target="NearbyItems" Interval="1" Range="1000" targetidentifiers="mobileradio" JamTimer="1.5" setvalue="true" />
     </Throwable>
   </Item>
   <Item name="" category="weapon" identifier="nukerod" Tags="smallitem" impacttolerance="3" maxstacksize="8" scale="0.5" health="1" impactsoundtag="impact_metal_heavy" description="">
@@ -1032,9 +1057,6 @@
     <InventoryIcon texture="%ModDir%/Content/Items/Misc/RodCylinderInvSpritesheet.png" sourcerect="68,5,54,54" origin="0.5,0.5" />
     <Body width="215" height="30" density="30" />
     <!-- Active effect and other SE -->
-    <Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-30,14" handle2="30,14" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use">
-      <StatusEffect type="OnContained" target="Character" SpeedMultiplier="0.5" setvalue="true" />
-    </Holdable>
     <Throwable characterusable="false" slots="Any,RightHand,LeftHand" throwforce="1.0" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnImpact" target="This" disabledeltatime="true" stackable="false">
         <use />
@@ -1064,16 +1086,13 @@
       <RequiredItem identifier="uranium" />
       <RequiredItem identifier="uranium" />
       <RequiredItem identifier="c4block" />
-      <RequiredItem identifier="dirtybomb" /> 
+      <RequiredItem identifier="dirtybomb" />
     </Fabricate>
     <!-- Texture and light -->
     <Sprite texture="%ModDir%/Content/Items/Misc/RodCylinderSpritesheet.png" depth="0.55" SourceRect="1,78,158,39" Origin="0.5,0.5" />
     <InventoryIcon texture="%ModDir%/Content/Items/Misc/RodCylinderInvSpritesheet.png" sourcerect="2,67,60,61" origin="0.5,0.5" />
     <Body width="215" height="30" density="30" />
     <!-- Active effect and other SE -->
-    <Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-30,14" handle2="30,14" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use">
-      <StatusEffect type="OnContained" target="Character" SpeedMultiplier="0.5" setvalue="true" />
-    </Holdable>
     <Throwable characterusable="false" slots="Any,RightHand,LeftHand" throwforce="1.0" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnImpact" target="This" disabledeltatime="true" stackable="false">
         <use />

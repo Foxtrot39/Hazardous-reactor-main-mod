@@ -1,22 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
-  <Item name="Reactor" identifier="rtg" tags="reactor,hazardcontainment,hazardcontainement,noheat" type="Reactor" scale="0.2" linkable="true" category="Machine" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+  <Item name="" identifier="RTG" tags="reactor,hazardcontainment" type="Reactor" scale="0.28" linkable="true" category="Machine" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
     <Upgrade gameversion="0.10.0.0" scale="*0.5" />
-      <Price baseprice="2500">
-        <Price storeidentifier="merchantoutpost" sold="false" />
-        <Price storeidentifier="merchantcity" sold="false" />
-        <Price storeidentifier="merchantresearch" sold="true"  minavailable="0" maxavailable="1" />
-        <Price storeidentifier="merchantmilitary" sold="true" minavailable="0" maxavailable="1" />
-        <Price storeidentifier="merchantmine" sold="false" />
-        <Price storeidentifier="merchantengineering" sold="true" minavailable="0" maxavailable="1" />
-      </Price>
-    <trigger />
+    <Fabricate suitablefabricators="fabricator" requiredtime="50" requiresrecipe="true">
+      <RequiredSkill identifier="electrical" level="60" />
+      <RequiredItem identifier="du_p_alloy" amount="2" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+      <RequiredItem identifier="copper" amount="1" />
+      <RequiredItem identifier="silicon" amount="1" />
+      <RequiredItem identifier="aluminium" amount="10" />
+    </Fabricate>
+    <trigger width="267" height="610" />
     <Sprite texture="%ModDir%/Content/Items/Reactor/RTG.png" sourcerect="93,37,267,610" origin="0.5,0.5" depth="0.8" />
-    <BrokenSprite texture="%ModDir%/Content/Items/Reactor/RTG.png" sourcerect="429,37,267,610" depth="0.8" maxcondition="50" origin="0.5,0.5" fadein="true" />
-        <BrokenSprite texture="%ModDir%/Content/Items/Reactor/RTG.png" sourcerect="764,37,267,610" depth="0.8" maxcondition="0" origin="0.5,0.5" fadein="true" />
+    <BrokenSprite texture="%ModDir%/Content/Items/Reactor/RTG.png" sourcerect="429,37,267,610" depth="0.8" maxcondition="70" origin="0.5,0.5" fadein="true" />
+    <BrokenSprite texture="%ModDir%/Content/Items/Reactor/RTG.png" sourcerect="763,33,270,618" depth="0.8" maxcondition="0" origin="0.5,0.5" />
     <aitarget sightrange="500" soundrange="4000" />
     <Body width="267" height="610" density="80" />
-    <Reactor canbeselected="true" selectrange="100" maxpoweroutput="2500" fuelconsumptionrate="0.2" vulnerabletoemp="false" msg="ItemMsgInteractSelect">
+    <Reactor canbeselected="true" selectrange="500" maxpoweroutput="2500" fuelconsumptionrate="0.2" FireDelay="500" MeltdownDelay="500" vulnerabletoemp="false" msg="ItemMsgInteractSelect">
       <TemperatureBoostSoundUp file="Content/Items/Reactor/ReactorTemperatureBoostUp.ogg" range="500.0" />
       <TemperatureBoostSoundDown file="Content/Items/Reactor/ReactorTemperatureBoostDown.ogg" range="500.0" />
       <GuiFrame relativesize="0.5,0.45" minsize="700,350" maxsize="2688,1166" anchor="Center" relativeoffset="0.1,0" style="ItemUI" />
@@ -45,23 +45,18 @@
         <Sprite name="TempRangeIndicator" texture="Content/UI/UIAtlasDevices.png" sourcerect="31,614,52,25" origin="0.5,0.5" size="0.6,0.6" />
       </TempRangeIndicator>
       <RequiredSkill identifier="electrical" level="50" />
-      <sound file="Content/Items/Reactor/Reactor.ogg" type="OnActive" range="2000.0" volumeproperty="FissionRate" volume="0.02" loop="true" />
-      
+      <sound file="Content/Items/Reactor/Reactor.ogg" type="OnActive" range="1000.0" volumeproperty="FissionRate" volume="0.03" loop="true" />
       <!--Evaporate water when submerged while running -->
       <StatusEffect type="InWater" target="This,Hull" WaterVolume="-2000" allowwhenbroken="false">
-        <Conditional targetitemcomponent="Reactor" temperature="gt 2" />
+        <Conditional targetitemcomponent="Reactor" temperature="gt 30" />
       </StatusEffect>
-      
       <!--Power output penality when submerged -->
-      
-      <StatusEffect type="Always" target="This" maxpoweroutput="500" setvalue="true" >
-        <Conditional Inwater="true"/>
+      <StatusEffect type="Always" target="This" maxpoweroutput="500" setvalue="true">
+        <Conditional Inwater="true" />
       </StatusEffect>
-      
-      <StatusEffect type="Always" target="This" maxpoweroutput="2000" setvalue="true">
-        <Conditional Inwater="false"/>
+      <StatusEffect type="Always" target="This" maxpoweroutput="2500" setvalue="true">
+        <Conditional Inwater="false" />
       </StatusEffect>
-      
       <!-- Kick out content when broken -->
       <StatusEffect type="OnBroken" target="This" FissionRate="0.0" disabledeltatime="true">
         <Conditional AvailableFuel="gt 1" />
@@ -70,42 +65,95 @@
         <DropContainedItems />
       </StatusEffect>
       <SkillRequirementHint identifier="electrical" level="50" />
-      
+      <!-- Overheating effects -->
+      <StatusEffect type="Always" target="this" interval="1" condition="-60">
+        <Conditional temperaturecritical="true" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="this" interval="1">
+        <Explosion range="500.0" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false">
+          <Affliction identifier="burn_emitter_rod" strength="100" />
+        </Explosion>
+        <Conditional temperaturecritical="true" />
+      </StatusEffect>
       <!-- Hazard when damaged -->
-      
-      <StatusEffect type="Always" target="this" interval="1" comparaison="And" >
-        <RequiredItem items="ekutility_incendiumfuelrod" type="Contained" />
-        <Explosion range="400.0" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" >
-        <Affliction identifier="burn" strength="5" />
-        </Explosion>
-        <Conditional condition="lt 50" />
-      </StatusEffect>
-      
       <StatusEffect type="Always" target="this" interval="1" comparaison="And">
-        <RequiredItem items="fuelrod,thoriumfuelrod,fulguriumfuelrodvolatile" type="Contained" />
-        <Explosion range="400.0" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" >
-        <Affliction identifier="radiationsickness" strength="5" />
-        <Affliction identifier="radiationgeiger" strength="5" />
+        <RequiredItem items="ekutility_incendiumfuelrod,fulguriumfuelrodvolatile,fulguriumfuelrod" type="Contained" />
+        <Explosion range="400.0" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false">
+          <Affliction identifier="burn_emitter_rod" strength="2.5" />
         </Explosion>
         <Conditional condition="lt 50" />
       </StatusEffect>
-      
+      <StatusEffect type="Always" target="this" interval="1" comparaison="And">
+        <RequiredItem items="fuelrod,thoriumfuelrod" type="Contained" />
+        <Explosion range="400.0" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false">
+          <Affliction identifier="radiationsickness" strength="5" />
+          <Affliction identifier="radiationgeiger" strength="5" />
+        </Explosion>
+        <Conditional condition="lt 50" />
+      </StatusEffect>
+      <!-- Enriched fuel hazard -->
+      <StatusEffect type="OnActive" target="This" delay="1" disabledeltatime="true" stackable="false" comparison="And">
+        <RequiredItem items="fuelrod,thoriumfuelrod" type="Contained" />
+        <Conditional targetitemcomponent="Reactor" temperature="gt 20" />
+        <Explosion range="800" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
+          <Affliction identifier="radiationsickness" strength="1" />
+          <Affliction identifier="radiationgeiger" strength="1" />
+          <Affliction identifier="radiation_source_visual_static" strength="10" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This" delay="1" disabledeltatime="true" stackable="false" comparison="And">
+        <RequiredItem items="fuelrod,thoriumfuelrod" type="Contained" />
+        <Conditional targetitemcomponent="Reactor" temperature="gt 20" />
+        <Conditional condition="lte 50" />
+        <Conditional condition="gte 25" />
+        <Explosion range="800" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
+          <Affliction identifier="radiationsickness" strength="3" />
+          <Affliction identifier="radiationgeiger" strength="1" />
+          <Affliction identifier="radiation_source_visual" strength="10" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This" delay="1" disabledeltatime="true" stackable="false" comparison="And">
+        <RequiredItem items="fuelrod,thoriumfuelrod" type="Contained" />
+        <Conditional targetitemcomponent="Reactor" temperature="gt 20" />
+        <Conditional condition="lte 25" />
+        <Conditional condition="gte 0" />
+        <Explosion range="800" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
+          <Affliction identifier="radiationsickness" strength="6" />
+          <Affliction identifier="radiationgeiger" strength="1" />
+          <Affliction identifier="radiation_source_visual" strength="15" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This" delay="1" disabledeltatime="true" stackable="false" comparison="And">
+        <RequiredItem items="ekutility_incendiumfuelrod" type="Contained" />
+        <Conditional targetitemcomponent="Reactor" temperature="gt 20" />
+        <Explosion range="800" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
+          <Affliction identifier="burn_emitter_rod" strength="10" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This" delay="1" disabledeltatime="true" stackable="false" comparison="And">
+        <RequiredItem items="ekutility_incendiumfuelrod" type="Contained" />
+        <Conditional condition="lte 25" />
+        <Conditional condition="gte 0" />
+        <Conditional targetitemcomponent="Reactor" temperature="gt 20" />
+        <Explosion range="800" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
+          <Affliction identifier="burn_emitter" strength="10" />
+        </Explosion>
+      </StatusEffect>
     </Reactor>
-    <LightComponent range="100.0" lightcolor="255,100,0,0" powerconsumption="0" IsOn="false" castshadows="false" alphablend="false" allowingameediting="false" comparaison="And" >
+    <LightComponent range="100.0" lightcolor="255,100,0,100" powerconsumption="0" IsOn="false" castshadows="false" alphablend="false" allowingameediting="false" comparaison="And">
       <Upgrade gameversion="0.9.600.0" lightcolor="255,255,255,0" />
       <IsActive targetitemcomponent="Reactor" temperature="gt 2" />
       <IsActive targetitemcomponent="Reactor" temperature="lt 80" />
-      <sprite texture="%ModDir%/Content/Items/Reactor/RTG.png" depth="0.025" sourcerect="1086,37,267,610" origin="0.5,0.45" alpha="1.0" />
+      <sprite texture="%ModDir%/Content/Items/Reactor/RTG.png" depth="0.025" sourcerect="1086,67,267,610" origin="0.5,0.45" alpha="1.0" />
     </LightComponent>
-    <LightComponent range="300.0" lightcolor="255,255,255,0" powerconsumption="0" IsOn="false" castshadows="false" alphablend="false" allowingameediting="false" >
+    <LightComponent range="175.0" lightcolor="255,96,43,255" powerconsumption="0" IsOn="false" castshadows="false" alphablend="false" allowingameediting="false">
       <Upgrade gameversion="0.9.600.0" lightcolor="255,255,255,0" />
       <IsActive targetitemcomponent="Reactor" temperaturecritical="eq true" />
-      <sprite texture="%ModDir%/Content/Items/Reactor/RTG.png" depth="0.025" sourcerect="1406,37,267,610" origin="0.5,0.45" alpha="1.0" />
+      <sprite texture="%ModDir%/Content/Items/Reactor/RTG.png" depth="0.025" sourcerect="1406,67,267,610" origin="0.5,0.45" alpha="1.0" />
       <StatusEffect type="OnActive" target="This">
         <ParticleEmitter particle="smoke" particleburstamount="1" particleburstinterval="1" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="40.0" />
-        <ParticleEmitter particle="DarkSmoke" particleburstamount="1" particleburstinterval="1" particlespersecond="20" scalemin="2.5" scalemax="3.5" anglemin="50" anglemax="130" velocitymin="10" velocitymax="50" mincondition="0.0" maxcondition="60.0" />
-        <ParticleEmitter particle="DarkSmoke" particleburstamount="1" particleburstinterval="1" particlespersecond="40" scalemin="2.5" scalemax="3.5" distancemin="-15" distancemax="15" anglemin="50" anglemax="130" velocitymin="10" velocitymax="100" mincondition="0.0" maxcondition="20.0" />
         <ParticleEmitter particle="swirlysmoke" particlespersecond="1" scalemin="1" scalemax="2" anglemin="0" anglemax="360" velocitymin="0" velocitymax="10" />
+        <sound file="%ModDir%/Content/Items/Reactor/rtgoverheat.ogg" type="OnUse" range="600.0" loop="true" volume="0.9" />
       </StatusEffect>
     </LightComponent>
     <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
@@ -121,7 +169,6 @@
       <output name="power_out" displayname="connection.powerout" maxwires="1" />
       <output name="temperature_out" displayname="connection.temperatureout" />
       <input name="shutdown" displayname="connection.shutdown" />
-      <output name="meltdown_warning" displayname="connection.meltdownwarning" />
       <input name="set_fissionrate" displayname="connection.setfissionrate" />
       <input name="set_turbineoutput" displayname="connection.setturbineoutput" />
       <output name="power_value_out" displayname="connection.powervalueout" />
@@ -135,33 +182,32 @@
       <Containable items="fuelrod">
         <StatusEffect type="OnContaining" target="This" AvailableFuel="80.0" disabledeltatime="true" />
       </Containable>
-      
-      <Containable items="fulguriumfuelrod">
-        <StatusEffect type="OnContaining" target="This" AvailableFuel="150.0" disabledeltatime="true" />
+      <Containable items="depletedfuel">
+        <StatusEffect type="OnContaining" target="This" AvailableFuel="70.0" disabledeltatime="true" />
       </Containable>
-      
       <Containable items="thoriumfuelrod">
         <StatusEffect type="OnContaining" target="This" AvailableFuel="100.0" disabledeltatime="true" />
       </Containable>
-      
-      <Containable items="fulguriumfuelrodvolatile">
-        <StatusEffect type="OnContaining" target="This" AvailableFuel="150.0" disabledeltatime="true" />
-      </Containable>
-    
       <Containable items="uranium">
-        <StatusEffect type="OnContaining" target="This" AvailableFuel="30.0" disabledeltatime="true" />
+        <StatusEffect type="OnContaining" target="This" AvailableFuel="40.0" disabledeltatime="true" />
       </Containable>
-      
       <Containable items="thorium">
         <StatusEffect type="OnContaining" target="This" AvailableFuel="40.0" disabledeltatime="true" />
       </Containable>
-      
-      <Containable items="incendium">
-        <StatusEffect type="OnContaining" target="This" AvailableFuel="75.0" disabledeltatime="true" />
+      <Containable items="depletedfuel">
+        <StatusEffect type="OnContaining" target="This" AvailableFuel="60.0" disabledeltatime="true" />
       </Containable>
-      
+      <Containable items="fulguriumfuelrod">
+        <StatusEffect type="OnContaining" target="This" AvailableFuel="90.0" disabledeltatime="true" />
+      </Containable>
+      <Containable items="fulguriumfuelrodvolatile">
+        <StatusEffect type="OnContaining" target="This" AvailableFuel="150.0" disabledeltatime="true" />
+      </Containable>
+      <Containable items="ekutility_incendiumfuelrod">
+        <StatusEffect type="OnContaining" target="This" AvailableFuel="175.0" disabledeltatime="true" />
+      </Containable>
     </ItemContainer>
-    <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="720" MinDeteriorationCondition="10" minsabotagecondition="10" RepairThreshold="50" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
+    <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="720" MinDeteriorationCondition="10" minsabotagecondition="10" RepairThreshold="70" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
       <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
       <RequiredSkill identifier="electrical" level="55" />
       <RequiredItem items="screwdriver" type="equipped" />
@@ -180,11 +226,9 @@
         <RequiredItem items="screwdriver" type="equipped" />
       </Repairable>
     </Upgrade>
-    
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="[E] Detach (Crowbar)" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="false">
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="[E] Detach (Crowbar)" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="false" limitedattachable="true">
       <RequiredItem identifier="crowbar" type="Equipped" />
       <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.25" setvalue="true" />
     </Holdable>
-    
   </Item>
 </Items>

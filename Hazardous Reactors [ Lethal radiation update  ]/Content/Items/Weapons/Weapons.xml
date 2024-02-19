@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
   <Override>
-  <Item name="" identifier="nucleardepthcharge" tags="depthchargeammo,nucleardepthchargeammo,hazardcontainment,hazardcontainement" category="Misc" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy">
+    <Item name="" identifier="nucleardepthcharge" tags="depthchargeammo,nucleardepthchargeammo,hazardcontainment" category="Misc" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy">
       <Price baseprice="450" soldeverywhere="false">
         <Price locationtype="outpost" multiplier="1.35" sold="false" />
         <Price locationtype="city" multiplier="1.25" sold="false" />
@@ -54,7 +54,6 @@
         <Containable items="smallitem,explosive" />
       </ItemContainer>
     </Item>
-    
     <Item name="" identifier="nuclearshell" tags="railgunequipment,railgunammo" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy">
       <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
       <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.05" />
@@ -120,8 +119,7 @@
         <Containable items="smallitem" />
       </ItemContainer>
     </Item>
-    
-    <Item name="" identifier="depthchargeshell" tags="depthchargeammo,hazardcontainment,hazardcontainement" description="Standard issue depth charge for submarine, can also be used to dispose of items and materials." category="Misc" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy">
+    <Item name="" identifier="depthchargeshell" tags="depthchargeammo,hazardcontainment" description="Standard issue depth charge for submarine, can also be used to dispose of items and materials." category="Misc" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy">
       <Price baseprice="75">
         <Price locationtype="outpost" multiplier="1.4" minavailable="1" />
         <Price locationtype="city" multiplier="1.25" minavailable="2" />
@@ -155,13 +153,11 @@
         <Containable items="smallitem,fuelrod,reactorfuel,explosive,crisis" />
       </ItemContainer>
     </Item>
-  
- </Override>
-  
+  </Override>
   <!-- Engineer talent related weapons -->
   <Override>
     <Item name="nucleargunbolt" identifier="nucleargunbolt" category="Misc" scale="0.5" sonarsize="2" hideinmenus="true">
-      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,0,1,1" depth="0.55" />
       <Body width="170" height="10" density="20" />
       <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
       <Projectile characterusable="false" hitscan="true" removeonhit="true">
@@ -202,29 +198,30 @@
     </Item>
   </Override>
   <Override>
-    <Item name="" identifier="nucleargun" category="Equipment" cargocontaineridentifier="metalcrate" tags="mediumitem,electrical,weapon,gun,hazardcontainment,hazardcontainement" Scale="0.5" impactsoundtag="impact_metal_heavy">
+    <Item name="" identifier="nucleargun" category="Equipment" cargocontaineridentifier="metalcrate" tags="mediumitem,electrical,weapon,gun,hazardcontainment" Scale="0.5" impactsoundtag="impact_metal_heavy">
       <PreferredContainer primary="secarmcab,weaponholder" />
-      <Price baseprice="675" soldeverywhere="false">
-        <Price locationtype="outpost" multiplier="1.5" sold="false" />
-        <Price locationtype="city" multiplier="1.25" sold="false" />
-        <Price locationtype="research" multiplier="1.25" sold="false" />
-        <Price locationtype="military" multiplier="0.9" sold="false" />
-        <Price locationtype="mine" multiplier="1.25" sold="false" />
+      <Price baseprice="900" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="1" maxavailable="2" sold="true">
+          <Reputation faction="coalition" min="70" />
+        </Price>
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
       </Price>
       <Deconstruct time="10">
-        <Item identifier="fpgacircuit" />
+        <Item identifier="copper" />
+        <Item identifier="plastic" />
         <Item identifier="lead" />
-        <Item identifier="titaniumaluminiumalloy" />
         <Item identifier="titaniumaluminiumalloy" />
         <Item identifier="fulgurium" />
       </Deconstruct>
       <Fabricate suitablefabricators="fabricator" requiredtime="70" requiresrecipe="true">
         <RequiredSkill identifier="electrical" level="65" />
         <RequiredItem identifier="fpgacircuit" />
-        <RequiredItem identifier="lead" />
-        <RequiredItem identifier="titaniumaluminiumalloy" />
-        <RequiredItem identifier="titaniumaluminiumalloy" />
-        <RequiredItem identifier="fulgurium" />
+        <RequiredItem identifier="lead" amount="2" />
+        <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+        <RequiredItem identifier="fulgurium" amount="2" />
       </Fabricate>
       <Sprite texture="Content/Items/JobGear/TalentGear.png" sourcerect="271,127,240,66" depth="0.55" origin="0.5,0.5" />
       <Body width="238" height="63" density="70" />
@@ -253,24 +250,18 @@
           <Use />
         </StatusEffect>
       </RangedWeapon>
-      <ItemContainer capacity="1" maxstacksize="1" hideitems="false" itempos="10,-5" containedspritedepths="0.562,0.561" containedstateindicatorstyle="default" containedstateindicatorslot="0">
-        <Containable items="reactorfuel" rotation="90" />
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="false" itempos="7,-5" containedspritedepths="0.554,0.554" containedstateindicatorstyle="default" containedstateindicatorslot="0">
+        <Containable items="reactorfuel" rotation="135" />
         <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="192,448,64,64" origin="0.5,0.5" />
         <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
         <SubContainer capacity="1" maxstacksize="1">
-          <Containable items="flashlight" hide="false" itempos="25,0" setactive="true" />
+          <Containable items="flashlight" hide="false" itempos="32,0" setactive="true" />
         </SubContainer>
-
         <Containable items="fuelrod" />
-
-        <Containable items="thoriumfuelrod"/>
-        
-        <Containable items="fulguriumfuelrod"/>
-        
-        <Containable items="fulguriumfuelrodvolatile"/>
-        
-        <Containable items="ekutility_incendiumfuelrod"/> 
-        
+        <Containable items="thoriumfuelrod" />
+        <Containable items="fulguriumfuelrod" />
+        <Containable items="fulguriumfuelrodvolatile" />
+        <Containable items="ekutility_incendiumfuelrod" />
       </ItemContainer>
       <aitarget sightrange="3000" soundrange="5000" fadeouttime="5" />
       <Quality>
@@ -279,7 +270,7 @@
     </Item>
   </Override>
   <Item name="fulguriumgunbolt" identifier="fulguriumgunbolt" category="Misc" scale="0.5" sonarsize="2" hideinmenus="true">
-    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,0,1,1" depth="0.55" />
     <Body width="170" height="10" density="20" />
     <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
     <Projectile characterusable="false" hitscan="true" removeonhit="true">
@@ -315,7 +306,7 @@
     </Projectile>
   </Item>
   <Item name="incendiumgunbolt" identifier="incendiumgunbolt" category="Misc" scale="0.5" sonarsize="2" hideinmenus="true">
-    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,0,1,1" depth="0.55" />
     <Body width="170" height="10" density="20" />
     <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
     <Projectile characterusable="false" hitscan="true" removeonhit="true">
@@ -349,7 +340,7 @@
     </Projectile>
   </Item>
   <Item name="volatilefulguriumgunbolt" identifier="volatilefulguriumgunbolt" category="Misc" scale="0.5" sonarsize="2" hideinmenus="true">
-    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,0,1,1" depth="0.55" />
     <Body width="170" height="10" density="20" />
     <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
     <Projectile characterusable="false" hitscan="true" removeonhit="true">

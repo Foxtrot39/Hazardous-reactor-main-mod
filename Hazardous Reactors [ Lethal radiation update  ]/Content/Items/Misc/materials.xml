@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
   <!-- Elements ************************************************************************************************ -->
-  <Item name="" identifier="iodine" category="Material" maxstacksize="8" Tags="smallitem,petfood3" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
+  <Item name="" identifier="iodine" category="Material" maxstacksize="32" Tags="smallitem,petfood3" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="storagecab" minamount="0" maxamount="4" spawnprobability="1" />
     <PreferredContainer secondary="wreckstoragecab" minamount="0" maxamount="3" spawnprobability="0.06" />
     <Price baseprice="5" soldeverywhere="false">
@@ -23,7 +23,7 @@
     <AiTarget sightrange="1000" static="true" />
   </Item>
   <Override>
-    <Item name="" identifier="fulgurium" category="Material,Alien" Tags="smallitem,ore" maxstacksize="8" cargocontaineridentifier="metalcrate" canbepicked="true" scale="0.5" impactsoundtag="impact_metal_light">
+    <Item name="" identifier="fulgurium" category="Material,Alien" Tags="smallitem,ore" maxstacksize="32" cargocontaineridentifier="metalcrate" canbepicked="true" scale="0.5" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="storagecab" />
       <PreferredContainer secondary="wreckstoragecab" amount="1" spawnprobability="0.02" />
       <PreferredContainer secondary="ruinstorage,ruinstoragesmall" amount="1" spawnprobability="0.05" />
@@ -55,7 +55,7 @@
         <RequiredItem items="cuttingequipment" type="Equipped" />
       </LevelResource>
     </Item>
-    <Item name="" identifier="incendium" category="Material,Alien" Tags="smallitem,ore" maxstacksize="8" cargocontaineridentifier="metalcrate" canbepicked="true" scale="0.5" impactsoundtag="impact_metal_light">
+    <Item name="" identifier="incendium" category="Material,Alien" Tags="smallitem,ore" maxstacksize="32" cargocontaineridentifier="metalcrate" canbepicked="true" scale="0.5" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="storagecab" />
       <PreferredContainer secondary="wreckstoragecab" amount="1" spawnprobability="0.02" />
       <PreferredContainer secondary="ruinstorage,ruinstoragesmall" amount="1" spawnprobability="0.05" />
@@ -100,7 +100,7 @@
       </LevelResource>
     </Item>
   </Override>
-  <Item name="" identifier="du_p_alloy" category="Material,Alien" Tags="smallitem" description="" maxstacksize="8" cargocontaineridentifier="metalcrate" canbepicked="true" scale="0.5" impactsoundtag="impact_metal_heavy">
+  <Item name="" identifier="du_p_alloy" category="Material,Alien" Tags="smallitem" description="" maxstacksize="32" cargocontaineridentifier="metalcrate" canbepicked="true" scale="0.5" impactsoundtag="impact_metal_heavy">
     <Price baseprice="700" soldeverywhere="false">
       <Price locationtype="outpost" multiplier="0" sold="false" />
       <Price locationtype="city" multiplier="0" sold="false" />
@@ -129,7 +129,7 @@
       </StatusEffect>
     </Holdable>
   </Item>
-  <Item name="" identifier="AI_microchip" category="Material,Alien" Tags="smallitem" maxstacksize="8" description="" cargocontaineridentifier="metalcrate" canbepicked="true" scale="0.5" impactsoundtag="impact_metal_heavy">
+  <Item name="" identifier="AI_microchip" category="Material,Alien" Tags="smallitem" maxstacksize="32" description="" cargocontaineridentifier="metalcrate" canbepicked="true" scale="0.5" impactsoundtag="impact_metal_heavy">
     <Price baseprice="200" soldeverywhere="false">
       <Price locationtype="outpost" multiplier="0" sold="false" />
       <Price locationtype="city" multiplier="0" sold="false" />
@@ -160,7 +160,7 @@
       </StatusEffect>
     </Holdable>
   </Item>
-  <Item name="" identifier="stasisemitter" category="Material,Alien" Tags="smallitem" description="" maxstacksize="8" cargocontaineridentifier="metalcrate" canbepicked="true" scale="0.5" impactsoundtag="impact_metal_heavy">
+  <Item name="" identifier="stasisemitter" category="Material,Alien" Tags="smallitem" description="" maxstacksize="32" cargocontaineridentifier="metalcrate" canbepicked="true" scale="0.5" impactsoundtag="impact_metal_heavy">
     <Price baseprice="200" soldeverywhere="false">
       <Price locationtype="outpost" multiplier="0" sold="false" />
       <Price locationtype="city" multiplier="0" sold="false" />
