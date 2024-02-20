@@ -46,7 +46,7 @@
       <!-- Contamination on Deconstruction-->
       <StatusEffect type="Always" target="This" delay="0.1" stackable="false" comparison="And">
         <Conditional InWater="false" />
-        <Conditional targetcontainer="true" hastag="neq hazardcontainment,hazardcontainement" />
+        <Conditional targetcontainer="true" hastag="neq hazardcontainment" />
         <sound file="%ModDir%/Content/Items/Misc/rock.ogg" range="600" volume="0.8" />
         <Explosion range="500" force="0.001" ignorecover="false" showeffects="false" smoke="true">
           <Affliction identifier="contamination" strength="10" />
@@ -81,11 +81,11 @@
         <!-- TURNS ON THE RADIATION -->
         <StatusEffect type="OnNotContained" target="This" IsOn="true" />
         <StatusEffect type="OnContained" target="This" IsOn="true">
-          <Conditional hastag="neq hazardcontainment,hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment" targetcontainer="true" />
         </StatusEffect>
         <!-- TURNS OFF THE RADIATION -->
         <StatusEffect type="OnContained" target="This" IsOn="false">
-          <Conditional hastag="eq hazardcontainment,hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="eq hazardcontainment" targetcontainer="true" />
         </StatusEffect>
       </Holdable>
       <!-- LETHAL LIGHT -->
@@ -123,11 +123,11 @@
         <!-- TURNS ON THE RADIATION -->
         <StatusEffect type="OnNotContained" target="This" IsOn="true" />
         <StatusEffect type="OnContained" target="This" IsOn="true">
-          <Conditional hastag="neq hazardcontainment,hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment" targetcontainer="true" />
         </StatusEffect>
         <!-- TURNS OFF THE RADIATION -->
         <StatusEffect type="OnContained" target="This" IsOn="false">
-          <Conditional hastag="eq hazardcontainment,hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="eq hazardcontainment" targetcontainer="true" />
         </StatusEffect>
       </Holdable>
       <!-- LETHAL LIGHT -->
