@@ -77,11 +77,11 @@
         <!-- TURNS ON THE RADIATION -->
         <StatusEffect type="OnNotContained" target="This" IsOn="true" />
         <StatusEffect type="OnContained" target="This" IsOn="true">
-          <Conditional hastag="neq hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment" targetcontainer="true" />
         </StatusEffect>
         <!-- TURNS OFF THE RADIATION -->
         <StatusEffect type="OnContained" target="This" IsOn="false">
-          <Conditional hastag="eq hazardcontainement" targetcontainer="true" />
+          <Conditional hastag="eq hazardcontainment" targetcontainer="true" />
         </StatusEffect>
       </Holdable>
       <!-- LETHAL LIGHT -->
