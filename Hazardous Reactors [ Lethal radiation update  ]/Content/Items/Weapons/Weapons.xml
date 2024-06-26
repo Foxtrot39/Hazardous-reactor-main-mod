@@ -53,6 +53,10 @@
         <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
         <Containable items="smallitem,explosive" />
       </ItemContainer>
+    <Quality>
+      <QualityStat stattype="ExplosionRadius" value="0.1"/>
+      <QualityStat stattype="ExplosionDamage" value="0.1"/>
+    </Quality>
     </Item>
     <Item name="" identifier="nuclearshell" tags="railgunequipment,railgunammo" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy">
       <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
@@ -128,30 +132,56 @@
         <Price locationtype="mine" multiplier="1.25" minavailable="1" />
       </Price>
       <Deconstruct time="10">
-        <Item identifier="steel" />
-        <Item identifier="aluminium" />
+        <Item identifier="iron" />
+        <Item identifier="uex" />
       </Deconstruct>
       <Fabricate suitablefabricators="fabricator" requiredtime="20">
         <RequiredSkill identifier="weapons" level="25" />
-        <RequiredItem identifier="steel" />
-        <RequiredItem identifier="aluminium" />
+        <RequiredItem identifier="iron" ammount="2" />
+        <RequiredItem identifier="uex" />
       </Fabricate>
       <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="512,128,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="0,0,130,89" depth="0.55" origin="0.5,0.5" />
       <Body width="128" height="85" density="11" />
-      <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
-      <Projectile characterusable="false" launchimpulse="5.0">
-        <Attack structuredamage="1" damagetype="Blunt">
-          <Affliction identifier="blunttrauma" strength="10" />
-        </Attack>
-        <StatusEffect type="OnImpact" target="Contained">
-          <Use />
-        </StatusEffect>
-      </Projectile>
+<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" launchimpulse="5.0">
+      <!-- Make destructible when launched -->
+      <StatusEffect type="OnUse" target="This" Indestructible="false"/>
+      <StatusEffect type="OnImpact" target="this" setvalue="true" condition="-100"/>
+      <!-- Effects when taking damage-->
+      <StatusEffect type="OnDamaged" target="This" disabledeltatime="true" setvalue="true">
+        <particleemitter particle="shrapnel" drawontop="true" particleamount="5" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" distancemin="0" distancemax="20" scalemin="0.1" scalemax="0.35" />
+        <Sound file="Content/Sounds/Damage/HitArmor1.ogg" range="800" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <sound file="Content/Items/Weapons/ExplosionDebris4.ogg" range="5000" />
+        <sound file="Content/Items/Weapons/ExplosionDebris5.ogg" range="5000" />
+      </StatusEffect>
+      <!-- Trigger explosions on contained items -->
+      <StatusEffect type="OnBroken" target="Contained" >
+        <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="20000" />
+        <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="20000" />
+        <Explosion range="700.0" ballastfloradamage="150" structuredamage="175" itemdamage="500" force="17.5" severlimbsprobability="0.5" debris="true" decal="explosion" decalsize="0.5" penetration="0.5">
+          <Affliction identifier="explosiondamage" strength="150" dividebylimbcount="true"/>
+          <Affliction identifier="burn" strength="15" probability="0.2" dividebylimbcount="false"/>
+          <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false"/>
+          <Affliction identifier="stun" strength="7" />
+        </Explosion>
+        <Use />
+      </StatusEffect>
+      <!-- Remove the item after exploding -->
+      <StatusEffect type="OnBroken" target="This" delay="0.01">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
       <ItemContainer hideitems="true" capacity="1" maxstacksize="1" canbeselected="false">
         <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
         <Containable items="smallitem,fuelrod,reactorfuel,explosive,crisis" />
       </ItemContainer>
+    <Quality>
+      <QualityStat stattype="ExplosionRadius" value="0.1"/>
+      <QualityStat stattype="ExplosionDamage" value="0.1"/>
+    </Quality>
     </Item>
   </Override>
   <!-- Engineer talent related weapons -->

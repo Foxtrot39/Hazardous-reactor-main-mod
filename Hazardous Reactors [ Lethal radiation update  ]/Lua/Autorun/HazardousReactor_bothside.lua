@@ -13,6 +13,17 @@ Hook.Add("roundStart", "changeRepairThingyOfReactors", function()
   end
 end)
 
+-- NPC unlimited fuel
+Hook.Add("roundStart", "ChangeReactorMeltdownTimers", function()
+   for k, v in pairs(Item.ItemList) do -- loop through items
+      if v.HasTag("reactor") and v.Submarine ~= Submarine.MainSub then -- check if item has 'reactor' tag and 'test' tag
+         local reactor = v.GetComponentString("Reactor") -- get reactor component
+         -- edit stuff
+      reactor.FuelConsumptionRate = 0
+     end
+  end
+end)
+
 -- Reactor fire/meltdown delay override
 Hook.Add("roundStart", "ChangeReactorMeltdownTimers", function()
    for k, v in pairs(Item.ItemList) do -- loop through items
