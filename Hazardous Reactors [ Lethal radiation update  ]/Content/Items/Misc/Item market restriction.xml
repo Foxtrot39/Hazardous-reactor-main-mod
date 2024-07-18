@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Items>
-    <Item name="" identifier="incendiumfueltank" category="Equipment" maxstacksize="8" Tags="smallitem,weldingtoolfuel,weldingfuel" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
+    <Item name="" identifier="incendiumfueltank" category="Equipment" maxstacksize="32" Tags="smallitem,weldingtoolfuel,weldingfuel" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="engcab" />
       <PreferredContainer secondary="wreckstoragecab" minamount="0" maxamount="2" spawnprobability="0.125" />
       <Price baseprice="250" soldeverywhere="false">
@@ -41,7 +41,7 @@
       </Holdable>
       <Upgrade gameversion="0.10.0.0" scale="0.5" />
     </Item>
-    <Item name="" identifier="incendiumgrenade" category="Equipment" maxstacksize="8" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive" Scale="0.5" impactsoundtag="impact_metal_heavy">
+    <Item name="" identifier="incendiumgrenade" category="Equipment" maxstacksize="32" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive" Scale="0.5" impactsoundtag="impact_metal_heavy">
       <PreferredContainer primary="secarmcab" minamount="0" maxamount="5" spawnprobability="1" />
       <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="2" spawnprobability="0.33" />
       <PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="1" spawnprobability="0.25" />
