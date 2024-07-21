@@ -125,16 +125,17 @@
         <StatusEffect type="OnActive" target="This" interval="1" Condition="-0.3" disabledeltatime="true" allowwhenbroken="true">
           <Conditional InWater="true" />
           <Explosion range="500" force="0.001" ignorecover="false" showeffects="false">
-            <Affliction identifier="radiationsickness" strength="4" />
-            <Affliction identifier="radiationgeiger" strength="4" />
-            <Affliction identifier="hazardexposure" strength="10" />
-            <Affliction identifier="radiation_source_visual" strength="10" />
+            <Affliction identifier="radiationsickness" strength="2" />
+            <Affliction identifier="radiationgeiger" strength="2" />
+            <Affliction identifier="hazardexposure" strength="5" />
+            <Affliction identifier="radiation_source_visual" strength="5" />
           </Explosion>
         </StatusEffect>
         <!-- Spawn fire! After 12s of not contained or in water -->
         <StatusEffect type="OnActive" target="This" comparison="And" delay="12" stackable="false" interval="1" checkconditionalalways="true" allowwhenbroken="true">
           <Conditional InWater="false" />
           <Conditional IsOn="true" />
+          <Conditional targetcontainer="true" hastag="neq tong"/>
           <Fire size="1.0" />
         </StatusEffect>
         <!-- Visual Effects Warning Smoke after 6s -->
@@ -280,14 +281,15 @@
           <Explosion range="500" force="0.001" ignorecover="false" showeffects="false">
             <Affliction identifier="radiationsickness" strength="2.5" />
             <Affliction identifier="radiationgeiger" strength="2.5" />
-            <Affliction identifier="hazardexposure" strength="10" />
-            <Affliction identifier="radiation_source_visual" strength="10" />
+            <Affliction identifier="hazardexposure" strength="5" />
+            <Affliction identifier="radiation_source_visual" strength="5" />
           </Explosion>
         </StatusEffect>
         <!-- Spawn fire! After 12s of not contained or in water -->
         <StatusEffect type="OnActive" target="This" comparison="And" delay="12" stackable="false" interval="1" checkconditionalalways="true" allowwhenbroken="true">
           <Conditional InWater="false" />
           <Conditional IsOn="true" />
+          <Conditional targetcontainer="true" hastag="neq tong"/>
           <Fire size="1.0" />
         </StatusEffect>
         <!-- Visual Effects Warning Smoke after 6s -->
@@ -651,6 +653,7 @@
         <StatusEffect type="OnActive" target="This" comparison="And" delay="6" stackable="false" checkconditionalalways="true" allowwhenbroken="true">
           <Conditional InWater="false" />
           <Conditional IsOn="true" />
+          <Conditional targetcontainer="true" hastag="neq tong"/>
           <Conditional Range="gt 50" targetitemcomponent="LightComponent" />
           <Fire size="1.0" />
         </StatusEffect>
@@ -998,43 +1001,78 @@
     </LightComponent>
     <!-- Active effect and other SE -->
     <Throwable characterusable="false" slots="Any,RightHand,LeftHand" throwforce="1.0" holdpos="0,-50" handle1="-10,0" handle2="10,0" msg="ItemMsgPickUpSelect">
+    
       <StatusEffect type="Always" target="This" interval="3">
+        <Conditional InWater="false" />
         <Explosion range="1000" stun="0" force="0.001" smoke="false" flames="false" shockwave="false" sparks="false" underwaterbubble="false" camerashake="0.0" flash="false" flashRange="0" ignorecover="false">
           <Affliction identifier="radiationsickness" strength="25" />
           <Affliction identifier="lethalradiation" strength="25" />
         </Explosion>
       </StatusEffect>
+      
+      <StatusEffect type="Always" target="This" interval="3">
+        <Conditional InWater="true" />
+        <Explosion range="400" stun="0" force="0.001" smoke="false" flames="false" shockwave="false" sparks="false" underwaterbubble="false" camerashake="0.0" flash="false" flashRange="0" ignorecover="false">
+          <Affliction identifier="radiationsickness" strength="12.5" />
+          <Affliction identifier="lethalradiation" strength="12.5" />
+        </Explosion>
+      </StatusEffect>
+      
       <StatusEffect type="Always" target="This" interval="1">
+        <Conditional InWater="false" />
         <Explosion range="1000" stun="0" force="0.01" showeffects="false" ignorecover="false">
           <Affliction identifier="radiationgeiger" strength="8" />
           <Affliction identifier="radiation_source_visual" strength="100" />
         </Explosion>
       </StatusEffect>
+      
+      <StatusEffect type="Always" target="This" interval="1">
+        <Conditional InWater="true" />
+        <Explosion range="500" stun="0" force="0.01" showeffects="false" ignorecover="false">
+          <Affliction identifier="radiationgeiger" strength="4" />
+          <Affliction identifier="radiation_source_visual" strength="50" />
+        </Explosion>
+      </StatusEffect>
+      
       <StatusEffect type="OnNotContained" target="This" interval="3">
         <Explosion range="200" stun="0" structuredamage="15" force="0.01" showeffects="false" ignorecover="false" />
       </StatusEffect>
+      
       <StatusEffect type="Always" target="This" stackable="false" interval="1">
         <Explosion range="1000" stun="0" force="0.001" showeffects="false" ignorecover="false">
           <Affliction identifier="hazardexposure" strength="1000" />
         </Explosion>
       </StatusEffect>
+      
       <StatusEffect type="Always" target="This" setvalue="true" condition="100" />
       <StatusEffect type="OnNotContained" target="This" stackable="false" interval="0.3">
         <Explosion range="150" structuredamage="0" force="0" flames="false" sparks="false" shockwave="true" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" stackable="false" />
       </StatusEffect>
+      
       <StatusEffect type="OnContained" target="This" stackable="false" interval="0.3">
         <Conditional targetcontainer="true" hastag="neq reactor" />
         <Explosion range="150" structuredamage="0" force="0" flames="false" sparks="false" shockwave="true" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" stackable="false" />
       </StatusEffect>
+      
       <StatusEffect type="OnContained" targettype="This,Character" targetlimbs="LeftHand,RightHand" disabledeltatime="true" interval="3" comparison="And">
+        <Conditional InWater="false" />
         <Affliction identifier="burningrod" strength="100" />
         <Affliction identifier="radiationsickness" strength="100" />
         <Affliction identifier="radiationgeiger" strength="100" />
       </StatusEffect>
+      
+      <StatusEffect type="OnContained" targettype="This,Character" targetlimbs="LeftHand,RightHand" disabledeltatime="true" interval="3" comparison="And">
+        <Conditional InWater="true" />
+        <Affliction identifier="burningrod" strength="100" />
+        <Affliction identifier="radiationsickness" strength="50" />
+        <Affliction identifier="radiationgeiger" strength="50" />
+      </StatusEffect>
+      
       <StatusEffect type="InWater" target="This">
         <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="1" velocitymin="0" velocitymax="50" scalemin="1" scalemax="1" />
         <ParticleEmitter particle="extinguisher" anglemin="0" anglemax="360" velocitymin="5.0" velocitymax="50.0" particlespersecond="40" />
       </StatusEffect>
+      
       <!-- RADIATION BASED RADIO JAMMING EFFECT -->
       <StatusEffect type="Always" target="NearbyItems" Interval="1" Range="1000" targetidentifiers="mobileradio" JamTimer="1.5" setvalue="true" />
     </Throwable>
