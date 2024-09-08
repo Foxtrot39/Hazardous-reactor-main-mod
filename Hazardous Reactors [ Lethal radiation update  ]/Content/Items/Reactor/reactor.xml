@@ -337,6 +337,7 @@
       <StatusEffect type="Always" target="This" delay="0" disabledeltatime="true" stackable="false" comparison="And">
         <Conditional condition="lte 25" />
         <Conditional condition="0" />
+        <Conditional hastag="reactor" />
         <sound file="%ModDir%/Content/Items/Reactor/extremeradiation.ogg" type="OnUse" range="500.0" loop="true" volume="0.5" />
       </StatusEffect>
       
@@ -345,12 +346,14 @@
       <StatusEffect type="Always" target="This" comparison="And" condition="-0.8" interval="1">
         <Conditional condition="lte 25" />
         <Conditional condition="gte 10" />
+        <Conditional hastag="reactor" />
         <RequiredItem items="fuelrod,fulguriumfuelrod,thoriumfuelrod,ekutility_incendiumfuelrod,fulguriumfuelrodvolatile" type="Contained" />
       </StatusEffect>
       
       <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" comparison="And" interval="1">
         <Conditional condition="lt 25" />
         <Conditional condition="gt 0" />
+        <Conditional hastag="reactor" />
         <RequiredItem items="ekutility_incendiumfuelrod" type="Contained" />
         <Explosion range="500" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
           <Affliction identifier="burn_emitter_with_incendium" strength="100" />
@@ -360,6 +363,7 @@
       <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" comparison="And" interval="1">
         <Conditional condition="lt 25" />
         <Conditional condition="gt 0" />
+        <Conditional hastag="reactor" />
         <RequiredItem items="fuelrod,fulguriumfuelrod,thoriumfuelrod,ekutility_incendiumfuelrod,fulguriumfuelrodvolatile" type="Contained" />
         <Explosion range="500" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
           <Affliction identifier="burn_emitter" strength="100" />
@@ -379,6 +383,7 @@
         <sound file="Content/Items/Reactor/ReactorOverheatAlarm.ogg" type="OnUse" range="3000.0" loop="true" volume="1.0" />
         <Conditional condition="lte 25" />
         <Conditional condition="gte 10" />
+        <Conditional hastag="reactor" />
         <RequiredItem items="fuelrod,fulguriumfuelrod,thoriumfuelrod,ekutility_incendiumfuelrod,fulguriumfuelrodvolatile" type="Contained" />
         <condtional targetcontained="true" hastag="neq crisis" />
       </StatusEffect>
@@ -388,6 +393,7 @@
         <ParticleEmitter particle="swirlysmoke" particlespersecond="6" scalemin="1" scalemax="2" anglemin="0" anglemax="360" velocitymin="0" velocitymax="10" />
         <Conditional condition="lte 10" />
         <Conditional condition="neq 0" />
+        <Conditional hastag="reactor" />
         <Fire size="1" />
         <RequiredItem items="fuelrod,fulguriumfuelrod,thoriumfuelrod,fulguriumfuelrodvolatile" type="Contained" />
       </StatusEffect>
@@ -396,6 +402,7 @@
         <ParticleEmitter particle="smoke" particleburstamount="6" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" underwaterbubble="false" />
         <ParticleEmitter particle="swirlysmoke" particlespersecond="6" scalemin="1" scalemax="2" anglemin="0" anglemax="360" velocitymin="0" velocitymax="10" />
         <Conditional condition="lte 10" />
+        <Conditional hastag="reactor" />
         <Fire size="10" />
         <RequiredItem items="ekutility_incendiumfuelrod" type="Contained" />
       </StatusEffect>
@@ -405,17 +412,20 @@
         <Conditional targetitemcomponent="Reactor" temperature="gt 2" />
         <Conditional condition="gt 10" />
         <Conditional condition="lt 25" />
+        <Conditional hastag="reactor" />
       </StatusEffect>
       
       <StatusEffect type="Always" target="This" comparison="And">
         <sound file="%ModDir%/Content/Items/Reactor/fuelmeltdownalarm.ogg" type="OnUse" range="3000.0" loop="true" volume="1.0" />
         <Conditional condition="lte 10" />
         <Conditional condition="neq 0" />
+        <Conditional hastag="reactor" />
         <RequiredItem items="fuelrod,fulguriumfuelrod,thoriumfuelrod,ekutility_incendiumfuelrod,fulguriumfuelrodvolatile" type="Contained" />
       </StatusEffect>
       
       <StatusEffect type="Always" target="This" comparison="And">
         <Conditional condition="neq 0" />
+        <Conditional hastag="reactor" />
         <sound file="%ModDir%/Content/Items/Reactor/fuelmeltdownalarm.ogg" type="OnUse" range="3000.0" loop="true" volume="1.0" />
         <RequiredItem items="molten_rods,supercritical_fulgurium,supercritical_incendium" type="Contained" />
       </StatusEffect>

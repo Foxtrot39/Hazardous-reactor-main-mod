@@ -363,4 +363,17 @@ However the medecine is expensive and just as dangerous if not injected by a ski
 Reports of botched injections have been saying it to not only have little positive effects but also cause severe internal damage in the process.
  
  </terminalwelcomemsg.manual>
+ 
+ <loadingscreentip>Always keep a fuel rod crate right next (within 3m) of the reactor or else NPC's will drop spend fuel rods and run away from the radiation.</loadingscreentip>
+ <loadingscreentip>Mining outposts can sell you deconstructor and dedicated fabricators to handle radiation emitting object safely.</loadingscreentip>
+ <loadingscreentip>Acute Radiation syndrome is a death sentence if left untreated, either have a large stock of Stabilozine or keep Antirad for this situation.</loadingscreentip>
+ <loadingscreentip>Reactor has a two stage meltdown alarm, if you hear the second one your only option to avoid a nuclear accident is to dump out all the fuel it contains.</loadingscreentip>
+ <loadingscreentip>Better safe than sorry : if you're gonna handle radioactive materials always be under the effect of radio protectant.</loadingscreentip>
+ <loadingscreentip>Do not deconstruct radioactive ores without at the very least an oxygen mask on : the created dust will lead to contamination.</loadingscreentip>
+ <loadingscreentip>"Carefully load that warhead now, it's VERY sensi-" -Last recording of an experimental weapon testbed submarine.</loadingscreentip>
+ <loadingscreentip>Super critical rods require an incendium based rod to undergo either a fuel meltdown or have the reactor destroyed in operation, not both.</loadingscreentip>
+ <loadingscreentip>Fuel meltdown occure if a reactor overheat for too long without without it exploding, creating extremely hazardous materials with their own usage.</loadingscreentip>
+ <loadingscreentip>The only way to handle corium and super critical rods without a death sentence is by wearing a PUCS.</loadingscreentip>
+ 
+ 
 </infotexts>

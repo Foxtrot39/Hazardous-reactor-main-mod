@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
-  <Item name="" identifier="reactor1wrecked" nameidentifier="reactor1" variantof="reactor1" category="Wrecked" condition="0" spritecolor="200,150,100,255">
+  <Item name="" identifier="reactor1wrecked" nameidentifier="reactor1" variantof="reactor1" category="Wrecked" tags="" condition="0" spritecolor="200,150,100,255">
     <Upgrade gameversion="0.20.4.0" scale="0.5" condition="0" spritecolor="200,150,100,255" />
     <Repairable>
       <!-- don't emit particles unless repaired above 0 condition -->
@@ -21,10 +21,10 @@
       </StatusEffect>
       <StatusEffect type="Always" target="This" stackable="false" delay="1">
         <Conditional condition="lt 20" />
-        <Explosion range="500" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false">
-          <Affliction identifier="radiationsickness" strength="40" />
-          <Affliction identifier="radiationgeiger" strength="20" />
-          <Affliction identifier="radiation_source_visual" strength="25" />
+        <Explosion range="250" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false">
+          <Affliction identifier="radiationsickness" strength="20" />
+          <Affliction identifier="radiationgeiger" strength="10" />
+          <Affliction identifier="radiation_source_visual" strength="12.5" />
         </Explosion>
       </StatusEffect>
       <!-- RADIATION BASED RADIO JAMMING EFFECT -->

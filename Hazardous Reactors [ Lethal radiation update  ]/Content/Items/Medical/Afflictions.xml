@@ -15,7 +15,6 @@
       </Effect>
       <Effect minstrength="81" maxstrength="99" minvitalitydecrease="40" maxvitalitydecrease="60" minchromaticaberration="5" maxchromaticaberration="5">
         <StatusEffect target="Character" interval="3">
-          <Affliction identifier="organdamage" amount="13" />
           <Affliction identifier="internaldamage" amount="8" />
         </StatusEffect>
       </Effect>
@@ -65,7 +64,6 @@
       <Effect minstrength="91" maxstrength="100" strengthchange="-0.05" minchromaticaberration="3" maxchromaticaberration="5" mingrainstrength="1" maxgrainstrength="2" MinScreenBlur="0.6" MaxScreenBlur="0.75" dialogueflag="radiationsicknessheavy">
         <StatusEffect target="Character" interval="3">
           <Affliction identifier="burn" amount="12" />
-          <Affliction identifier="internaldamage" amount="3" />
           <Affliction identifier="dnadamage" amount="80" />
           <Affliction identifier="lethalradiation" amount="200" />
         </StatusEffect>
@@ -114,7 +112,6 @@
       <Effect minstrength="26" maxstrength="50">
         <StatusEffect target="Character" interval="3">
           <Affliction identifier="radiationsickness" amount="300" />
-          <Affliction identifier="dnadamage" amount="21" />
         </StatusEffect>
         <StatusEffect target="Character">
           <Affliction identifier="radiationgeiger" amount="2" />
@@ -123,7 +120,6 @@
       <Effect minstrength="51" maxstrength="75">
         <StatusEffect target="Character" interval="3">
           <Affliction identifier="radiationsickness" amount="450" />
-          <Affliction identifier="dnadamage" amount="21" />
         </StatusEffect>
         <StatusEffect target="Character">
           <Affliction identifier="radiationgeiger" amount="4" />
@@ -132,7 +128,6 @@
       <Effect minstrength="76" maxstrength="95">
         <StatusEffect target="Character" interval="3">
           <Affliction identifier="radiationsickness" amount="600" />
-          <Affliction identifier="dnadamage" amount="21" />
         </StatusEffect>
         <StatusEffect target="Character">
           <Affliction identifier="radiationgeiger" amount="6" />
@@ -144,7 +139,6 @@
       <Effect minstrength="96" maxstrength="100">
         <StatusEffect target="Character" interval="3">
           <Affliction identifier="radiationsickness" amount="700" />
-          <Affliction identifier="dnadamage" amount="12" />
           <Affliction identifier="lethalradiation" amount="50" />
         </StatusEffect>
         <StatusEffect target="Character">
@@ -211,7 +205,6 @@
           <Sound file="%ModDir%/Content/Items/Medical/HUMAN_chokeFemale3.ogg" />
         </StatusEffect>
         <StatusEffect target="Character">
-          <Affliction identifier="organdamage" strength="0.5" />
           <Affliction identifier="bloodloss" strength="1" />
         </StatusEffect>
         <StatusEffect target="Character" setvalue="true">
