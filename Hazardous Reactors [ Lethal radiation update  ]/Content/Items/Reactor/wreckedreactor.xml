@@ -21,7 +21,7 @@
       </StatusEffect>
       <StatusEffect type="Always" target="This" stackable="false" delay="1">
         <Conditional condition="lt 20" />
-        <Explosion range="250" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false">
+        <Explosion range="250" structuredamage="0" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false">
           <Affliction identifier="radiationsickness" strength="20" />
           <Affliction identifier="radiationgeiger" strength="10" />
           <Affliction identifier="radiation_source_visual" strength="12.5" />
