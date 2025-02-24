@@ -59,17 +59,15 @@
   <entitydescription.HRtongs>A set of tongs for keeping fuel rods at arms length. Doubles as a melee weapon.</entitydescription.HRtongs>
   <!-- Reactor items -->
   <entityname.fuelrod>Uranium Fuel Rod</entityname.fuelrod>
-  <entitydescription.fuelrod>Standard nuclear fuel rod.</entitydescription.fuelrod>
+  <entitydescription.fuelrod>A standard nuclear fuel rod constructed of uranium. </entitydescription.fuelrod>
   <entityname.thoriumfuelrod>Thorium Fuel Rod</entityname.thoriumfuelrod>
-  <entitydescription.thoriumfuelrod>Can last up to three time as long as uranium rods.</entitydescription.thoriumfuelrod>
+  <entitydescription.thoriumfuelrod>A longer lasting fuel rod constructed of thorium.</entitydescription.thoriumfuelrod>
   <entityname.fulguriumfuelrod>Fulgurium Fuel Rod</entityname.fulguriumfuelrod>
-  <entitydescription.fulguriumfuelrod>Doesn't provide as much heat as other types of fuel rod, but lasts much longer and acts as a moderator, reducing fission spikes from other rods. Too stable to be used as is, and must be heated to be used as fuel.</entitydescription.fulguriumfuelrod>
+  <entitydescription.fulguriumfuelrod>A long-lasting fuel rod with a negative temperature coefficient, constructed of the rare and poorly understood compound Fulgurium. The more reactive this rod gets, the faster it cools, so it must be used with other fuel rods inside of a reactor to produce power.</entitydescription.fulguriumfuelrod>
   <entityname.fulguriumfuelrodvolatile>Volatile Fulgurium Fuel Rod</entityname.fulguriumfuelrodvolatile>
-  <!-- from Cognitive Cake: Very hard to understand the next line-->
-  <!-- from SeaverBeaver: No worries, that should fix it.-->
-  <entitydescription.fulguriumfuelrodvolatile>An amalgam rod of Incendium and Fulgurium, capable of producing large amounts of heat for extended periods of time. Impact sensitive.</entitydescription.fulguriumfuelrodvolatile>
+  <entitydescription.fulguriumfuelrodvolatile>An unstable, self heating fuel rod constructed of Fulgurium and Incendium, capable of producing large amounts of heat for extended periods of time. Impact sensitive.</entitydescription.fulguriumfuelrodvolatile>
   <entityname.ekutility_incendiumfuelrod>Incendium Fuel Rod</entityname.ekutility_incendiumfuelrod>
-  <entitydescription.ekutility_incendiumfuelrod>Extremely potent but also very unstable, self heating if left uncontained to the point of exploding and melting the hull. Impact sensitive even in secure containers.</entitydescription.ekutility_incendiumfuelrod>
+  <entitydescription.ekutility_incendiumfuelrod>An unstable, self heating fuel rod constructed of Incendium, capable of producing large amounts of heat for a short time. Impact sensitive.</entitydescription.ekutility_incendiumfuelrod>
   <entityname.supercritical_incendium>Supercritical Incendium Rod</entityname.supercritical_incendium>
   <entitydescription.supercritical_incendium> An Incendium fuel rod in a supercritical state. Extremely dangerous, and impact sensitive. Can be processed into advanced nuclear weapons.</entitydescription.supercritical_incendium>
   <entityname.supercritical_fulgurium>Supercritical Volatile Fulgurium Rod</entityname.supercritical_fulgurium>
@@ -84,7 +82,7 @@
   <entitydescription.nukerod>A stasis locked supercritical fuel rod, usable as a warhead. Extremely impact sensitive.</entitydescription.nukerod>
   <entityname.nukerodenhanced>Enhanced Crisis Warhead</entityname.nukerodenhanced>
   <entitydescription.nukerodenhanced>A Crisis Warhead further enhanced with fissile materials for increased yield. Extremely impact sensitive. </entitydescription.nukerodenhanced>
-  <entitydescription.nucleargun>A prototype particle weapon constructed using the unique alien materials on Europa, utilizing fuel rods as a power source. Dangerous to those on both ends of the barrel, depending on the fissile material used to power it.</entitydescription.nucleargun>
+  <entitydescription.nucleargun>A prototype directed energy weapon constructed using the unique alien materials on Europa, utilizing fuel rods as a power source. Dangerous to those on both ends of the barrel, depending on the fissile material used to power it. Sustained fire has a tendancy to overheat contained fuel rods.</entitydescription.nucleargun>
   <!-- Mission text -->
   <!-- Coalition version -->
   <missionname.salvagewreckwarheadcoalition>Recover Experimental Weapon</missionname.salvagewreckwarheadcoalition>
@@ -124,7 +122,7 @@
   <entityname.iodinecrystal>Diiodine Crystal</entityname.iodinecrystal>
   <entitydescription.iodinecrystal>Crystals made exclusively out of iodine.</entitydescription.iodinecrystal>
   <entityname.deconcontaminationemitter>Contamination Hazard</entityname.deconcontaminationemitter>
-  <entitydescription.deconcontaminationemitter>Warning : Deconstruction process will contaminate nearby unprotected personell.</entitydescription.deconcontaminationemitter>
+  <entitydescription.deconcontaminationemitter>Warning: Deconstruction process will contaminate nearby unprotected personell.</entitydescription.deconcontaminationemitter>
   <entityname.nuclearmaterialprocessor>Fuel Processor</entityname.nuclearmaterialprocessor>
   <entitydescription.nuclearmaterialprocessor>A heavely shielded fabricator allowing safe handling of hazardous materials.</entitydescription.nuclearmaterialprocessor>
   <entityname.fissiledeconstructor>Radiation Shielded Deconstructor</entityname.fissiledeconstructor>
@@ -363,17 +361,15 @@ However the medecine is expensive and just as dangerous if not injected by a ski
 Reports of botched injections have been saying it to not only have little positive effects but also cause severe internal damage in the process.
  
  </terminalwelcomemsg.manual>
- 
- <loadingscreentip>Always keep a fuel rod crate right next (within 3m) of the reactor or else NPC's will drop spend fuel rods and run away from the radiation.</loadingscreentip>
- <loadingscreentip>Mining outposts can sell you deconstructor and dedicated fabricators to handle radiation emitting object safely.</loadingscreentip>
- <loadingscreentip>Acute Radiation syndrome is a death sentence if left untreated, either have a large stock of Stabilozine or keep Antirad for this situation.</loadingscreentip>
- <loadingscreentip>Reactor has a two stage meltdown alarm, if you hear the second one your only option to avoid a nuclear accident is to dump out all the fuel it contains.</loadingscreentip>
- <loadingscreentip>Better safe than sorry : if you're gonna handle radioactive materials always be under the effect of radio protectant.</loadingscreentip>
- <loadingscreentip>Do not deconstruct radioactive ores without at the very least an oxygen mask on : the created dust will lead to contamination.</loadingscreentip>
- <loadingscreentip>"Carefully load that warhead now, it's VERY sensi-" -Last recording of an experimental weapon testbed submarine.</loadingscreentip>
- <loadingscreentip>Super critical rods require an incendium based rod to undergo either a fuel meltdown or have the reactor destroyed in operation, not both.</loadingscreentip>
- <loadingscreentip>Fuel meltdown occure if a reactor overheat for too long without without it exploding, creating extremely hazardous materials with their own usage.</loadingscreentip>
- <loadingscreentip>The only way to handle corium and super critical rods without a death sentence is by wearing a PUCS.</loadingscreentip>
- 
- 
+  <loadingscreentip>To allow NPC crewmembers to safely perform refueling operations, keep a Radioactive Material Storage Crate within 3 meters of the reactor.</loadingscreentip>
+  <loadingscreentip>Mining Outposts can sell shielded equipment that allows for the safe fabrication and deconstruction of radioactive materials. </loadingscreentip>
+  <loadingscreentip>Acute Radiation syndrome is a death sentence if not immediately treated with AntiRad, though Stabilozine can be used as a stopgap measure to keep the patient alive until proper treatment.</loadingscreentip>
+  <loadingscreentip>Most Nuclear Reactors on Europa have a Coalition-standard two stage meltdown alarm, once the second stage alarm is audible, the only hope of preventing a large-scale nuclear accident is removing all active fuel rods from the overloading reactor.</loadingscreentip>
+  <loadingscreentip>The Europa Coalition's Nuclear Regaulatory Comission reccomends that any handling of radioactive materials should be done under the effects of radio-protectant drugs.</loadingscreentip>
+  <loadingscreentip>SCBAs should be worn at all times when deconstructing radioactive materials, contaminating dust can be a byproduct of deconstruction.</loadingscreentip>
+  <loadingscreentip>[CVR Recording Start] "How many more you got Spunkmeyer?" [unintelligible] "Good, take it away-" [loud hydraulics, possibly power loader arms] "Keep it steady, you read the bulletin on these warheads-" [loud hissing, possibly hydraulic failure] [unintelligible, yelling] [CVR Recording End]</loadingscreentip>
+  <loadingscreentip>The creation of Supercritical Fuel Rods requires an Incendium-based fuel rod to undergo a meltdown process or reactor explosion.</loadingscreentip>
+  <loadingscreentip>A reactor meltdown accident occurs when a nuclear reactor is kept at an overload state for an extended period of time without exploding. The hazardous byproducts created in a meltdown accident can potentially have their own uses.</loadingscreentip>
+  <loadingscreentip>A potential byproduct of a nuclear meltdown accident is Corium, an extremely radioactive, lava-like substance consisting of molten fuel rods and structural materials from the reactor.</loadingscreentip>
+  <loadingscreentip>Handling extremely radioactive materials (such as Corium or Supercritical Fuel Rods) without a PUCS or other heavy-duty PPE is an almost certain death sentence.</loadingscreentip>
 </infotexts>

@@ -50,8 +50,6 @@
       <GuiFrame relativesize="0.5,0.5" anchor="Center" style="ItemUI" />
     </Terminal>
   </Item>
-  
-
   <Item name="jam" identifier="radiation_radio_jammer" canbeselected="false" NonInteractable="True" NonPlayerTeamInteractable="True" category="Equipment,Electrical" maxstacksize="1" tags="smallitem" health="200" scale="1" cargocontaineridentifier="metalcrate" description="">
     <Upgrade gameversion="0.10.0.0" scale="1" />
     <Body width="10" height="10" density="2" />

@@ -219,7 +219,7 @@
     </ItemContainer>
       
   </Item> -->
-  <Item name="" identifier="fuelbackpack" tags="largeitem,mobilecontainer,hazardcontainment" description="" showcontentsintooltip="true" scale="0.5" linkable="true" pickdistance="150" impactsoundtag="impact_metal_heavy" waterproof="true" fireproof="true">
+  <Item name="" identifier="fuelbackpack" category="Equipment" tags="largeitem,mobilecontainer,hazardcontainment" description="" showcontentsintooltip="true" scale="0.5" linkable="true" pickdistance="150" impactsoundtag="impact_metal_heavy" waterproof="true" fireproof="true">
     <Fabricate suitablefabricators="fabricator" requiredtime="60">
       <RequiredSkill identifier="electrical" level="70" />
       <RequiredSkill identifier="mechanical" level="50" />
@@ -484,19 +484,17 @@
       <StatusEffect type="OnUse" target="UseTarget,Contained" Condition="-4">
         <!-- The number to the left controls how many impacts before the rod is depleted and no longer has the added effects -->
         <RequiredItem identifier="ekutility_incendiumfuelrod" type="contained" targetcontainer="true" />
-        <Explosion range="35" structuredamage="15" force="50">
-          <Affliction identifier="burn" strength="8" />
-          <Affliction identifier="stun" strength="1.5" />
-        </Explosion>
+        <Explosion range="150.0" ballastfloradamage="80" structuredamage="10" levelwalldamage="100" itemdamage="25" force="8.0" severlimbsprobability="0.4" debris="true" decal="explosion" decalsize="0.3" />
+        <Affliction identifier="explosiondamage" strength="1" />
+		<Affliction identifier="burn" strength="1.8" />
+        <Affliction identifier="stun" strength="1.5" />
         <!-- The sounds below won't overlap- if you swing the tongs a second time while the first swings' sound is playing,
                for whatever reason it won't play again until the first sound is stopped. Fix this, OR find a sound in Hazardous Reactors
                that is shorter than the 1.2sec swing reload and sounds like a small explosion, OR make a copy of the below sounds
 			   and edit them to fade out within that 1.2 second reload -->
-        <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
-        <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="2000" />
-        <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="2000" />
-        <ParticleEmitter particle="shockwave" particlespersecond="1" scalemin="8" scalemax="10" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" />
-        <ParticleEmitter particle="explosionfire" particleamount="3" scalemin="0.4" scalemax="0.41" anglemin="0" anglemax="360" />
+        <sound file="Content/Items/Weapons/FragGrenade40mmShot1.ogg" range="2000" volume="1.5" selectionmode="Random"  />
+        <sound file="Content/Items/Weapons/FragGrenade40mmShot2.ogg" range="2000" volume="1.5" />
+        <ParticleEmitter particle="explosionfire" particleamount="3" scalemin="0.2" scalemax="0.25" anglemin="0" anglemax="360" />
       </StatusEffect>
       <!-- Forbidden bonk -->
       <StatusEffect type="OnUse" target="UseTarget,Contained" condition="-1000">
@@ -511,17 +509,18 @@
       <StatusEffect type="OnUse" target="UseTarget,Contained" Condition="-20">
         <!-- The number to the left controls how many impacts before the rod is depleted and no longer has the added effects -->
         <RequiredItem identifier="fulguriumfuelrodvolatile" type="contained" targetcontainer="true" />
-        <Explosion range="35" structuredamage="2" force="50" smoke="false" flames="false">
-          <Affliction identifier="burn" strength="5" />
-          <Affliction identifier="stun" strength="3" />
-        </Explosion>
+        <Explosion range="150.0" ballastfloradamage="80" structuredamage="10" levelwalldamage="100" itemdamage="25" flames="false" flash="true" force="8.0" severlimbsprobability="0.4" debris="true" decal="explosion" decalsize="0.3" />
+        <Affliction identifier="explosiondamage" strength="1" />
+		<Affliction identifier="electricshock" strength="100" />
+		<Affliction identifier="burn" strength="1.6" />
+        <Affliction identifier="stun" strength="1.8" />
         <!-- The sounds below won't overlap- if you swing the tongs a second time while the first swings' sound is playing,
                for whatever reason it won't play again until the first sound is stopped. Fix this, OR find a sound in Hazardous Reactors
                that is shorter than the 1.2sec swing reload and sounds like an electrical impact, OR make a copy of the below sounds
 			   and edit them to fade out within that 1.2 second reload -->
-        <sound file="Content/Items/Weapons/WEAPONS_electricalDischarge1.ogg" range="20000" selectionmode="random" />
-        <sound file="Content/Items/Weapons/WEAPONS_electricalDischarge2.ogg" range="20000" />
-        <ParticleEmitter particle="ElectricShock" distancemax="1" particleamount="4" anglemin="0" anglemax="360" scalemin="0.3" scalemax="0.35" />
+        <sound file="Content/Items/Weapons/WEAPONS_electricalDischarge1.ogg" range="2000" selectionmode="random" />
+        <sound file="Content/Items/Weapons/WEAPONS_electricalDischarge2.ogg" range="2000" />
+        <ParticleEmitter particle="ElectricShock" distancemax="1" particleamount="4" anglemin="0" anglemax="360" scalemin="0.25" scalemax="0.3" />
       </StatusEffect>
     </MeleeWeapon>
     <ItemContainer capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="47,-10" containedspritedepths="0.565" containedstateindicatorstyle="default" containedstateindicatorslot="0">

@@ -31,24 +31,18 @@
     </Affliction>
   </Override>
   <Override>
-    <Affliction name="" identifier="radiationsickness" description="" type="poison" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Torso" showiconthreshold="101" showinhealthscannerthreshold="25" karmachangeonapplied="-1" treatmentthreshold="1" maxstrength="100" damageoverlayalpha="0">
+    <Affliction name="" identifier="radiationsickness" description="" type="poison" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Torso" showiconthreshold="101" showinhealthscannerthreshold="0" karmachangeonapplied="-1" treatmentthreshold="1" maxstrength="100" damageoverlayalpha="0">
       <!-- Cause nausea, burns & organ damage DNA damage depending on strength + radiation geiger -->
       <Effect minstrength="5" maxstrength="25" strengthchange="-0.05" minchromaticaberration="0.0" maxchromaticaberration="0" />
       <Effect minstrength="26" maxstrength="50" strengthchange="-0.05" disabledeltatime="true">
         <StatusEffect target="Character" interval="3">
           <Affliction identifier="dnadamage" amount="10" />
         </StatusEffect>
-        <StatusEffect target="Character">
-          <Affliction identifier="radiationgeiger" amount="2" />
-        </StatusEffect>
       </Effect>
       <Effect minstrength="51" maxstrength="75" strengthchange="-0.05" MinScreenBlur="0" MaxScreenBlur="0.25" dialogueflag="radiationsicknessmedium">
         <StatusEffect target="Character" interval="3">
           <Affliction identifier="nausea" amount="10" />
           <Affliction identifier="dnadamage" amount="20" />
-        </StatusEffect>
-        <StatusEffect target="Character">
-          <Affliction identifier="radiationgeiger" amount="4" />
         </StatusEffect>
       </Effect>
       <Effect minstrength="76" maxstrength="90" strengthchange="-0.05" minchromaticaberration="1" maxchromaticaberration="3" mingrainstrength="0.0" maxgrainstrength="1" MinScreenBlur="0.25" MaxScreenBlur="0.6" dialogueflag="radiationsicknessheavy">
@@ -57,18 +51,12 @@
           <Affliction identifier="burn" amount="3" />
           <Affliction identifier="dnadamage" amount="40" />
         </StatusEffect>
-        <StatusEffect target="Character">
-          <Affliction identifier="radiationgeiger" amount="5" />
-        </StatusEffect>
       </Effect>
       <Effect minstrength="91" maxstrength="100" strengthchange="-0.05" minchromaticaberration="3" maxchromaticaberration="5" mingrainstrength="1" maxgrainstrength="2" MinScreenBlur="0.6" MaxScreenBlur="0.75" dialogueflag="radiationsicknessheavy">
         <StatusEffect target="Character" interval="3">
           <Affliction identifier="burn" amount="12" />
           <Affliction identifier="dnadamage" amount="80" />
           <Affliction identifier="lethalradiation" amount="200" />
-        </StatusEffect>
-        <StatusEffect target="Character">
-          <Affliction identifier="radiationgeiger" amount="10" />
         </StatusEffect>
         <StatusEffect target="Character" intervale="6" stackable="false">
           <Affliction identifier="bloodvomit" amount="100" />
@@ -97,7 +85,7 @@
     </Affliction>
   </Override>
   <Override>
-    <Affliction name="" identifier="contamination" description="airbornhazard" limbspecific="false" indicatorlimb="Torso" showiconthreshold="50" showinhealthscannerthreshold="45" karmachangeonapplied="-1" treatmentthreshold="0" maxstrength="100" grainburst="3" damageoverlayalpha="0">
+    <Affliction name="" identifier="contamination" description="airbornhazard" limbspecific="false" indicatorlimb="Torso" showiconthreshold="101" showinhealthscannerthreshold="101" karmachangeonapplied="-1" treatmentthreshold="0" maxstrength="100" grainburst="3" damageoverlayalpha="0">
       <Description textidentifier="afflictiondescription.contamination" minstrength="0" maxstrength="70" />
       <Description textidentifier="afflictiondescription.contamination.high" minstrength="75" maxstrength="100" />
       <!-- Radioactive dust inhaled, have fun -->
@@ -277,7 +265,7 @@
     </Affliction>
   </Override>
   <Override>
-    <Affliction name="" identifier="lethalradiation" description="" type="poison" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Torso" showiconthreshold="60" showinhealthscannerthreshold="60" karmachangeonapplied="-1" treatmentthreshold="0" minstrength="0" maxstrength="300" iconcolors="255,255,0,255" damageoverlayalpha="0">
+    <Affliction name="" identifier="lethalradiation" description="" type="poison" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Torso" showiconthreshold="101" showinhealthscannerthreshold="1" karmachangeonapplied="-1" treatmentthreshold="0" minstrength="0" maxstrength="300" iconcolors="255,255,0,255" damageoverlayalpha="0">
       <Description textidentifier="afflictiondescription.lethalradiation.low" minstrength="0" maxstrength="200" />
       <Description textidentifier="afflictiondescription.lethalradiation" minstrength="200" maxstrength="300" />
       <Effect minstrength="0" maxstrength="60" strengthchange="-0.2" />
@@ -287,9 +275,6 @@
           <Affliction identifier="dnadamage" amount="100" />
           <Affliction identifier="lethalradiation" amount="200" />
           <Affliction identifier="organdamage" strength="15" />
-        </StatusEffect>
-        <StatusEffect target="Character">
-          <Affliction identifier="radiationgeiger" amount="8" />
         </StatusEffect>
         <StatusEffect target="Character" stackable="false">
           <ReduceAffliction identifier="radiationsickness" amount="200" />
@@ -307,9 +292,6 @@
           <Affliction identifier="lethalradiation" amount="200" />
           <Affliction identifier="organdamage" strength="20" />
         </StatusEffect>
-        <StatusEffect target="Character">
-          <Affliction identifier="radiationgeiger" amount="8" />
-        </StatusEffect>
         <StatusEffect target="Character" stackable="false">
           <Affliction identifier="bloodvomit" amount="100" />
         </StatusEffect>
@@ -322,9 +304,6 @@
           <Affliction identifier="organdamage" strength="25" />
           <Affliction identifier="lethalradiation" amount="200" />
         </StatusEffect>
-        <StatusEffect target="Character">
-          <Affliction identifier="radiationgeiger" amount="8" />
-        </StatusEffect>
         <StatusEffect target="Character" setvalue="true" stackable="false">
           <Affliction identifier="stun" amount="5" />
         </StatusEffect>
@@ -336,7 +315,6 @@
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,768,128,128" origin="0,0" />
     </Affliction>
   </Override>
-  
   <!-- MISC AND QOL AFFLICTIONS -->
   <Override>
     <Affliction name="burn emitter" identifier="burn_emitter" description="cause burn damage" limbspecific="false" indicatorlimb="Torso" showiconthreshold="110" showinhealthscannerthreshold="110" karmachangeonapplied="-1" treatmentthreshold="0" maxstrength="100" grainburst="3" damageoverlayalpha="0">

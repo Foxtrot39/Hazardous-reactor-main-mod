@@ -92,81 +92,74 @@
         <Conditional condition="lt 50" />
       </StatusEffect>
       <!-- Enriched fuel hazard -->
-      
       <StatusEffect type="OnActive" target="This" delay="1" disabledeltatime="true" stackable="false" comparison="And">
         <RequiredItem items="fuelrod,thoriumfuelrod" type="Contained" />
         <Conditional targetitemcomponent="Reactor" temperature="gt 20" />
-          <Conditional InWater="false" />
+        <Conditional InWater="false" />
         <Explosion range="800" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
           <Affliction identifier="radiationsickness" strength="1" />
           <Affliction identifier="radiationgeiger" strength="1" />
           <Affliction identifier="radiation_source_visual_static" strength="10" />
         </Explosion>
       </StatusEffect>
-      
       <StatusEffect type="OnActive" target="This" delay="1" disabledeltatime="true" stackable="false" comparison="And">
         <RequiredItem items="fuelrod,thoriumfuelrod" type="Contained" />
         <Conditional targetitemcomponent="Reactor" temperature="gt 20" />
-          <Conditional InWater="true" />
+        <Conditional InWater="true" />
         <Explosion range="400" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
           <Affliction identifier="radiationsickness" strength="0.5" />
           <Affliction identifier="radiationgeiger" strength="0.5" />
           <Affliction identifier="radiation_source_visual_static" strength="5" />
         </Explosion>
       </StatusEffect>
-   
       <StatusEffect type="OnActive" target="This" delay="1" disabledeltatime="true" stackable="false" comparison="And">
         <RequiredItem items="fuelrod,thoriumfuelrod" type="Contained" />
         <Conditional targetitemcomponent="Reactor" temperature="gt 20" />
         <Conditional condition="lte 50" />
         <Conditional condition="gte 25" />
-          <Conditional InWater="false" />
+        <Conditional InWater="false" />
         <Explosion range="800" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
           <Affliction identifier="radiationsickness" strength="3" />
           <Affliction identifier="radiationgeiger" strength="1" />
           <Affliction identifier="radiation_source_visual" strength="10" />
         </Explosion>
       </StatusEffect>
-      
       <StatusEffect type="OnActive" target="This" delay="1" disabledeltatime="true" stackable="false" comparison="And">
         <RequiredItem items="fuelrod,thoriumfuelrod" type="Contained" />
         <Conditional targetitemcomponent="Reactor" temperature="gt 20" />
         <Conditional condition="lte 50" />
         <Conditional condition="gte 25" />
-          <Conditional InWater="true" />
+        <Conditional InWater="true" />
         <Explosion range="400" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
           <Affliction identifier="radiationsickness" strength="1.5" />
           <Affliction identifier="radiationgeiger" strength="0.5" />
           <Affliction identifier="radiation_source_visual" strength="5" />
         </Explosion>
       </StatusEffect>
-      
       <StatusEffect type="OnActive" target="This" delay="1" disabledeltatime="true" stackable="false" comparison="And">
         <RequiredItem items="fuelrod,thoriumfuelrod" type="Contained" />
         <Conditional targetitemcomponent="Reactor" temperature="gt 20" />
         <Conditional condition="lte 25" />
         <Conditional condition="gte 0" />
-          <Conditional InWater="false" />
+        <Conditional InWater="false" />
         <Explosion range="800" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
           <Affliction identifier="radiationsickness" strength="6" />
           <Affliction identifier="radiationgeiger" strength="1" />
           <Affliction identifier="radiation_source_visual" strength="15" />
         </Explosion>
       </StatusEffect>
-      
       <StatusEffect type="OnActive" target="This" delay="1" disabledeltatime="true" stackable="false" comparison="And">
         <RequiredItem items="fuelrod,thoriumfuelrod" type="Contained" />
         <Conditional targetitemcomponent="Reactor" temperature="gt 20" />
         <Conditional condition="lte 25" />
         <Conditional condition="gte 0" />
-          <Conditional InWater="true" />
+        <Conditional InWater="true" />
         <Explosion range="400" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
           <Affliction identifier="radiationsickness" strength="3" />
           <Affliction identifier="radiationgeiger" strength="0.5" />
           <Affliction identifier="radiation_source_visual" strength="7.5" />
         </Explosion>
       </StatusEffect>
-      
       <StatusEffect type="OnActive" target="This" delay="1" disabledeltatime="true" stackable="false" comparison="And">
         <RequiredItem items="ekutility_incendiumfuelrod" type="Contained" />
         <Conditional targetitemcomponent="Reactor" temperature="gt 20" />
@@ -174,7 +167,6 @@
           <Affliction identifier="burn_emitter_rod" strength="10" />
         </Explosion>
       </StatusEffect>
-      
       <StatusEffect type="OnActive" target="This" delay="1" disabledeltatime="true" stackable="false" comparison="And">
         <RequiredItem items="ekutility_incendiumfuelrod" type="Contained" />
         <Conditional condition="lte 25" />
@@ -184,7 +176,6 @@
           <Affliction identifier="burn_emitter" strength="10" />
         </Explosion>
       </StatusEffect>
-      
       <StatusEffect type="OnActive" target="This" delay="1" disabledeltatime="true" stackable="false" comparison="And">
         <RequiredItem items="molten_rods" type="Contained" />
         <Conditional targetitemcomponent="Reactor" temperature="gt 20" />
@@ -195,7 +186,6 @@
           <Affliction identifier="radiationgeiger" strength="20" />
         </Explosion>
       </StatusEffect>
-      
       <StatusEffect type="OnActive" target="This" delay="1" disabledeltatime="true" stackable="false" comparison="And">
         <RequiredItem items="molten_rods" type="Contained" />
         <Conditional targetitemcomponent="Reactor" temperature="gt 20" />
@@ -206,7 +196,6 @@
           <Affliction identifier="radiationgeiger" strength="10" />
         </Explosion>
       </StatusEffect>
-      
       <StatusEffect type="OnActive" target="This" delay="1" disabledeltatime="true" stackable="false" comparison="And">
         <RequiredItem items="molten_rods" type="Contained" />
         <Conditional condition="lte 25" />
@@ -219,20 +208,18 @@
           <Affliction identifier="radiationgeiger" strength="30" />
         </Explosion>
       </StatusEffect>
-      
       <StatusEffect type="OnActive" target="This" delay="1" disabledeltatime="true" stackable="false" comparison="And">
         <RequiredItem items="molten_rods" type="Contained" />
         <Conditional condition="lte 25" />
         <Conditional condition="gte 0" />
         <Conditional targetitemcomponent="Reactor" temperature="gt 20" />
-          <Conditional InWater="true" />
+        <Conditional InWater="true" />
         <Explosion range="400" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
           <Affliction identifier="burn_emitter_rod" strength="100" />
           <Affliction identifier="radiationsickness" strength="10" />
           <Affliction identifier="radiationgeiger" strength="20" />
         </Explosion>
       </StatusEffect>
-      
     </Reactor>
     <LightComponent range="100.0" lightcolor="255,100,0,100" powerconsumption="0" IsOn="false" castshadows="false" alphablend="false" allowingameediting="false" comparaison="And">
       <Upgrade gameversion="0.9.600.0" lightcolor="255,255,255,0" />
@@ -306,7 +293,6 @@
       <Containable items="molten_rods">
         <StatusEffect type="OnContaining" target="This" AvailableFuel="300" disabledeltatime="true" />
       </Containable>
-      
     </ItemContainer>
     <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="720" MinDeteriorationCondition="10" minsabotagecondition="10" RepairThreshold="70" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
       <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />

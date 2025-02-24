@@ -284,10 +284,10 @@
   </Override>
   <!-- RTG BOOK TO PLACE IT -->
   <Item name="" identifier="RTG_manual" cargocontaineridentifier="metalcrate" allowasextracargo="true" category="Misc" Tags="smallitem,skillbook" maxstacksize="32" scale="0.5" impactsoundtag="impact_soft">
-    <PreferredContainer primary="wreckreactorcab,wreckengcab" minamount="0" maxamount="2" spawnprobability="0.3" minleveldifficulty="33" />
+    <PreferredContainer primary="wreckreactorcab,wreckengcab" minamount="0" maxamount="2" spawnprobability="0.3" minleveldifficulty="30" />
     <Price baseprice="350" buyingpricemodifier="2.5" minleveldifficulty="40">
       <Price storeidentifier="merchantoutpost" maxavailable="1" />
-      <Price storeidentifier="merchantcity" />
+      <Price storeidentifier="merchantcity" maxavailable="1" />
       <Price storeidentifier="merchantresearch" maxavailable="1" />
       <Price storeidentifier="merchantmilitary" />
       <Price storeidentifier="merchantmine" />
@@ -295,8 +295,8 @@
     <Deconstruct time="20">
       <Item identifier="carbon" />
     </Deconstruct>
-    <InventoryIcon texture="Content/Items/JobGear/TalentGear.png" sourcerect="42,368,40,56" origin="0.5,0.5" />
-    <Sprite texture="Content/Items/JobGear/TalentGear.png" sourcerect="36,74,32,39" depth="0.6" origin="0.5,0.5" />
+    <InventoryIcon texture="%ModDir%/Content/Items/Misc/RTGManual.png" sourcerect="10,7,33,51" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Content/Items/Misc/RTGManual.png" sourcerect="56,16,31,37" depth="0.6" origin="0.5,0.5" />
     <Body width="28" height="36" density="20" />
     <MeleeWeapon slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" holdangle="260" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnSecondaryUse" target="This" Condition="-10.0" />

@@ -53,10 +53,10 @@
         <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
         <Containable items="smallitem,explosive" />
       </ItemContainer>
-    <Quality>
-      <QualityStat stattype="ExplosionRadius" value="0.1"/>
-      <QualityStat stattype="ExplosionDamage" value="0.1"/>
-    </Quality>
+      <Quality>
+        <QualityStat stattype="ExplosionRadius" value="0.1" />
+        <QualityStat stattype="ExplosionDamage" value="0.1" />
+      </Quality>
     </Item>
     <Item name="" identifier="nuclearshell" tags="railgunequipment,railgunammo" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy">
       <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
@@ -143,92 +143,89 @@
       <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="512,128,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="0,0,130,89" depth="0.55" origin="0.5,0.5" />
       <Body width="128" height="85" density="11" />
-<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
-    <Projectile characterusable="false" launchimpulse="5.0">
-      <!-- Make destructible when launched -->
-      <StatusEffect type="OnUse" target="This" Indestructible="false"/>
-      <StatusEffect type="OnImpact" target="this" setvalue="true" condition="-100"/>
-      <!-- Effects when taking damage-->
-      <StatusEffect type="OnDamaged" target="This" disabledeltatime="true" setvalue="true">
-        <particleemitter particle="shrapnel" drawontop="true" particleamount="5" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" distancemin="0" distancemax="20" scalemin="0.1" scalemax="0.35" />
-        <Sound file="Content/Sounds/Damage/HitArmor1.ogg" range="800" />
-      </StatusEffect>
-      <StatusEffect type="OnBroken" target="This">
-        <sound file="Content/Items/Weapons/ExplosionDebris4.ogg" range="5000" />
-        <sound file="Content/Items/Weapons/ExplosionDebris5.ogg" range="5000" />
-      </StatusEffect>
-      <!-- Trigger explosions on contained items -->
-      <StatusEffect type="OnBroken" target="Contained" >
-        <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="20000" />
-        <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="20000" />
-        <Explosion range="700.0" ballastfloradamage="150" structuredamage="175" itemdamage="500" force="17.5" severlimbsprobability="0.5" debris="true" decal="explosion" decalsize="0.5" penetration="0.5">
-          <Affliction identifier="explosiondamage" strength="150" dividebylimbcount="true"/>
-          <Affliction identifier="burn" strength="15" probability="0.2" dividebylimbcount="false"/>
-          <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false"/>
-          <Affliction identifier="stun" strength="7" />
-        </Explosion>
-        <Use />
-      </StatusEffect>
-      <!-- Remove the item after exploding -->
-      <StatusEffect type="OnBroken" target="This" delay="0.01">
-        <Remove />
-      </StatusEffect>
-    </Projectile>
+      <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" launchimpulse="5.0">
+        <!-- Make destructible when launched -->
+        <StatusEffect type="OnUse" target="This" Indestructible="false" />
+        <StatusEffect type="OnImpact" target="this" setvalue="true" condition="-100" />
+        <!-- Effects when taking damage-->
+        <StatusEffect type="OnDamaged" target="This" disabledeltatime="true" setvalue="true">
+          <particleemitter particle="shrapnel" drawontop="true" particleamount="5" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" distancemin="0" distancemax="20" scalemin="0.1" scalemax="0.35" />
+          <Sound file="Content/Sounds/Damage/HitArmor1.ogg" range="800" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <sound file="Content/Items/Weapons/ExplosionDebris4.ogg" range="5000" />
+          <sound file="Content/Items/Weapons/ExplosionDebris5.ogg" range="5000" />
+        </StatusEffect>
+        <!-- Trigger explosions on contained items -->
+        <StatusEffect type="OnBroken" target="Contained">
+          <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="20000" />
+          <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="20000" />
+          <Explosion range="700.0" ballastfloradamage="150" structuredamage="175" itemdamage="500" force="17.5" severlimbsprobability="0.5" debris="true" decal="explosion" decalsize="0.5" penetration="0.5">
+            <Affliction identifier="explosiondamage" strength="150" dividebylimbcount="true" />
+            <Affliction identifier="burn" strength="15" probability="0.2" dividebylimbcount="false" />
+            <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false" />
+            <Affliction identifier="stun" strength="7" />
+          </Explosion>
+          <Use />
+        </StatusEffect>
+        <!-- Remove the item after exploding -->
+        <StatusEffect type="OnBroken" target="This" delay="0.01">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
       <ItemContainer hideitems="true" capacity="1" maxstacksize="1" canbeselected="false">
         <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
         <Containable items="smallitem,fuelrod,reactorfuel,explosive,crisis" />
       </ItemContainer>
-    <Quality>
-      <QualityStat stattype="ExplosionRadius" value="0.1"/>
-      <QualityStat stattype="ExplosionDamage" value="0.1"/>
-    </Quality>
+      <Quality>
+        <QualityStat stattype="ExplosionRadius" value="0.1" />
+        <QualityStat stattype="ExplosionDamage" value="0.1" />
+      </Quality>
     </Item>
   </Override>
   <!-- Engineer talent related weapons -->
   <Override>
     <Item name="nucleargunbolt" identifier="nucleargunbolt" category="Misc" scale="0.5" sonarsize="2" hideinmenus="true">
-      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,0,1,1" depth="0.55" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
       <Body width="170" height="10" density="20" />
       <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
       <Projectile characterusable="false" hitscan="true" removeonhit="true">
-        <ParticleEmitter particle="tracernucleargun" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1,0.75" />
-        <ParticleEmitter particle="FlareBubbles" emitacrossrayinterval="50" />
-        <!-- Increased stun due to HOW DANGEROUS IT IS TO USE-->
-        <Attack structuredamage="20" targetforce="5" itemdamage="100" severlimbsprobability="0.5">
-          <Affliction identifier="burn" strength="45" />
-          <Affliction identifier="radiationsickness" strength="25" />
-          <Affliction identifier="radiationgeiger" strength="25" />
-          <Affliction identifier="lethalradiation" strength="10" />
-          <Affliction identifier="stun" strength="2.5" />
-        </Attack>
-        <StatusEffect type="OnImpact" target="UseTarget">
-          <ParticleEmitter particle="muzzleflashnucleargun" anglemin="0" anglemax="360" particleamount="10" velocitymin="0" scalemin="0.5" scalemax="0.8" scalemultiplier="0.75,0.75" />
-          <ParticleEmitter particle="weldspark" particleamount="5" anglemin="0" anglemax="360" velocitymin="300" velocitymax="350" scalemin="1.5" scalemax="1.9" drawontop="true" colormultiplier="150,255,195,180" />
-          <ParticleEmitter particle="FlareBubbles" particleamount="3" anglemin="0" anglemax="360" velocitymin="0" velocitymax="50" />
-        </StatusEffect>
-        <StatusEffect type="OnImpact" target="UseTarget">
-          <Conditional entitytype="eq Structure" />
-          <Conditional hastag="eq door" />
-          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
-        </StatusEffect>
-        <!-- Increased stun due to HOW DANGEROUS IT IS TO USE-->
-        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
-          <Explosion range="125.0" structuredamage="30" itemdamage="20" force="10.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" flashcolor="255,0,0,255">
-            <Affliction identifier="burn" strength="45" />
-            <Affliction identifier="radiationsickness" strength="65" />
-            <Affliction identifier="radiationgeiger" strength="65" />
-            <Affliction identifier="lethalradiation" strength="30" />
-            <Affliction identifier="stun" strength="1.5" />
-          </Explosion>
-        </StatusEffect>
-        <StatusEffect type="OnNotContained" target="This">
-          <Remove />
-        </StatusEffect>
-      </Projectile>
+      <ParticleEmitter particle="tracernucleargun" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1,0.75" />
+      <ParticleEmitter particle="FlareBubbles" emitacrossrayinterval="50" />
+      <Attack structuredamage="35" targetforce="5" itemdamage="35" severlimbsprobability="0.5" penetration="0.5">
+        <Affliction identifier="explosiondamage" strength="50" />
+		<Affliction identifier="radiationsickness" strength="50" />
+        <Affliction identifier="lethalradiation" strength="10" />
+        <Affliction identifier="stun" strength="0.5" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <ParticleEmitter particle="muzzleflashnucleargun" anglemin="0" anglemax="360" particleamount="10" velocitymin="0" scalemin="0.5" scalemax="0.8" scalemultiplier="0.75,0.75" />
+        <ParticleEmitter particle="weldspark" particleamount="5" anglemin="0" anglemax="360" velocitymin="300" velocitymax="350" scalemin="1.5" scalemax="1.9" drawontop="true" colormultiplier="150,255,195,180" />
+        <ParticleEmitter particle="FlareBubbles" particleamount="3" anglemin="0" anglemax="360" velocitymin="0" velocitymax="50" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <Conditional entitytype="eq Structure" />
+        <Conditional hastag="eq door" />
+        <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget" disabledeltatime="true">
+        <Explosion range="125.0" ballastfloradamage="50" structuredamage="0" itemdamage="0" force="5.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" flashcolor="255,0,0,255" penetration="1">
+          <Affliction identifier="radiationgeiger" amount="1" />
+		  <Affliction identifier="radiationsickness" strength="50" />
+          <Affliction identifier="lethalradiation" strength="15" />
+		  <Affliction identifier="burn" strength="25" />
+          <Affliction identifier="stun" strength="0.5" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
     </Item>
   </Override>
   <Override>
-    <Item name="" identifier="nucleargun" category="Equipment" cargocontaineridentifier="metalcrate" tags="mediumitem,electrical,weapon,gun,hazardcontainment" Scale="0.5" impactsoundtag="impact_metal_heavy">
+    <Item name="" identifier="nucleargun" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,electrical,weapon,gun,hazardcontainment" Scale="0.5" impactsoundtag="impact_metal_heavy">
       <PreferredContainer primary="secarmcab,weaponholder" />
       <Price baseprice="900" sold="false">
         <Price storeidentifier="merchantoutpost" multiplier="1.5" />
@@ -263,8 +260,8 @@
         <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
         <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
         <ParticleEmitter particle="FlareBubbles" scalemin="1.4" scalemax="1.8" particleamount="14" anglemin="0" anglemax="360" velocitymin="0" velocitymax="50" />
-        <ParticleEmitter particle="GlowDot" scalemin="4.0" scalemax="4.0" particleamount="20" anglemin="0" anglemax="360" velocitymin="0" velocitymax="0" colormultiplier="10,235,195,255" />
-        <ParticleEmitterCharge particle="chargenucleargun" particlespersecond="60" scalemultiplier="0.75,0.75" scalemin="1.0" scalemax="1.0" anglemin="0" anglemax="359" />
+        <ParticleEmitter particle="GlowDot" scalemin="4.0" scalemax="4.0" particleamount="20" anglemin="0" anglemax="360" velocitymin="0" velocitymax="0" colormultiplier="51,221,255,200" />
+        <ParticleEmitterCharge particle="chargenucleargun" particlespersecond="60" scalemultiplier="0.75,0.75" scalemin="1.0" scalemax="1.0" anglemin="0" anglemax="359" colormultiplier="51,221,255,200" />
         <Sound file="Content/Items/JobGear/Engineer/WEAPONS_rapidFissileAccelerator.ogg" type="OnUse" range="3000" selectionmode="Random" />
         <Sound file="Content/Items/JobGear/Engineer/WEAPONS_rapidFissileAccelerator2.ogg" type="OnUse" range="3000" />
         <Sound file="Content/Items/JobGear/Engineer/WEAPONS_rapidFissileAccelerator3.ogg" type="OnUse" range="3000" />
@@ -273,8 +270,8 @@
         <RequiredItems items="reactorfuel" type="Contained" msg="ItemMsgAmmoRequired" />
         <RequiredSkill identifier="weapons" level="25" />
         <!-- SHOOTY = ROD HAZARD ACTIVE!-->
-        <StatusEffect type="OnUse" target="This" tags="hazardactive" duration="5">
-          <Explosion range="250.0" force="5" shockwave="false" smoke="false" flash="true" sparks="false" flames="false" underwaterbubble="false" camerashake="12.0" />
+        <StatusEffect type="OnUse" target="This" tags="hazardactive" duration="1">
+          <Explosion range="150.0" force="3" shockwave="false" smoke="false" flash="true" sparks="false" flames="false" underwaterbubble="false" camerashake="6.0" />
         </StatusEffect>
         <StatusEffect type="OnUse" target="Contained">
           <Use />
@@ -300,19 +297,20 @@
     </Item>
   </Override>
   <Item name="fulguriumgunbolt" identifier="fulguriumgunbolt" category="Misc" scale="0.5" sonarsize="2" hideinmenus="true">
-    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,0,1,1" depth="0.55" />
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
     <Body width="170" height="10" density="20" />
     <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
     <Projectile characterusable="false" hitscan="true" removeonhit="true">
       <ParticleEmitter particle="tracernucleargun" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1,0.75" />
       <ParticleEmitter particle="FlareBubbles" emitacrossrayinterval="50" />
-      <Attack structuredamage="20" targetforce="5" itemdamage="100" severlimbsprobability="0.5">
-        <!-- Lower Burns, Extra Stuns -->
-        <Affliction identifier="burn" strength="35" />
-        <Affliction identifier="stun" strength="7" />
+      <Attack structuredamage="35" targetforce="5" itemdamage="35" severlimbsprobability="0.5" penetration="0.5">
+        <Affliction identifier="explosiondamage" strength="50" />
+		<Affliction identifier="burn" strength="15" />
+        <Affliction identifier="electricshock" strength="20" />
+        <Affliction identifier="stun" strength="1" />
       </Attack>
       <StatusEffect type="OnImpact" target="UseTarget">
-        <ParticleEmitter particle="muzzleflashnucleargun" anglemin="0" anglemax="360" particleamount="10" velocitymin="0" scalemin="0.5" scalemax="0.8" scalemultiplier="0.75,0.75" />
+        <ParticleEmitter particle="ElectricShock" DistanceMin="5" DistanceMax="20" ParticleAmount="3" ScaleMin="0.2" ScaleMax="0.4" />
         <ParticleEmitter particle="weldspark" particleamount="5" anglemin="0" anglemax="360" velocitymin="300" velocitymax="350" scalemin="1.5" scalemax="1.9" drawontop="true" colormultiplier="150,255,195,180" />
         <ParticleEmitter particle="FlareBubbles" particleamount="3" anglemin="0" anglemax="360" velocitymin="0" velocitymax="50" />
       </StatusEffect>
@@ -321,14 +319,12 @@
         <Conditional hastag="eq door" />
         <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
       </StatusEffect>
-      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
-        <!-- Lower Burns, Extra Stuns -->
-        <Explosion range="125.0" structuredamage="20" itemdamage="30" force="10.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" flashcolor="255,0,0,255">
-          <Affliction identifier="burn" strength="35" />
-          <Affliction identifier="stun" strength="3" />
+      <StatusEffect type="OnImpact" target="UseTarget" disabledeltatime="true">
+        <Explosion range="125.0" ballastfloradamage="50" structuredamage="0" itemdamage="0" force="5.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" flashcolor="255,0,0,255" penetration="1">
+          <Affliction identifier="burn" strength="20" />
+          <Affliction identifier="electricshock" strength="30" />
+          <Affliction identifier="stun" strength="1.25" />
         </Explosion>
-        <!-- EXTRA EMP -->
-        <Explosion range="250.0" empstrength="1.5" force="0.0" ignorecover="true" showeffects="false" />
       </StatusEffect>
       <StatusEffect type="OnNotContained" target="This">
         <Remove />
@@ -336,31 +332,30 @@
     </Projectile>
   </Item>
   <Item name="incendiumgunbolt" identifier="incendiumgunbolt" category="Misc" scale="0.5" sonarsize="2" hideinmenus="true">
-    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,0,1,1" depth="0.55" />
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
     <Body width="170" height="10" density="20" />
     <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
     <Projectile characterusable="false" hitscan="true" removeonhit="true">
       <ParticleEmitter particle="tracernucleargun" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1,0.75" />
       <ParticleEmitter particle="FlareBubbles" emitacrossrayinterval="50" />
-      <Attack structuredamage="20" targetforce="5" itemdamage="100" severlimbsprobability="0.5">
-        <Affliction identifier="burn" strength="100" />
-        <Affliction identifier="stun" strength="2" />
+      <Attack structuredamage="35" targetforce="5" itemdamage="35" severlimbsprobability="0.5" penetration="0.5">
+        <Affliction identifier="explosiondamage" strength="50" />
+        <Affliction identifier="burn" strength="25" />
+        <Affliction identifier="stun" strength="0.5" />
       </Attack>
       <StatusEffect type="OnImpact" target="UseTarget">
-        <ParticleEmitter particle="muzzleflashnucleargun" anglemin="0" anglemax="360" particleamount="10" velocitymin="0" scalemin="0.5" scalemax="0.8" scalemultiplier="0.75,0.75" />
+        <ParticleEmitter particle="thermalSetFire" DistanceMin="5" DistanceMax="20" ParticleAmount="5" ScaleMin="2" ScaleMax="3" />
         <ParticleEmitter particle="weldspark" particleamount="5" anglemin="0" anglemax="360" velocitymin="300" velocitymax="350" scalemin="1.5" scalemax="1.9" drawontop="true" colormultiplier="150,255,195,180" />
         <ParticleEmitter particle="FlareBubbles" particleamount="3" anglemin="0" anglemax="360" velocitymin="0" velocitymax="50" />
-        <!-- Extra Fires -->
-        <fire size="5.0" />
       </StatusEffect>
       <StatusEffect type="OnImpact" target="UseTarget">
         <Conditional entitytype="eq Structure" />
         <Conditional hastag="eq door" />
         <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
       </StatusEffect>
-      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
-        <Explosion range="125.0" structuredamage="15" itemdamage="20" force="10.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" flashcolor="255,0,0,255">
-          <Affliction identifier="burn" strength="50" />
+      <StatusEffect type="OnImpact" target="UseTarget" disabledeltatime="true">
+        <Explosion range="125.0" ballastfloradamage="50" structuredamage="0" itemdamage="0" force="5.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" flashcolor="255,0,0,255" penetration="1">
+          <Affliction identifier="burn" strength="40" />
           <Affliction identifier="stun" strength="1" />
         </Explosion>
       </StatusEffect>
@@ -370,17 +365,20 @@
     </Projectile>
   </Item>
   <Item name="volatilefulguriumgunbolt" identifier="volatilefulguriumgunbolt" category="Misc" scale="0.5" sonarsize="2" hideinmenus="true">
-    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,0,1,1" depth="0.55" />
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
     <Body width="170" height="10" density="20" />
     <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
     <Projectile characterusable="false" hitscan="true" removeonhit="true">
       <ParticleEmitter particle="tracernucleargun" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1,0.75" />
       <ParticleEmitter particle="FlareBubbles" emitacrossrayinterval="50" />
-      <Attack structuredamage="20" targetforce="5" itemdamage="100" severlimbsprobability="0.5">
-        <Affliction identifier="burn" strength="100" />
+      <Attack structuredamage="35" targetforce="5" itemdamage="35" severlimbsprobability="0.5" penetration="0.5">
+        <Affliction identifier="explosiondamage" strength="50" />
+		<Affliction identifier="burn" strength="20" />
+        <Affliction identifier="electricshock" strength="50" />
+        <Affliction identifier="stun" strength="1" />
       </Attack>
       <StatusEffect type="OnImpact" target="UseTarget">
-        <ParticleEmitter particle="muzzleflashnucleargun" anglemin="0" anglemax="360" particleamount="10" velocitymin="0" scalemin="0.5" scalemax="0.8" scalemultiplier="0.75,0.75" />
+        <ParticleEmitter particle="ElectricShock" DistanceMin="5" DistanceMax="20" ParticleAmount="3" ScaleMin="0.2" ScaleMax="0.4" />
         <ParticleEmitter particle="weldspark" particleamount="5" anglemin="0" anglemax="360" velocitymin="300" velocitymax="350" scalemin="1.5" scalemax="1.9" drawontop="true" colormultiplier="150,255,195,180" />
         <ParticleEmitter particle="FlareBubbles" particleamount="3" anglemin="0" anglemax="360" velocitymin="0" velocitymax="50" />
       </StatusEffect>
@@ -389,14 +387,12 @@
         <Conditional hastag="eq door" />
         <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
       </StatusEffect>
-      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
-        <Explosion range="125.0" structuredamage="15" itemdamage="20" force="10.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" flashcolor="255,0,0,255">
-          <Affliction identifier="burn" strength="50" />
-          <Affliction identifier="stun" strength="10" />
+      <StatusEffect type="OnImpact" target="UseTarget" disabledeltatime="true">
+        <Explosion range="125.0" ballastfloradamage="50" structuredamage="0" itemdamage="0" force="5.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" flashcolor="255,0,0,255" penetration="1">
+          <Affliction identifier="burn" strength="30" />
+          <Affliction identifier="electricshock" strength="50" />
+          <Affliction identifier="stun" strength="1.75" />
         </Explosion>
-      </StatusEffect>
-      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
-        <Explosion range="250.0" structuredamage="15" itemdamage="20" empstrength="1" force="10.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" flashcolor="255,0,0,255" />
       </StatusEffect>
       <StatusEffect type="OnNotContained" target="This">
         <Remove />
