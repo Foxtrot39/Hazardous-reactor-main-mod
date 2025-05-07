@@ -3,12 +3,12 @@
   <Override>
     <!-- STANDARD FUEL RODS -->
     <!-- Dummy Uranium Fuel Rod -->
-    <Item name="DummyRodUranium" identifier="dummyrod_ur" hideinmenus="true" maxstacksize="1" scale="0.5" tags="smallitem,reactorfuel">
+    <Item name="DummyRodUranium" identifier="dummyrod_ur" hideinmenus="true" maxstacksize="1" scale="0.5" tags="smallitem, reactorfuel,divingsuitfuel">
       <Sprite texture="Content/Items/Tools/tools.png" depth="0.55" sourcerect="410,1,19,68" />
       <Body height="1" width="1" density="1" />
     </Item>
     <!-- Uranium Fuel Rod -->
-    <Item name="" category="fuel" identifier="fuelrod" Tags="smallitem,reactorfuel,HRradioactive" maxstacksize="4" scale="0.5" pickdistance="150" health="90" cargocontaineridentifier="fuelcrate" impactsoundtag="impact_metal_light">
+    <Item name="" category="fuel" identifier="fuelrod" Tags="smallitem, reactorfuel,divingsuitfuel,HRradioactive" maxstacksize="4" scale="0.5" pickdistance="150" health="90" cargocontaineridentifier="fuelcrate" impactsoundtag="impact_metal_light">
       <!-- Spawn/PrefContainer(Vanilla) & Store Availability-->
       <PreferredContainer primary="fuelcrate" />
       <PreferredContainer secondary="nucleargun" minamount="1" maxamount="1" spawnprobability="1" />
@@ -66,7 +66,7 @@
         </StatusEffect>
         <StatusEffect type="OnContained" target="This" IsOn="true" comparison="And" allowwhenbroken="true">
           <Conditional Range="gt 1" targetitemcomponent="LightComponent" />
-          <Conditional hastag="neq hazardcontainment" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment,deepdivinglarge" targetcontainer="true" />
         </StatusEffect>
         <!-- TURNS OFF THE HAZARD -->
         <StatusEffect type="OnContained" target="This" IsOn="false" comparison="And" allowwhenbroken="true">
@@ -158,12 +158,12 @@
       </LightComponent>
     </Item>
     <!-- Dummy Thorium Fuel Rod -->
-    <Item name="DummyRodThorium" identifier="dummyrod_thorium" hideinmenus="true" maxstacksize="1" scale="0.5" tags="smallitem,reactorfuel">
+    <Item name="DummyRodThorium" identifier="dummyrod_thorium" hideinmenus="true" maxstacksize="1" scale="0.5" tags="smallitem, reactorfuel,divingsuitfuel">
       <Sprite texture="Content/Items/Tools/tools.png" depth="0.55" sourcerect="452,1,19,68" />
       <Body height="1" width="1" density="1" />
     </Item>
     <!-- Thorium Fuel Rod -->
-    <Item name="" category="fuel" identifier="thoriumfuelrod" Tags="smallitem,reactorfuel,HRradioactive" maxstacksize="4" cargocontaineridentifier="fuelcrate" scale="0.5" health="300" pickdistance="150" impactsoundtag="impact_metal_light">
+    <Item name="" category="fuel" identifier="thoriumfuelrod" Tags="smallitem, reactorfuel,divingsuitfuel,HRradioactive" maxstacksize="4" cargocontaineridentifier="fuelcrate" scale="0.5" health="300" pickdistance="150" impactsoundtag="impact_metal_light">
       <!-- Spawn/PrefContainer(Vanilla) & Store Availability-->
       <PreferredContainer primary="fuelcrate" />
       <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" amount="1" spawnprobability="0.1" />
@@ -220,7 +220,7 @@
         </StatusEffect>
         <StatusEffect type="OnContained" target="This" IsOn="true" comparison="And" allowwhenbroken="true">
           <Conditional Range="gt 1" targetitemcomponent="LightComponent" />
-          <Conditional hastag="neq hazardcontainment" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment,deepdivinglarge" targetcontainer="true" />
         </StatusEffect>
         <!-- TURNS OFF THE HAZARD -->
         <StatusEffect type="OnContained" target="This" IsOn="false" comparison="And" allowwhenbroken="true">
@@ -357,12 +357,12 @@
         completely inert when on 0% condition
     -->
     <!-- Dummy Fulgurium Fuel Rod -->
-    <Item name="DummyRodFulgurium" identifier="dummyrod_fulgurium" hideinmenus="true" maxstacksize="1" scale="0.5" tags="smallitem,reactorfuel">
+    <Item name="DummyRodFulgurium" identifier="dummyrod_fulgurium" hideinmenus="true" maxstacksize="1" scale="0.5" tags="smallitem, reactorfuel,divingsuitfuel">
       <Sprite texture="Content/Items/Tools/tools.png" depth="0.55" sourcerect="431,1,19,68" />
       <Body height="1" width="1" density="1" />
     </Item>
     <!-- Fulgurium Fuel Rod (Active) -->
-    <Item name="" category="fuel" identifier="fulguriumfuelrod" Tags="smallitem,reactorfuel,HRradioactive" maxstacksize="4" scale="0.5" health="1500" cargocontaineridentifier="fuelcrate" pickdistance="150" impactsoundtag="impact_metal_light">
+    <Item name="" category="fuel" identifier="fulguriumfuelrod" Tags="smallitem, reactorfuel,divingsuitfuel,HRradioactive" maxstacksize="4" scale="0.5" health="1500" cargocontaineridentifier="fuelcrate" pickdistance="150" impactsoundtag="impact_metal_light">
       <!-- Spawn/PrefContainer(Vanilla) & Store Availability || Removed to be more Bot Friendly
     <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" amount="1" spawnprobability="0.2"/>
     <PreferredContainer secondary="beaconengcab" amount="1" spawnprobability="0.05"/>
@@ -418,7 +418,7 @@
         </StatusEffect>
         <StatusEffect type="OnContained" target="This" IsOn="true" comparison="And" allowwhenbroken="true">
           <Conditional Range="gt 1" targetitemcomponent="LightComponent" />
-          <Conditional hastag="neq hazardcontainment" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment,deepdivinglarge" targetcontainer="true" />
         </StatusEffect>
         <!-- TURNS OFF THE HAZARD -->
         <StatusEffect type="OnContained" target="This" IsOn="false" comparison="And" allowwhenbroken="true">
@@ -559,13 +559,13 @@
 
       -->
     <!-- Dummy Incendium Fuel Rod -->
-    <Item name="DummyRodIncendium" identifier="dummyrod_incendium" hideinmenus="true" maxstacksize="1" scale="0.5" tags="smallitem,reactorfuel">
+    <Item name="DummyRodIncendium" identifier="dummyrod_incendium" hideinmenus="true" maxstacksize="1" scale="0.5" tags="smallitem, reactorfuel,divingsuitfuel">
       <Sprite texture="%ModDir%/Content/Items/Reactor/ekutility_tools.png" depth="0.55" sourcerect="704,368,32,80" />
       <Body height="1" width="1" density="1" />
 	  <LightComponent allowingameediting="false" lightcolor="255,0,0,150" canbeselected="false" range="26" ison="true" />
     </Item>
     <!-- Incendium Fuel Rod (Active) -->
-    <Item name="" category="fuel" identifier="ekutility_incendiumfuelrod" Tags="smallitem,reactorfuel,HRradioactive" maxstacksize="4" scale="0.5" health="70" cargocontaineridentifier="fuelcrate" pickdistance="150" impacttolerance="4" impactsoundtag="impact_metal_light">
+    <Item name="" category="fuel" identifier="ekutility_incendiumfuelrod" Tags="smallitem, reactorfuel,divingsuitfuel,HRradioactive" maxstacksize="4" scale="0.5" health="70" cargocontaineridentifier="fuelcrate" pickdistance="150" impacttolerance="4" impactsoundtag="impact_metal_light">
       <!-- Spawn/PrefContainer(Vanilla) & Store Availability || Removed to be more Bot Friendly
     <PreferredContainer primary="fuelcrate" />
     <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" amount="1" spawnprobability="0.2"/>
@@ -625,7 +625,7 @@
         </StatusEffect>
         <StatusEffect type="OnContained" target="This" IsOn="true" comparison="And" allowwhenbroken="true">
           <Conditional Range="gt 1" targetitemcomponent="LightComponent" />
-          <Conditional hastag="neq hazardcontainment" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment,deepdivinglarge" targetcontainer="true" />
         </StatusEffect>
         <!-- TURNS OFF THE HAZARD -->
         <StatusEffect type="OnContained" target="This" IsOn="false" comparison="And" allowwhenbroken="true">
@@ -662,7 +662,7 @@
         </StatusEffect>
         <!-- Impact sensivity need to make this into a trigger component-->
         <StatusEffect type="OnImpact" target="This" Range="100" Condition="-10" comparison="Or" disabledeltatime="true">
-          <Conditional hastag="neq hazardcontainment" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment,deepdivinglarge" targetcontainer="true" />
           <!-- <Conditional HasStatusTag="eq hazardactive" targetcontainer="true" /> -->
           <Conditional InWater="false" />
 		  <Sound file="Content/Items/Weapons/ExplosionSmall1.ogg" type="OnUse" range="1000" selectionmode="random" />
@@ -772,13 +772,13 @@
   </Override>
   <Override>
     <!-- Dummy Voliatile Fulgurium Fuel Rod -->
-    <Item name="DummyRodVoliatileFulgurium" identifier="dummyrod_voliatilefulgurium" hideinmenus="true" maxstacksize="1" scale="0.5" tags="smallitem,reactorfuel">
+    <Item name="DummyRodVoliatileFulgurium" identifier="dummyrod_voliatilefulgurium" hideinmenus="true" maxstacksize="1" scale="0.5" tags="smallitem, reactorfuel,divingsuitfuel">
       <Sprite texture="Content/Items/JobGear/TalentGear.png" depth="0.55" sourcerect="190,60,20,71" />
       <Body height="1" width="1" density="1" />
 	  <LightComponent allowingameediting="false" lightcolor="60,200,150,150" canbeselected="false" range="26" ison="true" />
     </Item>
     <!-- Voliatile Fulgurium Fuel Rod -->
-    <Item name="" identifier="fulguriumfuelrodvolatile" category="fuel" Tags="smallitem,reactorfuel,HRradioactive" maxstacksize="4" impacttolerance="6" description="" cargocontaineridentifier="fuelcrate" health="750" scale="0.5">
+    <Item name="" identifier="fulguriumfuelrodvolatile" category="fuel" Tags="smallitem, reactorfuel,divingsuitfuel,HRradioactive" maxstacksize="4" impacttolerance="6" description="" cargocontaineridentifier="fuelcrate" health="750" scale="0.5">
       <PreferredContainer primary="fuelcrate" />
       <!-- Pricing -->
       <Price baseprice="400" soldeverywhere="false">
@@ -815,6 +815,9 @@
       <!-- Texture and light -->
       <Sprite texture="Content/Items/JobGear/TalentGear.png" sourcerect="67,176,62,61" depth="0.55" />
       <Body height="55" width="15" density="20" />
+      <Quality>
+        <QualityStat stattype="Condition" value="0.1" />
+      </Quality>
 	  <!-- Allow rod to be used with fission accelerator -->
       <ItemContainer hideitems="false" capacity="1" itemrotation="0" drawinventory="false" canbeselected="false" SpawnWithId="volatilefulguriumgunbolt,dummyrod_voliatilefulgurium" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false" containedspritedepth="0.56">
         <Containable items="dummyrod_voliatilefulgurium" hide="false" itempos="0,0" rotation="180" />
@@ -829,14 +832,14 @@
       </ItemContainer>
 	  <Throwable characterusable="false" slots="RightHand,LeftHand" throwforce="4.0" holdpos="0,0" handle1="0,0" msg="ItemMsgPickUpSelect">
         <!-- ON SPAWN RETURN CONDITION TO 100% -->
-        <StatusEffect type="OnSpawn" target="This" condition="800" delay="3" />
+        <StatusEffect type="OnSpawn" target="This" condition="1500" delay="3" />
         <!-- TURNS ON THE HAZARD -->
         <StatusEffect type="OnNotContained" target="This" IsOn="true" allowwhenbroken="true">
           <Conditional Range="gt 1" targetitemcomponent="LightComponent" />
         </StatusEffect>
         <StatusEffect type="OnContained" target="This" IsOn="true" comparison="And" allowwhenbroken="true">
           <Conditional Range="gt 1" targetitemcomponent="LightComponent" />
-          <Conditional hastag="neq hazardcontainment" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment,deepdivinglarge" targetcontainer="true" />
         </StatusEffect>
         <!-- TURNS OFF THE HAZARD -->
         <StatusEffect type="OnContained" target="This" IsOn="false" comparison="And" allowwhenbroken="true">
@@ -873,7 +876,7 @@
         </StatusEffect>
         <!-- Impact sensivity need to make this into a trigger component-->
         <StatusEffect type="OnImpact" target="This" Range="100" Condition="-10" comparison="Or" disabledeltatime="true">
-          <Conditional hastag="neq hazardcontainment" targetcontainer="true" />
+          <Conditional hastag="neq hazardcontainment,deepdivinglarge" targetcontainer="true" />
           <!-- <Conditional HasStatusTag="eq hazardactive" targetcontainer="true" /> -->
           <Conditional InWater="false" />
 		  <Sound file="Content/Items/Weapons/ExplosionSmall1.ogg" type="OnUse" range="1000" selectionmode="random" />
@@ -942,7 +945,7 @@
       </LightComponent>
     </Item>
   </Override>
-  <Item name="" category="fuel" identifier="control_rod" Tags="smallitem,reactorfuel,HRradioactive" health="100" maxstacksize="1" scale="0.5" cargocontaineridentifier="metalcrate" pickdistance="150" impactsoundtag="impact_metal_light">
+  <Item name="" category="fuel" identifier="control_rod" Tags="smallitem, reactorfuel,divingsuitfuel,HRradioactive" health="100" maxstacksize="1" scale="0.5" cargocontaineridentifier="metalcrate" pickdistance="150" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="reactorcab" />
     <!-- Standard info-->
     <InventoryIcon texture="%ModDir%/Content/Items/Reactor/controlrod2.png" sourcerect="0,0,63,62" origin="0.5,0.5" depth="0.55" />
@@ -965,7 +968,7 @@
     </Throwable>
   </Item>
   <!-- CRISIS FUEL RODS -->
-  <Item name="" category="fuel" identifier="supercritical_incendium" scale="0.5" tags="crisis,reactorfuel,HRradioactive" impacttolerance="3" impactsoundtag="impact_metal_light" description="" health="400">
+  <Item name="" category="fuel" identifier="supercritical_incendium" scale="0.5" tags="crisis, reactorfuel,divingsuitfuel,HRradioactive" impacttolerance="3" impactsoundtag="impact_metal_light" description="" health="400">
     <!-- Texture and light -->
     <InventoryIcon texture="%ModDir%/Content/Items/Reactor/incendium rod critical.png" sourcerect="27,30,71,65" origin="0.5,0.5" depth="0.55" />
     <Sprite texture="%ModDir%/Content/Items/Reactor/incendium rod critical2.png" sourcerect="22,12,22,72" origin="0.5,0.5" depth="0.55" />
@@ -1049,12 +1052,12 @@
       </StatusEffect>
     </Throwable>
   </Item>
-  <Item name="" category="fuel" identifier="supercritical_fulgurium" variantof="supercritical_incendium" scale="0.5" tags="crisis,reactorfuel,HRradioactive" impacttolerance="3" impactsoundtag="impact_metal_light" description="" health="700">
+  <Item name="" category="fuel" identifier="supercritical_fulgurium" variantof="supercritical_incendium" scale="0.5" tags="crisis, reactorfuel,divingsuitfuel,HRradioactive" impacttolerance="3" impactsoundtag="impact_metal_light" description="" health="700">
     <InventoryIcon texture="%ModDir%/Content/Items/Reactor/volatile rod critical 2.png" sourcerect="0,0,63,62" origin="0.5,0.5" depth="0.55" />
     <Sprite texture="%ModDir%/Content/Items/Reactor/volatile rod critical 1.png" sourcerect="0,0,22,73" origin="0.5,0.5" depth="0.55" />
     <Body height="64.799995" width="19.8" density="40" />
   </Item>
-  <Item name="" identifier="molten_rods" Tags="crisis,reactorfuel,HRradioactive" maxstacksize="1" cargocontaineridentifier="fuelcrate" scale="0.25" health="100" impactsoundtag="impact_metal_light" description="">
+  <Item name="" identifier="molten_rods" Tags="crisis, reactorfuel,divingsuitfuel,HRradioactive" maxstacksize="1" cargocontaineridentifier="fuelcrate" scale="0.25" health="100" impactsoundtag="impact_metal_light" description="">
     <PreferredContainer primary="reactor1wrecked" minamount="0" maxamount="1" spawnprobability="0.05" />
     <Deconstruct time="60">
       <Item identifier="radiotoxin" />

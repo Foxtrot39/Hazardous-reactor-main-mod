@@ -72,7 +72,7 @@ Hook.Add("fulguriumavailablefuel", "fulguriumfuel", function(effect, deltaTime, 
 
   if light.Range > 0 then
     local reactor = item.GetComponentString("Reactor")
-    reactor.AvailableFuel = reactor.AvailableFuel + 60.0
+    reactor.AvailableFuel = reactor.AvailableFuel + 70.0
   end
 end)
 

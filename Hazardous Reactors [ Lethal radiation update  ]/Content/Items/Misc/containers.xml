@@ -10,7 +10,7 @@
       <Price storeidentifier="merchantmine" multiplier="1.25" />
       <Price storeidentifier="merchantengineering" multiplier="1.4" minavailable="2" />
     </Price>
-    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="30">
       <RequiredSkill identifier="mechanical" level="25" />
       <RequiredItem identifier="titaniumaluminiumalloy" />
       <RequiredItem identifier="lead" />
@@ -44,7 +44,7 @@
       <Item identifier="lead" amount="2" />
       <Item identifier="rubber" />
     </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="60">
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="60">
       <RequiredSkill identifier="mechanical" level="40" />
       <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
       <RequiredItem identifier="lead" amount="2" />
@@ -74,7 +74,7 @@
         <Item identifier="potassium" />
         <Item identifier="rubber" />
       </Deconstruct>
-      <Fabricate suitablefabricators="fabricator" requiredtime="120">
+      <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="120">
         <RequiredSkill identifier="mechanical" level="65" />
         <RequiredItem identifier="du_p_alloy" amount="3" />
         <RequiredItem identifier="lead" amount="4" />
@@ -220,7 +220,7 @@
       
   </Item> -->
   <Item name="" identifier="fuelbackpack" category="Equipment" tags="largeitem,mobilecontainer,hazardcontainment" description="" showcontentsintooltip="true" scale="0.5" linkable="true" pickdistance="150" impactsoundtag="impact_metal_heavy" waterproof="true" fireproof="true">
-    <Fabricate suitablefabricators="fabricator" requiredtime="60">
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="60">
       <RequiredSkill identifier="electrical" level="70" />
       <RequiredSkill identifier="mechanical" level="50" />
       <RequiredItem identifier="du_p_alloy" />
@@ -291,7 +291,7 @@
       <Item identifier="du_p_alloy" />
       <Item identifier="du_p_alloy" />
     </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="70">
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="70">
       <RequiredSkill identifier="mechanical" level="40" />
       <RequiredItem identifier="fueltransportcylinder" />
       <RequiredItem identifier="AI_microchip" />
@@ -468,7 +468,7 @@
     <Deconstruct time="20">
       <Item identifier="titaniumaluminiumalloy" />
     </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="25">
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="25">
       <RequiredSkill identifier="mechanical" level="40" />
       <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
       <RequiredItem identifier="rubber" amount="1" />

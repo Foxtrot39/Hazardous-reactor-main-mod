@@ -135,7 +135,7 @@
         <Item identifier="iron" />
         <Item identifier="uex" />
       </Deconstruct>
-      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="20">
         <RequiredSkill identifier="weapons" level="25" />
         <RequiredItem identifier="iron" ammount="2" />
         <RequiredItem identifier="uex" />
@@ -183,6 +183,75 @@
         <QualityStat stattype="ExplosionDamage" value="0.1" />
       </Quality>
     </Item>
+    
+  <Item name="" identifier="nucleardepthchargecheap" variantof="nucleardepthcharge" hideineditors="true">
+    <Price baseprice="280" sold="false">
+      <Price sold="false" />
+      <Price sold="false" />
+      <Price sold="false" />
+      <Price sold="false" />
+      <Price sold="false" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="iron" />
+      <Item identifier="uranium" />
+      <!-- clear the rest of the deconstruction -->
+      <Item />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="30" requiresrecipe="true">
+      <RequiredSkill identifier="electrical" level="40" />
+      <RequiredItem identifier="iron" amount="2" />
+      <RequiredItem identifier="fuelrod" mincondition="0.8" usecondition="false" />
+      <RequiredItem identifier="uex" />
+    </Fabricate>
+  </Item>
+  
+  <Item name="" identifier="nucleardepthdecoycheap" variantof="nucleardepthdecoy" hideineditors="true">
+    <Price baseprice="420" sold="false">
+      <Price sold="false" />
+      <Price sold="false" />
+      <Price sold="false" />
+      <Price sold="false" />
+      <Price sold="false" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="iron" />
+      <Item identifier="uranium" />
+      <!-- clear the rest of the deconstruction -->
+      <Item />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="30" requiresrecipe="true">
+      <RequiredSkill identifier="electrical" level="40" />
+      <RequiredItem identifier="nucleardepthchargecheap" />
+      <RequiredItem identifier="sonarbeacon" />
+    </Fabricate>
+  </Item>
+  
+  <Item name="" identifier="nuclearshellcheap" variantof="nuclearshell" hideineditors="true">
+    <PreferredContainer spawnprobability="0" />
+    <PreferredContainer spawnprobability="0" />
+    <Price baseprice="300" sold="false">
+      <Price sold="false" />
+      <Price sold="false" />
+      <Price sold="false" />
+      <Price sold="false" />
+      <Price sold="false" />
+      <Price sold="false" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="uranium" />
+      <!-- clear the rest of the deconstruction -->
+      <Item />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" requiredtime="30" requiresrecipe="true">
+      <RequiredSkill identifier="electrical" level="40" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="fuelrod" mincondition="0.8" usecondition="false" />
+      <RequiredItem identifier="uex" />
+    </Fabricate>
+  </Item>
+    
   </Override>
   <!-- Engineer talent related weapons -->
   <Override>

@@ -75,6 +75,7 @@
   <Override>
     <Affliction name="" identifier="radiationresistance" description="" type="resistance" isbuff="true" limbspecific="false" indicatorlimb="Torso" maxstrength="600" iconcolors="10,193,114,255;10,193,114,255;10,193,114,255;10,193,114,255">
       <Effect minstrength="0" maxstrength="600" strengthchange="-0.5" resistancefor="radiationsickness" minresistance="0.8" maxresistance="0.95" />
+      <Effect minstrength="0" maxstrength="600" strengthchange="-0.5" resistancefor="lethalradiation" minresistance="0.05" maxresistance="0.05" />
       <icon texture="%ModDir%/Content/UI/HazardousIconsAtlas.png" sourcerect="128,128,128,128" color="255,193,114,255" origin="0,0" />
     </Affliction>
   </Override>
