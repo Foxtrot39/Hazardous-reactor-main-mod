@@ -486,13 +486,13 @@
         <RequiredItem identifier="ekutility_incendiumfuelrod" type="contained" targetcontainer="true" />
         <Explosion range="150.0" ballastfloradamage="80" structuredamage="10" levelwalldamage="100" itemdamage="25" force="8.0" severlimbsprobability="0.4" debris="true" decal="explosion" decalsize="0.3" />
         <Affliction identifier="explosiondamage" strength="1" />
-		<Affliction identifier="burn" strength="1.8" />
+        <Affliction identifier="burn" strength="1.8" />
         <Affliction identifier="stun" strength="1.5" />
         <!-- The sounds below won't overlap- if you swing the tongs a second time while the first swings' sound is playing,
                for whatever reason it won't play again until the first sound is stopped. Fix this, OR find a sound in Hazardous Reactors
                that is shorter than the 1.2sec swing reload and sounds like a small explosion, OR make a copy of the below sounds
 			   and edit them to fade out within that 1.2 second reload -->
-        <sound file="Content/Items/Weapons/FragGrenade40mmShot1.ogg" range="2000" volume="1.5" selectionmode="Random"  />
+        <sound file="Content/Items/Weapons/FragGrenade40mmShot1.ogg" range="2000" volume="1.5" selectionmode="Random" />
         <sound file="Content/Items/Weapons/FragGrenade40mmShot2.ogg" range="2000" volume="1.5" />
         <ParticleEmitter particle="explosionfire" particleamount="3" scalemin="0.2" scalemax="0.25" anglemin="0" anglemax="360" />
       </StatusEffect>
@@ -511,8 +511,8 @@
         <RequiredItem identifier="fulguriumfuelrodvolatile" type="contained" targetcontainer="true" />
         <Explosion range="150.0" ballastfloradamage="80" structuredamage="10" levelwalldamage="100" itemdamage="25" flames="false" flash="true" force="8.0" severlimbsprobability="0.4" debris="true" decal="explosion" decalsize="0.3" />
         <Affliction identifier="explosiondamage" strength="1" />
-		<Affliction identifier="electricshock" strength="100" />
-		<Affliction identifier="burn" strength="1.6" />
+        <Affliction identifier="electricshock" strength="100" />
+        <Affliction identifier="burn" strength="1.6" />
         <Affliction identifier="stun" strength="1.8" />
         <!-- The sounds below won't overlap- if you swing the tongs a second time while the first swings' sound is playing,
                for whatever reason it won't play again until the first sound is stopped. Fix this, OR find a sound in Hazardous Reactors

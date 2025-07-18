@@ -35,25 +35,25 @@
       <StatusEffect type="OnFailure" target="This" Condition="-50.0" disabledeltatime="true" />
       <StatusEffect type="OnSuccess" target="This" Condition="-50.0" disabledeltatime="true" />
       <RequiredSkill identifier="medical" level="35" />
-      <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" duration="60">
+      <StatusEffect statuseffecttags="medical" type="OnSuccess" target="UseTarget" duration="60">
         <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
         <ReduceAffliction identifier="radiationsickness" amount="1.25" />
         <ReduceAffliction identifier="contamination" amount="1" />
       </StatusEffect>
-      <StatusEffect tags="medical" type="OnSuccess" target="UseTarget">
+      <StatusEffect statuseffecttags="medical" type="OnSuccess" target="UseTarget">
         <Affliction identifier="antiradeffect" strength="60" />
       </StatusEffect>
-      <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" condition="-50" duration="20">
+      <StatusEffect statuseffecttags="medical" type="OnSuccess" target="UseTarget" condition="-50" duration="20">
         <conditional lethalradiation="lt 20" />
         <ReduceAffliction identifier="lethalradiation" amount="0.2" />
       </StatusEffect>
-      <StatusEffect tags="medical" type="OnFailure" target="UseTarget" condition="-50" duration="60">
+      <StatusEffect statuseffecttags="medical" type="OnFailure" target="UseTarget" condition="-50" duration="60">
         <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
         <ReduceAffliction identifier="radiationsickness" amount="0.75" />
         <ReduceAffliction identifier="contamination" amount="0.5" />
         <Affliction identifier="nausea" amount="1.05" />
       </StatusEffect>
-      <StatusEffect tags="medical" type="OnFailure" target="UseTarget" condition="-50" duration="20">
+      <StatusEffect statuseffecttags="medical" type="OnFailure" target="UseTarget" condition="-50" duration="20">
         <conditional lethalradiation="lt 20" />
         <ReduceAffliction identifier="lethalradiation" amount="0.2" />
       </StatusEffect>
@@ -96,12 +96,12 @@
       <RequiredSkill identifier="medical" level="15" />
       <StatusEffect type="OnFailure" target="This" Condition="-20.0" disabledeltatime="true" />
       <StatusEffect type="OnSuccess" target="This" Condition="-20.0" disabledeltatime="true" />
-      <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" disabledeltatime="true">
+      <StatusEffect statuseffecttags="medical" type="OnSuccess" target="UseTarget" disabledeltatime="true">
         <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
         <Affliction identifier="radiationresistance" amount="600" />
         <Affliction identifier="contaminationresistance" amount="600" />
       </StatusEffect>
-      <StatusEffect tags="medical" type="OnFailure" target="UseTarget" disabledeltatime="true">
+      <StatusEffect statuseffecttags="medical" type="OnFailure" target="UseTarget" disabledeltatime="true">
         <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
         <Affliction identifier="radiationresistance" amount="300" />
         <Affliction identifier="contaminationresistance" amount="300" />
@@ -148,17 +148,17 @@
       <RequiredSkill identifier="medical" level="70" />
       <StatusEffect type="OnFailure" target="This" Condition="-100.0" disabledeltatime="true" />
       <StatusEffect type="OnSuccess" target="This" Condition="-100.0" disabledeltatime="true" />
-      <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" duration="375">
+      <StatusEffect statuseffecttags="medical" type="OnSuccess" target="UseTarget" duration="375">
         <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
         <ReduceAffliction identifier="dnadamage" amount="0.16" />
       </StatusEffect>
-      <StatusEffect tags="medical" type="OnSuccess" target="UseTarget">
+      <StatusEffect statuseffecttags="medical" type="OnSuccess" target="UseTarget">
         <Affliction identifier="dnaregeneration" strength="375" />
       </StatusEffect>
-      <StatusEffect tags="medical" type="OnFailure" target="UseTarget">
+      <StatusEffect statuseffecttags="medical" type="OnFailure" target="UseTarget">
         <Affliction identifier="dnaregeneration" strength="375" />
       </StatusEffect>
-      <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="375">
+      <StatusEffect statuseffecttags="medical" type="OnFailure" target="UseTarget" duration="375">
         <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
         <Affliction identifier="internaldamage" strength="0.1" />
         <Affliction identifier="bloodvomit" amount="1.3" />
@@ -195,12 +195,12 @@
       <Body width="35" height="65" density="20" />
       <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-4,0" holdangle="180" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
         <StatusEffect type="OnSuccess" target="This" Condition="-100.0" disabledeltatime="true" />
-        <StatusEffect tags="poison" type="OnSuccess" target="UseTarget" duration="5">
+        <StatusEffect statuseffecttags="poison" type="OnSuccess" target="UseTarget" duration="5">
           <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
           <Affliction identifier="radiationsickness" amount="8" />
           <Affliction identifier="contamination" amount="8" />
         </StatusEffect>
-        <StatusEffect tags="poison" type="OnSuccess" target="UseTarget">
+        <StatusEffect statuseffecttags="poison" type="OnSuccess" target="UseTarget">
           <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
           <Affliction identifier="lethalradiation" amount="61" />
         </StatusEffect>
@@ -213,11 +213,11 @@
         <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
           <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
         </StatusEffect>
-        <StatusEffect tags="poison" type="OnImpact" target="UseTarget" duration="5">
+        <StatusEffect statuseffecttags="poison" type="OnImpact" target="UseTarget" duration="5">
           <Affliction identifier="radiationsickness" amount="4" />
           <Affliction identifier="contamination" amount="4" />
         </StatusEffect>
-        <StatusEffect tags="poison" type="OnImpact" target="UseTarget">
+        <StatusEffect statuseffecttags="poison" type="OnImpact" target="UseTarget">
           <Affliction identifier="lethalradiation" amount="61" />
         </StatusEffect>
       </Projectile>
@@ -253,13 +253,13 @@
         <StatusEffect type="OnFailure" target="This" Condition="-100.0" disabledeltatime="true" />
         <StatusEffect type="OnSuccess" target="This" Condition="-100.0" disabledeltatime="true" />
         <RequiredSkill identifier="medical" level="5" />
-        <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" duration="5.0">
+        <StatusEffect statuseffecttags="medical" type="OnSuccess" target="UseTarget" duration="5.0">
           <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
           <ReduceAffliction identifier="radiationsickness" amount="25.0" />
           <ReduceAffliction identifier="contamination" amount="25.0" />
           <ReduceAffliction identifier="lethalradiation" amount="50" />
         </StatusEffect>
-        <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="4.0">
+        <StatusEffect statuseffecttags="medical" type="OnFailure" target="UseTarget" duration="4.0">
           <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
           <ReduceAffliction identifier="radiationsickness" amount="12.5" />
           <ReduceAffliction identifier="contamination" amount="12.5" />
@@ -274,7 +274,7 @@
         <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
           <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
         </StatusEffect>
-        <StatusEffect tags="medical" type="OnImpact" target="UseTarget" duration="1">
+        <StatusEffect statuseffecttags="medical" type="OnImpact" target="UseTarget" duration="1">
           <ReduceAffliction identifier="radiationsickness" amount="25.0" />
           <ReduceAffliction identifier="contamination" amount="25.0" />
           <ReduceAffliction identifier="lethalradiation" amount="25" />
@@ -284,7 +284,7 @@
   </Override>
   <!-- RTG BOOK TO PLACE IT -->
   <Item name="" identifier="RTG_manual" cargocontaineridentifier="metalcrate" allowasextracargo="true" category="Misc" Tags="smallitem,skillbook" maxstacksize="32" scale="0.5" impactsoundtag="impact_soft">
-    <PreferredContainer primary="wreckreactorcab,wreckengcab" minamount="0" maxamount="2" spawnprobability="0.3" minleveldifficulty="30" />
+    <PreferredContainer primary="wreckreactorcab,wreckengcab" minamount="0" maxamount="1" spawnprobability="0.3" minleveldifficulty="33" />
     <Price baseprice="350" buyingpricemodifier="2.5" minleveldifficulty="40">
       <Price storeidentifier="merchantoutpost" maxavailable="1" />
       <Price storeidentifier="merchantcity" maxavailable="1" />

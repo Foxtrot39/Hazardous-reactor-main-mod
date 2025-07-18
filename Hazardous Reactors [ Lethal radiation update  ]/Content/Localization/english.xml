@@ -39,7 +39,7 @@
   <entityname.DTPA>DTPA</entityname.DTPA>
   <entitydescription.DTPA>An Anti-Radiation medicine, desiged to treat the effects of low-dose exposure. Useless against Acute Radiation Syndrome.</entitydescription.DTPA>
   <entityname.Potassiumiodide>Potassium Iodide</entityname.Potassiumiodide>
-  <entitydescription.Potassiumiodide>Protects against radiation and radioactive contamination. Must be taken regulary in order to keep its effects. Does not protect from extreme-dose radiation sources.</entitydescription.Potassiumiodide>
+  <entitydescription.Potassiumiodide>Provides some protection against radiation and radioactive contamination by flooding the thyroid with inert iodine. Does not protect from extreme-dose radiation sources.</entitydescription.Potassiumiodide>
   <entityname.DNAstabiliser>DNA Stabiliser</entityname.DNAstabiliser>
   <entitydescription.DNAstabiliser>A rare and complex medical compound able to slowly restore damaged DNA over a long period of time, dangerous if injected by untrained personell.</entitydescription.DNAstabiliser>
   <entityname.antirad>AntiRad</entityname.antirad>
@@ -50,7 +50,7 @@
   <entityname.fuelcrate>Radioactive Material Storage Crate</entityname.fuelcrate>
   <entitydescription.fuelcrate>A shielded storage crate designed to transport radioactive materials and fuel rods.</entitydescription.fuelcrate>
   <entityname.fueltransportcylinder>Single Unit Fuel Rod Cylinder</entityname.fueltransportcylinder>
-  <entitydescription.fueltransportcylinder>A single slot rod storage unit, a lot less bulky than its fuel crate counterpart. Small enough to be stored in lockers.</entitydescription.fueltransportcylinder>
+  <entitydescription.fueltransportcylinder>A single slot rod storage unit, a lot less bulky than its fuel crate counterpart. Small enough to be stored in lockers, or on your back.</entitydescription.fueltransportcylinder>
   <entityname.ekutility_handtruck_reactorfuel>Fuelrod Handling Truck</entityname.ekutility_handtruck_reactorfuel>
   <entitydescription.ekutility_handtruck_reactorfuel>A hand truck with shielded pig for moving around fuel rods.</entitydescription.ekutility_handtruck_reactorfuel>
   <entityname.fuelbackpack>Radiation Shielded Backpack</entityname.fuelbackpack>
@@ -79,14 +79,14 @@
   <!-- Weapons -->
   <entityname.nukerod>Crisis Warhead</entityname.nukerod>
   <!-- from Cognitive Cake: What means "alien fuel rod"? It's just supercritical incendium or fulgurium fuel rod, isn't it?-->
-  <entitydescription.nukerod>A stasis locked supercritical fuel rod, usable as a warhead. Extremely impact sensitive.</entitydescription.nukerod>
+  <entitydescription.nukerod>A partially stasis locked supercritical fuel rod, usable as a warhead. Extremely impact sensitive.</entitydescription.nukerod>
   <entityname.nukerodenhanced>Enhanced Crisis Warhead</entityname.nukerodenhanced>
   <entitydescription.nukerodenhanced>A Crisis Warhead further enhanced with fissile materials for increased yield. Extremely impact sensitive. </entitydescription.nukerodenhanced>
   <entitydescription.nucleargun>A prototype directed energy weapon constructed using the unique alien materials on Europa, utilizing fuel rods as a power source. Dangerous to those on both ends of the barrel, depending on the fissile material used to power it. Sustained fire has a tendancy to overheat contained fuel rods.</entitydescription.nucleargun>
   <!-- Mission text -->
   <!-- Coalition version -->
   <missionname.salvagewreckwarheadcoalition>Recover Experimental Weapon</missionname.salvagewreckwarheadcoalition>
-  <missiondescription.salvagewreckwarheadcoalition>A Colalition military sub has sunk nearby carying an experimental explosive device. Find the wreck and secure the device.</missiondescription.salvagewreckwarheadcoalition>
+  <missiondescription.salvagewreckwarheadcoalition>A Coalition military sub has sunk nearby carying an experimental explosive device. Find the wreck and secure the device.</missiondescription.salvagewreckwarheadcoalition>
   <missionsonarlabel.salvagewreckwarheadcoalition>Coalition Submarine Wreck</missionsonarlabel.salvagewreckwarheadcoalition>
   <missionsuccess.salvagewreckwarheadcoalition>The warhead has been recovered.</missionsuccess.salvagewreckwarheadcoalition>
   <missionfailure.salvagewreckwarheadcoalition>You have failed to recover the warhead.</missionfailure.salvagewreckwarheadcoalition>
@@ -106,27 +106,27 @@
   <entityname.RTG>Radioisotope Thermoelectric Generator</entityname.RTG>
   <entitydescription.RTG>The Radioisotope Thermoelectric Generator, or RTG for short, is a type of nuclear power cell that directly converts the heat released by suitable radioactive material into electricity. While less efficient than a reactor's turbine, the array of thermocouples means any radioactive source will do, though weak sources will only produce small amounts of power. Designed to be portable, shielding is minimal, so radiation emissions when fueled by any refined source are extremely high.</entitydescription.RTG>
   <entityname.RTG_manual>RTG Manual</entityname.RTG_manual>
-  <entitydescription.RTG_manual>Once read, allows the user to craft and place Radioisotope Thermoelectric Generators.</entitydescription.RTG_manual>
+  <entitydescription.RTG_manual>A small manual detailing the construction and operation of Radioisotope Thermoelectric Generators.</entitydescription.RTG_manual>
   <entityname.geigercounter>Geiger Counter</entityname.geigercounter>
   <entitydescription.geigercounter>A small device capable of detecting nearby radiation levels.</entitydescription.geigercounter>
   <entityname.iodine>Iodine</entityname.iodine>
-  <entitydescription.iodine>Most commonly used in the manufacture of radio-protectant drugs.</entitydescription.iodine>
+  <entitydescription.iodine>An element most commonly used in the manufacture of radio-protectant drugs.</entitydescription.iodine>
   <entityname.du_p_alloy>Depleted Uranium-Physicorium Alloy</entityname.du_p_alloy>
   <entitydescription.du_p_alloy>An extremely hard and dense alloy, used in advanced manufacturing.</entitydescription.du_p_alloy>
   <entityname.AI_microchip>AI Microchip</entityname.AI_microchip>
   <entitydescription.AI_microchip>AI controller for stasis emitters.</entitydescription.AI_microchip>
   <entityname.stasisemitter>Stasis Emitter Array</entityname.stasisemitter>
   <entitydescription.stasisemitter>The emitter array of a stasis field generator used for the reinforced rod storage container.</entitydescription.stasisemitter>
-  <entityname.fueltrasnportcylinderreinforced>Reinforced Single Unit Fuel Rod Cylinder</entityname.fueltrasnportcylinderreinforced>
-  <entitydescription.fueltrasnportcylinderreinforced>A heavely reinforced rod storage cylinder with build in stasis system for extreme hazards containement. Can only be filled at a fabricator.</entitydescription.fueltrasnportcylinderreinforced>
+  <entityname.fueltrasnportcylinderreinforced>Crisis Warhead Casing</entityname.fueltrasnportcylinderreinforced>
+  <entitydescription.fueltrasnportcylinderreinforced>A heavily reinforced containment cylinder designed to partially stabilize supercritical fuel rods inserted via a fabricator.</entitydescription.fueltrasnportcylinderreinforced>
   <entityname.iodinecrystal>Diiodine Crystal</entityname.iodinecrystal>
   <entitydescription.iodinecrystal>Crystals made exclusively out of iodine.</entitydescription.iodinecrystal>
   <entityname.deconcontaminationemitter>Contamination Hazard</entityname.deconcontaminationemitter>
-  <entitydescription.deconcontaminationemitter>Warning: Deconstruction process will contaminate nearby unprotected personell.</entitydescription.deconcontaminationemitter>
+  <entitydescription.deconcontaminationemitter>WARNING: Deconstruction process will contaminate nearby unprotected personel.</entitydescription.deconcontaminationemitter>
   <entityname.nuclearmaterialprocessor>Fuel Processor</entityname.nuclearmaterialprocessor>
   <entitydescription.nuclearmaterialprocessor>A heavely shielded fabricator allowing safe handling of hazardous materials.</entitydescription.nuclearmaterialprocessor>
   <entityname.fissiledeconstructor>Radiation Shielded Deconstructor</entityname.fissiledeconstructor>
-  <entitydescription.fissiledeconstructor>A heavely shielded deconstructor allowing safe handling of hazardous materials.</entitydescription.fissiledeconstructor>
+  <entitydescription.fissiledeconstructor>A heavily shielded deconstructor allowing safe handling of hazardous materials.</entitydescription.fissiledeconstructor>
   <entityname.manual>Reactor Operating Manual</entityname.manual>
   <entitydescription.manual>Contains all important elements around nuclear reactors and its related hazards.</entitydescription.manual>
   <terminalwelcomemsg.manual>

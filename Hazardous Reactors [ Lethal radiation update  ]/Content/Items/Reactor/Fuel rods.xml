@@ -408,7 +408,7 @@
           <SpawnItem identifiers="fulguriumgunbolt" spawnposition="ThisInventory" />
         </StatusEffect>
       </ItemContainer>
-	  <!-- Holding/Throwing & Status Effect -->
+      <!-- Holding/Throwing & Status Effect -->
       <Throwable characterusable="false" slots="RightHand,LeftHand" throwforce="4.0" holdpos="0,0" handle1="0,0" msg="ItemMsgPickUpSelect">
         <!-- ON SPAWN RETURN CONDITION TO 100% -->
         <StatusEffect type="OnSpawn" target="This" condition="1500" delay="3" />
@@ -448,7 +448,7 @@
         </StatusEffect>
       </Throwable>
       <!-- LETHAL LIGHT, ONLY ACTIVE WHEN NOT SAFELY CONTAINED-->
-      <LightComponent lightcolor="253,151,61,255" range="0" ison="false" castshadows="false" powerconsumption="0" >
+      <LightComponent lightcolor="253,151,61,255" range="0" ison="false" castshadows="false" powerconsumption="0">
         <!-- Turns itself off when it loses heat and becomes too stable-->
         <StatusEffect type="OnActive" target="This" IsOn="false" allowwhenbroken="true">
           <Conditional Range="lt 1" targetitemcomponent="LightComponent" />
@@ -501,7 +501,7 @@
           <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" emitinterval="0.07" particleamount="1" velocitymin="0" velocitymax="50" scalemin="1" scalemax="1" />
           <ParticleEmitter particle="extinguisher" anglemin="0" anglemax="360" emitinterval="0.07" velocitymin="5.0" velocitymax="50.0" particlespersecond="40" />
         </StatusEffect>
-		<StatusEffect type="OnActive" target="This" interval="2.3" Condition="-6" Range="-36" disabledeltatime="true" spawnitemrandomly="true" allowwhenbroken="true">
+        <StatusEffect type="OnActive" target="This" interval="2.3" Condition="-6" Range="-36" disabledeltatime="true" spawnitemrandomly="true" allowwhenbroken="true">
           <Explosion range="150" force="0.001" empstrength="0.2" ignorecover="false" showeffects="false">
             <Affliction identifier="hazardexposure" strength="10" />
           </Explosion>
@@ -562,7 +562,7 @@
     <Item name="DummyRodIncendium" identifier="dummyrod_incendium" hideinmenus="true" maxstacksize="1" scale="0.5" tags="smallitem, reactorfuel,divingsuitfuel">
       <Sprite texture="%ModDir%/Content/Items/Reactor/ekutility_tools.png" depth="0.55" sourcerect="704,368,32,80" />
       <Body height="1" width="1" density="1" />
-	  <LightComponent allowingameediting="false" lightcolor="255,0,0,150" canbeselected="false" range="26" ison="true" />
+      <LightComponent allowingameediting="false" lightcolor="255,0,0,150" canbeselected="false" range="26" ison="true" />
     </Item>
     <!-- Incendium Fuel Rod (Active) -->
     <Item name="" category="fuel" identifier="ekutility_incendiumfuelrod" Tags="smallitem, reactorfuel,divingsuitfuel,HRradioactive" maxstacksize="4" scale="0.5" health="70" cargocontaineridentifier="fuelcrate" pickdistance="150" impacttolerance="4" impactsoundtag="impact_metal_light">
@@ -656,8 +656,8 @@
           <ParticleEmitter particle="bubbles" emitinterval="0.07" anglemin="0" anglemax="360" particleamount="1" velocitymin="0" velocitymax="50" scalemin="1" scalemax="1" />
           <ParticleEmitter particle="extinguisher" emitinterval="0.07" anglemin="0" anglemax="360" velocitymin="5.0" velocitymax="50.0" particlespersecond="40" />
         </StatusEffect>
-		<!-- Hull melting effect -->
-		<StatusEffect type="OnNotContained" target="This" disabledeltatime="true" stackable="false" delay="2">
+        <!-- Hull melting effect -->
+        <StatusEffect type="OnNotContained" target="This" disabledeltatime="true" stackable="false" delay="2">
           <Explosion range="100" structuredamage="25" force="0.01" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" stackable="false" delay="3" underwaterbubble="false" />
         </StatusEffect>
         <!-- Impact sensivity need to make this into a trigger component-->
@@ -665,7 +665,7 @@
           <Conditional hastag="neq hazardcontainment,deepdivinglarge" targetcontainer="true" />
           <!-- <Conditional HasStatusTag="eq hazardactive" targetcontainer="true" /> -->
           <Conditional InWater="false" />
-		  <Sound file="Content/Items/Weapons/ExplosionSmall1.ogg" type="OnUse" range="1000" selectionmode="random" />
+          <Sound file="Content/Items/Weapons/ExplosionSmall1.ogg" type="OnUse" range="1000" selectionmode="random" />
           <Sound file="Content/Items/Weapons/ExplosionSmall2.ogg" type="OnUse" range="1000" />
           <Sound file="Content/Items/Weapons/ExplosionSmall3.ogg" type="OnUse" range="1000" />
           <Explosion range="200" structuredamage="15" stun="1.5" force="4">
@@ -682,7 +682,7 @@
           <Conditional Range="gt 360" targetitemcomponent="LightComponent" />
           <Explosion range="75" force="0.001" ignorecover="false" showeffects="false">
             <!--<Affliction identifier="burn_emitter" strength="200" />-->
-			<Affliction identifier="burn" strength="2" />
+            <Affliction identifier="burn" strength="2" />
             <Affliction identifier="hazardexposure" strength="10" />
           </Explosion>
         </StatusEffect>
@@ -691,7 +691,7 @@
           <Conditional Range="gt 450" targetitemcomponent="LightComponent" />
           <Explosion range="75" force="0.001" ignorecover="false" showeffects="false">
             <!--<Affliction identifier="burn_emitter" strength="200" />-->
-			<Affliction identifier="burn" strength="2" />
+            <Affliction identifier="burn" strength="2" />
             <Affliction identifier="hazardexposure" strength="10" />
           </Explosion>
           <Explosion range="100" structuredamage="15" itemdamage="30" ballastfloradamage="20" showeffects="false" />
@@ -775,7 +775,7 @@
     <Item name="DummyRodVoliatileFulgurium" identifier="dummyrod_voliatilefulgurium" hideinmenus="true" maxstacksize="1" scale="0.5" tags="smallitem, reactorfuel,divingsuitfuel">
       <Sprite texture="Content/Items/JobGear/TalentGear.png" depth="0.55" sourcerect="190,60,20,71" />
       <Body height="1" width="1" density="1" />
-	  <LightComponent allowingameediting="false" lightcolor="60,200,150,150" canbeselected="false" range="26" ison="true" />
+      <LightComponent allowingameediting="false" lightcolor="60,200,150,150" canbeselected="false" range="26" ison="true" />
     </Item>
     <!-- Voliatile Fulgurium Fuel Rod -->
     <Item name="" identifier="fulguriumfuelrodvolatile" category="fuel" Tags="smallitem, reactorfuel,divingsuitfuel,HRradioactive" maxstacksize="4" impacttolerance="6" description="" cargocontaineridentifier="fuelcrate" health="750" scale="0.5">
@@ -818,7 +818,7 @@
       <Quality>
         <QualityStat stattype="Condition" value="0.1" />
       </Quality>
-	  <!-- Allow rod to be used with fission accelerator -->
+      <!-- Allow rod to be used with fission accelerator -->
       <ItemContainer hideitems="false" capacity="1" itemrotation="0" drawinventory="false" canbeselected="false" SpawnWithId="volatilefulguriumgunbolt,dummyrod_voliatilefulgurium" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false" containedspritedepth="0.56">
         <Containable items="dummyrod_voliatilefulgurium" hide="false" itempos="0,0" rotation="180" />
         <SubContainer capacity="1">
@@ -830,7 +830,7 @@
           <SpawnItem identifiers="volatilefulguriumgunbolt" spawnposition="ThisInventory" />
         </StatusEffect>
       </ItemContainer>
-	  <Throwable characterusable="false" slots="RightHand,LeftHand" throwforce="4.0" holdpos="0,0" handle1="0,0" msg="ItemMsgPickUpSelect">
+      <Throwable characterusable="false" slots="RightHand,LeftHand" throwforce="4.0" holdpos="0,0" handle1="0,0" msg="ItemMsgPickUpSelect">
         <!-- ON SPAWN RETURN CONDITION TO 100% -->
         <StatusEffect type="OnSpawn" target="This" condition="1500" delay="3" />
         <!-- TURNS ON THE HAZARD -->
@@ -870,8 +870,8 @@
           <ParticleEmitter particle="bubbles" emitinterval="0.07" anglemin="0" anglemax="360" particleamount="1" velocitymin="0" velocitymax="50" scalemin="1" scalemax="1" />
           <ParticleEmitter particle="extinguisher" emitinterval="0.07" anglemin="0" anglemax="360" velocitymin="5.0" velocitymax="50.0" particlespersecond="40" />
         </StatusEffect>
-		<!-- Hull melting effect -->
-		<StatusEffect type="OnNotContained" target="This" disabledeltatime="true" stackable="false" delay="2">
+        <!-- Hull melting effect -->
+        <StatusEffect type="OnNotContained" target="This" disabledeltatime="true" stackable="false" delay="2">
           <Explosion range="100" structuredamage="35" force="0.01" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" stackable="false" delay="3" underwaterbubble="false" />
         </StatusEffect>
         <!-- Impact sensivity need to make this into a trigger component-->
@@ -879,7 +879,7 @@
           <Conditional hastag="neq hazardcontainment,deepdivinglarge" targetcontainer="true" />
           <!-- <Conditional HasStatusTag="eq hazardactive" targetcontainer="true" /> -->
           <Conditional InWater="false" />
-		  <Sound file="Content/Items/Weapons/ExplosionSmall1.ogg" type="OnUse" range="1000" selectionmode="random" />
+          <Sound file="Content/Items/Weapons/ExplosionSmall1.ogg" type="OnUse" range="1000" selectionmode="random" />
           <Sound file="Content/Items/Weapons/ExplosionSmall2.ogg" type="OnUse" range="1000" />
           <Sound file="Content/Items/Weapons/ExplosionSmall3.ogg" type="OnUse" range="1000" />
           <Explosion range="200" structuredamage="15" stun="1.5" force="4">
@@ -887,7 +887,7 @@
             <Affliction identifier="stun" strength="1.5" />
           </Explosion>
         </StatusEffect>
-		<!-- Damage nearby junction box -->
+        <!-- Damage nearby junction box -->
         <StatusEffect type="OnNotContained" target="NearbyItems" range="150.0" targettags="junctionbox" stackable="false" delay="0.5" condition="-20" />
         <!-- Fancy electrical spark + sound effect -->
         <StatusEffect type="Always" target="This">
@@ -900,7 +900,7 @@
           <sound file="%ModDir%/Content/Items/Reactor/shock4.ogg" />
         </StatusEffect>
       </Throwable>
-	  <!-- LETHAL LIGHT, ONLY ACTIVE WHEN NOT SAFELY CONTAINED-->
+      <!-- LETHAL LIGHT, ONLY ACTIVE WHEN NOT SAFELY CONTAINED-->
       <LightComponent lightcolor="0,0,0,0" range="361" ison="true" castshadows="false">
         <!-- HEAT HAZARD BASED ON HEAT Above 360 -->
         <!-- Heat Hazard Active (Above 360) -->
@@ -908,7 +908,7 @@
           <Conditional Range="gt 360" targetitemcomponent="LightComponent" />
           <Explosion range="75" force="0.001" ignorecover="false" showeffects="false">
             <!--<Affliction identifier="burn_emitter" strength="200" />-->
-			<Affliction identifier="burn" strength="2" />
+            <Affliction identifier="burn" strength="2" />
             <Affliction identifier="hazardexposure" strength="10" />
           </Explosion>
         </StatusEffect>
@@ -917,7 +917,7 @@
           <Conditional Range="gt 450" targetitemcomponent="LightComponent" />
           <Explosion range="75" force="0.001" ignorecover="false" showeffects="false">
             <!--<Affliction identifier="burn_emitter" strength="200" />-->
-			<Affliction identifier="burn" strength="2" />
+            <Affliction identifier="burn" strength="2" />
             <Affliction identifier="hazardexposure" strength="10" />
           </Explosion>
           <Explosion range="100" structuredamage="15" itemdamage="30" ballastfloradamage="20" showeffects="false" />

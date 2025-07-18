@@ -22,7 +22,7 @@
       <!-- Condition Based Sounds-->
       <!-- Low Rad 1-20 -->
       <StatusEffect type="Always" target="This" comparison="And">
-        <Conditional Condition="lt 100" />
+        <Conditional Condition="lt 99.9" />
         <Conditional Condition="gte 80" />
         <sound file="%ModDir%/Content/Items/Reactor/lowradiation.ogg" range="500.0" loop="true" volume="0.5" dontmuffle="true" />
       </StatusEffect>

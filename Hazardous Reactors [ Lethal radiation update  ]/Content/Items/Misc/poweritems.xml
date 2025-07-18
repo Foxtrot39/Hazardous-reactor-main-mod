@@ -30,6 +30,7 @@
       </Quality>
     </Item>
   </Override>
+  <!-- Will be re-added once I have a chance to go through and fix it 
   <Item name="" identifier="manual" description="Contains all important elements around nuclear reactors and its related hazards." category="Electrical" Tags="smallitem,logic" cargocontaineridentifier="metalcrate" scale="0.25" impactsoundtag="impact_metal_light" isshootable="true">
     <Upgrade gameversion="0.9.9000.0" scale="0.25" />
     <PreferredContainer primary="reactorcab" minamount="1" maxamount="1" spawnprobability="1" />
@@ -50,6 +51,7 @@
       <GuiFrame relativesize="0.5,0.5" anchor="Center" style="ItemUI" />
     </Terminal>
   </Item>
+  -->
   <Item name="jam" identifier="radiation_radio_jammer" canbeselected="false" NonInteractable="True" NonPlayerTeamInteractable="True" category="Equipment,Electrical" maxstacksize="1" tags="smallitem" health="200" scale="1" cargocontaineridentifier="metalcrate" description="">
     <Upgrade gameversion="0.10.0.0" scale="1" />
     <Body width="10" height="10" density="2" />
