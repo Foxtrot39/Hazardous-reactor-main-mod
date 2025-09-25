@@ -58,7 +58,7 @@
         <Remove />
       </StatusEffect>
       <!-- Failsafe to remove it in case of unicorn conditions making usual cleanup fail-->
-      <StatusEffect type="always" target="This" delay="0.2">
+      <StatusEffect type="OnNotContained" target="This" delay="0.3">
         <Remove />
       </StatusEffect>
     </ItemComponent>

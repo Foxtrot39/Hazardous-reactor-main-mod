@@ -522,6 +522,7 @@
         <sound file="Content/Items/Weapons/WEAPONS_electricalDischarge2.ogg" range="2000" />
         <ParticleEmitter particle="ElectricShock" distancemax="1" particleamount="4" anglemin="0" anglemax="360" scalemin="0.25" scalemax="0.3" />
       </StatusEffect>
+      
     </MeleeWeapon>
     <ItemContainer capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="47,-10" containedspritedepths="0.565" containedstateindicatorstyle="default" containedstateindicatorslot="0">
       <Containable items="reactorfuel" rotation="45" />

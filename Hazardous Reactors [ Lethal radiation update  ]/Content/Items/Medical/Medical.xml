@@ -82,7 +82,6 @@
     <Sprite texture="%ModDir%/Content/Items/Medical/radmedicines.png" sourcerect="24,0,32,58" origin="0.5,0.5" depth="0.6" />
     <InventoryIcon texture="%ModDir%/Content/Items/Medical/radmedicinesiconatlas.png" sourcerect="64,0,64,64" origin="0.5,0.5" />
     <Body width="35" height="70" density="20" />
-    <SuitableTreatment identifier="radiationsickness" suitability="30" />
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="30">
       <RequiredSkill identifier="medical" level="18" />
       <RequiredItem identifier="potassium" />

@@ -24,6 +24,7 @@
         <Price storeidentifier="merchantengineering" multiplier="0.9" minavailable="3" />
       </Price>
       <!-- Standard info-->
+
       <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="576,64,64,64" origin="0.5,0.5" />
       <BrokenSprite texture="%ModDir%/Content/Items/Reactor/HotRods.png" depth="0.55" sourcerect="272,64,67,65" fadein="false" maxcondition="99.9" />
       <Body height="55" width="15" density="20" />
@@ -945,7 +946,7 @@
       </LightComponent>
     </Item>
   </Override>
-  <Item name="" category="fuel" identifier="control_rod" Tags="smallitem, reactorfuel,divingsuitfuel,HRradioactive" health="100" maxstacksize="1" scale="0.5" cargocontaineridentifier="metalcrate" pickdistance="150" impactsoundtag="impact_metal_light">
+  <Item name="" category="fuel" identifier="control_rod" Tags="smallitem,HRradioactive" health="100" maxstacksize="1" scale="0.5" cargocontaineridentifier="metalcrate" pickdistance="150" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="reactorcab" />
     <!-- Standard info-->
     <InventoryIcon texture="%ModDir%/Content/Items/Reactor/controlrod2.png" sourcerect="0,0,63,62" origin="0.5,0.5" depth="0.55" />
