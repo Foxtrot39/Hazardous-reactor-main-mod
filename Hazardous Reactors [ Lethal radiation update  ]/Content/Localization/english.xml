@@ -92,9 +92,10 @@
   <missionfailure.salvagewreckwarheadcoalition>You have failed to recover the warhead.</missionfailure.salvagewreckwarheadcoalition>
   <missionheader0.salvagewreckwarheadcoalition>Warhead recovered.</missionheader0.salvagewreckwarheadcoalition>
   <missionmessage0.salvagewreckwarheadcoalition>You have found the lost warhead. Bring it to [location2] without detonating it to claim your reward. Be warned that it is extremely sensitive to any sort of damage or impact.</missionmessage0.salvagewreckwarheadcoalition>
+  
   <!-- Separatist version -->
   <missionname.salvagewreckwarheadseparatist>Loot Experimental Weapon</missionname.salvagewreckwarheadseparatist>
-  <missiondescription.salvagewreckwarheadseparatist>Intelligence suggests a Colalition military sub has sunk nearby carying an experimental explosive device. Find the wreck and retrieve the device before the Coalation can secure it.</missiondescription.salvagewreckwarheadseparatist>
+  <missiondescription.salvagewreckwarheadseparatist>Intelligence suggests a Coalition military sub has sunk nearby carying an experimental explosive device. Find the wreck and retrieve the device before the Coalition can secure it.</missiondescription.salvagewreckwarheadseparatist>
   <missionsonarlabel.salvagewreckwarheadseparatist>Coalition Submarine Wreck</missionsonarlabel.salvagewreckwarheadseparatist>
   <missionsuccess.salvagewreckwarheadseparatist>Warhead recovered.</missionsuccess.salvagewreckwarheadseparatist>
   <missionfailure.salvagewreckwarheadseparatist>You have failed to recover the warhead.</missionfailure.salvagewreckwarheadseparatist>
