@@ -34,6 +34,8 @@ end)
 
 -- Remove fuel consumption from outpost reactor
 local thoriumFuelRodPrefab = ItemPrefab.GetItemPrefab("thoriumfuelrod")
+local ControlRodPrefab = ItemPrefab.GetItemPrefab("control_rod")
+local testPrefab = ItemPrefab.GetItemPrefab("supercritical_incendium")
 Hook.Add("roundStart", "infinitefuel", function()
   if not Level.Loaded then return end
 
@@ -42,12 +44,15 @@ Hook.Add("roundStart", "infinitefuel", function()
 
   for _, item in pairs(outpost.GetItems(false)) do
     local reactor = item.GetComponentString("Reactor")
-    if reactor then
+    if reactor then 
       reactor.FuelConsumptionRate = 0
       Entity.Spawner.AddItemToSpawnQueue(thoriumFuelRodPrefab, item.OwnInventory)
+      Entity.Spawner.AddItemToSpawnQueue(ControlRodPrefab, item.OwnInventory)
     end
-  end
-end)
+    end
+end) 
+
+
 
 -- Rod Hazard LightComponent Force Update when Broken
 Hook.Patch(
