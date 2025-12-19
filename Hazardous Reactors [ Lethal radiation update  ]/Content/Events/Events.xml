@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Randomevents>
+<Override>
+  <!-- SCRIPTED EVENTS empty template, Prevent major issue at outpost with Enhanced Reactor mod enabled-->
+  <EventPrefabs>
+    <!-- Configure Outpost Reactors -->
+    <ScriptedEvent identifier="filloutpostreactors"/>
+    <!-- Configure Enemy Submarine Reactors -->
+    <ScriptedEvent identifier="fillenemyreactors"/>
+  </EventPrefabs>
+  <!-- EVENT SETS -->
+  <EventSet identifier="errm.outpostevents" leveltype="outpost" allowatstart="true" minleveldifficulty="0" maxleveldifficulty="100" chooserandom="false" ignorecooldown="true" additive="true" selectalways="true"/>
+  <EventSet identifier="errm.transitevents" leveltype="locationconnection" allowatstart="true" minleveldifficulty="0" maxleveldifficulty="100" chooserandom="false" ignorecooldown="true" additive="true" selectalways="true" campaign="true"/>
+</Override>
+</Randomevents>

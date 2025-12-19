@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Hazardous Reactors" modversion="1.0.75" corepackage="False" steamworkshopid="2547888957" gameversion="1.10.7.2">
+<contentpackage name="Hazardous Reactors" modversion="1.0.76" corepackage="False" steamworkshopid="2547888957" gameversion="1.11.4.1">
   <Item file="%ModDir%/Content/Items/Reactor/reactor.xml" />
   <Afflictions file="%ModDir%/Content/Items/Medical/Afflictions.xml" />
   <Item file="%ModDir%/Content/Items/Medical/Medical.xml" />
@@ -27,4 +27,6 @@
   <Text file="%ModDir%/Content/Localization/Russian.xml" />
   <Missions file="%ModDir%/Content/Missions/Missions.xml" />
   <NPCSets file="%ModDir%/Content/NPCPrefabs/CombatMissionNpcs.xml" />
+  <RandomEvents file="%ModDir%/Content/Events/Events.xml" />
+  
 </contentpackage>

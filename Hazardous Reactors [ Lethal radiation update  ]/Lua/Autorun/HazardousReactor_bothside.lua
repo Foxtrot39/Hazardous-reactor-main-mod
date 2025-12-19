@@ -35,7 +35,6 @@ end)
 -- Remove fuel consumption from outpost reactor
 local thoriumFuelRodPrefab = ItemPrefab.GetItemPrefab("thoriumfuelrod")
 local ControlRodPrefab = ItemPrefab.GetItemPrefab("control_rod")
-local testPrefab = ItemPrefab.GetItemPrefab("supercritical_incendium")
 Hook.Add("roundStart", "infinitefuel", function()
   if not Level.Loaded then return end
 
