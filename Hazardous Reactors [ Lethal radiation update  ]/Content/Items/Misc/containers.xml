@@ -58,7 +58,7 @@
     </Holdable>
     <!-- Only accept fuel rods -->
     <ItemContainer autofill="False" capacity="4" slotsperrow="2" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="false">
-      <Containable items="fuelrod,thoriumfuelrod,fuelrod_active,thoriumfuelrod_active,fulguriumfuelrod,fulguriumfuelrodvolatile,ekutility_incendiumfuelrod,depletedfuel,uranium,thorium" />
+      <Containable items="fuelrod,thoriumfuelrod,fuelrod_active,thoriumfuelrod_active,fulguriumfuelrod,fulguriumfuelrodvolatile,ekutility_incendiumfuelrod,depletedfuel,uranium,thorium,raddeconfilter" />
     </ItemContainer>
   </Item>
   <Override>
@@ -229,7 +229,7 @@
       <RequiredItem identifier="ballisticfiber" />
       <RequiredItem identifier="geigercounter" />
     </Fabricate>
-    <Sprite texture="%ModDir%/Content/Items/Misc/ShieldedBackPack.png" depth="0.55" sourcerect="0,0,74,149" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Content/Items/Misc/ShieldedBackPack.png" depth="0.6" sourcerect="0,0,74,149" origin="0.5,0.5" />
     <InventoryIcon texture="%ModDir%/Content/Items/Misc/ShieldedBackPack.png" sourcerect="0,0,74,149" origin="0.5,0.5" />
     <Body width="74" height="149" density="30" />
     <Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect">
@@ -263,12 +263,12 @@
       </StatusEffect>
     </Holdable>
     <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Use">
-      <sprite name="backpack worn" texture="%ModDir%/Content/Items/Misc/ShieldedBackPack.png" canbehiddenbyotherwearables="false" rotation="0" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,74,149" origin="1.2,0.6" limb="Torso" ignorelimbscale="true" scale="0.5" />
+      <sprite name="backpack worn" texture="%ModDir%/Content/Items/Misc/ShieldedBackPack.png" canbehiddenbyotherwearables="false" rotation="0" inheritlimbdepth="true" depthlimb="Waist" sourcerect="0,0,74,149" origin="1.2,0.6" limb="Torso" ignorelimbscale="true" scale="0.5" />
       <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness,lethalradiation" damagemultiplier="0.8" damagesound="LimbArmor" />
     </Wearable>
     <!-- Only accept radioactive materials in certain slots -->
     <ItemContainer slotsperrow="2" capacity="2" maxstacksize="16" hideitems="true">
-      <Containable items="reactorfuel,uranium,thorium,uraniumore,brockite,thorianite,depletedfuel" />
+      <Containable items="reactorfuel,uranium,thorium,uraniumore,brockite,thorianite,depletedfuel,raddeconfilter" />
       <SlotIcon slotindex="0" texture="Content/UI/MainIconsAtlas.png" sourcerect="896,768,128,128" origin="0.5,0.5" />
       <SlotIcon slotindex="1" texture="Content/UI/MainIconsAtlas.png" sourcerect="896,768,128,128" origin="0.5,0.5" />
       <SubContainer slotsperrow="3" capacity="4" maxstacksize="16" hideitems="true">
@@ -346,7 +346,7 @@
     </ItemContainer> -->
     <!-- -->
   </Item>
-  <!-- Custome fabricator/deconstructor -->
+  <!-- Custom fabricator/deconstructor -->
   <Item name="" identifier="nuclearmaterialprocessor" tags="nuclearmaterialprocessor,hazardcontainment,donttakeitems,dontsellitems" category="Machine" linkable="true" allowedlinks="deconstructor,locker,fissiledeconstructor" description="" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
     <Body width="336" height="395" density="40" />
     <Price baseprice="1500" minleveldifficulty="0" soldbydefault="true" soldeverywhere="false" minavailable="0" maxavailable="1">
@@ -417,8 +417,8 @@
     <ItemContainer capacity="5" canbeselected="true" hideitems="true" slotsperrow="5" uilabel="" allowuioverlap="true" />
     <ItemContainer capacity="1" canbeselected="true" hideitems="true" slotsperrow="1" uilabel="" allowuioverlap="true" />
   </Item>
-  <Item name="" identifier="fissiledeconstructor" tags="deconstructor,hazardcontainment,donttakeitems,dontsellitems" category="Machine" linkable="true" allowedlinks="fabricator,medicalfabricator,locker" description="" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
-    <Body width="256" height="315" density="40" />
+  <Item name="" identifier="fissiledeconstructor" tags="deconstructor,hazardcontainment,donttakeitems,dontsellitems" category="Machine" linkable="true" canflipx="false" allowedlinks="fabricator,medicalfabricator,locker" description="" scale="0.25" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <Body width="338" height="166" density="40" />
     <Price baseprice="1500" minleveldifficulty="0" soldbydefault="true" soldeverywhere="false" minavailable="0" maxavailable="1">
       <Price storeidentifier="merchantmine" sold="true" minavailable="1" />
       <Price storeidentifier="merchantengineering" sold="true" minavailable="1" />
@@ -427,35 +427,189 @@
       <Repairable Msg="ItemMsgRepairWrench" />
     </Upgrade>
     <UpgradePreviewSprite scale="2.5" texture="Content/UI/WeaponUI.png" sourcerect="320,960,64,64" origin="0.5,0.45" />
-    <Sprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" depth="0.8" sourcerect="0,304,256,320" />
-    <BrokenSprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" sourcerect="272,304,256,320" depth="0.8" maxcondition="80" fadein="true" />
-    <BrokenSprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" sourcerect="544,304,256,320" depth="0.8" maxcondition="0" />
-    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" alphablend="false" allowingameediting="false">
+    <Sprite texture="%ModDir%/Content/Items/Misc/RadiationDeconstructor.png" depth="0.8" sourcerect="0,0,684,340" />
+    <BrokenSprite texture="%ModDir%/Content/Items/Misc/RadiationDeconstructor.png" sourcerect="0,476,684,340" depth="0.78" maxcondition="80" fadein="true" />
+    <BrokenSprite texture="%ModDir%/Content/Items/Misc/RadiationDeconstructor.png" sourcerect="0,842,684,340" depth="0.77" maxcondition="0" />
+    <LightComponent range="15" lightcolor="25,20,25,25" powerconsumption="5" IsOn="true" castshadows="false" alphablend="false" allowingameediting="false">
       <sprite texture="Content/Items/Command/navigatorLights.png" depth="0.025" sourcerect="0,665,256,320" origin="0.5,0.5" alpha="1.0" />
     </LightComponent>
-    <DecorativeSprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" depth="0.84" sourcerect="866,484,156,105" />
-    <DecorativeSprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" depth="0.83" offset="-27,-20" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-715">
+    <DecorativeSprite texture="Content/Items/Fabricators/FabricatorsAndDeconstructors.png" depth="0.84" sourcerect="866,484,156,105" scale="1.7" color="50,45,50,255" />
+    <DecorativeSprite texture="%ModDir%/Content/Items/Misc/RadiationDeconstructor.png" depth="0.79" sourcerect="0,378,684,58" offset="0,-142" />
+    <DecorativeSprite texture="Content/Items/Fabricators/FabricatorsAndDeconstructors.png" color="125,125,125,255" scale="1.7" depth="0.83" offset="-70,-20" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="715">
       <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
       <AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
       <IsActiveConditional Condition="gt 0.0" />
     </DecorativeSprite>
-    <DecorativeSprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" depth="0.82" offset="-29,-30" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-718">
+    <DecorativeSprite texture="Content/Items/Fabricators/FabricatorsAndDeconstructors.png" color="125,125,125,255" scale="1.7" depth="0.82" offset="-56,-40" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="718">
       <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
       <AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
       <IsActiveConditional Condition="gt 0.0" />
     </DecorativeSprite>
-    <DecorativeSprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" depth="0.81" offset="-30,-40" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-720">
+    <DecorativeSprite texture="Content/Items/Fabricators/FabricatorsAndDeconstructors.png" color="125,125,125,255" scale="1.7" depth="0.81" offset="-42,-60" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="720">
       <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
       <AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
       <IsActiveConditional Condition="gt 0.0" />
     </DecorativeSprite>
-    <DecorativeSprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" depth="0.83" offset="38,-20" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="715">
+    <DecorativeSprite texture="Content/Items/Fabricators/FabricatorsAndDeconstructors.png" color="125,125,125,255" scale="1.7" depth="0.83" offset="70,-20" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-715">
       <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
       <AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
       <IsActiveConditional Condition="gt 0.0" />
-    </DecorativeSprite>'
-    <DecorativeSprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" depth="0.82" offset="40,-30" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="718"><AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" /><AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" /><IsActiveConditional Condition="gt 0.0" /></DecorativeSprite><DecorativeSprite texture="%ModDir%/Content/Items/Misc/FabricatorsAndDeconstructors.png" depth="0.81" offset="41,-40" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed=" 720"><AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" /><AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" /><IsActiveConditional Condition="gt 0.0" /></DecorativeSprite><Deconstructor canbeselected="true" powerconsumption="500.0" msg="ItemMsgInteractSelect"><GuiFrame relativesize="0.25,0.37" minsize="320,266" style="ItemUI" anchor="Center" /><sound file="Content/Items/Fabricators/Deconstructor.ogg" type="OnActive" range="1000.0" volumeproperty="RelativeVoltage" loop="true" /><poweronsound file="Content/Items/PowerOnLight3.ogg" range="600" loop="false" /><StatusEffect type="InWater" target="This" condition="-0.5" /></Deconstructor><Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="[E] Detach (Crowbar)" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="false"><RequiredItem identifier="crowbar" type="Equipped" /><StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.25" setvalue="true" /></Holdable><ConnectionPanel selectkey="Action" canbeselected="true" hudpriority="10" msg="ItemMsgRewireScrewdriver"><GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" /><RequiredSkill identifier="electrical" level="55" /><StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true"><Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" /><Explosion range="100.0" force="1.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" /><Affliction identifier="stun" strength="4" /><Affliction identifier="burn" strength="5" /></StatusEffect><RequiredItem items="screwdriver" type="Equipped" /><input name="power_in" displayname="connection.powerin" /><output name="condition_out" displayname="connection.conditionout" /></ConnectionPanel><Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.50" mindeteriorationdelay="60" maxdeteriorationdelay="120" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10"><GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" /><RequiredSkill identifier="mechanical" level="55" /><RequiredItem items="wrench" type="equipped" /><ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" /><ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" /><ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" /><StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true"><Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" /><Affliction identifier="lacerations" strength="5" /><Affliction identifier="stun" strength="4" /></StatusEffect></Repairable><ItemContainer capacity="3" canbeselected="true" hideitems="true" hudpos="0.5, 0.4" slotsperrow="3" uilabel="" allowuioverlap="true" /><ItemContainer capacity="5" canbeselected="true" hideitems="true" hudpos="0.5, 0.8" slotsperrow="5" uilabel="" allowuioverlap="true" /></Item>
-  <Item name="Fuel Rod Handling Tongs" identifier="HRtongs" category="Equipment" Tags="mediumitem,tool,simpletool,mountableweapon,crowbaritem,tong" scale="0.6" allowasextracargo="true" requireaimtouse="true" impactsoundtag="impact_metal_light">
+    </DecorativeSprite>
+    <DecorativeSprite texture="Content/Items/Fabricators/FabricatorsAndDeconstructors.png" color="125,125,125,255" scale="1.7" depth="0.82" offset="56,-40" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-718">
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+    <DecorativeSprite texture="Content/Items/Fabricators/FabricatorsAndDeconstructors.png" color="125,125,125,255" scale="1.7" depth="0.81" offset="42,-60" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-720">
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+    <Deconstructor canbeselected="true" powerconsumption="500.0" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.25,0.37" minsize="320,266" style="ItemUI" anchor="Center" />
+      <sound file="Content/Items/Fabricators/Deconstructor.ogg" type="OnActive" range="1000.0" volumeproperty="RelativeVoltage" loop="true" />
+      <poweronsound file="Content/Items/PowerOnLight3.ogg" range="600" loop="false" />
+      <StatusEffect type="InWater" target="This" condition="-0.5" />
+    </Deconstructor>
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="[E] Detach (Crowbar)" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="false">
+      <RequiredItem identifier="crowbar" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.25" setvalue="true" />
+    </Holdable>
+    <ConnectionPanel selectkey="Action" canbeselected="true" hudpriority="10" msg="ItemMsgRewireScrewdriver">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Explosion range="100.0" force="1.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="4" probability="0.5" />
+        <Affliction identifier="electricshock" strength="60" />
+        <Affliction identifier="burn" strength="5" />
+        <ParticleEmitter particle="ElectricShock" DistanceMin="10" DistanceMax="25" ParticleAmount="5" ScaleMin="0.1" ScaleMax="0.12" />
+      </StatusEffect>
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <output name="condition_out" displayname="connection.conditionout" />
+    </ConnectionPanel>
+    <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.50" mindeteriorationdelay="60" maxdeteriorationdelay="120" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
+      <RequiredSkill identifier="mechanical" level="55" />
+      <RequiredItem items="wrench" type="equipped" />
+      <ParticleEmitter particle="damagebubbles" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemax="360" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="smoke" particlespersecond="2" scalemin="1" scalemax="2.5" anglemax="360" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
+      <ParticleEmitter particle="heavysmoke" particlespersecond="2" scalemin="1.0" scalemax="2.5" anglemax="360" distancemax="60" mincondition="0.0" maxcondition="15.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <Affliction identifier="lacerations" strength="5" />
+        <Affliction identifier="stun" strength="4" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <DropContainedItems />
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <ParticleEmitter particle="electricshock" particleamount="3" scalemin="0.2" scalemax="0.25" anglemin="0" anglemax="360" />
+        <ParticleEmitter particle="explosiondebris" particleamount="10" scalemin="1.25" scalemax="1.5" anglemin="0" anglemax="360" VelocityMin="250" VelocityMax="350" />
+        <ParticleEmitter particle="damagebubbles" particleamount="6" scalemin="1" scalemax="1.5" anglemin="0" anglemax="360" />
+      </StatusEffect>
+    </Repairable>
+    <ItemContainer capacity="3" canbeselected="true" hideitems="true" hudpos="0.5, 0.4" slotsperrow="3" uilabel="" allowuioverlap="false">
+      <SlotIcon slotindex="2" texture="%ModDir%/Content/Items/Misc/RadiationDeconstructor.png" sourcerect="702,254,105,105" origin="0.5,0.5" />
+    </ItemContainer>
+    <ItemContainer capacity="2" canbeselected="true" hideitems="false" hudpos="0.5, 0.8" slotsperrow="3" uilabel="" allowuioverlap="false" itempos="194,-386" iteminterval="300,0" depth="0.84">
+      <Containable items="crate" hide="false" />
+      <SubContainer capacity="1" maxstacksize="1" uilabel="FuelRods">
+        <Containable items="raddeconfilter" hide="true" />
+      </SubContainer>
+    </ItemContainer>
+  </Item>
+  
+  <!-- Shielded Deconstructor Filter, acts as a container for the deconcontaminationemitter and loses condition every time an emitter goes in, becoming irradiated. Can be cleaned in water, or thrown for angry pocket sand. -->
+  <Item name="" identifier="raddeconfilter" tags="mediumitem,hazardcontainment" category="Machine" impacttolerance="2" description="" scale="0.35" showcontentsintooltip="true" linkable="true" pickdistance="175" impactsoundtag="impact_soft" HideInContainers="true">
+    <Price baseprice="125" displaynonempty="true">
+      <Price storeidentifier="merchantoutpost" sold="false" />
+      <Price storeidentifier="merchantcity" minavailable="1" />
+      <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" />
+      <Price storeidentifier="merchantengineering" multiplier="1.4" minavailable="2" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="mechanical" level="40" />
+      <RequiredItem identifier="organicfiber" amount="2" />
+      <RequiredItem identifier="lead" />
+      <RequiredItem identifier="rubber" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Content/Items/Misc/RadiationDeconstructor.png" depth="0.55" sourcerect="702,10,105,105" />
+    <BrokenSprite texture="%ModDir%/Content/Items/Misc/RadiationDeconstructor.png" sourcerect="702,132,105,105" depth="0.55" maxcondition="100" fadein="true" />
+    <InventoryIcon texture="%ModDir%/Content/Items/Misc/RadiationDeconstructor.png" sourcerect="694,2,121,121" origin="0.5,0.5" scale="0.2" />
+    <Body width="100" height="100" density="11" />
+    <Throwable slots="RightHand,LeftHand" holdpos="0,0" handle1="0,0" throwforce="3.5" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnSecondaryUse" target="This" delay="0.1">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="This" Condition="13" disabledeltatime="true" />
+      <StatusEffect type="InWater" AllowWhenBroken="true" target="This" condition="3" />
+      <StatusEffect type="OnImpact" target="This">
+        <Conditional condition="lt 100" target="this" />
+        <ParticleEmitter particle="steamspray" anglemin="0" anglemax="360" particleamount="10" velocitymin="0" velocitymax="50" scalemin="1.5" scalemax="2.5" LifeTimeMultiplier="3" />
+        <Explosion range="220" force="0.001" ignorecover="false" showeffects="false">
+          <Affliction identifier="contamination" strength="10" />
+        </Explosion>
+        <Explosion range="420" force="0.001" ignorecover="false" showeffects="false">
+          <Affliction identifier="radiationgeiger" strength="2" />
+        </Explosion>
+      </StatusEffect>
+      <!-- Passive radiation effects when contaminated -->
+      <StatusEffect type="OnNotContained" target="this" interval="1">
+        <Conditional condition="lt 100" target="this" />
+        <Explosion range="350" force="0.001" ignorecover="false" showeffects="false">
+          <Affliction identifier="radiationsickness" strength="0.05" />
+          <Affliction identifier="radiationgeiger" strength="0.05" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnContained" target="this" interval="1" comparison="AND">
+        <Conditional condition="lt 100" />
+        <Conditional hastag="neq hazardcontainment" targetcontainer="true" />
+        <Explosion range="350" force="0.001" ignorecover="false" showeffects="false">
+          <Affliction identifier="radiationsickness" strength="0.05" />
+          <Affliction identifier="radiationgeiger" strength="0.05" />
+        </Explosion>
+      </StatusEffect>
+      <!--Spawns a seperate contamination emitter when the filter is depleted-->
+      <StatusEffect type="Always" target="this" interval="1">
+        <Conditional condition="lte 1" />
+        <RequiredItems items="deconcontaminationemitter" type="Contained" />
+        <SpawnItem identifier="deconcontaminationemitter" spawnposition="SameInventory" spawnifinventoryfull="true" spawnifcantbecontained="true" />
+      </StatusEffect>
+      <!--Lowers condition when the deconcontaminationemitter is inside-->
+      <StatusEffect type="OnContained" AllowWhenBroken="false" target="this" condition="-12">
+        <Conditional condition="gte 1" target="this" />
+        <RequiredItems items="deconcontaminationemitter" type="Contained" />
+      </StatusEffect>
+      <!--Bubbles in water when not at 100% condition-->
+      <StatusEffect type="InWater" target="This" allowwhenbroken="true" interval="0.2">
+        <Conditional condition="lt 100" target="this" />
+        <ParticleEmitter particle="damagebubbles" anglemin="0" anglemax="360" particleamount="5" velocitymin="0" velocitymax="50" scalemin="1" scalemax="1" />
+      </StatusEffect>
+    </Throwable>
+    <Projectile characterusable="false" launchimpulse="0.0" sticktocharacters="false">
+      <Attack>
+        <Affliction identifier="blunttrauma" strength="5" />
+        <Affliction identifier="stun" strength="0.5" />
+        <StatusEffect type="OnUse" target="Limb" targetLimbs="Head">
+          <Affliction identifier="stun" strength="1" />
+        </StatusEffect>
+      </Attack>
+      <StatusEffect type="OnImpact" target="This">
+        <Conditional condition="lt 100" target="this" />
+        <ParticleEmitter particle="steamspray" anglemin="0" anglemax="360" particleamount="10" velocitymin="0" velocitymax="50" scalemin="1.5" scalemax="2.5" LifeTimeMultiplier="3" />
+      </StatusEffect>
+    </Projectile>
+    <!-- Only accepts deconcontaminationemitter, gives it a place to go while it despawns -->
+    <ItemContainer autofill="False" capacity="1" slotsperrow="1" maxstacksize="32" canbeselected="false" hideitems="true" drawinventory="false" containedstateindicatorstyle="null" containedstateindicatorslot="1">
+      <Containable items="deconcontaminationemitter" />
+    </ItemContainer>
+  </Item>
+  
+  <Item name="Fuel Rod Handling Tongs" identifier="HRtongs" category="Equipment" Tags="smallitem,tool,simpletool,mountableweapon,crowbaritem,tong" scale="0.6" allowasextracargo="true" requireaimtouse="true" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="engcab" amount="1" spawnprobability="0.08" />
     <PreferredContainer primary="wreckengcab,abandonedengcab,outpostengcab,beaconengcab" amount="1" spawnprobability="0.1" />
     <Price baseprice="100" sold="true" minavailable="1" maxavailable="1">
@@ -476,7 +630,7 @@
     <InventoryIcon texture="%ModDir%\Content\Items\Misc\Fueltongs.png" sourcerect="0,0,86,86" origin="0.5,0.5" />
     <Sprite texture="%ModDir%\Content\Items\Misc\Fueltongs.png" sourcerect="90,23,134,42" depth="0.55" origin="0.5,0.2" />
     <Body width="138" height="45" density="25" />
-    <MeleeWeapon slots="RightHand+LeftHand" HoldPos="50,-100" aimpos="60,-15" handle1="-22,-5" handle2="-32,-5" holdangle="50" aimangle="-30" reload="1.2" range="50" combatPriority="20" msg="ItemMsgPickUpSelect">
+    <MeleeWeapon slots="RightHand+LeftHand,Any" HoldPos="50,-100" aimpos="60,-15" handle1="-22,-5" handle2="-32,-5" holdangle="50" aimangle="-30" reload="1.2" range="50" combatPriority="20" msg="ItemMsgPickUpSelect">
       <Attack structuredamage="5" itemdamage="5" targetimpulse="10">
         <Affliction identifier="blunttrauma" strength="9" />
         <Affliction identifier="stun" strength="0.5" />
@@ -522,7 +676,6 @@
         <sound file="Content/Items/Weapons/WEAPONS_electricalDischarge2.ogg" range="2000" />
         <ParticleEmitter particle="ElectricShock" distancemax="1" particleamount="4" anglemin="0" anglemax="360" scalemin="0.25" scalemax="0.3" />
       </StatusEffect>
-      
     </MeleeWeapon>
     <ItemContainer capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="47,-10" containedspritedepths="0.565" containedstateindicatorstyle="default" containedstateindicatorslot="0">
       <Containable items="reactorfuel" rotation="45" />

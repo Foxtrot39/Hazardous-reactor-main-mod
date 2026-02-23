@@ -24,7 +24,6 @@
         <Item identifier="wrench" />
         <Item identifier="Potassiumiodide" />
         <Item identifier="geigercounter" />
-        <Item identifier="DTPA" />
         <PreviewSprites dims="120,109">
           <sprite texture="Content/Items/Jobgear/Engineer/engineer_torso_[GENDER]_1.png" sourcerect="2,38,120,109" offset="0,0" />
           <sprite texture="Content/Items/Jobgear/Engineer/engineer_torso_[GENDER]_1.png" sourcerect="121,0,76,80" offset="-20,15" />
@@ -39,7 +38,6 @@
         <Item identifier="wrench" />
         <Item identifier="Potassiumiodide" />
         <Item identifier="geigercounter" />
-        <Item identifier="DTPA" />
         <PreviewSprites dims="120,109">
           <sprite texture="Content/Items/Jobgear/Engineer/engineer_torso_[GENDER]_2.png" sourcerect="2,38,120,109" offset="0,0" />
           <sprite texture="Content/Items/Jobgear/Engineer/engineer_torso_[GENDER]_2.png" sourcerect="121,0,76,80" offset="-20,15" />

@@ -56,6 +56,8 @@
   <entitydescription.fuelbackpack>Un sac à dos renforcé pouvant transporter des materiaux nucléaire en toute sécurité, possède un compteur geiger and offre une protection limitée contre les radiations.</entitydescription.fuelbackpack>
   <entityname.HRtongs>Pince pour carburant de réacteur</entityname.HRtongs>
   <entitydescription.HRtongs>Une pince pour maintenir une barre de combustible à une distance sécurisée de vos mains. Peut être utilisé en tant qu'arme contondante si besoin.</entitydescription.HRtongs>
+  <entityname.raddeconfilter>Filtre à radiation pour déconstructeur avec blindage anti-radiation</entityname.raddeconfilter>
+  <entitydescription.raddeconfilter>Un filtre dense utilisé avec les constructeurs équipés d'un blindage anti-radiation. Se sature de poussière radioactive avec l'utilisation, peut être nettoyée dans de l'eau ou jetée pour contaminer une zone.</entitydescription.raddeconfilter>
   <!-- Reactor items -->
   <entityname.fuelrod>Barre de combustible en uranium</entityname.fuelrod>
   <entitydescription.fuelrod>Combustible standard pour réacteur nucléaire.</entitydescription.fuelrod>
@@ -122,8 +124,8 @@
   <entitydescription.deconcontaminationemitter>Attention : Le processus de déconstruction contaminera le personnel non protégé à proximité..</entitydescription.deconcontaminationemitter>
   <entityname.nuclearmaterialprocessor>Fabricateur de materiaux nucléaire</entityname.nuclearmaterialprocessor>
   <entitydescription.nuclearmaterialprocessor>Un fabricateur spécialisé équipé d'un bouclier anti-radiation permettant la manipulation sans risque de matériaux dangereux.</entitydescription.nuclearmaterialprocessor>
-  <entityname.fissiledeconstructor>Déconstructeur avec blindage anti radiation</entityname.fissiledeconstructor>
-  <entitydescription.fissiledeconstructor>Un déconstructeur equipé d'un bouclier anti-radiation permettant la manipulation sans risque de matériaux dangereux.</entitydescription.fissiledeconstructor>
+  <entityname.fissiledeconstructor>Déconstructeur avec blindage anti-radiation</entityname.fissiledeconstructor>
+  <entitydescription.fissiledeconstructor>Un déconstructeur équipé d'un bouclier anti-radiation permettant la manipulation sans risque de matériaux dangereux tant qu'il est équipé de ses filtres dédiés.</entitydescription.fissiledeconstructor>
   <entityname.manual>Guide d'opération du réacteur</entityname.manual>
   <entitydescription.manual>Contient toutes les informations importantes en relation du réacteur nucléaire et ses dangers.</entitydescription.manual>
   <terminalwelcomemsg.manual>

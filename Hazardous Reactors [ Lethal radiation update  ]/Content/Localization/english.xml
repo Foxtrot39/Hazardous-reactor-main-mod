@@ -57,6 +57,8 @@
   <entitydescription.fuelbackpack>A shielded backpack with an inbuilt geiger counter, able to monitor radiation levels and safely transport radioactive materials.</entitydescription.fuelbackpack>
   <entityname.HRtongs>Fuel Rod Handling Tongs</entityname.HRtongs>
   <entitydescription.HRtongs>A set of tongs for keeping fuel rods at arms length. Doubles as a melee weapon.</entitydescription.HRtongs>
+  <entityname.raddeconfilter>Radiation Shielded Deconstructor Filter</entityname.raddeconfilter>
+  <entitydescription.raddeconfilter>A dense filter used in the Radiation Shielded Deconstructor to prevent radioactive contamination. Saturates with radioactive dust during use, and can be cleaned in water, or thrown to contaminate an area.</entitydescription.raddeconfilter>
   <!-- Reactor items -->
   <entityname.fuelrod>Uranium Fuel Rod</entityname.fuelrod>
   <entitydescription.fuelrod>A standard nuclear fuel rod constructed of uranium. </entitydescription.fuelrod>
@@ -93,6 +95,27 @@
   <missionheader0.salvagewreckwarheadcoalition>Warhead recovered.</missionheader0.salvagewreckwarheadcoalition>
   <missionmessage0.salvagewreckwarheadcoalition>You have found the lost warhead. Bring it to [location2] without detonating it to claim your reward. Be warned that it is extremely sensitive to any sort of damage or impact.</missionmessage0.salvagewreckwarheadcoalition>
   
+  <EventText.warheadrecovery1.c1>You hear a senior coalition officer, visibly fuming, shouting angrely at his radio : 
+  “WHAT DO YOU MEAN "NOBODY AVAIABLE” ?! Do you have ANY IDEA how dangerous it is to loose it?! If the separatist discover that wreck its gonna be a worst case scenario broken arrow all over again!”
+  Slamming his radio hard enough on the table to break it as he finishes up with
+  “IGNORANT FUCKS” .</EventText.warheadrecovery1.c1>
+  <eventtext.warheadrecovery1.c1.o1>Inquire what the commotion is all about</eventtext.warheadrecovery1.c1.o1>
+  <eventtext.warheadrecovery1.c1.o2>Step back, better not get involved in whatever this is all about</eventtext.warheadrecovery1.c1.o2>
+  
+  <EventText.warheadrecovery1.c2>He looks at you for a second before regaining his composure before saying one word :
+  “Classified”
+  Visibly thinking for a bit he continues :
+  “But im in dire need for a crew willing to take on an important and urgent mission, as anyone else in the room may be aware off now due to me going of the rails. Higher ups aren't willing to divert any ressource for it between fending off monsters, pirates, fanatics and everything else threatening the Coalition around here.”
+  </EventText.warheadrecovery1.c2>
+  <eventtext.warheadrecovery1.c2.o1>What kind of mission are we talking about? And what's the pay?</eventtext.warheadrecovery1.c2.o1>
+  <eventtext.warheadrecovery1.c2.o2>Can't do, we're short on suppliesourselves</eventtext.warheadrecovery1.c2.o2>
+  
+  <EventText.warheadrecovery1.c3>"I can't say much, since its classified, but in essence its either a rescue or a wreck salvage run. But from the last contact we had with the sub, i'm afraid its the latter.”
+  He pauses for a few seconds
+  “I am not even sure their cargo is even still intact or not, but if it is, it NEEDS to be brought back and secured to the nearest coalition outpost ASAP. You will know what it is when you see it”
+  “For the payement I can offer 5000 mark, put in a good word about you to the Coallition and everything else on the wreck is also yours to take. I do have to warn you, that cargo is extremely dangerous. If you don't handle it correctly, there won't even be a wreck left of your submarine. Now, are you still willing to proceed?”</EventText.warheadrecovery1.c3>
+  <eventtext.warheadrecovery1.c3.o1>“Count me in”</eventtext.warheadrecovery1.c3.o1> 
+  <eventtext.warheadrecovery1.c3.o2>“Sounds to dangerous to me to carry such cargo around, I'll have to decline”.</eventtext.warheadrecovery1.c3.o2> 
   <!-- Separatist version -->
   <missionname.salvagewreckwarheadseparatist>Loot Experimental Weapon</missionname.salvagewreckwarheadseparatist>
   <missiondescription.salvagewreckwarheadseparatist>Intelligence suggests a Coalition military sub has sunk nearby carying an experimental explosive device. Find the wreck and retrieve the device before the Coalition can secure it.</missiondescription.salvagewreckwarheadseparatist>
@@ -127,7 +150,7 @@
   <entityname.nuclearmaterialprocessor>Fuel Processor</entityname.nuclearmaterialprocessor>
   <entitydescription.nuclearmaterialprocessor>A heavely shielded fabricator allowing safe handling of hazardous materials.</entitydescription.nuclearmaterialprocessor>
   <entityname.fissiledeconstructor>Radiation Shielded Deconstructor</entityname.fissiledeconstructor>
-  <entitydescription.fissiledeconstructor>A heavily shielded deconstructor allowing safe handling of hazardous materials.</entitydescription.fissiledeconstructor>
+  <entitydescription.fissiledeconstructor>A heavily shielded deconstructor allowing safe handling of hazardous materials as long its dedicated filters are installed.</entitydescription.fissiledeconstructor>
   <entityname.manual>Reactor Operating Manual</entityname.manual>
   <entitydescription.manual>Contains all important elements around nuclear reactors and its related hazards.</entitydescription.manual>
   <terminalwelcomemsg.manual>

@@ -42,6 +42,9 @@
         <StatusEffect type="OnUse" target="This" IsOn="true" condition="-15" Range="10" disabledeltatime="true">
           <SpawnItem identifiers="nucleargunbolt" spawnposition="ThisInventory" />
         </StatusEffect>
+        <StatusEffect type="OnSpawn" target="This" disabledeltatime="true">
+          <SpawnItem identifiers="nucleargunbolt" spawnposition="ThisInventory" />
+        </StatusEffect>
       </ItemContainer>
       <!-- Slow Decon Time, create contamination hazard, gives lead if empty -->
       <Deconstruct time="25">
@@ -57,6 +60,11 @@
         <RequiredItem identifier="copper" />
         <RequiredItem identifier="uranium" />
       </Fabricate>
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" displayname="recycleitem" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem identifier="uranium" />
+      <RequiredItem identifier="fuelrod" mincondition="0.0" maxcondition="0.1" usecondition="false"/>
+    </Fabricate>
       <!-- Holding/Throwing & Status Effect -->
       <Throwable characterusable="true" slots="RightHand,LeftHand" throwforce="4.0" holdpos="0,0" handle1="0,0" msg="ItemMsgPickUpSelect">
         <!-- ON SPAWN RETURN CONDITION TO 100% -->
@@ -199,6 +207,11 @@
         <RequiredItem identifier="copper" />
         <RequiredItem identifier="thorium" />
       </Fabricate>
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" displayname="recycleitem" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="50" />
+      <RequiredItem identifier="thorium" />
+      <RequiredItem identifier="thoriumfuelrod" mincondition="0.0" maxcondition="0.1" usecondition="false"/>
+    </Fabricate>
       <!-- Allow rod to be used with fission accelerator -->
       <ItemContainer hideitems="false" capacity="1" itemrotation="0" drawinventory="false" canbeselected="false" SpawnWithId="incendiumgunbolt,dummyrod_thorium" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false" containedspritedepth="0.56">
         <Containable items="dummyrod_thorium" hide="false" itempos="0,0" rotation="180" />
@@ -208,6 +221,9 @@
         <!-- SHOOTY = ROD HAZARD ACTIVE!-->
         <!-- Increase Heat when Fired! -->
         <StatusEffect type="OnUse" target="This" IsOn="true" condition="-30" Range="10" disabledeltatime="true">
+          <SpawnItem identifiers="nucleargunbolt" spawnposition="ThisInventory" />
+        </StatusEffect>
+        <StatusEffect type="OnSpawn" target="This" disabledeltatime="true">
           <SpawnItem identifiers="nucleargunbolt" spawnposition="ThisInventory" />
         </StatusEffect>
       </ItemContainer>
@@ -397,6 +413,11 @@
         <RequiredItem identifier="lead" />
         <RequiredItem identifier="fulgurium" />
       </Fabricate>
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" displayname="recycleitem" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="65" />
+      <RequiredItem identifier="fulgurium" />
+      <RequiredItem identifier="fulguriumfuelrod" mincondition="0.0" maxcondition="0.1" usecondition="false"/>
+    </Fabricate>
       <!-- Allow rod to be used with fission accelerator -->
       <ItemContainer hideitems="false" capacity="1" itemrotation="0" drawinventory="false" canbeselected="false" SpawnWithId="fulguriumgunbolt,dummyrod_fulgurium" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false" containedspritedepth="0.56">
         <Containable items="dummyrod_fulgurium" hide="false" itempos="0,0" rotation="180" />
@@ -406,6 +427,9 @@
         <!-- SHOOTY = ROD HAZARD ACTIVE!-->
         <!-- Increase Heat when Fired! -->
         <StatusEffect type="OnUse" target="This" IsOn="true" condition="-150.0" Range="10" disabledeltatime="true">
+          <SpawnItem identifiers="fulguriumgunbolt" spawnposition="ThisInventory" />
+        </StatusEffect>
+        <StatusEffect type="OnSpawn" target="This" disabledeltatime="true">
           <SpawnItem identifiers="fulguriumgunbolt" spawnposition="ThisInventory" />
         </StatusEffect>
       </ItemContainer>
@@ -600,6 +624,11 @@
         <RequiredItem identifier="lead" />
         <RequiredItem identifier="incendium" />
       </Fabricate>
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" displayname="recycleitem" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="80" />
+      <RequiredItem identifier="incendium" />
+      <RequiredItem identifier="ekutility_incendiumfuelrod" mincondition="0.0" maxcondition="0.1" usecondition="false"/>
+    </Fabricate>
       <!-- Allow rod to be used with fission accelerator -->
       <ItemContainer hideitems="false" capacity="1" itemrotation="0" drawinventory="false" canbeselected="false" SpawnWithId="incendiumgunbolt,dummyrod_incendium" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false" containedspritedepth="0.56">
         <Containable items="dummyrod_incendium" hide="false" itempos="0,0" rotation="180" />
@@ -609,6 +638,9 @@
         <!-- SHOOTY = ROD HAZARD ACTIVE!-->
         <!-- Increase Heat when Fired! -->
         <StatusEffect type="OnUse" target="This" IsOn="true" condition="-8.75" Range="125" disabledeltatime="true">
+          <SpawnItem identifiers="incendiumgunbolt" spawnposition="ThisInventory" />
+        </StatusEffect>
+        <StatusEffect type="OnSpawn" target="This" disabledeltatime="true">
           <SpawnItem identifiers="incendiumgunbolt" spawnposition="ThisInventory" />
         </StatusEffect>
         <!-- To allow hazard spawn -->
@@ -805,10 +837,9 @@
         <RequiredItem identifier="fulgurium" />
         <RequiredItem identifier="incendium" />
       </Fabricate>
-      <!-- Recycle option currently cause problem, disabled until the devs fix it
   
-    <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="10" requiresrecipe="true">
-      <RequiredSkill identifier="mechanical" level="50" />
+    <Fabricate suitablefabricators="fabricator,nuclearmaterialprocessor" displayname="recycleitem" requiredtime="10" requiresrecipe="true">
+      <RequiredSkill identifier="mechanical" level="60" />
       <RequiredItem identifier="fulgurium" />
       <RequiredItem identifier="incendium" />
       <RequiredItem identifier="fulguriumfuelrodvolatile" mincondition="0.0" usecondition="false" />
@@ -828,6 +859,9 @@
         <!-- SHOOTY = ROD HAZARD ACTIVE!-->
         <!-- Increase Heat when Fired! -->
         <StatusEffect type="OnUse" target="This" IsOn="true" condition="-62.5" Range="125" disabledeltatime="true">
+          <SpawnItem identifiers="volatilefulguriumgunbolt" spawnposition="ThisInventory" />
+        </StatusEffect>
+        <StatusEffect type="OnSpawn" target="This" disabledeltatime="true">
           <SpawnItem identifiers="volatilefulguriumgunbolt" spawnposition="ThisInventory" />
         </StatusEffect>
       </ItemContainer>
@@ -1168,6 +1202,9 @@
           <Affliction identifier="explosiondamage" strength="1500" />
           <Affliction identifier="stun" strength="4" />
         </Explosion>
+        <Explosion range="2000" force="0.0" smoke="false" sparks="false" empstrength="2.5" applyfireeffects="false" ignorecover="true">
+          <Affliction identifier="emp" strength="50" multiplybymaxvitality="true" />
+        </Explosion> 
         <Explosion range="1500" structuredamage="100" force="4" ignorecover="false" stackable="false" underwaterbubble="false">
           <Affliction identifier="burn" strength="3500" />
           <Affliction identifier="explosiondamage" strength="2500" />
@@ -1210,9 +1247,13 @@
           <Affliction identifier="burn" strength="5500" />
           <Affliction identifier="explosiondamage" strength="4500" />
         </Explosion>
+        <Explosion range="2500" force="0.0" smoke="false" sparks="false" empstrength="2.5" applyfireeffects="false" ignorecover="true">
+          <Affliction identifier="emp" strength="25" multiplybymaxvitality="true" />
+        </Explosion>
         <Explosion range="3000" force="4" ignorecover="false" stackable="false" underwaterbubble="false">
           <Affliction identifier="lethalradiation" strength="500" />
         </Explosion>
+
       </StatusEffect>
       <StatusEffect type="OnBroken" target="This" disabledeltatime="true" stackable="false" delay="2">
         <Remove />
