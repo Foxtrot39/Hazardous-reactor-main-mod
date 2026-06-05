@@ -1,90 +1,82 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
-
-<Override>
-
-  <Item name="" identifier="nucleardepthcharge" tags="depthchargeammo,nucleardepthchargeammo,demolitionsexpert" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" indestructible="true" health="10" cargocontaineridentifier="">
-    <Upgrade gameversion="0.20.4.0" scale="0.4"/>
-    <PreferredContainer primary="depthchargeloader" secondary="ammoboxcontainer" />
-    <Price baseprice="450" sold="false">
-      <Price storeidentifier="merchantoutpost" multiplier="1.35" />
-      <Price storeidentifier="merchantcity" multiplier="1.25" />
-      <Price storeidentifier="merchantresearch" multiplier="1.25" />
-      <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="1" />
-      <Price storeidentifier="merchantmine" multiplier="1.25" />
-    </Price>
-    <Deconstruct time="20">
-      <Item identifier="iron" />
-      <Item identifier="uranium" />
-      <Item identifier="incendium" />
-    </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="30">
-      <RequiredSkill identifier="weapons" level="40" />
-      <RequiredItem identifier="iron" amount="2" />
-      <RequiredItem identifier="uranium" />
-      <RequiredItem identifier="ic4block" />
-    </Fabricate>
-    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="576,128,64,64" origin="0.5,0.5" />
-    <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="130,1,129,88" depth="0.55" origin="0.5,0.5" />
-    <Body width="128" height="85" density="20" />
-    <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
-    <Projectile characterusable="false" launchimpulse="8.0">
-      <!-- Make destructible when launched -->
-      <StatusEffect type="OnUse" target="This" Indestructible="false"/>
-      <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
-      </StatusEffect>
-      <!-- Effects when taking damage-->
-      <StatusEffect type="OnDamaged" target="This" disabledeltatime="true" setvalue="true">
-        <particleemitter particle="shrapnel" drawontop="true" particleamount="5" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" distancemin="0" distancemax="20" scalemin="0.1" scalemax="0.35" />
-        <Sound file="Content/Sounds/Damage/HitArmor1.ogg" range="800" />
-      </StatusEffect>
-      <StatusEffect type="OnBroken" target="this">
-        <sound file="Content/Items/Weapons/ExplosionDebris1.ogg" range="5000" />
-        <sound file="Content/Items/Weapons/ExplosionDebris2.ogg" range="5000" />
-      </StatusEffect>
-      <StatusEffect type="OnBroken" target="This">
-        <SteamTimeLineEvent title="Nuke detonated" description="A nuclear depth charge detonated!" icon="steam_explosion"/>
-        <Explosion range="1500.0" structuredamage="600" itemdamage="1000" ballastfloradamage="1000" force="50.0" severlimbsprobability="2" debris="true" decal="explosion" decalsize="1.0"
-           camerashake="1000" camerashakerange="50000"
-           flashrange="10000" flashduration="5.0"
-           screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="5.0" penetration="0.5">
-          <Affliction identifier="explosiondamage" strength="1000" />
-          <Affliction identifier="burn" strength="1000" />
+  <Override>
+    <Item name="" identifier="nucleardepthcharge" tags="depthchargeammo,nucleardepthchargeammo,demolitionsexpert" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" indestructible="true" health="10" cargocontaineridentifier="">
+      <Upgrade gameversion="0.20.4.0" scale="0.4" />
+      <PreferredContainer primary="depthchargeloader" secondary="ammoboxcontainer" />
+      <Price baseprice="450" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1.35" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="1" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+      </Price>
+      <Deconstruct time="20">
+        <Item identifier="iron" />
+        <Item identifier="uranium" />
+        <Item identifier="incendium" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="weapons" level="40" />
+        <RequiredItem identifier="iron" amount="2" />
+        <RequiredItem identifier="uranium" />
+        <RequiredItem identifier="ic4block" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="576,128,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="130,1,129,88" depth="0.55" origin="0.5,0.5" />
+      <Body width="128" height="85" density="20" />
+      <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" launchimpulse="8.0">
+        <!-- Make destructible when launched -->
+        <StatusEffect type="OnUse" target="This" Indestructible="false" />
+        <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true"></StatusEffect>
+        <!-- Effects when taking damage-->
+        <StatusEffect type="OnDamaged" target="This" disabledeltatime="true" setvalue="true">
+          <particleemitter particle="shrapnel" drawontop="true" particleamount="5" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" distancemin="0" distancemax="20" scalemin="0.1" scalemax="0.35" />
+          <Sound file="Content/Sounds/Damage/HitArmor1.ogg" range="800" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="this">
+          <sound file="Content/Items/Weapons/ExplosionDebris1.ogg" range="5000" />
+          <sound file="Content/Items/Weapons/ExplosionDebris2.ogg" range="5000" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <SteamTimeLineEvent title="Nuke detonated" description="A nuclear depth charge detonated!" icon="steam_explosion" />
+          <Explosion range="1500.0" structuredamage="600" itemdamage="1000" ballastfloradamage="1000" force="50.0" severlimbsprobability="2" debris="true" decal="explosion" decalsize="1.0" camerashake="1000" camerashakerange="50000" flashrange="10000" flashduration="5.0" screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="5.0" penetration="0.5">
+            <Affliction identifier="explosiondamage" strength="1000" />
+            <Affliction identifier="burn" strength="1000" />
             <Affliction identifier="radiationsickness" strength="100" />
             <Affliction identifier="radiationgeiger" strength="100" />
             <Affliction identifier="lethalradiation" strength="50" />
-          <Affliction identifier="bleeding" strength="500" probability="0.05" />
-          <Affliction identifier="stun" strength="30" />
-        </Explosion>
-        <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="50000" />
-        <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="50000" />
-        <Explosion range="2000" force="0.0" smoke="false" sparks="false" empstrength="2.5" applyfireeffects="false" ignorecover="true">
-          <Affliction identifier="emp" strength="50" multiplybymaxvitality="true" />
-        </Explosion>
-        <ParticleEmitter particle="underwaterexplosion" anglemin="0" anglemax="360" particleamount="3" velocitymin="0" velocitymax="0" scalemin="15" scalemax="15" />
-        <SpawnItem identifier="nuclearaftereffectemitter" spawnposition="This"/>
-      </StatusEffect>
-      <!-- Trigger explosions on contained items -->
-      <StatusEffect type="OnBroken" target="contained">
-        <Use/>
-      </StatusEffect>
-      <!-- Remove the item after exploding -->
-      <StatusEffect type="OnBroken" target="This" delay="0.01">
-        <Remove />
-      </StatusEffect>
-    </Projectile>
-    <ItemContainer hideitems="true" capacity="1" maxstacksize="1" canbeselected="false">
-      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,384,64,64" origin="0.5,0.5" />
-      <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" containedstateindicatorstyle="explosive" containedspritedepth="0.81" />
-      <Containable items="smallitem,explosive" />
-    </ItemContainer>
-    <Quality>
-      <QualityStat stattype="ExplosionRadius" value="0.1"/>
-      <QualityStat stattype="ExplosionDamage" value="0.1"/>
-    </Quality>
-  </Item>
-
-
+            <Affliction identifier="bleeding" strength="500" probability="0.05" />
+            <Affliction identifier="stun" strength="30" />
+          </Explosion>
+          <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="50000" />
+          <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="50000" />
+          <Explosion range="2000" force="0.0" smoke="false" sparks="false" empstrength="2.5" applyfireeffects="false" ignorecover="true">
+            <Affliction identifier="emp" strength="50" multiplybymaxvitality="true" />
+          </Explosion>
+          <ParticleEmitter particle="underwaterexplosion" anglemin="0" anglemax="360" particleamount="3" velocitymin="0" velocitymax="0" scalemin="15" scalemax="15" />
+          <SpawnItem identifier="nuclearaftereffectemitter" spawnposition="This" />
+        </StatusEffect>
+        <!-- Trigger explosions on contained items -->
+        <StatusEffect type="OnBroken" target="contained">
+          <Use />
+        </StatusEffect>
+        <!-- Remove the item after exploding -->
+        <StatusEffect type="OnBroken" target="This" delay="0.01">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+      <ItemContainer hideitems="true" capacity="1" maxstacksize="1" canbeselected="false">
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,384,64,64" origin="0.5,0.5" />
+        <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" containedstateindicatorstyle="explosive" containedspritedepth="0.81" />
+        <Containable items="smallitem,explosive" />
+      </ItemContainer>
+      <Quality>
+        <QualityStat stattype="ExplosionRadius" value="0.1" />
+        <QualityStat stattype="ExplosionDamage" value="0.1" />
+      </Quality>
+    </Item>
     <Item name="" identifier="nuclearshell" tags="railgunequipment,railgunammo" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy">
       <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
       <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.05" />
@@ -110,18 +102,18 @@
       <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,128,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="1,131,217,33" depth="0.55" origin="0.5,0.5" />
       <Body width="215" height="30" density="35" />
-    <Holdable canbecombined="false" slots="LeftHand,RightHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
-      <!-- slow down the character when holding the item -->
-      <StatValue stattype="MovementSpeed" value="-0.2" />
-      <!-- adjust hold position when swimming -->
-      <StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
-        <Conditional InWater="true" />
-      </StatusEffect>
-      <!-- revert hold position adjustment when walking -->
-      <StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
-        <Conditional InWater="false" />
-      </StatusEffect>
-    </Holdable>
+      <Holdable canbecombined="false" slots="LeftHand,RightHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+        <!-- slow down the character when holding the item -->
+        <StatValue stattype="MovementSpeed" value="-0.2" />
+        <!-- adjust hold position when swimming -->
+        <StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <!-- revert hold position adjustment when walking -->
+        <StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+          <Conditional InWater="false" />
+        </StatusEffect>
+      </Holdable>
       <Projectile characterusable="false" launchimpulse="0" maxtargetstohit="1" damagedoors="true">
         <Attack structuredamage="100" itemdamage="50" severlimbsprobability="5" penetration="0.5" targetforce="1000">
           <Affliction identifier="explosiondamage" strength="250" />
@@ -156,75 +148,75 @@
           <Remove />
         </StatusEffect>
       </Projectile>
-    <ItemContainer hideitems="true" capacity="1" maxstacksize="1" canbeselected="false" containedstateindicatorstyle="explosive" containedspritedepth="0.81">
-      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,384,64,64" origin="0.5,0.5" />
-      <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
-      <Containable items="smallitem" />
-    </ItemContainer>
+      <ItemContainer hideitems="true" capacity="1" maxstacksize="1" canbeselected="false" containedstateindicatorstyle="explosive" containedspritedepth="0.81">
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,384,64,64" origin="0.5,0.5" />
+        <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
+        <Containable items="smallitem" />
+      </ItemContainer>
     </Item>
-<Item name="" identifier="depthchargeshell" tags="depthchargeammo,demolitionsexpert,hazardcontainment" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" indestructible="true" health="10" cargocontaineridentifier="">
-    <Upgrade gameversion="0.20.4.0" scale="0.4"/>
-    <PreferredContainer primary="depthchargeloader" secondary="ammoboxcontainer" />
-    <Price baseprice="120" minavailable="1">
-      <Price storeidentifier="merchantoutpost" multiplier="1.4" />
-      <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" />
-      <Price storeidentifier="merchantresearch" multiplier="1.25" />
-      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="4" />
-      <Price storeidentifier="merchantmine" multiplier="1.25" />
-    </Price>
-    <Deconstruct time="10">
-      <Item identifier="iron" />
-      <Item identifier="uex" />
-    </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="20">
-      <RequiredSkill identifier="weapons" level="25" />
-      <RequiredItem identifier="iron" amount="2" />
-      <RequiredItem identifier="uex" />
-    </Fabricate>
-    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="512,128,64,64" origin="0.5,0.5" />
-    <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="0,0,130,89" depth="0.55" origin="0.5,0.5" />
-    <Body width="128" height="85" density="20" />
-    <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
-    <Projectile characterusable="false" launchimpulse="8.0">
-      <!-- Make destructible when launched -->
-      <StatusEffect type="OnUse" target="This" Indestructible="false"/>
-      <StatusEffect type="OnImpact" target="this" setvalue="true" condition="-100"/>
-      <!-- Effects when taking damage-->
-      <StatusEffect type="OnDamaged" target="This" disabledeltatime="true" setvalue="true">
-        <particleemitter particle="shrapnel" drawontop="true" particleamount="5" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" distancemin="0" distancemax="20" scalemin="0.1" scalemax="0.35" />
-        <Sound file="Content/Sounds/Damage/HitArmor1.ogg" range="800" />
-      </StatusEffect>
-      <StatusEffect type="OnBroken" target="This">
-        <sound file="Content/Items/Weapons/ExplosionDebris4.ogg" range="5000" />
-        <sound file="Content/Items/Weapons/ExplosionDebris5.ogg" range="5000" />
-      </StatusEffect>
-      <!-- Trigger explosions on contained items -->
-      <StatusEffect type="OnBroken" target="Contained" >
-        <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="20000" />
-        <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="20000" />
-        <Explosion range="700.0" ballastfloradamage="150" structuredamage="175" itemdamage="500" force="17.5" severlimbsprobability="0.5" debris="true" decal="explosion" decalsize="0.5" penetration="0.5">
-          <Affliction identifier="explosiondamage" strength="150" dividebylimbcount="true"/>
-          <Affliction identifier="burn" strength="15" probability="0.2" dividebylimbcount="false"/>
-          <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false"/>
-          <Affliction identifier="stun" strength="7" />
-        </Explosion>
-        <Use />
-      </StatusEffect>
-      <!-- Remove the item after exploding -->
-      <StatusEffect type="OnBroken" target="This" delay="0.01">
-        <Remove />
-      </StatusEffect>
-    </Projectile>
-    <ItemContainer hideitems="true" capacity="1" maxstacksize="1" canbeselected="false" containedstateindicatorstyle="explosive" containedspritedepth="0.81">
-      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,384,64,64" origin="0.5,0.5" />
-      <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
-      <Containable items="smallitem,explosive" />
-    </ItemContainer>
-    <Quality>
-      <QualityStat stattype="ExplosionRadius" value="0.1"/>
-      <QualityStat stattype="ExplosionDamage" value="0.1"/>
-    </Quality>
-  </Item>
+    <Item name="" identifier="depthchargeshell" tags="depthchargeammo,demolitionsexpert,hazardcontainment" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" indestructible="true" health="10" cargocontaineridentifier="">
+      <Upgrade gameversion="0.20.4.0" scale="0.4" />
+      <PreferredContainer primary="depthchargeloader" secondary="ammoboxcontainer" />
+      <Price baseprice="120" minavailable="1">
+        <Price storeidentifier="merchantoutpost" multiplier="1.4" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="4" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <Item identifier="uex" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredItem identifier="iron" amount="2" />
+        <RequiredItem identifier="uex" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="512,128,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="0,0,130,89" depth="0.55" origin="0.5,0.5" />
+      <Body width="128" height="85" density="20" />
+      <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" launchimpulse="8.0">
+        <!-- Make destructible when launched -->
+        <StatusEffect type="OnUse" target="This" Indestructible="false" />
+        <StatusEffect type="OnImpact" target="this" setvalue="true" condition="-100" />
+        <!-- Effects when taking damage-->
+        <StatusEffect type="OnDamaged" target="This" disabledeltatime="true" setvalue="true">
+          <particleemitter particle="shrapnel" drawontop="true" particleamount="5" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" distancemin="0" distancemax="20" scalemin="0.1" scalemax="0.35" />
+          <Sound file="Content/Sounds/Damage/HitArmor1.ogg" range="800" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <sound file="Content/Items/Weapons/ExplosionDebris4.ogg" range="5000" />
+          <sound file="Content/Items/Weapons/ExplosionDebris5.ogg" range="5000" />
+        </StatusEffect>
+        <!-- Trigger explosions on contained items -->
+        <StatusEffect type="OnBroken" target="Contained">
+          <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="20000" />
+          <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="20000" />
+          <Explosion range="700.0" ballastfloradamage="150" structuredamage="175" itemdamage="500" force="17.5" severlimbsprobability="0.5" debris="true" decal="explosion" decalsize="0.5" penetration="0.5">
+            <Affliction identifier="explosiondamage" strength="150" dividebylimbcount="true" />
+            <Affliction identifier="burn" strength="15" probability="0.2" dividebylimbcount="false" />
+            <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false" />
+            <Affliction identifier="stun" strength="7" />
+          </Explosion>
+          <Use />
+        </StatusEffect>
+        <!-- Remove the item after exploding -->
+        <StatusEffect type="OnBroken" target="This" delay="0.01">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+      <ItemContainer hideitems="true" capacity="1" maxstacksize="1" canbeselected="false" containedstateindicatorstyle="explosive" containedspritedepth="0.81">
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,384,64,64" origin="0.5,0.5" />
+        <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
+        <Containable items="smallitem,explosive" />
+      </ItemContainer>
+      <Quality>
+        <QualityStat stattype="ExplosionRadius" value="0.1" />
+        <QualityStat stattype="ExplosionDamage" value="0.1" />
+      </Quality>
+    </Item>
     <Item name="" identifier="nucleardepthchargecheap" variantof="nucleardepthcharge" hideineditors="true">
       <Price baseprice="280" sold="false">
         <Price sold="false" />
