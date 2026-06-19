@@ -16,7 +16,7 @@
     </Fabricate>
     <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="0,-15" msg="ItemMsgPickUpSelect">
       <!-- LUA Geiger Counter-->
-      <StatusEffect type="Always" target="Character" interval="1">
+      <StatusEffect type="Always" target="NearbyCharacters" interval="1" range="90">
         <LuaHook name="geigercount" />
       </StatusEffect>
       <!-- Condition Based Sounds-->

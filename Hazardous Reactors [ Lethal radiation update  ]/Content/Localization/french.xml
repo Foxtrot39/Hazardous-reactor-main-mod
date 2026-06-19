@@ -53,7 +53,7 @@
   <entityname.ekutility_handtruck_reactorfuel>Chariot de manipulation à barre de combustible</entityname.ekutility_handtruck_reactorfuel>
   <entitydescription.ekutility_handtruck_reactorfuel>Un chariot à main avec un conteneur sécurisé pour le transport de barres à combustible.</entitydescription.ekutility_handtruck_reactorfuel>
   <entityname.fuelbackpack>Sac à dos avec bouclier anti-radiation</entityname.fuelbackpack>
-  <entitydescription.fuelbackpack>Un sac à dos renforcé pouvant transporter des materiaux nucléaire en toute sécurité, possède un compteur geiger and offre une protection limitée contre les radiations.</entitydescription.fuelbackpack>
+  <entitydescription.fuelbackpack>Un sac à dos renforcé pouvant transporter des materiaux nucléaire en toute sécurité, possède un compteur Geiger and offre une protection limitée contre les radiations.</entitydescription.fuelbackpack>
   <entityname.HRtongs>Pince pour carburant de réacteur</entityname.HRtongs>
   <entitydescription.HRtongs>Une pince pour maintenir une barre de combustible à une distance sécurisée de vos mains. Peut être utilisé en tant qu'arme contondante si besoin.</entitydescription.HRtongs>
   <entityname.raddeconfilter>Filtre à radiation pour déconstructeur avec blindage anti-radiation</entityname.raddeconfilter>
